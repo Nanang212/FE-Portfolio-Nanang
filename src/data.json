@@ -1,0 +1,733 @@
+{
+    "about": {
+        "id": 1,
+        "bio_id": "Saya adalah Fullstack Developer yang spesialisasi dalam membangun aplikasi enterprise yang robust dan skalabel. Dengan keahlian mendalam di Laravel dan Node.js (Express), saya merancang sistem yang bersih, mudah dipelihara, dan siap produksi. Saya memiliki pengalaman langsung membangun sistem monitoring konstruksi, platform manajemen dokumen proyek, dan API data terpusat yang melayani berbagai aplikasi internal.",
+        "bio_en": "I'm a Fullstack Developer specializing in building robust, scalable enterprise applications. With deep expertise in Laravel and Node.js (Express), I design systems that are clean, maintainable, and production-ready. I have hands-on experience building construction monitoring systems, project document management platforms, and centralized data APIs serving multiple internal applications.",
+        "photo_path": null,
+        "resume_path": "about\/cc805d4f-13b7-450b-a2a1-4e44ef3efdc8.pdf",
+        "job_title_id": "Software Engineer",
+        "job_title_en": "Software Engineer",
+        "highlights": [
+            "3+ Years Experience",
+            "Enterprise Systems",
+            "Backend Specialist",
+            "Docker & DevOps"
+        ],
+        "created_at": "2026-04-07T06:49:38.000000Z",
+        "updated_at": "2026-05-19T07:52:23.000000Z"
+    },
+    "projects": [
+        {
+            "id": 13,
+            "slug": "jm-rise-jasa-marga-toll-road-construction-monitoring-application-eSxpz",
+            "title_id": "JM-RISE (Jasa Marga Toll Road Construction Monitoring Application)",
+            "title_en": "JM-RISE (Jasa Marga Toll Road Construction Monitoring Application)",
+            "description_id": "adalah aplikasi berbasis web yang dirancang untuk memantau kemajuan pembangunan jalan tol, mengelola data proyek, dan menghasilkan laporan. Dalam proyek ini, arsitektur database dirancang dan dikembangkan, termasuk struktur tabel, hubungan entitas, normalisasi, dan penyesuaian skema untuk mendukung kebutuhan bisnis. Penerapannya mencakup pembuatan migrasi, strategi pengindeksan, dan pengoptimalan kueri guna meningkatkan kinerja pelacakan dan pelaporan. Sistem ini terus dipelihara dan ditingkatkan dengan menyempurnakan hubungan data, mengintegrasikan API eksternal, dan memastikan konsistensi dan integritas data di seluruh aplikasi.",
+            "description_en": "is a web-based application designed to monitor toll road construction progress, manage project data, and generate reports. In this project, the database architecture was designed and developed, including table structures, entity relationships, normalization, and schema adjustments to support business requirements. The implementation included creating migrations, indexing strategies, and optimizing queries to improve performance for tracking and reporting. The system was continuously maintained and enhanced by refining data relationships, integrating external APIs, and ensuring data consistency and integrity across the application.",
+            "tech_stack": [
+                "Express.js",
+                "PostgreSQL",
+                "Redis",
+                "Docker",
+                "Postman",
+                "Swagger",
+                "GitLab",
+                "Jira"
+            ],
+            "github_url": null,
+            "demo_url": "https:\/\/jm-rise.jasamarga.co.id\/login",
+            "image_path": null,
+            "image_paths": [
+                "projects\/3e69b54f-d62f-47a1-be91-13eaf042e0ab.webp",
+                "projects\/ae8c86ff-6705-42da-b6fa-73ed989c47b1.webp"
+            ],
+            "is_published": true,
+            "order": 1,
+            "created_at": "2026-05-19T07:10:01.000000Z",
+            "updated_at": "2026-05-19T07:15:49.000000Z"
+        },
+        {
+            "id": 15,
+            "slug": "aggregator-operasi-ugIJE",
+            "title_id": "Aggregator Operasi",
+            "title_en": "Aggregator Operasi",
+            "description_id": "Aggregator Operasi adalah layanan data master terpusat yang dirancang untuk menyatukan dan menstandarisasi data di berbagai aplikasi di Jasa Marga. Proyek ini dibangun untuk mengatasi inkonsistensi antar sistem yang ada dengan mengkonsolidasikan data master menjadi satu sumber kebenaran yang dapat diakses oleh semua aplikasi. Proses pengembangan memerlukan adaptasi yang cermat terhadap struktur data yang ada untuk memastikan bahwa sistem lama terus berfungsi tanpa gangguan. Inilah sebabnya mengapa proyek ini memakan waktu lebih lama, karena agregator harus menyesuaikan dengan data yang sudah ada daripada menggantinya. Saat ini, sistem masih dalam tahap pengembangan dan pengujian, dengan beberapa aplikasi Jasa Marga telah mengintegrasikan dan menggunakan API dalam lingkungan pengembangan.",
+            "description_en": "Aggregator Operasi is a centralized master data service designed to unify and standardize data across multiple applications within Jasa Marga. This project was built to address inconsistencies between existing systems by consolidating master data into a single source of truth that can be accessed by all applications. The development process requires careful adaptation to existing data structures to ensure that legacy systems continue to function without disruption. This is why the project takes longer, as the aggregator must adjust to already established data rather than replacing it. Currently, the system is still in the development and testing phase, with several Jasa Marga applications already integrating and consuming the APIs in a development environment.",
+            "tech_stack": [
+                "Express.js",
+                "PostgreSQL",
+                "Redis",
+                "Docker",
+                "Postman",
+                "Jira"
+            ],
+            "github_url": null,
+            "demo_url": "http:\/\/frontend-agregatore-operasi.apps.ocdev.jasamarga.co.id\/",
+            "image_path": null,
+            "image_paths": [
+                "projects\/890f367b-228f-4b41-a2fe-bb8a6fb18cdc.webp"
+            ],
+            "is_published": true,
+            "order": 2,
+            "created_at": "2026-05-19T07:15:36.000000Z",
+            "updated_at": "2026-05-19T07:15:49.000000Z"
+        },
+        {
+            "id": 14,
+            "slug": "jm-act-jasa-marga-adukan-cermati-tuntaskan-kBr1Y",
+            "title_id": "JM-ACT (Jasa Marga Adukan Cermati Tuntaskan)",
+            "title_en": "JM-ACT (Jasa Marga Adukan Cermati Tuntaskan)",
+            "description_id": "merupakan sistem pengelolaan pengaduan yang memungkinkan pengguna jalan tol menyampaikan laporan melalui aplikasi mobile Travoy. Awalnya dibangun sebagai aplikasi Laravel monolitik tanpa titik akhir API, proyek ini ditingkatkan dengan memperkenalkan RESTful API untuk mendukung integrasi seluler. Sistem ini mencakup fitur-fitur seperti pembuatan pengaduan, riwayat pengaduan, dan layanan notifikasi. Notifikasi dikirimkan melalui notifikasi push dan email menggunakan pengirim email, memastikan pengguna menerima pembaruan real-time untuk setiap aktivitas. Dokumentasi API dibuat menggunakan Postman dan Scramble untuk mendukung kolaborasi antara tim backend, frontend, dan mobile.",
+            "description_en": "is a complaint management system that enables toll road users to submit reports through the Travoy mobile application. Initially built as a monolithic Laravel application without API endpoints, this project was enhanced by introducing RESTful APIs to support mobile integration. The system includes features such as complaint creation, complaint history, and notification services. Notifications are delivered through both push notifications and email using a mail sender, ensuring users receive real-time updates for every activity. API documentation was created using Postman and Scramble to support collaboration between backend, frontend, and mobile teams.",
+            "tech_stack": [
+                "Laravel",
+                "PHP",
+                "PostgreSQL",
+                "Docker",
+                "GitLab CI\/CD",
+                "Postman",
+                "Jira",
+                "Scramble"
+            ],
+            "github_url": null,
+            "demo_url": "https:\/\/jm-act.jasamarga.co.id\/",
+            "image_path": null,
+            "image_paths": [
+                "projects\/10f32a2f-c46e-4263-adeb-275aa019f289.webp",
+                "projects\/bc95ec5f-a56e-4ebc-8d63-45b3543fcf98.webp"
+            ],
+            "is_published": true,
+            "order": 3,
+            "created_at": "2026-05-19T07:13:09.000000Z",
+            "updated_at": "2026-05-19T07:15:49.000000Z"
+        },
+        {
+            "id": 12,
+            "slug": "jimms-jasa-marga-integrated-maintenance-management-system-RTbFF",
+            "title_id": "JIMMS (Jasa Marga Integrated Maintenance Management System)",
+            "title_en": "JIMMS (Jasa Marga Integrated Maintenance Management System)",
+            "description_id": "merupakan sistem manajemen pemeliharaan yang digunakan untuk operasional lingkungan hidup di jalan tol Jasa Marga. Proyek ini berfokus pada peningkatan aplikasi berbasis Laravel yang sudah ada dengan meningkatkan fitur dashboard lingkungan untuk pemantauan dan pelaporan yang lebih baik. Peningkatan tambahan mencakup penerapan kontrol akses berbasis peran (RBAC) untuk alur kerja persetujuan dan menyempurnakan enum evaluasi agar lebih selaras dengan proses bisnis.",
+            "description_en": "is a maintenance management system used for environmental operations on Jasa Marga toll roads. This project focused on enhancing an existing Laravel-based application by improving environmental dashboard features for better monitoring and reporting. Additional improvements included implementing role-based access control (RBAC) for approval workflows and refining evaluation enums to better align with business processes.",
+            "tech_stack": [
+                "Laravel",
+                "PHP",
+                "PostgreSQL",
+                "SQL",
+                "Jenkins",
+                "Postman",
+                "GitLab",
+                "Jira"
+            ],
+            "github_url": null,
+            "demo_url": "https:\/\/jimms.jasamarga.co.id\/login",
+            "image_path": null,
+            "image_paths": [
+                "projects\/813a7dca-dc17-4fe4-9c8a-de85d4178165.webp",
+                "projects\/f1c12152-2235-4217-9f02-bc27c42453ce.webp"
+            ],
+            "is_published": true,
+            "order": 4,
+            "created_at": "2026-05-19T07:06:25.000000Z",
+            "updated_at": "2026-05-19T07:15:49.000000Z"
+        },
+        {
+            "id": 1,
+            "slug": "digitalisasi-document-mtMz7",
+            "title_id": "Digitalisasi Dokumen",
+            "title_en": "Digitalisasi Document",
+            "description_id": "Proyek untuk memindahkan dokumen pengajuan manual ke format digital. Proyek ini berintegrasi dengan perpajakan untuk memperoleh e-meterai, serta membuat UI tanda tangan digital Adira agar proses dokumen dapat digenerate otomatis dan siap cetak.",
+            "description_en": "A project to move manual submission documents into digital format. This project works together with tax integration to obtain e-stamps, and includes a UI for Adira's digital signature so document processes are auto-generated and ready to print.",
+            "tech_stack": [
+                "ZK",
+                "Java 7",
+                "Java 17",
+                "SQL",
+                "Postman",
+                "Unit Test",
+                "Kafka",
+                "Docker"
+            ],
+            "github_url": null,
+            "demo_url": null,
+            "image_path": null,
+            "image_paths": null,
+            "is_published": true,
+            "order": 5,
+            "created_at": "2026-04-08T02:26:45.000000Z",
+            "updated_at": "2026-05-19T07:15:49.000000Z"
+        },
+        {
+            "id": 2,
+            "slug": "preibalap-cddvD",
+            "title_id": "PreiBalap",
+            "title_en": "PreiBalap",
+            "description_id": "Website registrasi kompetisi balap mobil se-Jawa Timur. Proyek freelance yang dikerjakan oleh 2 orang, mencakup alur pendaftaran event lengkap dan manajemen peserta.",
+            "description_en": "A registration website for car racing competitions throughout East Java. A freelance project built by a team of 2, featuring full event registration flow and participant management.",
+            "tech_stack": [
+                "Laravel",
+                "React JS",
+                "TypeScript",
+                "TailwindCSS",
+                "Postman",
+                "Git"
+            ],
+            "github_url": "https:\/\/github.com\/bagus2x\/idf",
+            "demo_url": "https:\/\/preibalap.com",
+            "image_path": null,
+            "image_paths": [
+                "projects\/df9c0e09-9401-4906-9c94-233bcf14441c.webp",
+                "projects\/34d74364-6f4d-4ab4-8fd4-2e42d79def8c.webp"
+            ],
+            "is_published": true,
+            "order": 6,
+            "created_at": "2026-04-08T02:26:45.000000Z",
+            "updated_at": "2026-05-19T07:15:49.000000Z"
+        },
+        {
+            "id": 4,
+            "slug": "pengkinian-data-w2fPB",
+            "title_id": "Pengkinian Data",
+            "title_en": "Pengkinian Data",
+            "description_id": "Mengurangi frekuensi hit API Dukcapil dengan mewajibkan perubahan pada field yang divalidasi. Meningkatkan tampilan Pop-Up gagal pembaruan data untuk menampilkan detail ketidaksesuaian dengan Dukcapil, membantu tim lapangan memahami penyebab kegagalan.",
+            "description_en": "Reduces Dukcapil API hit frequency by requiring validated fields to change before triggering updates. Also improves the Pop-Up display for failed data updates to show detailed discrepancies with Dukcapil, helping field teams identify failure causes clearly.",
+            "tech_stack": [
+                "ZK",
+                "Java 7",
+                ".Net",
+                "SQL",
+                "Postman"
+            ],
+            "github_url": null,
+            "demo_url": null,
+            "image_path": null,
+            "image_paths": null,
+            "is_published": true,
+            "order": 7,
+            "created_at": "2026-04-08T02:26:45.000000Z",
+            "updated_at": "2026-05-19T07:15:49.000000Z"
+        },
+        {
+            "id": 5,
+            "slug": "connect-by-bca-6NcmN",
+            "title_id": "Connect by BCA",
+            "title_en": "Connect by BCA",
+            "description_id": "Aplikasi layanan m-banking tersedia di Android dan web, sebagai proyek akhir bootcamp Synergy Academy \u00d7 BCA. Bertanggung jawab atas seluruh tampilan UI menggunakan React dan konsumsi API dari tim backend.",
+            "description_en": "An m-banking service application available on Android and web, built as the final project of the Synergy Academy \u00d7 BCA bootcamp. Responsible for the full UI using React and consuming APIs from the backend team.",
+            "tech_stack": [
+                "React JS",
+                "TailwindCSS",
+                "JavaScript",
+                "Postman"
+            ],
+            "github_url": null,
+            "demo_url": null,
+            "image_path": null,
+            "image_paths": [
+                "projects\/92ea0e18-a109-41af-adef-161ca432d4e3.webp"
+            ],
+            "is_published": true,
+            "order": 8,
+            "created_at": "2026-04-08T02:26:45.000000Z",
+            "updated_at": "2026-05-19T07:15:49.000000Z"
+        },
+        {
+            "id": 6,
+            "slug": "training-management-tJh9V",
+            "title_id": "Training Management",
+            "title_en": "Training Management",
+            "description_id": "Tugas akhir Metrodata Coding Camp. Website manajemen pelatihan dengan fitur datatables, preview dokumen, upload lampiran, pembuatan REST API, dan konsumsi API.",
+            "description_en": "Final assignment for the Metrodata Coding Camp. A training management website featuring datatables, document preview, attachment uploads, REST API creation, and API consumption.",
+            "tech_stack": [
+                "Spring Boot",
+                "TailwindCSS",
+                "JavaScript",
+                "SQL",
+                "Postman"
+            ],
+            "github_url": null,
+            "demo_url": null,
+            "image_path": null,
+            "image_paths": [
+                "projects\/12886605-0b86-4980-9b98-cd47e6b78620.webp",
+                "projects\/0db622b1-f2fe-47b5-b79b-9f56032fddcf.webp",
+                "projects\/1f27cae8-989f-4342-be34-b3ed66d0edc9.webp"
+            ],
+            "is_published": true,
+            "order": 9,
+            "created_at": "2026-04-08T02:26:45.000000Z",
+            "updated_at": "2026-05-19T07:15:49.000000Z"
+        },
+        {
+            "id": 7,
+            "slug": "pokemon-explorer-U5A97",
+            "title_id": "Pok\u00e9mon Explorer",
+            "title_en": "Pok\u00e9mon Explorer",
+            "description_id": "Tugas konsumsi Pok\u00e9API selama Metrodata Coding Camp, menampilkan data Pok\u00e9mon dalam antarmuka interaktif.",
+            "description_en": "An assignment to consume the Pok\u00e9API dummy data during the Metrodata Coding Camp, displaying Pok\u00e9mon data in an interactive interface.",
+            "tech_stack": [
+                "HTML",
+                "CSS",
+                "TailwindCSS",
+                "JavaScript"
+            ],
+            "github_url": null,
+            "demo_url": null,
+            "image_path": null,
+            "image_paths": [
+                "projects\/54cabab2-437f-4e53-ae08-ab3954e2da44.webp",
+                "projects\/c33a479c-39e0-427f-bcf9-1e2e02c672ca.webp",
+                "projects\/51c9f809-b128-4fe4-aaee-de9ba9804960.webp"
+            ],
+            "is_published": true,
+            "order": 10,
+            "created_at": "2026-04-08T02:26:45.000000Z",
+            "updated_at": "2026-05-19T07:15:49.000000Z"
+        },
+        {
+            "id": 8,
+            "slug": "supermarket-pos-HEKCh",
+            "title_id": "Supermarket POS",
+            "title_en": "Supermarket POS",
+            "description_id": "Proyek freelance membuat website manajemen supermarket dengan ag-Grid untuk tabel dinamis, ekspor PDF, cetak struk, dan implementasi REST API penuh.",
+            "description_en": "A freelance project to build a supermarket management website featuring ag-Grid for dynamic tables, export to PDF, print receipts, and full REST API implementation.",
+            "tech_stack": [
+                "Laravel",
+                "Bootstrap",
+                "JavaScript",
+                "SQL",
+                "Postman",
+                "Ag-Grid"
+            ],
+            "github_url": null,
+            "demo_url": null,
+            "image_path": null,
+            "image_paths": null,
+            "is_published": true,
+            "order": 11,
+            "created_at": "2026-04-08T02:26:45.000000Z",
+            "updated_at": "2026-05-19T07:15:49.000000Z"
+        },
+        {
+            "id": 9,
+            "slug": "care-for-orphans-PNsoY",
+            "title_id": "Care for Orphans",
+            "title_en": "Care for Orphans",
+            "description_id": "Tugas akhir kuliah: website donasi untuk anak yatim PENS, dilengkapi datatables, ekspor PDF, pembuatan REST API, dan konsumsi API.",
+            "description_en": "Final college assignment: a donation website to support PENS orphans, featuring datatables, PDF export, REST API creation, and API consumption.",
+            "tech_stack": [
+                "Laravel",
+                "Bootstrap",
+                "JavaScript",
+                "SQL",
+                "Postman",
+                "Query Builder"
+            ],
+            "github_url": null,
+            "demo_url": null,
+            "image_path": null,
+            "image_paths": [
+                "projects\/ece0b203-eb41-4635-96e4-03354f50caaa.webp",
+                "projects\/41dd323f-0838-47fd-8350-f44180b335c3.webp",
+                "projects\/ef14166e-3a6e-440a-8910-015c95e0e528.webp"
+            ],
+            "is_published": true,
+            "order": 12,
+            "created_at": "2026-04-08T02:26:45.000000Z",
+            "updated_at": "2026-05-19T07:15:49.000000Z"
+        },
+        {
+            "id": 10,
+            "slug": "konsel-lI0q4",
+            "title_id": "KONSEL",
+            "title_en": "KONSEL",
+            "description_id": "Dibuat saat magang: KONSEL (Konseling Online) adalah website untuk siswa SMP dan SMA se-Yogyakarta. Fitur multi-role, datatables, ekspor PDF, dan REST API lengkap.",
+            "description_en": "Built during internship: KONSEL (Online Counseling) is a website for middle and high school students throughout Yogyakarta. Features multi-role access, datatables, PDF export, and a full REST API.",
+            "tech_stack": [
+                "Laravel",
+                "Bootstrap",
+                "JavaScript",
+                "SQL",
+                "Postman"
+            ],
+            "github_url": null,
+            "demo_url": null,
+            "image_path": null,
+            "image_paths": [
+                "projects\/d9644288-0058-469c-9156-dfaadaaa99e3.webp",
+                "projects\/3dd40129-1f0e-46ea-b534-f74f2a04abb5.webp",
+                "projects\/4d59f3dd-bd78-4d08-9fe3-7eba965ca833.webp"
+            ],
+            "is_published": true,
+            "order": 13,
+            "created_at": "2026-04-08T02:26:45.000000Z",
+            "updated_at": "2026-05-19T07:15:49.000000Z"
+        },
+        {
+            "id": 11,
+            "slug": "siabdi-YV15r",
+            "title_id": "SIABDI",
+            "title_en": "SIABDI",
+            "description_id": "SIABDI (Sistem Abdi) adalah website manajemen pengabdian masyarakat kampus, dengan fitur datatables, import PDF, dan filter berdasarkan nama dan judul pengabdian dosen.",
+            "description_en": "SIABDI (Sistem Abdi) is a community service management website for the campus, featuring datatables, PDF import, and filtering by lecturer name and service title.",
+            "tech_stack": [
+                "Laravel",
+                "Bootstrap",
+                "JavaScript",
+                "SQL",
+                "Postman"
+            ],
+            "github_url": null,
+            "demo_url": null,
+            "image_path": null,
+            "image_paths": [
+                "projects\/288ea7c8-2c93-41ca-93e7-3130ac745499.webp",
+                "projects\/d8221e15-382e-47a7-a7a8-5b4fe135f19f.webp",
+                "projects\/71af6d49-c1ff-4e78-a4a5-ea2b785393a0.webp"
+            ],
+            "is_published": true,
+            "order": 14,
+            "created_at": "2026-04-08T02:26:45.000000Z",
+            "updated_at": "2026-05-19T07:15:49.000000Z"
+        }
+    ],
+    "skills": [
+        {
+            "id": 2,
+            "category": "Backend",
+            "name": "Express.js",
+            "icon": null,
+            "level": "expert",
+            "order": 1,
+            "created_at": "2026-04-07T06:49:38.000000Z",
+            "updated_at": "2026-04-08T02:39:54.000000Z"
+        },
+        {
+            "id": 13,
+            "category": "Frontend",
+            "name": "React.js",
+            "icon": null,
+            "level": "advanced",
+            "order": 1,
+            "created_at": "2026-04-07T06:49:38.000000Z",
+            "updated_at": "2026-04-07T06:49:38.000000Z"
+        },
+        {
+            "id": 5,
+            "category": "DevOps",
+            "name": "Docker",
+            "icon": null,
+            "level": "advanced",
+            "order": 1,
+            "created_at": "2026-04-07T06:49:38.000000Z",
+            "updated_at": "2026-04-07T06:49:38.000000Z"
+        },
+        {
+            "id": 11,
+            "category": "Database",
+            "name": "MySQL",
+            "icon": null,
+            "level": "expert",
+            "order": 1,
+            "created_at": "2026-04-07T06:49:38.000000Z",
+            "updated_at": "2026-04-07T06:49:38.000000Z"
+        },
+        {
+            "id": 8,
+            "category": "Storage",
+            "name": "MinIO",
+            "icon": null,
+            "level": "advanced",
+            "order": 1,
+            "created_at": "2026-04-07T06:49:38.000000Z",
+            "updated_at": "2026-04-07T06:49:38.000000Z"
+        },
+        {
+            "id": 10,
+            "category": "Cache",
+            "name": "Redis",
+            "icon": null,
+            "level": "advanced",
+            "order": 1,
+            "created_at": "2026-04-07T06:49:38.000000Z",
+            "updated_at": "2026-04-07T06:49:38.000000Z"
+        },
+        {
+            "id": 9,
+            "category": "Storage",
+            "name": "AWS S3",
+            "icon": null,
+            "level": "intermediate",
+            "order": 2,
+            "created_at": "2026-04-07T06:49:38.000000Z",
+            "updated_at": "2026-04-07T06:49:38.000000Z"
+        },
+        {
+            "id": 14,
+            "category": "Frontend",
+            "name": "Inertia.js",
+            "icon": null,
+            "level": "advanced",
+            "order": 2,
+            "created_at": "2026-04-07T06:49:38.000000Z",
+            "updated_at": "2026-04-07T06:49:38.000000Z"
+        },
+        {
+            "id": 12,
+            "category": "Database",
+            "name": "PostgreSQL",
+            "icon": null,
+            "level": "advanced",
+            "order": 2,
+            "created_at": "2026-04-07T06:49:38.000000Z",
+            "updated_at": "2026-04-07T06:49:38.000000Z"
+        },
+        {
+            "id": 6,
+            "category": "DevOps",
+            "name": "GitLab CI\/CD",
+            "icon": null,
+            "level": "advanced",
+            "order": 2,
+            "created_at": "2026-04-07T06:49:38.000000Z",
+            "updated_at": "2026-04-07T06:49:38.000000Z"
+        },
+        {
+            "id": 3,
+            "category": "Backend",
+            "name": "Node.js",
+            "icon": null,
+            "level": "expert",
+            "order": 2,
+            "created_at": "2026-04-07T06:49:38.000000Z",
+            "updated_at": "2026-04-08T02:39:59.000000Z"
+        },
+        {
+            "id": 1,
+            "category": "Backend",
+            "name": "Laravel",
+            "icon": null,
+            "level": "expert",
+            "order": 3,
+            "created_at": "2026-04-07T06:49:38.000000Z",
+            "updated_at": "2026-04-08T02:40:13.000000Z"
+        },
+        {
+            "id": 7,
+            "category": "DevOps",
+            "name": "Nginx",
+            "icon": null,
+            "level": "advanced",
+            "order": 3,
+            "created_at": "2026-04-07T06:49:38.000000Z",
+            "updated_at": "2026-04-07T06:49:38.000000Z"
+        },
+        {
+            "id": 15,
+            "category": "Frontend",
+            "name": "TailwindCSS",
+            "icon": null,
+            "level": "advanced",
+            "order": 3,
+            "created_at": "2026-04-07T06:49:38.000000Z",
+            "updated_at": "2026-04-07T06:49:38.000000Z"
+        },
+        {
+            "id": 4,
+            "category": "Backend",
+            "name": "PHP",
+            "icon": null,
+            "level": "expert",
+            "order": 4,
+            "created_at": "2026-04-07T06:49:38.000000Z",
+            "updated_at": "2026-04-07T06:49:38.000000Z"
+        },
+        {
+            "id": 17,
+            "category": "DevOps",
+            "name": "cPanel",
+            "icon": null,
+            "level": "expert",
+            "order": 4,
+            "created_at": "2026-05-19T09:29:07.000000Z",
+            "updated_at": "2026-05-19T09:29:07.000000Z"
+        },
+        {
+            "id": 16,
+            "category": "Backend",
+            "name": "Spring Boot",
+            "icon": null,
+            "level": "intermediate",
+            "order": 5,
+            "created_at": "2026-04-08T02:39:33.000000Z",
+            "updated_at": "2026-04-08T02:39:49.000000Z"
+        }
+    ],
+    "experiences": [
+        {
+            "id": 1,
+            "company": "PT Jasa Marga (Persero) Tbk",
+            "role": "Back End Developer",
+            "period_start": "2025-03-01T00:00:00.000000Z",
+            "period_end": "2026-04-08T00:00:00.000000Z",
+            "is_current": true,
+            "projects": [
+                {
+                    "name": "JM-RISE (Jasa Marga Integrated System for Enterprise)",
+                    "description_en": "A web-based application designed to monitor toll road construction progress, manage project data, and generate reports.\n\nDesigned and developed the database architecture for the JM-RISE application by creating table structures, defining entity relationships, applying data normalization, and adjusting schemas to support toll road construction monitoring requirements. Implemented the database structure into the application through migrations, indexing, and query optimization to improve performance for construction progress tracking and project reporting, while continuously maintaining and enhancing the database by adding new structures, refining data relationships, integrating external APIs, and ensuring data consistency and integrity across the application.",
+                    "description_id": "Aplikasi berbasis web yang dirancang untuk memantau kemajuan pembangunan jalan tol, mengelola data proyek, dan menghasilkan laporan.\n\nMerancang dan mengembangkan arsitektur database untuk aplikasi JM-RISE dengan membuat struktur tabel, mendefinisikan hubungan entitas, menerapkan normalisasi data, dan menyesuaikan skema untuk mendukung kebutuhan pemantauan konstruksi jalan tol. Menerapkan struktur database ke dalam aplikasi melalui migrasi, pengindeksan, dan optimalisasi kueri untuk meningkatkan kinerja pelacakan kemajuan konstruksi dan pelaporan proyek, sambil terus memelihara dan meningkatkan database dengan menambahkan struktur baru, menyempurnakan hubungan data, mengintegrasikan API eksternal, dan memastikan konsistensi dan integritas data di seluruh aplikasi."
+                },
+                {
+                    "name": "Aggregator Operasi",
+                    "description_en": "The Operations Aggregator is a web-based application that serves as a centralized hub for master data integration within Jasa Marga. It consolidates data from multiple endpoints into a single unified service, enabling other applications to access data more consistently and efficiently.\n\nThis approach simplifies system integration, ensures standardization, and improves overall maintainability.",
+                    "description_id": "Aplikasi Aggregator Operasi adalah sistem berbasis web yang berfungsi sebagai pusat integrasi master data di lingkungan Jasa Marga. Aplikasi ini mengonsolidasikan berbagai sumber data dari beragam endpoint menjadi satu layanan terpusat, sehingga memudahkan aplikasi lain dalam mengakses data secara konsisten dan efisien. Dengan pendekatan ini, integrasi antar sistem menjadi lebih sederhana, terstandarisasi, dan mudah dikelola."
+                },
+                {
+                    "name": "JM-ACT (Jasa Marga Adukan Cermati Tuntaskan)",
+                    "description_en": "Complaint management system integrated with mobile apps (Travoy) to handle toll road user reports with real-time notifications.\n\nRefactored a monolithic Laravel-based system into a service-oriented architecture by developing RESTful APIs to support mobile integration for the Travoy application, including complaint creation, complaint history, and notification services. Enabled toll road complaint submissions through mobile platforms to improve accessibility and user engagement, while implementing real-time notification mechanisms using push notifications and email services. Additionally, created and maintained API documentation using Postman and Scramble to enhance collaboration with frontend and mobile teams, and supported CI\/CD and deployment workflows using GitLab.",
+                    "description_id": "Sistem manajemen pengaduan terintegrasi dengan aplikasi seluler (Travoy) untuk menangani laporan pengguna jalan tol dengan notifikasi real-time.\n\nMemfaktorkan ulang sistem monolitik berbasis Laravel menjadi arsitektur berorientasi layanan dengan mengembangkan RESTful API untuk mendukung integrasi seluler untuk aplikasi Travoy, termasuk pembuatan keluhan, riwayat keluhan, dan layanan notifikasi. Memungkinkan penyampaian keluhan jalan tol melalui platform seluler untuk meningkatkan aksesibilitas dan keterlibatan pengguna, sekaligus menerapkan mekanisme pemberitahuan real-time menggunakan pemberitahuan push dan layanan email. Selain itu, membuat dan memelihara dokumentasi API menggunakan Postman dan Scramble untuk meningkatkan kolaborasi dengan tim frontend dan mobile, serta mendukung CI\/CD dan alur kerja penerapan menggunakan GitLab."
+                },
+                {
+                    "name": "JIMMS (Jasa Marga Integrated Maintenance Management System)",
+                    "description_en": "Developed a website for environmental maintenance on Jasa Marga toll roads using PHP Laravel and PostgreSQL. Fixed dashboard environmental features, added roles & permissions for GH approval, and edited enum evaluations.",
+                    "description_id": "Mengembangkan website untuk pemeliharaan lingkungan jalan tol Jasa Marga menggunakan PHP Laravel dan PostgreSQL. Memperbaiki fitur lingkungan pada dashboard, menambahkan roles & permissions untuk approval GH, dan mengedit enum evaluasi."
+                }
+            ],
+            "tech_stack": [
+                "Laravel",
+                "PHP",
+                "PostgreSQL",
+                "Jenkins",
+                "GitLab",
+                "Postman",
+                "Jira",
+                "Scramble",
+                "Express.js",
+                "Redis",
+                "Docker",
+                "DBEaver",
+                "JavaScript"
+            ],
+            "order": 1,
+            "created_at": "2026-04-08T02:26:45.000000Z",
+            "updated_at": "2026-05-19T07:00:46.000000Z"
+        },
+        {
+            "id": 2,
+            "company": "PT Adira Dinamika Multi Finance",
+            "role": "Programmer",
+            "period_start": "2024-02-01T00:00:00.000000Z",
+            "period_end": "2025-02-28T00:00:00.000000Z",
+            "is_current": false,
+            "projects": [
+                {
+                    "name": "Core Application Maintenance (Action)",
+                    "description_en": "Maintained and improved the \"Action\" core application used for branch customer loan applications. Analyzed and resolved ticket issues from branches by validating data using SQL queries.",
+                    "description_id": "Memelihara dan meningkatkan aplikasi inti \"Action\" yang digunakan untuk pengajuan pinjaman nasabah cabang. Menganalisis dan menyelesaikan isu tiket dari cabang dengan validasi data menggunakan query SQL."
+                },
+                {
+                    "name": "Document Digitization System",
+                    "description_en": "Developed a document digitization system using Spring Boot and Apache POI to automate manual digital document creation. Built UI for digital signatures and integrated Kafka consumers.",
+                    "description_id": "Mengembangkan sistem digitalisasi dokumen menggunakan Spring Boot dan Apache POI untuk mengotomatiskan pembuatan dokumen digital secara manual. Membangun UI untuk tanda tangan digital dan mengintegrasikan Kafka consumers."
+                },
+                {
+                    "name": "Autofill & Pengkinian Data",
+                    "description_en": "Automated document filling and customer data updates integrated with Dukcapil data system.",
+                    "description_id": "Otomatisasi pengisian dokumen dan pembaruan data nasabah yang terintegrasi dengan sistem data Dukcapil."
+                }
+            ],
+            "tech_stack": [
+                "Java",
+                "Spring Boot",
+                "Apache POI",
+                "SQL",
+                "ZK Framework",
+                ".Net",
+                "Docker",
+                "Kafka"
+            ],
+            "order": 2,
+            "created_at": "2026-04-08T02:26:45.000000Z",
+            "updated_at": "2026-04-08T05:47:19.000000Z"
+        },
+        {
+            "id": 3,
+            "company": "PT Mitra Integrasi Informatika",
+            "role": "Programmer \/ Trainee",
+            "period_start": "2023-09-01T00:00:00.000000Z",
+            "period_end": "2023-12-31T00:00:00.000000Z",
+            "is_current": false,
+            "projects": [
+                {
+                    "name": "Training Management Application",
+                    "description_en": "Built training management applications for internal and external company needs using Spring Boot during the application management training program.",
+                    "description_id": "Membangun aplikasi manajemen pelatihan untuk kebutuhan internal dan eksternal perusahaan menggunakan Spring Boot selama program pelatihan manajemen aplikasi."
+                }
+            ],
+            "tech_stack": [
+                "Java",
+                "Spring Boot",
+                "TailwindCSS",
+                "JavaScript",
+                "SQL",
+                "Postman",
+                "DataTables",
+                "Draw.io"
+            ],
+            "order": 3,
+            "created_at": "2026-04-08T02:26:45.000000Z",
+            "updated_at": "2026-04-08T05:46:44.000000Z"
+        },
+        {
+            "id": 4,
+            "company": "Lavin Technologies",
+            "role": "Full Stack Developer",
+            "period_start": "2023-05-01T00:00:00.000000Z",
+            "period_end": "2023-07-31T00:00:00.000000Z",
+            "is_current": false,
+            "projects": [
+                {
+                    "name": "Supermarket Cashier Application",
+                    "description_en": "Developed a web-based supermarket cashier application using Laravel with full transaction management, sales recording, product management, and financial reports. Used Ag-Grid for dynamic data tables.",
+                    "description_id": "Mengembangkan aplikasi kasir supermarket berbasis web menggunakan Laravel dengan manajemen transaksi lengkap, pencatatan penjualan, manajemen produk, dan laporan keuangan. Menggunakan Ag-Grid untuk tabel data dinamis."
+                }
+            ],
+            "tech_stack": [
+                "Laravel",
+                "JavaScript",
+                "Bootstrap",
+                "Ag-Grid",
+                "MySQL",
+                "Laragon"
+            ],
+            "order": 4,
+            "created_at": "2026-04-08T02:26:45.000000Z",
+            "updated_at": "2026-04-08T02:26:45.000000Z"
+        },
+        {
+            "id": 5,
+            "company": "PT Unicam Digital Studio Pictvres",
+            "role": "Full Stack Developer (Internship)",
+            "period_start": "2022-08-01T00:00:00.000000Z",
+            "period_end": "2022-12-31T00:00:00.000000Z",
+            "is_current": false,
+            "projects": [
+                {
+                    "name": "Student Counseling Website",
+                    "description_en": "Developed a counseling website for middle and high school students in Yogyakarta using Laravel, providing online guidance and session management features.",
+                    "description_id": "Mengembangkan website konseling untuk siswa SMP dan SMA di Yogyakarta menggunakan Laravel, menyediakan fitur bimbingan online dan manajemen sesi."
+                }
+            ],
+            "tech_stack": [
+                "Laravel",
+                "JavaScript",
+                "Bootstrap",
+                "DataTables",
+                "MySQL",
+                "Laragon"
+            ],
+            "order": 5,
+            "created_at": "2026-04-08T02:26:45.000000Z",
+            "updated_at": "2026-04-08T02:26:45.000000Z"
+        }
+    ]
+}

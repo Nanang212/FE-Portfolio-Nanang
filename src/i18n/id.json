@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "experience": "Pengalaman",
+    "projects": "Proyek",
+    "skills": "Keahlian",
+    "contact": "Kontak"
+  },
+  "hero": {
+    "greeting": "Halo, Saya",
+    "name": "Nanang Aditya",
+    "role": "Software Engineer",
+    "tagline": "Membangun sistem enterprise yang skalabel dengan Laravel, Node.js, Spring Boot & Docker.",
+    "cta_primary": "Lihat Karya Saya",
+    "cta_secondary": "Hubungi Saya"
+  },
+  "about": {
+    "title": "Tentang Saya",
+    "subtitle": "Fullstack Developer fokus Backend",
+    "bio": "Saya adalah Fullstack Developer yang spesialisasi dalam membangun aplikasi enterprise yang robust dan skalabel. Dengan keahlian mendalam di Laravel dan Node.js (Express), saya merancang sistem yang bersih, mudah dipelihara, dan siap produksi.",
+    "currently": "Saat ini di",
+    "highlights": {
+      "experience": "3+ Tahun Pengalaman",
+      "enterprise": "Sistem Enterprise",
+      "backend": "Spesialis Backend"
+    }
+  },
+  "experience": {
+    "title": "Pengalaman Kerja",
+    "subtitle": "Perjalanan profesional saya",
+    "current": "Sekarang",
+    "tech_stack": "Tech Stack"
+  },
+  "projects": {
+    "title": "Proyek",
+    "subtitle": "Karya yang telah saya bangun",
+    "view_code": "Lihat Kode",
+    "live_demo": "Demo Langsung",
+    "view_all": "Semua Proyek",
+    "empty": "Belum ada proyek."
+  },
+  "skills": {
+    "title": "Tech Stack",
+    "subtitle": "Alat & teknologi yang saya gunakan"
+  },
+  "contact": {
+    "title": "Hubungi Saya",
+    "subtitle": "Punya proyek? Mari berdiskusi.",
+    "name": "Nama Anda",
+    "email": "Email Anda",
+    "subject": "Subjek",
+    "message": "Pesan Anda",
+    "send": "Kirim Pesan",
+    "sending": "Mengirim...",
+    "success": "Pesan terkirim! Saya akan membalas secepatnya.",
+    "linkedin": "LinkedIn",
+    "or_email": "atau email langsung ke saya"
+  },
+  "footer": {
+    "built_with": "Dibuat dengan React + Vite + TailwindCSS",
+    "rights": "Hak cipta dilindungi."
+  },
+  "theme": {
+    "dark": "Mode Gelap",
+    "light": "Mode Terang"
+  },
+  "lang": {
+    "switch": "Ganti Bahasa"
+  }
+}

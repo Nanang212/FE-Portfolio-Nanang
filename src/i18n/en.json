@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Nanang Aditya",
+    "role": "Software Engineer",
+    "tagline": "Building scalable enterprise systems with Laravel, Node.js, Spring Boot & Docker.",
+    "cta_primary": "View My Work",
+    "cta_secondary": "Get In Touch"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Backend-focused Fullstack Developer",
+    "bio": "I'm a Fullstack Developer specializing in building robust, scalable enterprise applications. With deep expertise in Laravel and Node.js (Express), I design systems that are clean, maintainable and production-ready.",
+    "currently": "Currently at",
+    "highlights": {
+      "experience": "3+ Years Experience",
+      "enterprise": "Enterprise Systems",
+      "backend": "Backend Specialist"
+    }
+  },
+  "experience": {
+    "title": "Work Experience",
+    "subtitle": "My professional journey",
+    "current": "Current",
+    "tech_stack": "Tech Stack"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Things I've built",
+    "view_code": "View Code",
+    "live_demo": "Live Demo",
+    "view_all": "View All Projects",
+    "empty": "No projects yet."
+  },
+  "skills": {
+    "title": "Tech Stack",
+    "subtitle": "Tools & technologies I work with"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have a project in mind? Let's talk.",
+    "name": "Your Name",
+    "email": "Your Email",
+    "subject": "Subject",
+    "message": "Your Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent! I'll get back to you soon.",
+    "linkedin": "LinkedIn",
+    "or_email": "or email me directly"
+  },
+  "footer": {
+    "built_with": "Built with React + Vite + TailwindCSS",
+    "rights": "All rights reserved."
+  },
+  "theme": {
+    "dark": "Dark Mode",
+    "light": "Light Mode"
+  },
+  "lang": {
+    "switch": "Switch Language"
+  }
+}
