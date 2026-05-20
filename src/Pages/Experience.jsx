@@ -58,7 +58,7 @@ export default function Experience({ experiences }) {
                                     {/* Timeline dot */}
                                     <div className="absolute left-6 top-6 w-5 h-5 bg-primary-600 rounded-full border-4 border-white dark:border-slate-900 shadow-sm hidden md:block"/>
 
-                                    <div className="card p-6 md:p-8">
+                                    <div className="card p-6 md:p-8 transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-600/30">
                                         {/* Company header */}
                                         <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                                             <div>
