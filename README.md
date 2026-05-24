@@ -45,7 +45,20 @@ Files of interest
 - Layouts and components: `src/Components/Portfolio/` and `src/Layouts/`
 
 Notes
-- This is a client-only frontend. If you connect it to a backend API, set any required base URLs in your runtime environment or modify the code to point to your API endpoints.
+- The assistant now runs in free FAQ mode using local retrieval from `public/data/knowledge.json`.
+- No AI model/API key is required for the default assistant mode.
+- To enable OpenRouter, put your key in `.env.local` on the server side:
+
+```bash
+OPENROUTER_API_KEY=your_openrouter_key_here
+OPENROUTER_MODEL=openai/gpt-4o-mini
+OPENROUTER_SITE_URL=http://localhost:5173
+OPENROUTER_APP_NAME=Portfolio Assistant
+```
+
+- If you deploy to Vercel or another host, set the same environment variables in the deployment dashboard.
+- Never put the key in `src/` or expose it through Vite client env variables like `VITE_*`.
+- If you used `vercel dev` before and it created `.env.local`, you can remove old AI env vars like `GEMINI_API_KEY`, `OPENAI_API_KEY`, `OLLAMA_MODEL`, and `OLLAMA_BASE_URL`.
 - If you prefer `yarn` or `pnpm`, you can use them instead of `npm` (install deps with `yarn` / `pnpm install`).
 
 If you want I can add a short CONTRIBUTING section, environment examples, or a script to auto-copy images into `public/images`.

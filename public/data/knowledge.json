@@ -1,0 +1,26 @@
+[
+  {
+    "id": "about",
+    "title": "About",
+    "summary": "Nanang Aditya - Software Engineer. Builds scalable enterprise systems using Laravel, Node.js (Express), Spring Boot, Docker.",
+    "text": "Nanang Aditya is a Software Engineer focusing on building robust, scalable enterprise applications. Experienced with Laravel, Node.js (Express), Spring Boot, Docker, and CI/CD practices."
+  },
+  {
+    "id": "experience_jm",
+    "title": "PT Jasa Marga - Fullstack Developer",
+    "summary": "Worked on JM-RISE (toll road construction monitoring) and Aggregator Operasi (centralized master data).",
+    "text": "At Jasa Marga, developed JM-RISE, a toll road construction monitoring system, and Aggregator Operasi, a centralized master data aggregator. Responsibilities included database design, API development, integrations, and CI/CD."
+  },
+  {
+    "id": "skills",
+    "title": "Skills",
+    "summary": "Tech stack includes React, Vite, TailwindCSS, Laravel, Node.js, Docker, MySQL, Redis, GitLab CI/CD.",
+    "text": "Frontend: React, Vite, TailwindCSS. Backend: Laravel, Node.js (Express). Databases: MySQL, Redis. DevOps: Docker, GitLab CI/CD. Other: experience with API design, system integration, and scalable architectures."
+  },
+  {
+    "id": "projects",
+    "title": "Selected Projects",
+    "summary": "JM-RISE, Aggregator Operasi, JM-ACT — systems for monitoring, aggregation, and complaint management.",
+    "text": "JM-RISE: toll road monitoring with real-time tracking and reporting. Aggregator Operasi: centralized master data API. JM-ACT: complaint management integrated with mobile apps, supporting RESTful APIs and notifications."
+  }
+]
