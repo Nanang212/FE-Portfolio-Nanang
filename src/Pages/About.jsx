@@ -50,7 +50,7 @@ export default function About({ about }) {
                                     <div className="mt-6">
                                         <a href={`/storage/${about?.resume_path}`} className="btn-secondary inline-flex items-center gap-2">
                                             <FileDown size={20} />
-                                            Unduh CV
+                                            {t('about.download_cv')}
                                         </a>
                                     </div>
                                 )}

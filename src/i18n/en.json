@@ -20,6 +20,7 @@
     "subtitle": "Backend-focused Fullstack Developer",
     "bio": "I'm a Fullstack Developer specializing in building robust, scalable enterprise applications. With deep expertise in Laravel and Node.js (Express), I design systems that are clean, maintainable and production-ready.",
     "currently": "Currently at",
+    "download_cv": "Download CV",
     "highlights": {
       "experience": "3+ Years Experience",
       "enterprise": "Enterprise Systems",
