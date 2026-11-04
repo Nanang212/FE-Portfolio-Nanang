@@ -76,7 +76,7 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
 
     return (
         <PortfolioLayout title="Nanang Aditya — Software Engineer">
-            <div className="pt-20 sm:pt-24 pb-20 space-y-16 sm:space-y-24">
+            <div className="pt-20 sm:pt-24 pb-6 sm:pb-8 space-y-16 sm:space-y-24">
 
                 {/* ══════════════════════════════════════════════════════════════
                    1. HERO & WORKSPACE SETUP SECTION (#home)

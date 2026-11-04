@@ -8,7 +8,7 @@ export default function Footer() {
     const year = new Date().getFullYear();
 
     return (
-        <footer className="bg-[#10382c] text-emerald-100/90 py-14 mt-16 border-t border-emerald-500/20">
+        <footer className="relative z-20 bg-[#0d3024] text-emerald-100/90 py-12 sm:py-14 mt-6 sm:mt-8 border-t border-emerald-500/30 shadow-2xl">
             <div className="container-max">
                 <div className="grid md:grid-cols-12 gap-8 items-start">
                     {/* Left: Message / Imprint */}
