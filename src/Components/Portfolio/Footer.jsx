@@ -3,7 +3,8 @@ import { Mail } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/Components/UI/SocialIcons';
 
 export default function Footer() {
-    const { t } = useTranslation();
+    const { i18n } = useTranslation();
+    const lang = i18n.language;
     const year = new Date().getFullYear();
 
     return (
@@ -16,7 +17,9 @@ export default function Footer() {
                             NANANG ADITYA
                         </h4>
                         <p className="font-editorial-serif text-base text-emerald-100/80 max-w-lg leading-relaxed">
-                            Software Engineer specializing in enterprise backends, distributed data pipelines, and mission-critical systems in Indonesia.
+                            {lang === 'id' 
+                                ? 'Software Engineer yang berfokus pada arsitektur sistem enterprise, backend skala besar, dan infrastruktur data di Indonesia.' 
+                                : 'Software Engineer specializing in enterprise backends, distributed data pipelines, and mission-critical systems in Indonesia.'}
                         </p>
                         <p className="text-xs text-emerald-300/60 font-mono pt-1">
                             Engineered on Maker's Cutting Mat &bull; Laravel &bull; Node.js &bull; Spring Boot &bull; PostgreSQL &bull; Docker
@@ -26,7 +29,7 @@ export default function Footer() {
                     {/* Right: Direct Dispatch / Contacts */}
                     <div className="md:col-span-5 space-y-3">
                         <p className="text-sm font-semibold uppercase tracking-wider text-emerald-300 font-mono">
-                            Kontak Langsung
+                            {lang === 'id' ? 'Kontak Langsung' : 'Direct Dispatch'}
                         </p>
 
                         <div className="space-y-2.5 text-sm">

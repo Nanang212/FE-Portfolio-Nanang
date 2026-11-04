@@ -1,13 +1,10 @@
-import { Link } from '@/Components/Link';
 import { Head } from '@/Components/Head';
-import { useTranslation } from 'react-i18next';
 import NavBar from '@/Components/Portfolio/NavBar';
 import Footer from '@/Components/Portfolio/Footer';
+import PaintSplatterBackground from '@/Components/UI/PaintSplatterBackground';
 import { useEffect } from 'react';
 
 export default function PortfolioLayout({ children, title = '' }) {
-    const { t } = useTranslation();
-
     // Enforce clean Light Mode
     useEffect(() => {
         document.documentElement.classList.remove('dark');
@@ -17,9 +14,12 @@ export default function PortfolioLayout({ children, title = '' }) {
     return (
         <>
             <Head title={title} />
-            <div className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--ink)]">
+            <div className="min-h-screen flex flex-col relative text-[var(--ink)] overflow-x-hidden bg-[#ebf3ee]">
+                {/* Artistic Organic Emerald Paint Splatter Canvas Background */}
+                <PaintSplatterBackground />
+
                 <NavBar />
-                <main className="flex-1">
+                <main className="flex-1 relative z-10">
                     {children}
                 </main>
                 <Footer />

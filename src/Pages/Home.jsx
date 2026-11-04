@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PortfolioLayout from '@/Layouts/PortfolioLayout';
 import { useTranslation } from 'react-i18next';
+import { motion, AnimatePresence } from 'framer-motion';
 import ProjectBook from '@/Components/Portfolio/ProjectBook';
 import AnimatedSkillsLab from '@/Components/Portfolio/AnimatedSkillsLab';
+import AnimatedExperience from '@/Components/Portfolio/AnimatedExperience';
+import AboutMeBento from '@/Components/Portfolio/AboutMeBento';
 import { 
-    BookOpen, Briefcase, Wrench, User, Mail, FileDown, 
-    ArrowRight, Calendar, Send, MapPin, Phone, ExternalLink, 
-    Layers, Terminal, GraduationCap, Laptop, Glasses, List, CheckCircle2
+    BookOpen, Briefcase, Wrench, Mail, FileDown, 
+    Send, MapPin, Phone, ExternalLink, 
+    Terminal, Glasses, List, CheckCircle2,
+    Zap, Sparkles
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/Components/UI/SocialIcons';
 
 export default function Home({ about, projects = [], skills = {}, experiences = [] }) {
-    const { t, i18n } = useTranslation();
+    const { i18n } = useTranslation();
     const lang = i18n.language;
 
     // View mode for projects section: 'book' | 'table'
@@ -21,17 +25,27 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
     const [contactForm, setContactForm] = useState({ name: '', email: '', subject: '', message: '' });
     const [contactSent, setContactSent] = useState(false);
 
+    // Dynamic rotating specialization badges
+    const [roleIdx, setRoleIdx] = useState(0);
+    const ROLES = [
+        lang === 'id' ? 'Enterprise Backend Architect' : 'Enterprise Backend Architect',
+        lang === 'id' ? 'Sistem Terdistribusi & REST API' : 'Distributed Systems & REST APIs',
+        lang === 'id' ? 'AI / RAG Vector Pipeline Builder' : 'AI / RAG Vector Pipeline Builder',
+        lang === 'id' ? 'High-Throughput Node.js & Laravel' : 'High-Throughput Node.js & Laravel'
+    ];
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setRoleIdx((prev) => (prev + 1) % ROLES.length);
+        }, 3200);
+        return () => clearInterval(timer);
+    }, [ROLES.length]);
+
     const handleContactSubmit = (e) => {
         e.preventDefault();
         const mailtoUrl = `mailto:nanangaditya2001@gmail.com?subject=${encodeURIComponent(contactForm.subject || 'Portfolio Inquiry')}&body=${encodeURIComponent(`From: ${contactForm.name} (${contactForm.email})\n\n${contactForm.message}`)}`;
         window.location.href = mailtoUrl;
         setContactSent(true);
-    };
-
-    const formatDate = (dateStr) => {
-        if (!dateStr) return '';
-        const d = new Date(dateStr);
-        return d.toLocaleDateString(lang === 'id' ? 'id-ID' : 'en-US', { month: 'short', year: 'numeric' });
     };
 
     const scrollTo = (id) => {
@@ -69,7 +83,7 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                    ══════════════════════════════════════════════════════════════ */}
                 <section id="home" className="container-max scroll-mt-20">
                     {/* Cutting Mat Metric Measurement Ruler along top */}
-                    <div className="hidden sm:flex items-center justify-between text-[11px] font-mono text-emerald-300/60 pb-2 px-1 select-none border-b border-white/10 mb-4">
+                    <div className="hidden sm:flex items-center justify-between text-[11px] font-mono text-emerald-800/50 pb-2 px-1 select-none border-b border-emerald-900/15 mb-4">
                         <span>| 00 CM</span>
                         <span>· · · · 10</span>
                         <span>· · · · 20</span>
@@ -85,11 +99,30 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
 
                     <div className="grid lg:grid-cols-12 gap-8 items-stretch">
                         {/* Left: Main Editorial Statement Sheet */}
-                        <div className="lg:col-span-7 desk-sheet p-8 sm:p-10 flex flex-col justify-between space-y-6 bg-white/95">
+                        <div className="lg:col-span-7 desk-sheet p-8 sm:p-10 flex flex-col justify-between space-y-6 bg-white/95 h-full">
                             <div className="space-y-4">
-                                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-semibold">
-                                    <span className="inline-block w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
-                                    <span>Surabaya, Indonesia &bull; Available for Enterprise Backend</span>
+                                <div className="flex flex-wrap items-center gap-2">
+                                    <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-semibold bg-emerald-50/80 px-2.5 py-1 rounded-md border border-emerald-200/80">
+                                        <span className="inline-block w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+                                        <span>{lang === 'id' ? 'Surabaya, Indonesia • Siap untuk Backend Enterprise' : 'Surabaya, Indonesia • Available for Enterprise Backend'}</span>
+                                    </div>
+                                    
+                                    {/* Animated dynamic specialization pill */}
+                                    <div className="h-6 overflow-hidden flex items-center">
+                                        <AnimatePresence mode="wait">
+                                            <motion.span
+                                                key={roleIdx}
+                                                initial={{ opacity: 0, y: 10 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                exit={{ opacity: 0, y: -10 }}
+                                                transition={{ duration: 0.25, ease: "easeOut" }}
+                                                className="text-[11px] font-mono font-bold text-emerald-800 bg-emerald-100/70 border border-emerald-300/80 shadow-2xs px-2 py-0.5 rounded flex items-center gap-1"
+                                            >
+                                                <Zap size={11} className="text-amber-600 fill-amber-500" />
+                                                {ROLES[roleIdx]}
+                                            </motion.span>
+                                        </AnimatePresence>
+                                    </div>
                                 </div>
 
                                 <h1 className="font-editorial-title text-6xl sm:text-7xl lg:text-8xl text-slate-900 leading-none tracking-tight">
@@ -112,20 +145,26 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                             {/* CTAs */}
                             <div className="space-y-3 pt-2">
                                 <div className="flex flex-wrap items-center gap-3">
-                                    <button
+                                    <motion.button
+                                        whileHover={{ scale: 1.03 }}
+                                        whileTap={{ scale: 0.97 }}
                                         onClick={() => scrollTo('projects')}
-                                        className="btn-primary"
+                                        className="btn-primary shimmer-button shadow-md shadow-emerald-900/15"
                                     >
                                         <BookOpen size={17} />
                                         <span>{lang === 'id' ? 'Buka Buku Proyek 3D' : 'Open 3D Project Book'}</span>
-                                    </button>
-                                    <button
+                                    </motion.button>
+                                    <motion.button
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
                                         onClick={() => scrollTo('contact')}
                                         className="btn-secondary"
                                     >
                                         <span>{lang === 'id' ? 'Hubungi Saya' : 'Get In Touch'}</span>
-                                    </button>
-                                    <a
+                                    </motion.button>
+                                    <motion.a
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
                                         href="/downloads/CV_Nanang_Aditya_Sutahar_ATS.pdf"
                                         className="btn-secondary flex items-center gap-2"
                                         target="_blank"
@@ -134,8 +173,10 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                     >
                                         <FileDown size={16} />
                                         <span>{lang === 'id' ? 'Unduh CV ATS' : 'Download ATS CV'}</span>
-                                    </a>
-                                    <a
+                                    </motion.a>
+                                    <motion.a
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
                                         href="/downloads/Portfolio_Nanang_Aditya_Sutahar.pdf"
                                         className="btn-secondary flex items-center gap-2"
                                         target="_blank"
@@ -144,7 +185,7 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                     >
                                         <FileDown size={16} />
                                         <span>{lang === 'id' ? 'Portofolio PDF' : 'Portfolio PDF'}</span>
-                                    </a>
+                                    </motion.a>
                                 </div>
 
                                 {/* Direct Contact & Social Links */}
@@ -176,7 +217,11 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                         </div>
 
                         {/* Right: Unified Developer Studio Card (Portrait + Credentials + Terminal Telemetry) */}
-                        <div className="lg:col-span-5 desk-sheet p-6 sm:p-7 flex flex-col justify-between bg-white/95 space-y-4">
+                        <motion.div
+                            whileHover={{ y: -3 }}
+                            transition={{ duration: 0.2 }}
+                            className="lg:col-span-5 desk-sheet p-6 sm:p-7 flex flex-col justify-between bg-white/95 space-y-4 hover:shadow-2xl transition-shadow h-full"
+                        >
                             {/* Top Header of the Studio Card */}
                             <div className="flex items-center justify-between pb-3 border-b border-slate-200">
                                 <div className="flex items-center gap-2">
@@ -185,7 +230,8 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                         ENGINEER DOSSIER &bull; ID #2001
                                     </span>
                                 </div>
-                                <span className="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                                <span className="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-ping" />
                                     ONLINE
                                 </span>
                             </div>
@@ -193,7 +239,11 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                             {/* Identity Bar: Side-by-Side Portrait & Verified Credentials */}
                             <div className="flex items-center gap-4 bg-slate-50/80 p-3.5 rounded-xl border border-slate-200/70">
                                 {/* Transparent PNG portrait in compact, elegant framed badge */}
-                                <div className="w-24 h-28 sm:w-28 sm:h-32 shrink-0 rounded-lg bg-gradient-to-b from-emerald-50 to-emerald-100/50 flex items-end justify-center overflow-hidden border border-emerald-200/80 shadow-inner">
+                                <motion.div
+                                    whileHover={{ scale: 1.03 }}
+                                    transition={{ type: "spring", stiffness: 350, damping: 22 }}
+                                    className="w-24 h-28 sm:w-28 sm:h-32 shrink-0 rounded-lg bg-gradient-to-b from-emerald-50 to-emerald-100/50 flex items-end justify-center overflow-hidden border border-emerald-200/80 shadow-inner cursor-pointer"
+                                >
                                     <img
                                         src="/images/profile.png"
                                         alt="Nanang Aditya Sutahar — Software Engineer"
@@ -202,7 +252,7 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                         fetchPriority="high"
                                         className="max-h-full w-auto object-contain drop-shadow"
                                     />
-                                </div>
+                                </motion.div>
 
                                 {/* Credentials Breakdown */}
                                 <div className="flex-1 min-w-0 space-y-1.5 text-xs">
@@ -221,11 +271,11 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                             <span className="text-slate-800 font-medium truncate text-right">PT Jasa Marga</span>
                                         </div>
                                         <div className="flex items-baseline justify-between gap-1">
-                                            <span className="text-slate-400 font-mono text-[10px]">EXPERIENCE:</span>
-                                            <span className="text-emerald-700 font-semibold font-mono text-[10px]">3+ Years</span>
+                                            <span className="text-slate-400 font-mono text-[10px]">{lang === 'id' ? 'PENGALAMAN:' : 'EXPERIENCE:'}</span>
+                                            <span className="text-emerald-700 font-semibold font-mono text-[10px]">{lang === 'id' ? '3+ Tahun' : '3+ Years'}</span>
                                         </div>
                                         <div className="flex items-baseline justify-between gap-1">
-                                            <span className="text-slate-400 font-mono text-[10px]">EDUCATION:</span>
+                                            <span className="text-slate-400 font-mono text-[10px]">{lang === 'id' ? 'PENDIDIKAN:' : 'EDUCATION:'}</span>
                                             <span className="text-slate-800 font-medium text-right text-[11px]">S1 Esa Unggul &bull; D3 PENS</span>
                                         </div>
                                     </div>
@@ -246,7 +296,10 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                 </div>
 
                                 <div className="space-y-1.5 text-slate-300 text-[11px] sm:text-xs leading-relaxed py-1">
-                                    <p className="text-emerald-400 font-semibold">$ neofetch --engineer</p>
+                                    <p className="text-emerald-400 font-semibold flex items-center gap-1">
+                                        <span>$ neofetch --engineer</span>
+                                        <span className="inline-block w-1.5 h-3.5 bg-emerald-400 animate-pulse ml-1" />
+                                    </p>
                                     <div className="grid grid-cols-1 gap-1 text-slate-300">
                                         <p><span className="text-emerald-400 font-bold">Stack:</span> Express.js &bull; Laravel &bull; Spring Boot</p>
                                         <p><span className="text-emerald-400 font-bold">Data:</span> PostgreSQL &bull; Prisma &bull; Redis &bull; MinIO</p>
@@ -259,12 +312,12 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                     <span className="flex items-center gap-1.5 text-slate-400">
                                         <Glasses size={13} className="text-emerald-400" /> Developer Desk Spec
                                     </span>
-                                    <span className="text-emerald-400 font-semibold font-mono text-[10px]">
-                                        Production Verified &bull; 100% Pass
+                                    <span className="text-emerald-400 font-semibold font-mono text-[10px] flex items-center gap-1">
+                                        <Sparkles size={11} className="text-amber-400" /> 100% Production Verified
                                     </span>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </section>
 
@@ -278,7 +331,7 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                             <div>
                                 <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-semibold mb-1">
                                     <BookOpen size={14} className="text-emerald-700" />
-                                    <span>Laboratorium Rekayasa & Portofolio Sistem</span>
+                                    <span>{lang === 'id' ? 'Laboratorium Rekayasa & Portofolio Sistem' : 'Engineering Lab & System Portfolio'}</span>
                                 </div>
                                 <h2 className="font-editorial-title text-4xl sm:text-6xl text-slate-900 tracking-tight leading-none">
                                     {lang === 'id' ? 'BUKU PROYEK 3D INTERAKTIF' : '3D INTERACTIVE PROJECT BOOK'}
@@ -327,10 +380,10 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                     <thead className="bg-slate-50 text-xs font-mono uppercase text-slate-500 border-b border-slate-200">
                                         <tr>
                                             <th className="py-3.5 px-4 font-semibold">No</th>
-                                            <th className="py-3.5 px-4 font-semibold">Proyek</th>
+                                            <th className="py-3.5 px-4 font-semibold">{lang === 'id' ? 'Proyek' : 'Project'}</th>
                                             <th className="py-3.5 px-4 font-semibold hidden sm:table-cell">Stack</th>
-                                            <th className="py-3.5 px-4 font-semibold hidden md:table-cell">Deskripsi Rekayasa</th>
-                                            <th className="py-3.5 px-4 font-semibold text-right">Tautan</th>
+                                            <th className="py-3.5 px-4 font-semibold hidden md:table-cell">{lang === 'id' ? 'Deskripsi Rekayasa' : 'Engineering Description'}</th>
+                                            <th className="py-3.5 px-4 font-semibold text-right">{lang === 'id' ? 'Tautan' : 'Links'}</th>
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-slate-100 font-sans">
@@ -390,91 +443,33 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
 
 
                 {/* ══════════════════════════════════════════════════════════════
-                   3. WORK EXPERIENCE SECTION (#experience)
+                   3. WORK EXPERIENCE SECTION (#experience) - ANIMATED TIMELINE
                    ══════════════════════════════════════════════════════════════ */}
                 <section id="experience" className="container-max scroll-mt-20">
-                    <div className="desk-sheet p-8 sm:p-12 space-y-10 bg-white/95">
-                        <div>
-                            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-semibold mb-1">
-                                <Briefcase size={14} className="text-emerald-700" />
-                                <span>Riwayat Karir Industri</span>
+                    <div className="desk-sheet p-4 sm:p-6 space-y-4 bg-white/95">
+                        <div className="border-b border-slate-200 pb-2.5 flex flex-wrap items-center justify-between gap-3">
+                            <div className="flex items-center gap-2.5">
+                                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-800 shrink-0">
+                                    <Briefcase size={15} />
+                                </div>
+                                <div>
+                                    <div className="text-[10px] font-mono uppercase tracking-wider text-emerald-800 font-bold leading-tight">
+                                        {lang === 'id' ? 'Riwayat Karir Industri • Timeline Rekayasa' : 'Industrial Career Record • Engineering Timeline'}
+                                    </div>
+                                    <h2 className="font-editorial-title text-2xl sm:text-3xl text-slate-900 tracking-tight leading-none mt-0.5">
+                                        {lang === 'id' ? 'PENGALAMAN KERJA' : 'WORK EXPERIENCE'}
+                                    </h2>
+                                </div>
                             </div>
-                            <h2 className="font-editorial-title text-4xl sm:text-6xl text-slate-900 tracking-tight leading-none">
-                                {lang === 'id' ? 'PENGALAMAN KERJA' : 'WORK EXPERIENCE'}
-                            </h2>
-                            <p className="font-editorial-serif text-base sm:text-lg text-slate-600 mt-2 italic">
+                            <p className="hidden md:block font-editorial-serif text-xs text-slate-500 italic max-w-sm text-right">
                                 {lang === 'id'
-                                    ? 'Sistem enterprise berskala nasional yang dikembangkan dan dipertahankan dalam lingkungan produksi.'
-                                    : 'Production systems engineered and maintained across enterprise environments.'}
+                                    ? 'Sistem enterprise skala nasional di PT Jasa Marga & Adira Finance.'
+                                    : 'Production systems engineered across national enterprise infrastructure.'}
                             </p>
                         </div>
 
-                        {/* Experience Stack */}
-                        <div className="space-y-8 divide-y divide-slate-200">
-                            {experiences.map((exp) => (
-                                <article key={exp.id} className="pt-8 first:pt-0 space-y-4">
-                                    <div className="flex flex-wrap items-start justify-between gap-3">
-                                        <div>
-                                            <div className="flex items-center gap-2.5">
-                                                {exp.is_current && (
-                                                    <span className="px-2.5 py-0.5 bg-emerald-700 text-white text-xs font-semibold rounded">
-                                                        Posisi Saat Ini
-                                                    </span>
-                                                )}
-                                            </div>
-                                            <h3 className="font-editorial-title text-3xl sm:text-4xl text-slate-900 mt-2">
-                                                {exp.company}
-                                            </h3>
-                                            <p className="text-base text-emerald-800 font-semibold">
-                                                {exp.role}
-                                            </p>
-                                        </div>
-
-                                        <div className="text-xs text-slate-500 font-mono flex items-center gap-1.5 self-start pt-1 bg-slate-100 px-3 py-1 rounded border border-slate-200">
-                                            <Calendar size={13} />
-                                            <span>
-                                                {formatDate(exp.period_start)} &mdash; {exp.is_current ? (lang === 'id' ? 'Sekarang' : 'Present') : formatDate(exp.period_end)}
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    {/* Tech Stack Chips */}
-                                    <div className="flex flex-wrap gap-1.5 pt-1">
-                                        {(exp.tech_stack || []).map((tech) => (
-                                            <span
-                                                key={tech}
-                                                className="px-2.5 py-0.5 bg-slate-100 text-slate-700 text-xs font-medium rounded border border-slate-200"
-                                            >
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-
-                                    {/* Sub-projects list */}
-                                    {exp.projects && exp.projects.length > 0 && (
-                                        <div className="grid gap-3 pt-3">
-                                            {exp.projects.map((p, idx) => (
-                                                <div key={idx} className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
-                                                    <div className="flex flex-wrap items-center justify-between gap-2">
-                                                        <h4 className="font-semibold text-sm text-slate-900">
-                                                            {p.name}
-                                                        </h4>
-                                                        {p.period && (
-                                                            <span className="text-[11px] font-mono text-slate-500">
-                                                                {p.period}
-                                                            </span>
-                                                        )}
-                                                    </div>
-                                                    <p className="text-xs text-slate-600 leading-relaxed text-justify">
-                                                        {lang === 'id' ? p.description_id : p.description_en}
-                                                    </p>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
-                                </article>
-                            ))}
-                        </div>
+                        {/* Interactive Animated Experience Console */}
+                        <AnimatedExperience experiences={experiences} />
                     </div>
                 </section>
 
@@ -488,7 +483,7 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                             <div>
                                 <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-semibold mb-1">
                                     <Wrench size={13} className="text-emerald-700" />
-                                    <span>Matriks Keahlian & Telemetri Arsitektur</span>
+                                    <span>{lang === 'id' ? 'Matriks Keahlian & Telemetri Arsitektur' : 'Skill Matrix & Architecture Telemetry'}</span>
                                 </div>
                                 <h2 className="font-editorial-title text-3xl sm:text-5xl text-slate-900 tracking-tight leading-none">
                                     {lang === 'id' ? 'KEAHLIAN TEKNIS' : 'TECHNICAL SKILLS'}
@@ -508,99 +503,11 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
 
 
                 {/* ══════════════════════════════════════════════════════════════
-                   5. ABOUT & EDUCATION SECTION (#about)
+                   5. UNIFIED ABOUT ME & CREDENTIALS SECTION (#about)
                    ══════════════════════════════════════════════════════════════ */}
                 <section id="about" className="container-max scroll-mt-20">
-                    <div className="desk-sheet p-8 sm:p-12 space-y-10 bg-white/95">
-                        <div>
-                            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-semibold mb-1">
-                                <User size={14} className="text-emerald-700" />
-                                <span>Dossier Pribadi & Kualifikasi</span>
-                            </div>
-                            <h2 className="font-editorial-title text-4xl sm:text-6xl text-slate-900 tracking-tight leading-none">
-                                {lang === 'id' ? 'TENTANG SAYA' : 'ABOUT ME'}
-                            </h2>
-                        </div>
-
-                        {/* Bio Letter with Compact Portrait */}
-                        <div className="grid md:grid-cols-12 gap-8 items-start">
-                            <div className="md:col-span-4 flex flex-col items-center text-center space-y-3">
-                                <div className="w-36 sm:w-40 h-48 sm:h-52 flex items-end justify-center bg-slate-50 rounded-xl pt-3 px-2 overflow-hidden border border-slate-200">
-                                    <img
-                                        src="/images/profile.png"
-                                        alt="Nanang Aditya Sutahar"
-                                        className="max-h-full w-auto object-contain drop-shadow"
-                                    />
-                                </div>
-                                <div className="text-sm text-slate-600 space-y-1">
-                                    <div className="text-slate-900 font-bold">Nanang Aditya Sutahar</div>
-                                    <div className="text-xs text-slate-500">Software Engineer | Backend & Full Stack</div>
-                                    <div className="text-xs text-emerald-700 font-semibold">PT Jasa Marga (Persero) Tbk</div>
-                                </div>
-                            </div>
-
-                            <div className="md:col-span-8 space-y-4">
-                                <h3 className="font-editorial-title text-2xl sm:text-3xl text-slate-900">
-                                    {lang === 'id' ? 'RINGKASAN PROFESIONAL' : 'PROFESSIONAL SUMMARY'}
-                                </h3>
-
-                                <p className="font-editorial-serif text-base sm:text-lg text-slate-700 leading-relaxed text-justify">
-                                    {about ? (lang === 'id' ? about.bio_id : about.bio_en) : ''}
-                                </p>
-
-                                <div className="pt-2 flex flex-wrap gap-3">
-                                    <a
-                                        href="/downloads/CV_Nanang_Aditya_Sutahar_ATS.pdf"
-                                        className="btn-primary flex items-center gap-2"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        download="CV_Nanang_Aditya_Sutahar_ATS.pdf"
-                                    >
-                                        <FileDown size={16} />
-                                        <span>{lang === 'id' ? 'Unduh CV ATS Resmi (PDF)' : 'Download Official ATS CV (PDF)'}</span>
-                                    </a>
-                                    <a
-                                        href="/downloads/Portfolio_Nanang_Aditya_Sutahar.pdf"
-                                        className="btn-secondary flex items-center gap-2"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        download="Portfolio_Nanang_Aditya_Sutahar.pdf"
-                                    >
-                                        <FileDown size={16} />
-                                        <span>{lang === 'id' ? 'Unduh Portofolio Lengkap (PDF)' : 'Download Full Portfolio (PDF)'}</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Education Qualifications */}
-                        <div className="pt-6 border-t border-slate-200 space-y-4">
-                            <h3 className="font-editorial-title text-2xl sm:text-3xl text-slate-900 flex items-center gap-2">
-                                <GraduationCap size={22} className="text-emerald-700" />
-                                <span>{lang === 'id' ? 'KUALIFIKASI PENDIDIKAN' : 'EDUCATIONAL QUALIFICATIONS'}</span>
-                            </h3>
-
-                            <div className="grid sm:grid-cols-2 gap-4">
-                                {education.map((edu, idx) => (
-                                    <div key={idx} className="p-5 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
-                                        <div className="flex flex-wrap items-center justify-between gap-2">
-                                            <h4 className="font-semibold text-sm text-slate-900">
-                                                {lang === 'id' ? edu.degree_id : edu.degree_en}
-                                            </h4>
-                                            <span className="text-xs font-semibold px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded">
-                                                IPK: {edu.gpa}
-                                            </span>
-                                        </div>
-                                        <p className="text-xs text-slate-600 font-medium">
-                                            {edu.institution}
-                                        </p>
-                                        <p className="text-[11px] font-mono text-slate-400">
-                                            {edu.period}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                    <div className="desk-sheet p-6 sm:p-10 bg-white/95">
+                        <AboutMeBento about={about} education={education} />
                     </div>
                 </section>
 
@@ -613,7 +520,7 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                         <div>
                             <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-semibold mb-1">
                                 <Mail size={14} className="text-emerald-700" />
-                                <span>Jalur Komunikasi Langsung</span>
+                                <span>{lang === 'id' ? 'Jalur Komunikasi Langsung' : 'Direct Communication Channel'}</span>
                             </div>
                             <h2 className="font-editorial-title text-4xl sm:text-6xl text-slate-900 tracking-tight leading-none">
                                 {lang === 'id' ? 'HUBUNGI SAYA' : 'GET IN TOUCH'}
@@ -630,7 +537,9 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                             <div className="md:col-span-5 space-y-4">
                                 <div className="p-6 bg-slate-50 rounded-xl border border-slate-200 space-y-4 text-sm">
                                     <div>
-                                        <span className="text-xs font-mono uppercase text-slate-400 block mb-1">Email Langsung</span>
+                                        <span className="text-xs font-mono uppercase text-slate-400 block mb-1">
+                                            {lang === 'id' ? 'Email Langsung' : 'Direct Email'}
+                                        </span>
                                         <a
                                             href="mailto:nanangaditya2001@gmail.com"
                                             className="text-base font-semibold text-slate-900 hover:text-emerald-700 flex items-center gap-2"
@@ -640,7 +549,9 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                     </div>
 
                                     <div>
-                                        <span className="text-xs font-mono uppercase text-slate-400 block mb-1">Telepon / WhatsApp</span>
+                                        <span className="text-xs font-mono uppercase text-slate-400 block mb-1">
+                                            {lang === 'id' ? 'Telepon / WhatsApp' : 'Phone / WhatsApp'}
+                                        </span>
                                         <a
                                             href="tel:+6285790663367"
                                             className="text-base font-semibold text-slate-900 hover:text-emerald-700 flex items-center gap-2"
@@ -650,7 +561,9 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                     </div>
 
                                     <div>
-                                        <span className="text-xs font-mono uppercase text-slate-400 block mb-1">Lokasi Kerja</span>
+                                        <span className="text-xs font-mono uppercase text-slate-400 block mb-1">
+                                            {lang === 'id' ? 'Lokasi Kerja' : 'Work Location'}
+                                        </span>
                                         <p className="text-base font-semibold text-slate-900 flex items-center gap-2">
                                             <MapPin size={16} className="text-emerald-700" /> Surabaya, East Java, Indonesia
                                         </p>
@@ -695,49 +608,57 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                     <form onSubmit={handleContactSubmit} className="space-y-4">
                                         <div className="grid sm:grid-cols-2 gap-4">
                                             <div className="space-y-1">
-                                                <label className="text-xs font-mono uppercase text-slate-500 font-semibold">Nama Pengirim</label>
+                                                <label className="text-xs font-mono uppercase text-slate-500 font-semibold">
+                                                    {lang === 'id' ? 'Nama Pengirim' : 'Your Name'}
+                                                </label>
                                                 <input
                                                     type="text"
                                                     required
                                                     value={contactForm.name}
                                                     onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
-                                                    placeholder="Nama Anda"
+                                                    placeholder={lang === 'id' ? 'Nama Anda' : 'Your Name'}
                                                     className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-emerald-600"
                                                 />
                                             </div>
                                             <div className="space-y-1">
-                                                <label className="text-xs font-mono uppercase text-slate-500 font-semibold">Alamat Email</label>
+                                                <label className="text-xs font-mono uppercase text-slate-500 font-semibold">
+                                                    {lang === 'id' ? 'Alamat Email' : 'Email Address'}
+                                                </label>
                                                 <input
                                                     type="email"
                                                     required
                                                     value={contactForm.email}
                                                     onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
-                                                    placeholder="email@perusahaan.com"
+                                                    placeholder={lang === 'id' ? 'email@perusahaan.com' : 'email@company.com'}
                                                     className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-emerald-600"
                                                 />
                                             </div>
                                         </div>
 
                                         <div className="space-y-1">
-                                            <label className="text-xs font-mono uppercase text-slate-500 font-semibold">Subjek / Topik</label>
+                                            <label className="text-xs font-mono uppercase text-slate-500 font-semibold">
+                                                {lang === 'id' ? 'Subjek / Topik' : 'Subject / Topic'}
+                                            </label>
                                             <input
                                                 type="text"
                                                 required
                                                 value={contactForm.subject}
                                                 onChange={(e) => setContactForm({ ...contactForm, subject: e.target.value })}
-                                                placeholder="Diskusi Proyek / Kolaborasi"
+                                                placeholder={lang === 'id' ? 'Diskusi Proyek / Kolaborasi' : 'Project Discussion / Collaboration'}
                                                 className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-emerald-600"
                                             />
                                         </div>
 
                                         <div className="space-y-1">
-                                            <label className="text-xs font-mono uppercase text-slate-500 font-semibold">Isi Pesan</label>
+                                            <label className="text-xs font-mono uppercase text-slate-500 font-semibold">
+                                                {lang === 'id' ? 'Isi Pesan' : 'Message Body'}
+                                            </label>
                                             <textarea
                                                 rows={4}
                                                 required
                                                 value={contactForm.message}
                                                 onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
-                                                placeholder="Tuliskan pesan atau kebutuhan sistem Anda..."
+                                                placeholder={lang === 'id' ? 'Tuliskan pesan atau kebutuhan sistem Anda...' : 'Type your message or system requirements here...'}
                                                 className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-emerald-600 resize-none"
                                             />
                                         </div>

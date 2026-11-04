@@ -1,9 +1,90 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
-    Terminal, Server, Database, Cloud, Layers, Cpu, 
-    ArrowRight, CheckCircle2, Activity, ShieldCheck
+    Terminal, Activity, ShieldCheck, Zap, 
+    Server, Layout, Database, Cpu, CheckCircle2
 } from 'lucide-react';
+
+// Domain profiles with descriptions and key production highlights
+const DOMAIN_PROFILES = {
+    Backend: {
+        id: 'Backend',
+        label: 'Backend',
+        title: 'Backend Architecture & High-Concurrency APIs',
+        badge: 'Enterprise Core',
+        icon: Server,
+        color: 'emerald',
+        defaultTech: 'Express.js',
+        technologies: ['Express.js', 'Node.js', 'Laravel', 'Spring Boot', 'Prisma ORM', 'Kafka', 'Swagger', 'PHP'],
+        description: {
+            id: 'Merancang arsitektur backend skala enterprise, REST API performa tinggi, Server-Sent Events (SSE) multi-turn streaming, dan antrean pesan terdistribusi (Kafka). Terbukti memproses data transaksi konstruksi jalan tol nasional di PT Jasa Marga dan digitalisasi dokumen di Adira Finance.',
+            en: 'Engineered mission-critical enterprise backends, high-throughput REST APIs, SSE real-time streaming, and distributed message queues (Kafka). Production-tested across national toll road systems at PT Jasa Marga and loan document digitization at Adira Finance.'
+        },
+        highlights: [
+            { label: 'API Latency', value: '1.2 ms Avg' },
+            { label: 'Event Throughput', value: '450 ev/s (Kafka)' },
+            { label: 'Automated Tests', value: '100% Pass (78/78)' }
+        ]
+    },
+    Frontend: {
+        id: 'Frontend',
+        label: 'Frontend',
+        title: 'Frontend Engineering & Client Applications',
+        badge: 'Interactive UI & PWA',
+        icon: Layout,
+        color: 'teal',
+        defaultTech: 'React.js',
+        technologies: ['React.js', 'TypeScript', 'TailwindCSS', 'Inertia.js'],
+        description: {
+            id: 'Membangun antarmuka web modern yang responsif, Progressive Web App (PWA) dengan offline capability, modul penandatanganan dokumen digital kanvas ramah sentuhan, serta integrasi seamless Laravel + React via Inertia.js dengan type safety ketat.',
+            en: 'Building responsive modern interfaces, offline-ready Progressive Web Apps (PWA), touch-friendly canvas digital signature drawing, and seamless Laravel + React SPA integrations via Inertia.js with strict TypeScript type safety.'
+        },
+        highlights: [
+            { label: 'Build Time', value: '0.6s (Vite)' },
+            { label: 'Type Safety', value: 'Strict TypeScript' },
+            { label: 'Usability (SUS)', value: '87.08 (Grade A)' }
+        ]
+    },
+    Database: {
+        id: 'Database',
+        label: 'Database & Storage',
+        title: 'Database, Cache & Cloud Object Storage',
+        badge: 'Relational & Object Tier',
+        icon: Database,
+        color: 'cyan',
+        defaultTech: 'PostgreSQL',
+        technologies: ['PostgreSQL', 'MySQL', 'MariaDB', 'Redis', 'MinIO', 'AWS S3'],
+        description: {
+            id: 'Normalisasi skema relasional, optimasi query B-Tree index, in-memory caching Redis sebagai Single Source of Truth (SSOT), serta penyimpanan berkas cetak biru & kontrak terenkripsi menggunakan cluster MinIO S3.',
+            en: 'Relational schema normalization, B-Tree index query optimization, Redis in-memory caching as Single Source of Truth (SSOT), and encrypted document vault storage using private MinIO S3 cluster.'
+        },
+        highlights: [
+            { label: 'Query Execution', value: '1.14 ms (B-Tree)' },
+            { label: 'Cache Hit Ratio', value: '94.6% (Redis)' },
+            { label: 'Object Storage', value: 'MinIO S3 Cluster' }
+        ]
+    },
+    DevOps: {
+        id: 'DevOps',
+        label: 'DevOps & CI/CD',
+        title: 'DevOps, CI/CD & Linux Infrastructure',
+        badge: 'Container & Zero-Trust',
+        icon: Cpu,
+        color: 'emerald',
+        defaultTech: 'Docker',
+        technologies: ['Docker', 'GitLab CI/CD', 'Linux', 'Nginx', 'CloudPanel'],
+        description: {
+            id: 'Orkestrasi kontainer Docker Compose multi-service, automated pipeline CI/CD GitLab 4 tahap, mitigasi bot Nginx (HTTP 403), serta administrasi Dedicated Cloud VPS 26+ domain berbasis Linux Ubuntu dan CloudPanel.',
+            en: 'Multi-service container orchestration with Docker Compose, automated GitLab 4-stage CI/CD pipelines, Nginx reverse proxy bot mitigation (HTTP 403), and dedicated Linux Cloud VPS administration across 26+ production domains.'
+        },
+        highlights: [
+            { label: 'Production Uptime', value: '99.9% Verified' },
+            { label: 'CI/CD Pipeline', value: 'Automated 4-Stage' },
+            { label: 'Server Load Drop', value: '104+ down to <0.5' }
+        ]
+    }
+};
 
 // Production proof and telemetry details for each technology
 const TECH_TELEMETRY = {
@@ -152,18 +233,6 @@ const TECH_TELEMETRY = {
             '> AI Bot Mitigation: Blocked aggressive Meta/Claude/Exa bots (HTTP 403)',
             '> PHP-FPM worker pool tuned (pm.max_children) + Redis object caching',
             '> Server load dropped: 104+ -> < 0.5 | RAM freed: +4.5 GB | TTFB: 1-3s'
-        ]
-    },
-    'cPanel': {
-        category: 'DevOps',
-        badge: 'Server Management',
-        project: 'Production Web Hosting Administration',
-        command: 'uapi DomainInfo list_domains',
-        latency: '0.5 ms',
-        status: 'ACTIVE',
-        output: [
-            '> DNS zone routing, cron automation, and DB backups active',
-            '> PHP-FPM pool optimization applied'
         ]
     },
     'MinIO': {
@@ -322,175 +391,211 @@ const TECH_TELEMETRY = {
     }
 };
 
-export default function AnimatedSkillsLab({ skills = {} }) {
-    const { t, i18n } = useTranslation();
+export default function AnimatedSkillsLab() {
+    const { i18n } = useTranslation();
     const lang = i18n.language;
 
-    // Filter tab: 'all' | 'Backend' | 'Database' | 'DevOps' | 'Frontend'
-    const [activeCategory, setActiveCategory] = useState('all');
+    // Active domain category: 'Backend' | 'Frontend' | 'Database' | 'DevOps'
+    const [activeDomain, setActiveDomain] = useState('Backend');
 
-    // Selected tech for live telemetry display
-    const [selectedTech, setSelectedTech] = useState('Express.js');
+    const domainKeys = ['Backend', 'Frontend', 'Database', 'DevOps'];
+    const currentDomain = DOMAIN_PROFILES[activeDomain];
 
-    const categories = [
-        { id: 'all', label: lang === 'id' ? 'Semua' : 'All' },
-        { id: 'Backend', label: 'Backend' },
-        { id: 'Database', label: 'Database & Storage' },
-        { id: 'DevOps', label: 'DevOps & CI/CD' },
-        { id: 'Frontend', label: 'Frontend' }
-    ];
+    // Selected tech within current domain
+    const [selectedTech, setSelectedTech] = useState(currentDomain.defaultTech);
 
-    // Filter categories cleanly
-    const filteredCategories = Object.entries(skills).filter(([category]) => {
-        if (activeCategory === 'all') return true;
-        if (activeCategory === 'Database') return category === 'Database' || category === 'Storage' || category === 'Cache';
-        return category.toLowerCase() === activeCategory.toLowerCase();
-    });
+    const handleSelectDomain = (domainKey) => {
+        setActiveDomain(domainKey);
+        setSelectedTech(DOMAIN_PROFILES[domainKey].defaultTech);
+    };
 
-    const activeTelemetry = TECH_TELEMETRY[selectedTech] || TECH_TELEMETRY['Express.js'];
-
-    // Interactive Architecture Pipeline Nodes
-    const pipelineNodes = [
-        { name: 'React', role: 'Frontend', tech: 'React.js' },
-        { name: 'Express / Laravel', role: 'API Core', tech: 'Express.js' },
-        { name: 'Redis', role: 'Cache', tech: 'Redis' },
-        { name: 'PostgreSQL', role: 'Database', tech: 'PostgreSQL' },
-        { name: 'MinIO', role: 'Storage', tech: 'MinIO' },
-        { name: 'Docker', role: 'DevOps', tech: 'Docker' }
-    ];
+    const activeTelemetry = TECH_TELEMETRY[selectedTech] || TECH_TELEMETRY[currentDomain.defaultTech];
 
     return (
         <div className="space-y-4">
-            {/* Top Compact Filter Bar */}
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
-                <div className="flex flex-wrap items-center gap-1.5">
-                    {categories.map((cat) => (
-                        <button
-                            key={cat.id}
-                            onClick={() => setActiveCategory(cat.id)}
-                            className={`px-3 py-1 text-xs font-semibold rounded-md transition-all ${
-                                activeCategory === cat.id
-                                    ? 'bg-emerald-700 text-white shadow-sm'
-                                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
+            {/* ── 1. TOP DOMAIN SELECTOR: 4 Primary Categories (Backend, Frontend, Database & Storage, DevOps & CI/CD) ── */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 border-b border-slate-200 pb-3">
+                {domainKeys.map((key) => {
+                    const domain = DOMAIN_PROFILES[key];
+                    const Icon = domain.icon;
+                    const isActive = activeDomain === key;
+                    return (
+                        <motion.button
+                            key={key}
+                            onClick={() => handleSelectDomain(key)}
+                            whileHover={{ y: -1 }}
+                            whileTap={{ scale: 0.98 }}
+                            className={`p-2.5 rounded-xl border text-left transition-all relative overflow-hidden flex items-center gap-2.5 ${
+                                isActive
+                                    ? 'bg-emerald-800 text-white border-emerald-900 shadow-md ring-2 ring-emerald-600/30'
+                                    : 'bg-slate-50 hover:bg-white text-slate-700 border-slate-200/90 hover:border-slate-300'
                             }`}
                         >
-                            {cat.label}
-                        </button>
-                    ))}
+                            {/* Fluid Sliding Active Pill */}
+                            {isActive && (
+                                <motion.div
+                                    layoutId="activeDomainHighlight"
+                                    className="absolute inset-0 bg-emerald-800"
+                                    transition={{ type: 'spring', stiffness: 450, damping: 32 }}
+                                />
+                            )}
+
+                            <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 relative z-10 ${
+                                isActive 
+                                    ? 'bg-white/15 text-emerald-200' 
+                                    : 'bg-white text-slate-600 border border-slate-200'
+                            }`}>
+                                <Icon size={16} />
+                            </div>
+
+                            <div className="min-w-0 relative z-10">
+                                <h4 className={`text-xs font-bold truncate leading-tight ${isActive ? 'text-white' : 'text-slate-900'}`}>
+                                    {domain.label}
+                                </h4>
+                                <p className={`text-[10px] font-mono truncate ${isActive ? 'text-emerald-200' : 'text-slate-400'}`}>
+                                    {domain.badge}
+                                </p>
+                            </div>
+                        </motion.button>
+                    );
+                })}
+            </div>
+
+            {/* ── 2. SUB-TECHNOLOGY TABS OF THE ACTIVE DOMAIN ── */}
+            <div className="flex items-center justify-between gap-2 overflow-x-auto p-1 bg-slate-100 rounded-lg border border-slate-200">
+                <div className="flex items-center gap-1 min-w-0 overflow-x-auto py-0.5">
+                    <span className="text-[10px] font-mono font-bold uppercase text-slate-500 px-2 shrink-0 flex items-center gap-1">
+                        <Activity size={11} className="text-emerald-700" />
+                        <span>{lang === 'id' ? 'Pilih Teknologi' : 'Select Tech'}:</span>
+                    </span>
+
+                    {currentDomain.technologies.map((tech) => {
+                        const isTechActive = selectedTech === tech;
+                        return (
+                            <motion.button
+                                key={tech}
+                                onClick={() => setSelectedTech(tech)}
+                                whileHover={{ scale: 1.04 }}
+                                whileTap={{ scale: 0.96 }}
+                                className={`px-2.5 py-1 rounded text-[11px] font-mono font-semibold transition-all whitespace-nowrap relative ${
+                                    isTechActive
+                                        ? 'bg-emerald-700 text-white shadow-xs'
+                                        : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200'
+                                }`}
+                            >
+                                <span className="flex items-center gap-1.5">
+                                    <span className={`w-1.5 h-1.5 rounded-full ${isTechActive ? 'bg-white animate-ping' : 'bg-emerald-600'}`} />
+                                    <span>{tech}</span>
+                                </span>
+                            </motion.button>
+                        );
+                    })}
                 </div>
 
-                <div className="text-[11px] font-mono text-emerald-800 font-semibold flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
-                    <span>{lang === 'id' ? 'Klik chip untuk live telemetri' : 'Click chip for live telemetry'}</span>
+                <div className="hidden md:flex items-center gap-1 text-[10px] font-mono text-emerald-800 font-semibold px-2 shrink-0">
+                    <ShieldCheck size={12} className="text-emerald-700" />
+                    <span>{lang === 'id' ? 'Terverifikasi Produksi' : 'Production Verified'}</span>
                 </div>
             </div>
 
-            {/* Clean 2-Column Split Studio Layout (Fits in 1 screen viewport!) */}
-            <div className="grid lg:grid-cols-12 gap-5 items-stretch">
+            {/* ── 3. SPLIT 2-COLUMN DISPLAY: Explanation & Capabilities (Left) + Live Telemetry Terminal (Right) ── */}
+            <div className="grid lg:grid-cols-12 gap-4 sm:gap-5 items-stretch">
                 
-                {/* ── LEFT COLUMN: Compact Grouped Skill Badges ── */}
-                <div className="lg:col-span-6 flex flex-col justify-between space-y-3">
-                    <div className="space-y-3 max-h-[380px] overflow-y-auto pr-1 custom-scrollbar">
-                        {filteredCategories.map(([category, items]) => (
-                            <div
-                                key={category}
-                                className="p-3.5 bg-slate-50 rounded-xl border border-slate-200/90 space-y-2"
-                            >
-                                <div className="flex items-center justify-between text-xs border-b border-slate-200/60 pb-1">
-                                    <span className="font-bold text-slate-800 uppercase tracking-wider font-mono">
-                                        {category}
+                {/* ── LEFT COLUMN: Domain Explanation & Architecture Capabilities ── */}
+                <div className="lg:col-span-6 bg-slate-50/90 rounded-xl p-4 sm:p-5 border border-slate-200 flex flex-col justify-between space-y-4 shadow-2xs">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={activeDomain}
+                            initial={{ opacity: 0, y: 6 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -6 }}
+                            transition={{ duration: 0.18 }}
+                            className="space-y-3.5"
+                        >
+                            {/* Domain Title & Badge */}
+                            <div>
+                                <div className="flex items-center justify-between pb-1.5 border-b border-slate-200">
+                                    <span className="text-[10px] font-mono uppercase font-bold text-emerald-800 tracking-wider">
+                                        {lang === 'id' ? 'PROFIL DOMAIN' : 'DOMAIN PROFILE'} &bull; 0{domainKeys.indexOf(activeDomain) + 1}
                                     </span>
-                                    <span className="text-[11px] text-slate-400 font-mono">
-                                        {items.length} Tech
+                                    <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-white text-slate-700 border border-slate-200">
+                                        {currentDomain.badge}
                                     </span>
                                 </div>
-
-                                <div className="flex flex-wrap gap-1.5">
-                                    {items.map((skill) => {
-                                        const isSelected = selectedTech === skill.name;
-                                        return (
-                                            <button
-                                                key={skill.id}
-                                                onClick={() => setSelectedTech(skill.name)}
-                                                className={`group px-2.5 py-1 text-xs font-medium rounded-md transition-all duration-150 flex items-center gap-1.5 ${
-                                                    isSelected
-                                                        ? 'bg-emerald-700 text-white shadow ring-2 ring-emerald-500 scale-102 font-semibold'
-                                                        : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-900 border border-slate-200 shadow-2xs'
-                                                }`}
-                                            >
-                                                <span className={`w-1.5 h-1.5 rounded-full ${isSelected ? 'bg-white' : 'bg-emerald-600'}`} />
-                                                <span>{skill.name}</span>
-                                            </button>
-                                        );
-                                    })}
-                                </div>
+                                <h3 className="font-editorial-title text-2xl sm:text-3xl text-slate-900 mt-1 leading-tight">
+                                    {currentDomain.title}
+                                </h3>
                             </div>
-                        ))}
-                    </div>
 
-                    {/* Bottom Status Ticker */}
-                    <div className="p-2.5 bg-slate-100 rounded-lg border border-slate-200 flex items-center justify-between text-[11px] font-mono text-slate-600">
-                        <span className="flex items-center gap-1">
-                            <ShieldCheck size={13} className="text-emerald-700" /> Production Verified
+                            {/* Detailed Explanation */}
+                            <p className="font-editorial-serif text-sm sm:text-base text-slate-700 leading-relaxed text-justify">
+                                {lang === 'id' ? currentDomain.description.id : currentDomain.description.en}
+                            </p>
+
+                            {/* Key Capability Highlights */}
+                            <div className="grid grid-cols-3 gap-2 pt-1">
+                                {currentDomain.highlights.map((h, i) => (
+                                    <div key={i} className="bg-white p-2 rounded-lg border border-slate-200 text-center shadow-2xs">
+                                        <div className="text-[9px] font-mono text-slate-400 uppercase truncate">
+                                            {h.label}
+                                        </div>
+                                        <div className="text-xs sm:text-sm font-bold text-slate-900 truncate mt-0.5">
+                                            {h.value}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </AnimatePresence>
+
+                    {/* Active Selected Tech Info Card */}
+                    <div className="pt-2 border-t border-slate-200/80 flex items-center justify-between text-xs font-mono">
+                        <span className="text-slate-500 flex items-center gap-1.5">
+                            <CheckCircle2 size={13} className="text-emerald-700" />
+                            <span>{lang === 'id' ? 'Inspeksi' : 'Inspecting'}: <strong className="text-slate-900 font-bold">{selectedTech}</strong></span>
                         </span>
-                        <span className="text-emerald-700 font-semibold">Active Target: {selectedTech}</span>
+                        <span className="text-emerald-800 font-bold text-[11px] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                            {activeTelemetry.badge}
+                        </span>
                     </div>
                 </div>
 
-                {/* ── RIGHT COLUMN: Live Architecture & Telemetry Terminal ── */}
-                <div className="lg:col-span-6 flex flex-col justify-between p-4 sm:p-5 bg-slate-950 text-slate-100 rounded-xl shadow-xl border border-slate-800 font-mono space-y-3 min-h-[380px]">
-                    {/* Top: Mini Architecture Pipeline Bus */}
-                    <div>
-                        <div className="flex items-center justify-between text-[10px] text-slate-400 pb-1.5 border-b border-slate-800 uppercase tracking-wider">
-                            <span className="flex items-center gap-1 text-emerald-400 font-semibold">
-                                <Activity size={12} /> Data Bus Flow
+                {/* ── RIGHT COLUMN: Live Telemetry Terminal Console ── */}
+                <div className="lg:col-span-6 flex flex-col justify-between p-4 sm:p-5 bg-slate-950 text-slate-100 rounded-xl shadow-xl border border-slate-800 font-mono space-y-3 min-h-[360px]">
+                    {/* Terminal Window Header */}
+                    <div className="flex items-center justify-between pb-2 border-b border-slate-800 text-[11px]">
+                        <div className="flex items-center gap-1.5">
+                            <span className="w-2.5 h-2.5 rounded-full bg-rose-500" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                            <span className="text-slate-300 ml-1.5 font-bold text-emerald-400 flex items-center gap-1">
+                                <Terminal size={12} />
+                                <span>telemetry &mdash; {selectedTech}</span>
                             </span>
-                            <span>Interactive Nodes</span>
                         </div>
-                        <div className="grid grid-cols-6 gap-1 pt-1.5">
-                            {pipelineNodes.map((node) => {
-                                const isSelected = selectedTech === node.tech;
-                                return (
-                                    <button
-                                        key={node.name}
-                                        onClick={() => setSelectedTech(node.tech)}
-                                        className={`p-1.5 rounded text-center transition-all ${
-                                            isSelected
-                                                ? 'bg-emerald-900/80 text-emerald-200 ring-1 ring-emerald-400'
-                                                : 'bg-slate-900 text-slate-400 hover:text-slate-200 hover:bg-slate-800'
-                                        }`}
-                                        title={`${node.name} - ${node.role}`}
-                                    >
-                                        <p className="text-[10px] font-bold truncate leading-tight">{node.name}</p>
-                                        <p className="text-[9px] text-slate-500 truncate">{node.role}</p>
-                                    </button>
-                                );
-                            })}
-                        </div>
+                        <span className="px-2 py-0.5 bg-emerald-900/60 text-emerald-300 rounded text-[10px] border border-emerald-500/30 font-semibold">
+                            {activeTelemetry.status}
+                        </span>
                     </div>
 
-                    {/* Middle: Terminal Console Output */}
-                    <div className="flex-1 min-h-0 bg-slate-900/80 rounded-lg p-3 border border-slate-800 space-y-2 text-xs overflow-hidden flex flex-col justify-between">
-                        <div>
-                            {/* Terminal Window Header */}
-                            <div className="flex items-center justify-between pb-2 border-b border-slate-800 text-[11px]">
-                                <div className="flex items-center gap-1.5">
-                                    <span className="w-2 h-2 rounded-full bg-rose-500" />
-                                    <span className="w-2 h-2 rounded-full bg-amber-500" />
-                                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                                    <span className="text-slate-300 ml-1.5 font-bold text-emerald-400">{selectedTech}</span>
-                                </div>
-                                <span className="px-1.5 py-0.5 bg-emerald-900/60 text-emerald-300 rounded text-[10px] border border-emerald-500/30">
-                                    {activeTelemetry.badge}
-                                </span>
-                            </div>
-
-                            {/* Execution Log */}
-                            <div className="pt-2 space-y-1">
-                                <p className="text-emerald-400 text-[11px]">
-                                    <span className="text-slate-500">$</span> {activeTelemetry.command}
+                    {/* Terminal Log Execution Body */}
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={selectedTech}
+                            initial={{ opacity: 0, y: 5 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -5 }}
+                            transition={{ duration: 0.16 }}
+                            className="flex-1 bg-slate-900/80 rounded-lg p-3 border border-slate-800 space-y-2 text-xs flex flex-col justify-between"
+                        >
+                            <div>
+                                <p className="text-emerald-400 text-[11px] flex items-center gap-1 font-semibold">
+                                    <span className="text-slate-500">$</span>
+                                    <span>{activeTelemetry.command}</span>
+                                    <span className="inline-block w-1.5 h-3 bg-emerald-400 animate-pulse ml-0.5" />
                                 </p>
-                                <div className="space-y-1 text-slate-300 text-[11px] pt-1 pl-2 border-l border-emerald-500/40">
+                                
+                                <div className="space-y-1.5 text-slate-300 text-[11px] pt-2 pl-2 border-l border-emerald-500/40">
                                     {activeTelemetry.output.map((line, idx) => (
                                         <p key={idx} className="leading-snug">
                                             {line}
@@ -498,21 +603,21 @@ export default function AnimatedSkillsLab({ skills = {} }) {
                                     ))}
                                 </div>
                             </div>
-                        </div>
 
-                        {/* Project Reference Tag */}
-                        <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[10px] text-slate-400">
-                            <span className="truncate max-w-[240px]">Env: {activeTelemetry.project}</span>
-                            <span className="text-emerald-400 font-bold">{activeTelemetry.status}</span>
-                        </div>
-                    </div>
+                            {/* Production Proof Environment */}
+                            <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[10px] text-slate-400">
+                                <span className="truncate max-w-[280px]">{lang === 'id' ? 'Bukti' : 'Proof'}: {activeTelemetry.project}</span>
+                                <span className="text-emerald-400 font-bold">{activeTelemetry.latency}</span>
+                            </div>
+                        </motion.div>
+                    </AnimatePresence>
 
-                    {/* Bottom Status Bar */}
+                    {/* Bottom Terminal Footer */}
                     <div className="flex items-center justify-between text-[10px] text-slate-400 pt-1 border-t border-slate-900">
                         <span className="flex items-center gap-1">
-                            <Terminal size={11} className="text-emerald-400" /> Architecture Runtime v2026
+                            <Zap size={11} className="text-amber-400 fill-amber-400" /> {lang === 'id' ? 'Telemetri Arsitektur Sistem' : 'System Architecture Telemetry'}
                         </span>
-                        <span className="text-slate-400">Response: <strong className="text-emerald-400">{activeTelemetry.latency}</strong></span>
+                        <span className="text-slate-400">{lang === 'id' ? 'Respons' : 'Response'}: <strong className="text-emerald-400">{activeTelemetry.latency}</strong></span>
                     </div>
                 </div>
 
