@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Globe, Menu, X, BookOpen, Briefcase, User, Wrench, Mail, Home as HomeIcon } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function NavBar() {
     const { t, i18n } = useTranslation();
@@ -110,15 +111,34 @@ export default function NavBar() {
 
                 {/* Right Controls */}
                 <div className="flex items-center gap-2">
-                    <button
+                    <motion.button
+                        whileTap={{ scale: 0.92 }}
                         onClick={toggleLang}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/15 transition-colors"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/20 shadow-sm transition-all focus:outline-none"
                         title={t('lang.switch')}
                         aria-label="Switch Language"
                     >
-                        <Globe size={14} className="text-emerald-300" />
-                        <span>{i18n.language === 'en' ? 'ID' : 'EN'}</span>
-                    </button>
+                        <motion.div
+                            animate={{ rotate: i18n.language === 'en' ? 180 : 0 }}
+                            transition={{ duration: 0.35, ease: "easeInOut" }}
+                        >
+                            <Globe size={14} className="text-emerald-300" />
+                        </motion.div>
+                        <div className="relative w-5 h-4 flex items-center justify-center overflow-hidden">
+                            <AnimatePresence mode="wait" initial={false}>
+                                <motion.span
+                                    key={i18n.language}
+                                    initial={{ y: 8, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    exit={{ y: -8, opacity: 0 }}
+                                    transition={{ duration: 0.18, ease: "easeOut" }}
+                                    className="font-mono font-bold tracking-wider text-[11px] block absolute"
+                                >
+                                    {i18n.language === 'en' ? 'ID' : 'EN'}
+                                </motion.span>
+                            </AnimatePresence>
+                        </div>
+                    </motion.button>
 
                     <button
                         className="md:hidden p-1.5 text-white hover:bg-white/10 rounded"

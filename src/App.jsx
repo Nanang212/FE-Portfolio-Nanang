@@ -10,7 +10,7 @@ import Contact from './Pages/Contact';
 import dbData from './data.json';
 import './index.css';
 import './i18n';
-import Assistant from './Components/AI/Assistant';
+// import Assistant from './Components/AI/Assistant';
 
 function App() {
   const { about, projects, skills, experiences } = dbData;
@@ -33,7 +33,7 @@ function App() {
         <Route path="/skills" element={<Skills skills={groupedSkills} />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Assistant />
+      {/* <Assistant /> - Di-comment sementara sesuai permintaan */}
     </BrowserRouter>
   );
 }

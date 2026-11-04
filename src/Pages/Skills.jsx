@@ -1,4 +1,3 @@
-import React from 'react';
 import PortfolioLayout from '@/Layouts/PortfolioLayout';
 import { useTranslation } from 'react-i18next';
 import AnimatedSkillsLab from '@/Components/Portfolio/AnimatedSkillsLab';
@@ -12,7 +11,7 @@ export default function Skills({ skills = {} }) {
         <PortfolioLayout title={t('skills.title')}>
             <div className="pt-20 sm:pt-24 pb-16">
                 <div className="container-max">
-                    <div className="desk-sheet p-6 sm:p-8 space-y-5 bg-white/95">
+                    <div className="desk-sheet p-3.5 sm:p-6 lg:p-8 space-y-4 sm:space-y-5 bg-white/95">
                         {/* Header */}
                         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 pb-3">
                             <div>

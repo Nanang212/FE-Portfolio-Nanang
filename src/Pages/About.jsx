@@ -1,7 +1,6 @@
-import React from 'react';
 import PortfolioLayout from '@/Layouts/PortfolioLayout';
 import { useTranslation } from 'react-i18next';
-import { FileDown, GraduationCap, Award, BookOpen } from 'lucide-react';
+import { FileDown, GraduationCap } from 'lucide-react';
 
 export default function About({ about }) {
     const { t, i18n } = useTranslation();
@@ -44,7 +43,7 @@ export default function About({ about }) {
     const focusAreas = [
         'Express.js & Node.js Engine',
         'PostgreSQL & Prisma ORM',
-        'AI / RAG Vector Ingestion',
+        'RESTful API & Database Architecture',
         'Laravel Framework (PHP)',
         'Docker & Containerized DevOps',
         'Spring Boot (Java 17 & Java 7)',

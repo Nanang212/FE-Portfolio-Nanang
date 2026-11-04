@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, ChevronLeft, ChevronRight, BookOpen, Layers, X, ArrowRight, Code2 } from 'lucide-react';
 import { GithubIcon } from '@/Components/UI/SocialIcons';
 
 export default function ProjectBook({ projects = [] }) {
-    const { t, i18n } = useTranslation();
+    const { i18n } = useTranslation();
     const lang = i18n.language;
 
     // Group projects into 3 curated engineering journals/volumes (Paper by WeTransfer style)
@@ -58,13 +59,59 @@ export default function ProjectBook({ projects = [] }) {
     const [activeProjectIdx, setActiveProjectIdx] = useState(0);
     // Active plate/image index on the right page
     const [activeImageIdx, setActiveImageIdx] = useState(0);
+    // Expandable tech stack tags toggle
+    const [showAllTech, setShowAllTech] = useState(false);
+    // Page fanning animation on initial open
+    const [isFlippingOpen, setIsFlippingOpen] = useState(false);
 
     const activeVolume = volumes[selectedVolIdx] || volumes[0];
     const currentProject = activeVolume.projects[activeProjectIdx] || activeVolume.projects[0];
 
-    useEffect(() => {
+    // Generate realistic flipping leaves from last project down to first folio
+    const flippingLeaves = (activeVolume.projects || []).length > 1
+        ? activeVolume.projects.slice(1).reverse().map((p, idx, arr) => ({
+            folioNum: activeVolume.projects.indexOf(p) + 1,
+            title: lang === 'id' ? p.title_id : p.title_en,
+            index: idx,
+            total: arr.length
+        }))
+        : [];
+
+    const nextProject = () => {
         setActiveImageIdx(0);
-    }, [activeProjectIdx, selectedVolIdx]);
+        setShowAllTech(false);
+        if (activeProjectIdx < activeVolume.projects.length - 1) {
+            setActiveProjectIdx((prev) => prev + 1);
+        } else if (selectedVolIdx < volumes.length - 1) {
+            // Jump to next volume
+            setSelectedVolIdx((prev) => prev + 1);
+            setActiveProjectIdx(0);
+        }
+    };
+
+    const prevProject = () => {
+        setActiveImageIdx(0);
+        setShowAllTech(false);
+        if (activeProjectIdx > 0) {
+            setActiveProjectIdx((prev) => prev - 1);
+        } else if (selectedVolIdx > 0) {
+            // Jump to previous volume last item
+            setSelectedVolIdx((prev) => prev - 1);
+            setActiveProjectIdx(volumes[selectedVolIdx - 1].projects.length - 1);
+        }
+    };
+
+    const openVolume = (volIdx = null, projIdx = 0) => {
+        if (volIdx !== null) setSelectedVolIdx(volIdx);
+        setActiveProjectIdx(projIdx);
+        setActiveImageIdx(0);
+        setShowAllTech(false);
+        setIsFlippingOpen(true);
+        setIsOpen(true);
+        setTimeout(() => {
+            setIsFlippingOpen(false);
+        }, 1850);
+    };
 
     // Keyboard navigation
     useEffect(() => {
@@ -77,38 +124,12 @@ export default function ProjectBook({ projects = [] }) {
             } else {
                 if (e.key === 'ArrowRight') setSelectedVolIdx((prev) => (prev + 1) % volumes.length);
                 if (e.key === 'ArrowLeft') setSelectedVolIdx((prev) => (prev - 1 + volumes.length) % volumes.length);
-                if (e.key === 'Enter') setIsOpen(true);
+                if (e.key === 'Enter') openVolume(selectedVolIdx, 0);
             }
         };
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [isOpen, selectedVolIdx, activeProjectIdx]);
-
-    const nextProject = () => {
-        if (activeProjectIdx < activeVolume.projects.length - 1) {
-            setActiveProjectIdx((prev) => prev + 1);
-        } else if (selectedVolIdx < volumes.length - 1) {
-            // Jump to next volume
-            setSelectedVolIdx((prev) => prev + 1);
-            setActiveProjectIdx(0);
-        }
-    };
-
-    const prevProject = () => {
-        if (activeProjectIdx > 0) {
-            setActiveProjectIdx((prev) => prev - 1);
-        } else if (selectedVolIdx > 0) {
-            // Jump to previous volume last item
-            setSelectedVolIdx((prev) => prev - 1);
-            setActiveProjectIdx(volumes[selectedVolIdx - 1].projects.length - 1);
-        }
-    };
-
-    const openVolume = (volIdx, projIdx = 0) => {
-        setSelectedVolIdx(volIdx);
-        setActiveProjectIdx(projIdx);
-        setIsOpen(true);
-    };
 
     const getImages = (project) => {
         if (!project) return [];
@@ -135,8 +156,8 @@ export default function ProjectBook({ projects = [] }) {
                         <p className="text-sm text-slate-600 flex items-center justify-center gap-2">
                             <span>{activeVolume.projects.length} {lang === 'id' ? 'Proyek Tersimpan' : 'Documented Projects'}</span>
                             <span>&bull;</span>
-                            <span className="text-teal-700 font-semibold cursor-pointer hover:underline" onClick={() => setIsOpen(true)}>
-                                {lang === 'id' ? 'Buka Lembaran Buku →' : 'Open Sheets →'}
+                            <span className="text-teal-700 font-semibold cursor-pointer hover:underline" onClick={() => openVolume(selectedVolIdx, 0)}>
+                                {lang === 'id' ? 'Buka Lembaran Jurnal →' : 'Open Dossier Sheets →'}
                             </span>
                         </p>
                     </div>
@@ -153,7 +174,7 @@ export default function ProjectBook({ projects = [] }) {
                                     key={vol.id}
                                     onClick={() => {
                                         if (isSelected) {
-                                            setIsOpen(true);
+                                            openVolume(vIdx, 0);
                                         } else {
                                             setSelectedVolIdx(vIdx);
                                         }
@@ -229,12 +250,12 @@ export default function ProjectBook({ projects = [] }) {
                                         <button
                                             onClick={(e) => {
                                                 e.stopPropagation();
-                                                setIsOpen(true);
+                                                openVolume(vIdx, 0);
                                             }}
                                             className="mt-6 btn-primary flex items-center gap-2 text-sm font-semibold"
                                         >
                                             <BookOpen size={16} />
-                                            <span>{lang === 'id' ? 'Buka Jurnal Ini' : 'Open This Journal'}</span>
+                                            <span>{lang === 'id' ? 'Buka Jurnal Proyek' : 'Open Project Dossier'}</span>
                                         </button>
                                     )}
                                 </div>
@@ -263,13 +284,26 @@ export default function ProjectBook({ projects = [] }) {
                 <div className="py-2 sm:py-4">
                     {/* Top Control Bar: Back to Shelf & Page Scrubber */}
                     <div className="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3 border-b border-slate-200">
-                        <button
-                            onClick={() => setIsOpen(false)}
-                            className="btn-secondary !py-1.5 !px-3 text-xs font-medium flex items-center gap-1.5"
-                        >
-                            <X size={14} />
-                            <span>{lang === 'id' ? 'Tutup & Kembali ke Rak Jurnal' : 'Close & Return to Shelf'}</span>
-                        </button>
+                        <div className="flex items-center gap-2">
+                            <button
+                                onClick={() => setIsOpen(false)}
+                                className="btn-secondary !py-1.5 !px-3 text-xs font-medium flex items-center gap-1.5"
+                            >
+                                <X size={14} />
+                                <span>{lang === 'id' ? 'Tutup & Kembali ke Rak Jurnal' : 'Close & Return to Shelf'}</span>
+                            </button>
+                            <button
+                                onClick={() => {
+                                    setIsFlippingOpen(true);
+                                    setTimeout(() => setIsFlippingOpen(false), 1850);
+                                }}
+                                className="btn-secondary !py-1.5 !px-3 text-xs font-medium flex items-center gap-1.5 text-teal-800 hover:text-teal-950"
+                                title={lang === 'id' ? 'Putar Ulang Animasi Membuka Lembaran' : 'Replay Book Opening Animation'}
+                            >
+                                <BookOpen size={14} className="text-teal-600" />
+                                <span className="hidden sm:inline">{lang === 'id' ? 'Buka Ulang Jurnal' : 'Replay Dossier Flip'}</span>
+                            </button>
+                        </div>
 
                         <div className="flex items-center gap-2">
                             <span className="text-xs text-slate-500">
@@ -294,16 +328,258 @@ export default function ProjectBook({ projects = [] }) {
                         </div>
                     </div>
 
-                    {/* Opened Two-Page Spread (Constrained to fit viewport cleanly without whole-page scroll) */}
-                    <div className="relative w-full max-w-5xl mx-auto bg-white rounded-2xl open-spread-shadow flex flex-col md:flex-row overflow-hidden border border-slate-200 md:h-[580px] lg:h-[610px] max-h-[calc(100vh-190px)]">
+                    {/* Opened Two-Page Spread (Desktop fits viewport cleanly, mobile flows comfortably with breathing room) */}
+                    <div 
+                        className="relative w-full max-w-5xl mx-auto bg-white rounded-2xl open-spread-shadow flex flex-col md:flex-row border border-slate-200 h-auto md:h-[580px] lg:h-[610px] md:max-h-[calc(100vh-190px)]"
+                        style={{ perspective: '2000px' }}
+                    >
                         
+                        {/* ── 3D Fanning Page Flip Sequence on Initial Open (Flipping from last folio to page 1) ── */}
+                        <AnimatePresence>
+                            {isFlippingOpen && (
+                                <motion.div
+                                    initial={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.35 }}
+                                    className="absolute inset-0 z-50 pointer-events-none"
+                                    style={{ perspective: '2200px', transformStyle: 'preserve-3d' }}
+                                >
+                                    {/* Desktop & Tablet: 3D Paper Leaves Flipping from Last Folio down to Page 1 */}
+                                    <div className="hidden md:block absolute inset-0 [transform-style:preserve-3d]">
+                                        {/* Outer Cover Leaf that swings open first with realistic weight */}
+                                        <motion.div
+                                            initial={{ rotateY: 0, translateZ: 0 }}
+                                            animate={{ 
+                                                rotateY: [0, -45, -90, -145, -180],
+                                                translateZ: [0, 35, 60, 30, 0]
+                                            }}
+                                            transition={{ 
+                                                duration: 0.85, 
+                                                times: [0, 0.25, 0.5, 0.75, 1],
+                                                ease: "easeInOut" 
+                                            }}
+                                            style={{
+                                                left: '50%',
+                                                width: '50%',
+                                                top: 0,
+                                                bottom: 0,
+                                                position: 'absolute',
+                                                transformOrigin: 'left center',
+                                                transformStyle: 'preserve-3d',
+                                                zIndex: 40
+                                            }}
+                                        >
+                                            {/* Front Face: Book Cover */}
+                                            <div 
+                                                className={`absolute inset-0 ${activeVolume.coverBg} rounded-r-2xl border-l border-slate-900 shadow-2xl p-8 flex flex-col justify-between text-white [backface-visibility:hidden]`}
+                                            >
+                                                <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-white/70">
+                                                    <BookOpen size={14} />
+                                                    <span>ENGINEERING DOSSIER // OPENING</span>
+                                                </div>
+                                                <div className="space-y-2">
+                                                    <span className="text-[10px] uppercase font-mono px-2 py-0.5 bg-black/25 rounded border border-white/20">
+                                                        {activeVolume.projects.length} Documented Projects
+                                                    </span>
+                                                    <h3 className="font-editorial-title text-3xl text-white">
+                                                        {lang === 'id' ? activeVolume.title_id : activeVolume.title_en}
+                                                    </h3>
+                                                </div>
+                                                <div className="text-xs text-white/50 font-mono flex items-center justify-between border-t border-white/20 pt-2">
+                                                    <span>TURNING SHEETS...</span>
+                                                    <span>FOLIO #01</span>
+                                                </div>
+                                            </div>
+
+                                            {/* Back Face: Inside Cover Leaf */}
+                                            <div 
+                                                style={{ transform: 'rotateY(180deg)', backfaceVisibility: 'hidden' }}
+                                                className="absolute inset-0 bg-[#e8e4dc] rounded-l-2xl border-r border-slate-400 p-8 flex flex-col justify-between shadow-2xl"
+                                            >
+                                                <div className="text-xs font-mono text-slate-500">COVER VERSO</div>
+                                                <div className="text-center font-editorial-serif italic text-slate-600 text-sm">
+                                                    {lang === 'id' ? activeVolume.title_id : activeVolume.title_en}
+                                                </div>
+                                                <div className="text-[10px] font-mono text-slate-400 text-right">NANANG ADITYA ARCHIVE</div>
+                                            </div>
+                                        </motion.div>
+
+                                        {/* Flipping Leaves: Turning sequentially from last project down to Folio #01 with authentic 3D curvature */}
+                                        {flippingLeaves.map((leaf, i) => {
+                                            const delay = 0.22 + i * 0.3;
+                                            return (
+                                                <motion.div
+                                                    key={leaf.folioNum}
+                                                    initial={{ 
+                                                        rotateY: 0, 
+                                                        translateZ: 0,
+                                                        rotateZ: 0 
+                                                    }}
+                                                    animate={{ 
+                                                        rotateY: [0, -45, -90, -145, -180],
+                                                        translateZ: [0, 45, 85, 45, 0],
+                                                        rotateZ: [0, -2, -3.5, -1.5, 0],
+                                                        zIndex: [35 - i, 60, 60, 20 + i, 20 + i]
+                                                    }}
+                                                    transition={{ 
+                                                        duration: 0.9, 
+                                                        delay, 
+                                                        times: [0, 0.25, 0.5, 0.75, 1],
+                                                        ease: "easeInOut" 
+                                                    }}
+                                                    style={{
+                                                        left: '50%',
+                                                        width: '50%',
+                                                        top: 0,
+                                                        bottom: 0,
+                                                        position: 'absolute',
+                                                        transformOrigin: 'left center',
+                                                        transformStyle: 'preserve-3d'
+                                                    }}
+                                                >
+                                                    {/* Front Face: Sheet on right side before turning */}
+                                                    <div 
+                                                        className="absolute inset-0 bg-[#faf8f4] bg-grid-paper rounded-r-xl border-l border-slate-300 shadow-2xl p-6 flex flex-col justify-between [backface-visibility:hidden] select-none overflow-hidden"
+                                                    >
+                                                        <div className="flex items-center justify-between text-xs text-slate-400 font-mono border-b border-slate-200 pb-2">
+                                                            <span className="font-semibold text-slate-600">
+                                                                {lang === 'id' ? activeVolume.title_id : activeVolume.title_en}
+                                                            </span>
+                                                            <span className="font-bold text-teal-800 bg-teal-50 px-2 py-0.5 rounded border border-teal-200">
+                                                                FOLIO #{String(leaf.folioNum).padStart(2, '0')}
+                                                            </span>
+                                                        </div>
+
+                                                        <div className="space-y-2 py-4">
+                                                            <span className="text-[10px] font-mono uppercase tracking-wider text-teal-800 bg-teal-50/80 px-2 py-0.5 rounded">
+                                                                ARCHIVE SPECIFICATION
+                                                            </span>
+                                                            <h4 className="font-editorial-title text-xl text-slate-900 line-clamp-2">
+                                                                {leaf.title}
+                                                            </h4>
+                                                            <div className="space-y-1.5 pt-2">
+                                                                <div className="h-1.5 w-full bg-slate-200 rounded" />
+                                                                <div className="h-1.5 w-4/5 bg-slate-200 rounded" />
+                                                                <div className="h-1.5 w-2/3 bg-slate-200 rounded" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-200">
+                                                            <span className="text-teal-700 font-semibold">
+                                                                MEMBUKA LEMBARAN...
+                                                            </span>
+                                                            <span>HALAMAN {leaf.folioNum}</span>
+                                                        </div>
+                                                        
+                                                        {/* Dynamic Spine Crease Lighting Effect */}
+                                                        <motion.div 
+                                                            animate={{ opacity: [0, 0.35, 0.6, 0.1, 0] }}
+                                                            transition={{ duration: 0.9, delay, times: [0, 0.25, 0.5, 0.75, 1], ease: "easeInOut" }}
+                                                            className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/10 to-transparent pointer-events-none rounded-r-xl" 
+                                                        />
+                                                    </div>
+
+                                                    {/* Back Face: Sheet resting on the left side after turning */}
+                                                    <div 
+                                                        style={{ transform: 'rotateY(180deg)', backfaceVisibility: 'hidden' }}
+                                                        className="absolute inset-0 bg-[#f4f1ea] rounded-l-xl border-r border-slate-300 shadow-2xl p-6 flex flex-col justify-between select-none overflow-hidden"
+                                                    >
+                                                        <div className="flex items-center justify-between text-xs text-slate-400 font-mono border-b border-slate-200 pb-2">
+                                                            <span className="font-bold text-teal-800">
+                                                                FOLIO #{String(leaf.folioNum).padStart(2, '0')} (VERSO)
+                                                            </span>
+                                                            <span>SYSTEM SCHEMATIC</span>
+                                                        </div>
+                                                        <div className="space-y-2 py-4 opacity-70">
+                                                            <div className="h-2 w-3/4 bg-slate-300 rounded" />
+                                                            <div className="h-2 w-1/2 bg-slate-300 rounded" />
+                                                            <div className="h-2 w-2/3 bg-slate-300 rounded" />
+                                                        </div>
+                                                        <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-200">
+                                                            <span>RECORD VERIFIED</span>
+                                                            <span>PAGE {leaf.folioNum}</span>
+                                                        </div>
+
+                                                        {/* Dynamic Spine Crease Landing Lighting Effect */}
+                                                        <motion.div 
+                                                            animate={{ opacity: [0, 0.1, 0.6, 0.35, 0] }}
+                                                            transition={{ duration: 0.9, delay, times: [0, 0.25, 0.5, 0.75, 1], ease: "easeInOut" }}
+                                                            className="absolute inset-0 bg-gradient-to-l from-black/25 via-black/10 to-transparent pointer-events-none rounded-l-xl" 
+                                                        />
+                                                    </div>
+                                                </motion.div>
+                                            );
+                                        })}
+                                    </div>
+
+                                    {/* Mobile Screens (< md:): Cascading Smooth Sheet Flip Wave */}
+                                    <div className="md:hidden absolute inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+                                        <div className="relative w-full max-w-xs h-72">
+                                            {flippingLeaves.map((leaf, idx) => (
+                                                <motion.div
+                                                    key={leaf.folioNum}
+                                                    initial={{ y: 0, opacity: 1, rotateX: 0, scale: 1 }}
+                                                    animate={{ 
+                                                        y: [0, -25, -65],
+                                                        opacity: [1, 1, 0],
+                                                        rotateX: [0, -20, -55],
+                                                        scale: [1, 1.02, 0.95]
+                                                    }}
+                                                    transition={{ 
+                                                        duration: 0.75, 
+                                                        delay: 0.18 + idx * 0.28, 
+                                                        times: [0, 0.4, 1],
+                                                        ease: [0.22, 1, 0.36, 1] 
+                                                    }}
+                                                    className="absolute inset-0 bg-[#faf8f4] border border-slate-300 rounded-xl p-5 shadow-2xl flex flex-col justify-between"
+                                                    style={{ zIndex: 30 - idx }}
+                                                >
+                                                    <div className="flex items-center justify-between text-xs font-mono text-slate-400 border-b border-slate-200 pb-2">
+                                                        <span className="text-teal-800 font-bold">FOLIO #{String(leaf.folioNum).padStart(2, '0')}</span>
+                                                        <span className="text-[10px] bg-teal-50 text-teal-700 px-2 py-0.5 rounded">MEMBUKA...</span>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-slate-900 text-sm line-clamp-2">{leaf.title}</h4>
+                                                        <div className="space-y-1 mt-2">
+                                                            <div className="h-1.5 w-full bg-slate-200 rounded" />
+                                                            <div className="h-1.5 w-3/4 bg-slate-200 rounded" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="text-[11px] font-mono text-slate-400 border-t border-slate-200 pt-2 flex items-center justify-between">
+                                                        <span>{lang === 'id' ? 'Menuju Halaman 1' : 'To Page 1'}</span>
+                                                        <span>#{leaf.folioNum}</span>
+                                                    </div>
+                                                </motion.div>
+                                            ))}
+                                            {/* Destination Page 1 underneath */}
+                                            <div className="absolute inset-0 bg-white border border-teal-500 rounded-xl p-5 shadow-xl flex flex-col justify-between z-0">
+                                                <div className="flex items-center justify-between text-xs font-mono text-teal-800 border-b border-slate-200 pb-2 font-bold">
+                                                    <span>FOLIO #01</span>
+                                                    <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">READY</span>
+                                                </div>
+                                                <div>
+                                                    <h4 className="font-semibold text-slate-900 text-sm">
+                                                        {lang === 'id' ? currentProject?.title_id : currentProject?.title_en}
+                                                    </h4>
+                                                </div>
+                                                <div className="text-[11px] font-mono text-teal-700 border-t border-slate-200 pt-2 flex items-center justify-between font-bold">
+                                                    <span>{lang === 'id' ? 'Lembar Pertama Terbuka' : 'First Sheet Open'}</span>
+                                                    <span>#01</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+
                         {/* Center Spine Crease */}
                         <div className="hidden md:block absolute inset-y-0 left-1/2 w-[1px] bg-slate-300 -translate-x-1/2 z-30" />
                         <div className="hidden md:block absolute inset-y-0 left-1/2 -translate-x-full w-12 book-spine-gutter-left z-20 pointer-events-none" />
                         <div className="hidden md:block absolute inset-y-0 left-1/2 w-12 book-spine-gutter-right z-20 pointer-events-none" />
 
                         {/* ── LEFT PAGE: Engineering Specification ── */}
-                        <div className="w-full md:w-1/2 p-5 sm:p-7 lg:p-8 flex flex-col justify-between bg-grid-paper border-b md:border-b-0 md:border-r border-slate-200 overflow-hidden">
+                        <div className="w-full md:w-1/2 p-5 sm:p-7 lg:p-8 flex flex-col justify-between bg-grid-paper border-b md:border-b-0 md:border-r border-slate-200 overflow-hidden md:rounded-l-2xl">
                             {/* Running Header */}
                             <div className="flex items-center justify-between text-xs text-slate-500 pb-2 border-b border-slate-200">
                                 <span className="font-semibold text-teal-800">
@@ -312,65 +588,108 @@ export default function ProjectBook({ projects = [] }) {
                                 <span>FOLIO #{String(activeProjectIdx + 1).padStart(2, '0')}</span>
                             </div>
 
-                            {/* Main Project Content */}
-                            <div className="flex-1 min-h-0 flex flex-col justify-center py-2 space-y-2.5 overflow-hidden">
-                                <div>
-                                    <h3 className="font-editorial-title text-2xl sm:text-3xl text-slate-900 leading-tight tracking-tight">
+                            {/* Main Project Content with Animated Page Turn */}
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={activeProjectIdx}
+                                    initial={{ opacity: 0, x: 12 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -12 }}
+                                    transition={{ duration: 0.22, ease: "easeOut" }}
+                                    className="flex-1 min-h-0 flex flex-col justify-center py-2 space-y-2.5 overflow-hidden"
+                                >
+                                    <div>
+                                        <h3 className="font-editorial-title text-2xl sm:text-3xl text-slate-900 leading-tight tracking-tight">
+                                            {(() => {
+                                                const raw = lang === 'id' ? currentProject.title_id : currentProject.title_en;
+                                                return raw.includes('(') ? raw.split('(')[0].trim() : raw;
+                                            })()}
+                                        </h3>
                                         {(() => {
                                             const raw = lang === 'id' ? currentProject.title_id : currentProject.title_en;
-                                            return raw.includes('(') ? raw.split('(')[0].trim() : raw;
+                                            if (raw.includes('(')) {
+                                                const sub = raw.split('(')[1].replace(')', '').trim();
+                                                return (
+                                                    <p className="text-xs text-teal-700 font-semibold mt-0.5">
+                                                        {sub}
+                                                    </p>
+                                                );
+                                            }
+                                            return null;
                                         })()}
-                                    </h3>
-                                    {(() => {
-                                        const raw = lang === 'id' ? currentProject.title_id : currentProject.title_en;
-                                        if (raw.includes('(')) {
-                                            const sub = raw.split('(')[1].replace(')', '').trim();
-                                            return (
-                                                <p className="text-xs text-teal-700 font-semibold mt-0.5">
-                                                    {sub}
-                                                </p>
-                                            );
-                                        }
-                                        return null;
-                                    })()}
-                                </div>
-
-                                {/* Scrollable Description Panel */}
-                                <div className="overflow-y-auto max-h-[170px] sm:max-h-[210px] pr-2 custom-scrollbar">
-                                    <p className="font-editorial-serif text-sm sm:text-base text-slate-700 leading-relaxed text-justify">
-                                        {lang === 'id' ? currentProject.description_id : currentProject.description_en}
-                                    </p>
-                                </div>
-
-                                {/* Tech Stack Badges */}
-                                <div className="pt-1">
-                                    <p className="text-xs uppercase tracking-wider text-slate-500 mb-1 font-semibold">
-                                        Engineering Stack
-                                    </p>
-                                    <div className="flex flex-wrap gap-1 text-xs">
-                                        {(currentProject.tech_stack || []).map((t) => (
-                                            <span
-                                                key={t}
-                                                className="px-2 py-0.5 bg-slate-100 text-slate-800 rounded border border-slate-200"
-                                            >
-                                                {t}
-                                            </span>
-                                        ))}
                                     </div>
-                                </div>
-                            </div>
+
+                                    {/* Scrollable Description Panel (Roomy and comfortable to read on mobile) */}
+                                    <div className="overflow-y-auto min-h-[90px] md:max-h-[210px] pr-2 custom-scrollbar">
+                                        <p className="font-editorial-serif text-sm sm:text-base text-slate-700 leading-relaxed text-justify">
+                                            {lang === 'id' ? currentProject.description_id : currentProject.description_en}
+                                        </p>
+                                    </div>
+
+                                    {/* Tech Stack Badges with Expandable '+... More' Pill */}
+                                    <div className="pt-2">
+                                        <div className="flex items-center justify-between mb-1.5">
+                                            <p className="text-[10px] sm:text-xs uppercase tracking-wider text-slate-500 font-bold font-mono">
+                                                Engineering Stack
+                                            </p>
+                                            {(currentProject.tech_stack || []).length > 5 && (
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setShowAllTech(prev => !prev)}
+                                                    className="text-[11px] font-mono font-semibold text-teal-700 hover:text-teal-900 transition-colors cursor-pointer"
+                                                >
+                                                    {showAllTech 
+                                                        ? (lang === 'id' ? '− Sembunyikan' : '− Collapse')
+                                                        : `+${(currentProject.tech_stack || []).length - 5} ${lang === 'id' ? 'Lainnya' : 'More'}`}
+                                                </button>
+                                            )}
+                                        </div>
+                                        <div className="flex flex-wrap gap-1.5 text-xs">
+                                            {((currentProject.tech_stack || []).slice(0, showAllTech ? undefined : 5)).map((t) => (
+                                                <span
+                                                    key={t}
+                                                    className="px-2 py-0.5 bg-slate-100 text-slate-800 rounded border border-slate-200 text-[11px] font-mono"
+                                                >
+                                                    {t}
+                                                </span>
+                                            ))}
+                                            {!showAllTech && (currentProject.tech_stack || []).length > 5 && (
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setShowAllTech(true)}
+                                                    className="px-2 py-0.5 bg-teal-50 hover:bg-teal-100 text-teal-800 rounded border border-teal-200 text-[11px] font-mono font-bold transition-colors cursor-pointer"
+                                                >
+                                                    +{(currentProject.tech_stack || []).length - 5}
+                                                </button>
+                                            )}
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </AnimatePresence>
 
                             {/* Action Links & Sheet Navigation */}
                             <div className="pt-3 border-t border-slate-200 flex flex-wrap items-center justify-between gap-2">
-                                <button
-                                    onClick={prevProject}
-                                    disabled={activeProjectIdx === 0 && selectedVolIdx === 0}
-                                    className="text-teal-700 font-semibold hover:underline flex items-center gap-1 disabled:opacity-30 disabled:no-underline text-xs"
-                                    aria-label="Lembar Sebelumnya"
-                                >
-                                    <ChevronLeft size={14} />
-                                    <span>{lang === 'id' ? 'Lembar Sebelumnya' : 'Previous Sheet'}</span>
-                                </button>
+                                <div className="flex items-center gap-3">
+                                    <button
+                                        onClick={prevProject}
+                                        disabled={activeProjectIdx === 0 && selectedVolIdx === 0}
+                                        className="text-teal-700 font-semibold hover:underline flex items-center gap-1 disabled:opacity-30 disabled:no-underline text-xs"
+                                        aria-label="Lembar Sebelumnya"
+                                    >
+                                        <ChevronLeft size={14} />
+                                        <span>{lang === 'id' ? 'Sebelumnya' : 'Prev'}</span>
+                                    </button>
+
+                                    <button
+                                        onClick={nextProject}
+                                        disabled={activeProjectIdx === activeVolume.projects.length - 1 && selectedVolIdx === volumes.length - 1}
+                                        className="md:hidden text-teal-700 font-semibold hover:underline flex items-center gap-1 disabled:opacity-30 disabled:no-underline text-xs"
+                                        aria-label="Lembar Berikutnya"
+                                    >
+                                        <span>{lang === 'id' ? 'Berikutnya' : 'Next'}</span>
+                                        <ChevronRight size={14} />
+                                    </button>
+                                </div>
 
                                 <div className="flex items-center gap-2">
                                     {currentProject.demo_url && (
@@ -404,65 +723,85 @@ export default function ProjectBook({ projects = [] }) {
                         </div>
 
                         {/* ── RIGHT PAGE: UI Screenshot / System Schematics ── */}
-                        <div className="w-full md:w-1/2 p-5 sm:p-7 lg:p-8 flex flex-col justify-between bg-white overflow-hidden">
+                        <div className="w-full md:w-1/2 p-5 sm:p-7 lg:p-8 flex flex-col justify-between bg-white overflow-hidden md:rounded-r-2xl">
                             <div className="flex items-center justify-between text-xs text-slate-500 pb-2 border-b border-slate-200">
                                 <span className="font-semibold uppercase tracking-wider">SYSTEM INTERFACE PLATE</span>
                                 <span>{currentImages.length > 0 ? `${activeImageIdx + 1} / ${currentImages.length}` : 'SCHEMATIC'}</span>
                             </div>
 
-                            <div className="flex-1 min-h-0 flex flex-col justify-center py-2 overflow-hidden">
-                                {currentImages.length > 0 ? (
-                                    <div className="h-full flex flex-col justify-between gap-2 overflow-hidden">
-                                        {/* Main Screenshot Frame */}
-                                        <div className="flex-1 min-h-0 w-full bg-slate-50 rounded-lg overflow-hidden border border-slate-200 flex items-center justify-center p-2">
-                                            <img
-                                                src={currentImages[activeImageIdx]}
-                                                alt={currentProject.title_en}
-                                                className="max-h-full max-w-full object-contain rounded"
-                                                loading="lazy"
-                                            />
-                                        </div>
-
-                                        {/* Thumbnails if multiple images exist */}
-                                        {currentImages.length > 1 && (
-                                            <div className="h-12 flex items-center gap-2 overflow-x-auto py-1 shrink-0">
-                                                {currentImages.map((img, idx) => (
-                                                    <button
-                                                        key={idx}
-                                                        onClick={() => setActiveImageIdx(idx)}
-                                                        className={`relative w-14 h-9 shrink-0 rounded overflow-hidden transition-all ${
-                                                            idx === activeImageIdx
-                                                                ? 'ring-2 ring-teal-600'
-                                                                : 'opacity-50 hover:opacity-100'
-                                                        }`}
-                                                        aria-label={`View image ${idx + 1}`}
-                                                    >
-                                                        <img src={img} alt={`Thumb ${idx + 1}`} className="w-full h-full object-cover" />
-                                                    </button>
-                                                ))}
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={`${activeProjectIdx}-${activeImageIdx}`}
+                                    initial={{ opacity: 0, scale: 0.98 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.98 }}
+                                    transition={{ duration: 0.22, ease: "easeOut" }}
+                                    className="flex-1 min-h-0 flex flex-col justify-center py-2 overflow-hidden"
+                                >
+                                    {currentImages.length > 0 ? (
+                                        <div className="h-full flex flex-col justify-between gap-2 overflow-hidden">
+                                            {/* Main Screenshot Frame */}
+                                            <div className="flex-1 min-h-0 w-full bg-slate-50 rounded-lg overflow-hidden border border-slate-200 flex items-center justify-center p-2">
+                                                <img
+                                                    src={currentImages[activeImageIdx]}
+                                                    alt={currentProject.title_en}
+                                                    className="max-h-full max-w-full object-contain rounded"
+                                                    loading="lazy"
+                                                />
                                             </div>
-                                        )}
-                                    </div>
-                                ) : (
-                                    <div className="w-full h-full bg-slate-50 rounded-lg border border-slate-200 p-6 flex flex-col justify-center items-center text-center space-y-3">
-                                        <Layers size={36} className="text-teal-700 opacity-80" />
-                                        <p className="text-sm uppercase tracking-wider font-semibold text-slate-800">
-                                            Backend Core Architecture
-                                        </p>
-                                        <p className="text-xs text-slate-500 max-w-xs leading-relaxed">
-                                            {lang === 'id'
-                                                ? 'Sistem enterprise berbasis microservice API, relasi skema database PostgreSQL/MySQL, dan queue pipeline.'
-                                                : 'Enterprise backend system powered by API endpoints, normalized database schemas, and queue services.'}
-                                        </p>
-                                    </div>
-                                )}
-                            </div>
 
-                            {/* Navigation to next sheet */}
-                            <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
-                                <span className="font-mono text-[11px] text-slate-400 uppercase tracking-wider">
+                                            {/* Thumbnails if multiple images exist */}
+                                            {currentImages.length > 1 && (
+                                                <div className="h-12 flex items-center gap-2 overflow-x-auto py-1 shrink-0">
+                                                    {currentImages.map((img, idx) => (
+                                                        <button
+                                                            key={idx}
+                                                            onClick={() => setActiveImageIdx(idx)}
+                                                            className={`relative w-14 h-9 shrink-0 rounded overflow-hidden transition-all ${
+                                                                idx === activeImageIdx
+                                                                    ? 'ring-2 ring-teal-600'
+                                                                    : 'opacity-50 hover:opacity-100'
+                                                            }`}
+                                                            aria-label={`View image ${idx + 1}`}
+                                                        >
+                                                            <img src={img} alt={`Thumb ${idx + 1}`} className="w-full h-full object-cover" />
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    ) : (
+                                        <div className="w-full h-full bg-slate-50 rounded-lg border border-slate-200 p-6 flex flex-col justify-center items-center text-center space-y-3">
+                                            <Layers size={36} className="text-teal-700 opacity-80" />
+                                            <p className="text-sm uppercase tracking-wider font-semibold text-slate-800">
+                                                Backend Core Architecture
+                                            </p>
+                                            <p className="text-xs text-slate-500 max-w-xs leading-relaxed">
+                                                {lang === 'id'
+                                                    ? 'Sistem enterprise berbasis microservice API, relasi skema database PostgreSQL/MySQL, dan queue pipeline.'
+                                                    : 'Enterprise backend system powered by API endpoints, normalized database schemas, and queue services.'}
+                                            </p>
+                                        </div>
+                                    )}
+                                </motion.div>
+                            </AnimatePresence>
+
+                            {/* Navigation to next & previous sheet (Both available on mobile and desktop) */}
+                            <div className="pt-2.5 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
+                                <button
+                                    onClick={prevProject}
+                                    disabled={activeProjectIdx === 0 && selectedVolIdx === 0}
+                                    className="text-teal-700 font-semibold hover:underline flex items-center gap-1 disabled:opacity-30 disabled:no-underline"
+                                    aria-label="Lembar Sebelumnya"
+                                >
+                                    <ChevronLeft size={14} />
+                                    <span>{lang === 'id' ? 'Lembar Sebelumnya' : 'Previous Sheet'}</span>
+                                </button>
+
+                                <span className="hidden sm:inline font-mono text-[11px] text-slate-400 uppercase tracking-wider">
                                     NANANG ADITYA &bull; DOSSIER
                                 </span>
+
                                 <button
                                     onClick={nextProject}
                                     disabled={activeProjectIdx === activeVolume.projects.length - 1 && selectedVolIdx === volumes.length - 1}

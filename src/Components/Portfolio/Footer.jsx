@@ -18,8 +18,8 @@ export default function Footer() {
                         </h4>
                         <p className="font-editorial-serif text-base text-emerald-100/80 max-w-lg leading-relaxed">
                             {lang === 'id' 
-                                ? 'Software Engineer yang berfokus pada arsitektur sistem enterprise, backend skala besar, dan infrastruktur data di Indonesia.' 
-                                : 'Software Engineer specializing in enterprise backends, distributed data pipelines, and mission-critical systems in Indonesia.'}
+                                ? 'Software Engineer yang berfokus pada arsitektur sistem enterprise, backend skala besar, serta keandalan dan konsistensi data transaksi.' 
+                                : 'Software Engineer specializing in enterprise system architecture, high-throughput backends, and reliable transaction pipelines.'}
                         </p>
                         <p className="text-xs text-emerald-300/60 font-mono pt-1">
                             Engineered on Maker's Cutting Mat &bull; Laravel &bull; Node.js &bull; Spring Boot &bull; PostgreSQL &bull; Docker

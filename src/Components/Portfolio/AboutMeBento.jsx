@@ -38,21 +38,21 @@ export default function AboutMeBento({ about, education = [] }) {
     const photos = [
         {
             src: '/images/personal/trail-run.jpg',
-            title_id: 'Trail Run & Puncak Lumut',
-            title_en: 'Trail Run & Lumut Peak',
-            badge: '1699 MDPL',
-            location: 'Puncak Lumut, Bogor',
-            caption_id: 'Menembus jalur hutan berkabut dan medan menanjak.',
-            caption_en: 'Conquering misty forest trails and steep elevation.'
+            title_id: 'Trail Run & Eksplorasi Alam',
+            title_en: 'Trail Run & Nature Trekking',
+            badge: 'Trail Run',
+            location: 'Bogor',
+            caption_id: 'Menembus jalur hutan berkabut dan medan menanjak di alam terbuka.',
+            caption_en: 'Conquering misty forest trails and steep elevation in nature.'
         },
         {
             src: '/images/personal/jogging.png',
-            title_id: 'Jogging Rutin (Pagi / Malam)',
-            title_en: 'Routine Jogging (Morning & Night)',
+            title_id: 'Olahraga Lari & Jogging',
+            title_en: 'Routine Running & Jogging',
             badge: 'Pace & Endurance',
-            location: 'Surabaya City',
-            caption_id: 'Menjaga stamina dengan lari santai pagi atau malam hari di jalanan Surabaya.',
-            caption_en: 'Building stamina through morning or evening road runs across Surabaya.'
+            location: 'GBK Senayan, Jakarta',
+            caption_id: 'Menjaga kebugaran dan stamina fisik dengan olahraga lari rutin.',
+            caption_en: 'Building stamina and endurance through routine running.'
         },
         {
             src: '/images/personal/muaythai.png',
@@ -74,12 +74,12 @@ export default function AboutMeBento({ about, education = [] }) {
         },
         {
             src: '/images/personal/mendaki.jpg',
-            title_id: 'Mendaki Gunung Gede',
-            title_en: 'Mount Gede Trekking',
-            badge: 'Gunung Gede',
-            location: 'Taman Nasional Gede Pangrango',
-            caption_id: 'Istirahat di jalur akar pohon rimbun pendakian Gunung Gede.',
-            caption_en: 'Taking a breath along the mossy root trail of Mount Gede.'
+            title_id: 'Mendaki Gunung & Trekking',
+            title_en: 'Mountain Hiking & Trekking',
+            badge: 'Mountain Trail',
+            location: 'Gunung Gede, Jawa Barat',
+            caption_id: 'Istirahat sejenak di jalur akar pepohonan saat mendaki gunung.',
+            caption_en: 'Taking a breath along the forest root trails while mountain hiking.'
         }
     ];
 
@@ -289,30 +289,44 @@ export default function AboutMeBento({ about, education = [] }) {
                     </p>
                 </div>
 
-                {/* Tactile Dual-Mode Selector Bar */}
+                {/* Tactile Dual-Mode Selector Bar with Fluid Spring Slider */}
                 <div className="flex justify-center pt-2 pb-1">
-                    <div className="inline-flex p-1.5 bg-slate-100 rounded-2xl border border-slate-200 shadow-inner max-w-lg w-full">
+                    <div className="inline-flex p-1.5 bg-slate-100 rounded-2xl border border-slate-200/90 shadow-inner max-w-lg w-full relative">
                         <button
                             onClick={() => setViewMode('credentials')}
-                            className={`flex-1 py-3 px-4 rounded-xl flex items-center justify-center gap-2.5 transition-all duration-300 font-mono text-xs sm:text-sm ${
+                            className={`flex-1 py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 font-mono text-xs sm:text-sm relative z-10 transition-colors duration-200 ${
                                 viewMode === 'credentials'
-                                    ? 'bg-white text-slate-950 font-bold shadow-md border border-slate-200/80'
-                                    : 'text-slate-500 hover:text-slate-900'
+                                    ? 'text-white font-bold'
+                                    : 'text-slate-600 hover:text-slate-900 font-medium'
                             }`}
                         >
-                            <Briefcase size={16} className={viewMode === 'credentials' ? 'text-emerald-700' : 'text-slate-400'} />
+                            {viewMode === 'credentials' && (
+                                <motion.div
+                                    layoutId="activeAboutTab"
+                                    transition={{ type: "spring", stiffness: 450, damping: 35 }}
+                                    className="absolute inset-0 bg-emerald-800 rounded-xl shadow-md -z-10"
+                                />
+                            )}
+                            <Briefcase size={15} className={viewMode === 'credentials' ? 'text-white' : 'text-slate-500'} />
                             <span>{lang === 'id' ? 'Kredensial & Karir' : 'Credentials & Career'}</span>
                         </button>
 
                         <button
                             onClick={() => setViewMode('chill')}
-                            className={`flex-1 py-3 px-4 rounded-xl flex items-center justify-center gap-2.5 transition-all duration-300 font-mono text-xs sm:text-sm ${
+                            className={`flex-1 py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 font-mono text-xs sm:text-sm relative z-10 transition-colors duration-200 ${
                                 viewMode === 'chill'
-                                    ? 'bg-slate-950 text-white font-bold shadow-lg border border-slate-800'
-                                    : 'text-slate-500 hover:text-slate-900'
+                                    ? 'text-white font-bold'
+                                    : 'text-slate-600 hover:text-slate-900 font-medium'
                             }`}
                         >
-                            <Headphones size={16} className={viewMode === 'chill' ? 'text-emerald-400' : 'text-slate-400'} />
+                            {viewMode === 'chill' && (
+                                <motion.div
+                                    layoutId="activeAboutTab"
+                                    transition={{ type: "spring", stiffness: 450, damping: 35 }}
+                                    className="absolute inset-0 bg-emerald-800 rounded-xl shadow-md -z-10"
+                                />
+                            )}
+                            <Headphones size={15} className={viewMode === 'chill' ? 'text-emerald-200' : 'text-slate-500'} />
                             <span>{lang === 'id' ? 'Santai & Musik' : 'Chill & Beats'}</span>
                         </button>
                     </div>
@@ -424,7 +438,7 @@ export default function AboutMeBento({ about, education = [] }) {
                                 </span>
                                 <span className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-100/90 text-amber-950 font-semibold border border-amber-300/80 shadow-2xs">
                                     <CheckCircle2 size={12} className="text-amber-700" />
-                                    <span>AI Vector Ingestion</span>
+                                    <span>REST API & Database</span>
                                 </span>
                             </div>
                         </div>
@@ -505,112 +519,125 @@ export default function AboutMeBento({ about, education = [] }) {
                         className="space-y-6 pt-2"
                     >
 
-                        {/* ── 3-COLUMN LIFESTYLE BENTO GRID ── */}
-                        <div className="grid lg:grid-cols-12 gap-6 items-stretch">
+                        {/* ── 3-COLUMN LIFESTYLE BENTO GRID (Viewport Compact & Organic Sage Palette) ── */}
+                        <div className="grid lg:grid-cols-12 gap-5 items-stretch">
                             
-                            {/* ── LEFT COLUMN: Hobbies & Comfort Food (4 cols) ── */}
+                            {/* ── LEFT COLUMN: Hobbies & Comfort Food (4 cols on desktop, Order 2 on mobile) ── */}
                             <motion.div 
-                                initial={{ opacity: 0, x: -10 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.7, delay: 0.1 }}
-                                className="lg:col-span-4 flex flex-col justify-between space-y-4"
+                                initial={{ opacity: 0, y: 16 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.45, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+                                className="lg:col-span-4 order-2 lg:order-1 bg-white/95 rounded-2xl p-4 sm:p-5 border border-emerald-200/90 shadow-sm flex flex-col justify-between space-y-3 relative overflow-hidden"
                             >
-                                {/* Hobbies Card with Slow Float Animation */}
-                                <div className="bg-slate-900 text-slate-100 rounded-2xl p-5 border border-slate-800 shadow-xl space-y-3 flex-1 flex flex-col justify-between relative overflow-hidden">
-                                    {/* Gentle slow background glow */}
-                                    <motion.div 
-                                        animate={{ 
-                                            opacity: [0.15, 0.28, 0.15],
-                                            scale: [1, 1.08, 1]
-                                        }}
-                                        transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
-                                        className="absolute -top-12 -left-12 w-48 h-48 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"
-                                    />
-
-                                    <div className="flex items-center justify-between pb-2 border-b border-slate-800 relative z-10">
-                                        <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-400 font-bold flex items-center gap-1.5">
-                                            <Sparkles size={12} className="text-amber-400" />
+                                <div className="space-y-3 relative z-10">
+                                    <div className="flex items-center justify-between pb-2 border-b border-emerald-100">
+                                        <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-800 font-bold flex items-center gap-1.5">
+                                            <Sparkles size={12} className="text-amber-500" />
                                             <span>{lang === 'id' ? 'HOBI & AKTIVITAS' : 'HOBBIES & LIFESTYLE'}</span>
                                         </span>
-                                        <span className="text-[10px] font-mono text-slate-500">ACTIVE LIFE</span>
+                                        <span className="text-[9.5px] font-mono font-bold text-emerald-700 bg-emerald-100/80 px-2 py-0.5 rounded-full">
+                                            ACTIVE LIFE
+                                        </span>
                                     </div>
 
-                                    <div className="space-y-1.5 text-xs font-mono relative z-10">
+                                    <div className="space-y-1.5 text-xs font-mono">
                                         {[
-                                            { icon: '⛰️', label_id: 'Trail Run & Mendaki Gunung', label_en: 'Trail Run & Mountain Trekking' },
-                                            { icon: '🏃', label_id: 'Jogging Rutin (Pagi & Malam)', label_en: 'Morning & Night Jogging' },
-                                            { icon: '🥊', label_id: 'Muay Thai & Sparring', label_en: 'Muay Thai & Conditioning' },
-                                            { icon: '⚽', label_id: 'Futsal Rutin', label_en: 'Regular Futsal Matches' },
-                                            { icon: '🎣', label_id: 'Memancing Akhir Pekan', label_en: 'Weekend Fishing & Angling' },
-                                            { icon: '💻', label_id: 'Eksplorasi Teknologi Baru', label_en: 'Tech Exploration & Open Source' }
+                                            { 
+                                                icon: '⛰️', 
+                                                label_id: 'Mendaki Gunung & Trail Run', 
+                                                label_en: 'Mountain Trekking & Trail Run',
+                                                hoverWiggle: { scale: 1.3, rotate: -12, y: -2 }
+                                            },
+                                            { 
+                                                icon: '🏃', 
+                                                label_id: 'Olahraga Lari / Jogging', 
+                                                label_en: 'Routine Jogging & Running',
+                                                hoverWiggle: { scale: 1.3, x: [0, 3, -2, 2, 0], transition: { repeat: Infinity, duration: 0.5 } }
+                                            },
+                                            { 
+                                                icon: '🥊', 
+                                                label_id: 'Muay Thai & Conditioning', 
+                                                label_en: 'Muay Thai & Conditioning',
+                                                hoverWiggle: { scale: 1.3, x: [0, 4, -1, 3, 0], transition: { repeat: Infinity, duration: 0.4 } }
+                                            },
+                                            { 
+                                                icon: '⚽', 
+                                                label_id: 'Futsal Rutin', 
+                                                label_en: 'Regular Futsal Matches',
+                                                hoverWiggle: { rotate: 360, transition: { duration: 0.8, ease: "linear", repeat: Infinity } }
+                                            },
+                                            { 
+                                                icon: '🎣', 
+                                                label_id: 'Memancing Santai Akhir Pekan', 
+                                                label_en: 'Weekend Angling & Stillness',
+                                                hoverWiggle: { rotate: [-8, 8, -8], y: [0, -3, 0], transition: { repeat: Infinity, duration: 0.85, ease: "easeInOut" } }
+                                            }
                                         ].map((hobby, idx) => (
                                             <motion.div
                                                 key={idx}
-                                                whileHover={{ x: 4, backgroundColor: 'rgba(30, 41, 59, 0.9)' }}
-                                                transition={{ duration: 0.2 }}
-                                                className="flex items-center gap-2.5 p-2 rounded-lg bg-slate-800/60 border border-slate-700/50 transition-colors"
+                                                whileHover={{ x: 4, scale: 1.01 }}
+                                                transition={{ duration: 0.15 }}
+                                                className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-emerald-50/70 hover:bg-emerald-100/90 border border-emerald-200/60 hover:border-emerald-300 text-slate-800 transition-all cursor-pointer shadow-2xs group"
                                             >
-                                                <span className="text-base shrink-0">{hobby.icon}</span>
-                                                <span className="text-slate-200 font-medium truncate">
+                                                <motion.span 
+                                                    className="text-sm shrink-0 inline-block origin-center"
+                                                    whileHover={hobby.hoverWiggle}
+                                                >
+                                                    {hobby.icon}
+                                                </motion.span>
+                                                <span className="text-[11.5px] font-medium truncate group-hover:text-emerald-950 transition-colors">
                                                     {lang === 'id' ? hobby.label_id : hobby.label_en}
                                                 </span>
                                             </motion.div>
                                         ))}
                                     </div>
-
-                                    <div className="pt-2 border-t border-slate-800/80 text-[10px] font-mono text-slate-400 flex items-center justify-between relative z-10">
-                                        <span>MIND & BODY SYNERGY</span>
-                                        <span className="text-emerald-400 font-semibold">100% IN MOTION</span>
-                                    </div>
                                 </div>
 
-                                {/* Comfort Food & Sips Card */}
-                                <div className="bg-slate-900 text-slate-100 rounded-2xl p-5 border border-slate-800 shadow-xl space-y-3">
-                                    <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-                                        <span className="text-[10px] font-mono uppercase tracking-wider text-amber-400 font-bold flex items-center gap-1.5">
-                                            <Utensils size={12} className="text-amber-400" />
+                                {/* Compact Comfort Food & Sips */}
+                                <div className="pt-2.5 border-t border-emerald-100/90 space-y-1.5 relative z-10">
+                                    <div className="flex items-center justify-between text-[10px] font-mono text-emerald-900 font-bold">
+                                        <span className="flex items-center gap-1">
+                                            <Utensils size={11} className="text-amber-600" />
                                             <span>{lang === 'id' ? 'MAKANAN & MINUMAN FAVORIT' : 'COMFORT FOOD & SIPS'}</span>
                                         </span>
-                                        <Coffee size={13} className="text-amber-300" />
+                                        <Coffee size={12} className="text-amber-600" />
                                     </div>
 
-                                    <div className="grid grid-cols-2 gap-2 text-xs">
+                                    <div className="grid grid-cols-2 gap-1.5 text-xs">
                                         <motion.div 
-                                            whileHover={{ y: -2 }}
-                                            className="p-2.5 rounded-lg bg-slate-800/70 border border-slate-700/50 space-y-1"
+                                            whileHover={{ scale: 1.03, y: -1 }}
+                                            className="p-2 rounded-lg bg-amber-50/80 hover:bg-amber-100/80 border border-amber-200/70 text-slate-800 space-y-0.5 transition-all cursor-default shadow-2xs"
                                         >
-                                            <div className="text-[10px] font-mono text-slate-400 uppercase">FOOD</div>
-                                            <div className="font-bold text-slate-100">🍛 Nasi Goreng</div>
-                                            <div className="font-bold text-slate-100">🍲 Rawon Surabaya</div>
+                                            <span className="text-[9px] font-mono text-amber-900 font-bold uppercase tracking-wider block">FOOD</span>
+                                            <span className="font-semibold text-[11px] block truncate">🍛 Nasi Goreng</span>
+                                            <span className="font-semibold text-[11px] block truncate">🍲 Rawon Surabaya</span>
                                         </motion.div>
                                         <motion.div 
-                                            whileHover={{ y: -2 }}
-                                            className="p-2.5 rounded-lg bg-slate-800/70 border border-slate-700/50 space-y-1"
+                                            whileHover={{ scale: 1.03, y: -1 }}
+                                            className="p-2 rounded-lg bg-emerald-50/80 hover:bg-emerald-100/80 border border-emerald-200/70 text-slate-800 space-y-0.5 transition-all cursor-default shadow-2xs"
                                         >
-                                            <div className="text-[10px] font-mono text-slate-400 uppercase">SIPS</div>
-                                            <div className="font-bold text-emerald-300">☕ Americano Peach</div>
-                                            <div className="font-bold text-amber-300">☕ Mont Blanc</div>
+                                            <span className="text-[9px] font-mono text-emerald-900 font-bold uppercase tracking-wider block">SIPS</span>
+                                            <span className="font-semibold text-emerald-900 text-[11px] block truncate">☕ Americano Peach</span>
+                                            <span className="font-semibold text-amber-900 text-[11px] block truncate">☕ Mont Blanc</span>
                                         </motion.div>
                                     </div>
                                 </div>
                             </motion.div>
 
-                            {/* ── CENTER COLUMN: Authentic Photo Polaroid Showcase & Story (4.5 cols) ── */}
+                            {/* ── CENTER COLUMN: Authentic Photo Polaroid Showcase & Story (5 cols on desktop, Order 1 on mobile) ── */}
                             <motion.div 
-                                initial={{ opacity: 0, y: 15 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.7, delay: 0.2 }}
-                                className="lg:col-span-5 bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-md flex flex-col justify-between space-y-4"
+                                initial={{ opacity: 0, y: 16 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.45, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+                                className="lg:col-span-5 order-1 lg:order-2 bg-white/95 rounded-2xl p-4 sm:p-5 border border-emerald-200/90 shadow-sm flex flex-col justify-between space-y-3"
                             >
-                                {/* Top: Photo Showcase with Ambient Blur & Zero-Crop Framing */}
+                                {/* Top: Photo Showcase with Ambient Blur & Compact Height */}
                                 <div 
-                                    className="space-y-2.5"
+                                    className="space-y-2"
                                     onMouseEnter={() => setIsHoveredPhoto(true)}
                                     onMouseLeave={() => setIsHoveredPhoto(false)}
                                 >
-                                    <div className="flex items-center justify-between text-xs font-mono pb-2 border-b border-slate-100">
+                                    <div className="flex items-center justify-between text-xs font-mono pb-1.5 border-b border-emerald-100">
                                         <span className="text-emerald-800 font-bold uppercase tracking-wider flex items-center gap-1.5">
                                             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                                             <span>{lang === 'id' ? 'DOKUMENTASI ASLI' : 'AUTHENTIC GLIMPSE'}</span>
@@ -624,23 +651,23 @@ export default function AboutMeBento({ about, education = [] }) {
                                                 <Maximize2 size={12} />
                                                 <span>{lang === 'id' ? 'Perbesar' : 'Zoom'}</span>
                                             </button>
-                                            <span className="text-slate-400">
+                                            <span className="text-slate-400 text-[11px]">
                                                 0{activePhotoIdx + 1} / 0{photos.length}
                                             </span>
                                         </div>
                                     </div>
 
-                                    {/* Framed Polaroid Viewport: Portrait Proportion with Ambient Background */}
-                                    <div className="relative rounded-xl overflow-hidden bg-slate-950 border border-slate-800/80 shadow-inner h-[380px] sm:h-[430px] flex items-center justify-center group">
-                                        {/* Ambient blurred backdrop for aesthetic full-bleed fill */}
+                                    {/* Compact Framed Polaroid Viewport (h-56 sm:h-60) */}
+                                    <div className="relative rounded-xl overflow-hidden bg-emerald-950/90 border border-emerald-800/60 shadow-inner h-56 sm:h-60 flex items-center justify-center group">
+                                        {/* Ambient blurred backdrop */}
                                         <img
                                             src={photos[activePhotoIdx].src}
                                             alt=""
                                             aria-hidden="true"
-                                            className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-35 scale-125 select-none pointer-events-none transition-all duration-1000"
+                                            className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-125 select-none pointer-events-none transition-all duration-1000"
                                         />
 
-                                        {/* Main photo: completely visible without cutting off face, body, or gear */}
+                                        {/* Main photo: crisp & completely visible without crop */}
                                         <AnimatePresence mode="wait">
                                             <motion.img
                                                 key={photos[activePhotoIdx].src}
@@ -649,26 +676,26 @@ export default function AboutMeBento({ about, education = [] }) {
                                                 initial={{ opacity: 0, scale: 0.96 }}
                                                 animate={{ opacity: 1, scale: 1 }}
                                                 exit={{ opacity: 0, scale: 1.04 }}
-                                                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                                                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                                                 onClick={() => setLightboxOpen(true)}
-                                                className="relative z-10 max-h-full max-w-full object-contain rounded-lg shadow-2xl cursor-pointer transition-transform duration-500 group-hover:scale-[1.01]"
+                                                className="relative z-10 max-h-full max-w-full object-contain rounded-lg shadow-xl cursor-pointer transition-transform duration-500 group-hover:scale-[1.01]"
                                             />
                                         </AnimatePresence>
 
                                         {/* Bottom Gradient Overlay for Badge, Title & Caption */}
-                                        <div className="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-slate-950/95 via-slate-950/65 to-transparent pt-12 pb-3.5 px-4 flex flex-col justify-end pointer-events-none">
-                                            <div className="flex items-center gap-2 mb-1">
-                                                <span className="inline-block px-2 py-0.5 rounded text-[9.5px] font-mono font-bold bg-emerald-500 text-slate-950 shadow-sm">
+                                        <div className="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent pt-10 pb-2.5 px-3 flex flex-col justify-end pointer-events-none">
+                                            <div className="flex items-center gap-1.5 mb-0.5">
+                                                <span className="inline-block px-2 py-0.5 rounded text-[9px] font-mono font-bold bg-emerald-500 text-slate-950 shadow-sm">
                                                     {photos[activePhotoIdx].badge}
                                                 </span>
-                                                <span className="text-[10px] font-mono text-emerald-300/80">
+                                                <span className="text-[9.5px] font-mono text-emerald-300">
                                                     {photos[activePhotoIdx].location}
                                                 </span>
                                             </div>
-                                            <h4 className="text-white font-bold text-sm sm:text-base leading-tight drop-shadow-sm">
+                                            <h4 className="text-white font-bold text-xs sm:text-sm leading-tight drop-shadow-sm truncate">
                                                 {lang === 'id' ? photos[activePhotoIdx].title_id : photos[activePhotoIdx].title_en}
                                             </h4>
-                                            <p className="text-slate-300 text-[11px] font-editorial-serif italic drop-shadow-sm">
+                                            <p className="text-slate-300 text-[10.5px] font-editorial-serif italic drop-shadow-sm truncate">
                                                 {lang === 'id' ? photos[activePhotoIdx].caption_id : photos[activePhotoIdx].caption_en}
                                             </p>
                                         </div>
@@ -676,28 +703,28 @@ export default function AboutMeBento({ about, education = [] }) {
                                         {/* Stepper Arrow Buttons */}
                                         <button
                                             onClick={prevPhoto}
-                                            className="absolute left-2.5 top-1/2 -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-slate-900/80 hover:bg-emerald-600 text-white flex items-center justify-center transition-all shadow-lg opacity-80 hover:opacity-100"
+                                            className="absolute left-2 top-1/2 -translate-y-1/2 z-30 w-7 h-7 rounded-full bg-slate-900/80 hover:bg-emerald-600 text-white flex items-center justify-center transition-all shadow-md opacity-80 hover:opacity-100"
                                             aria-label="Previous photo"
                                         >
-                                            <ChevronLeft size={18} />
+                                            <ChevronLeft size={16} />
                                         </button>
                                         <button
                                             onClick={nextPhoto}
-                                            className="absolute right-2.5 top-1/2 -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-slate-900/80 hover:bg-emerald-600 text-white flex items-center justify-center transition-all shadow-lg opacity-80 hover:opacity-100"
+                                            className="absolute right-2 top-1/2 -translate-y-1/2 z-30 w-7 h-7 rounded-full bg-slate-900/80 hover:bg-emerald-600 text-white flex items-center justify-center transition-all shadow-md opacity-80 hover:opacity-100"
                                             aria-label="Next photo"
                                         >
-                                            <ChevronRight size={18} />
+                                            <ChevronRight size={16} />
                                         </button>
                                     </div>
 
                                     {/* Thumbnail dots */}
-                                    <div className="flex items-center justify-center gap-1.5 pt-1">
+                                    <div className="flex items-center justify-center gap-1.5 pt-0.5">
                                         {photos.map((_, pIdx) => (
                                             <button
                                                 key={pIdx}
                                                 onClick={() => setActivePhotoIdx(pIdx)}
                                                 className={`h-1.5 rounded-full transition-all duration-300 ${
-                                                    activePhotoIdx === pIdx ? 'w-6 bg-emerald-700' : 'w-2 bg-slate-300 hover:bg-slate-400'
+                                                    activePhotoIdx === pIdx ? 'w-5 bg-emerald-700' : 'w-1.5 bg-slate-300 hover:bg-slate-400'
                                                 }`}
                                                 aria-label={`Go to slide ${pIdx + 1}`}
                                             />
@@ -705,11 +732,11 @@ export default function AboutMeBento({ about, education = [] }) {
                                     </div>
                                 </div>
 
-                                {/* Middle: Rotating Life Quote in Elegant Pill */}
-                                <div className="bg-emerald-50/80 p-3 rounded-xl border border-emerald-200/80 space-y-1.5">
+                                {/* Middle: Rotating Life Quote */}
+                                <div className="bg-emerald-50/80 p-2.5 rounded-xl border border-emerald-200/80 space-y-1">
                                     <div className="flex items-center justify-between text-[10px] font-mono text-emerald-800 font-bold uppercase">
                                         <span className="flex items-center gap-1">
-                                            <Quote size={11} className="text-emerald-700" />
+                                            <Quote size={10} className="text-emerald-700" />
                                             <span>{quotes[activeQuoteIdx].author}</span>
                                         </span>
                                         <button
@@ -722,11 +749,11 @@ export default function AboutMeBento({ about, education = [] }) {
                                     <AnimatePresence mode="wait">
                                         <motion.p
                                             key={quotes[activeQuoteIdx].id}
-                                            initial={{ opacity: 0, y: 4 }}
+                                            initial={{ opacity: 0, y: 3 }}
                                             animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: -4 }}
-                                            transition={{ duration: 0.3 }}
-                                            className="font-editorial-serif italic text-xs sm:text-[13px] text-slate-800 leading-snug"
+                                            exit={{ opacity: 0, y: -3 }}
+                                            transition={{ duration: 0.25 }}
+                                            className="font-editorial-serif italic text-xs text-slate-800 leading-snug line-clamp-2"
                                         >
                                             &ldquo;{quotes[activeQuoteIdx].text}&rdquo;
                                         </motion.p>
@@ -734,39 +761,28 @@ export default function AboutMeBento({ about, education = [] }) {
                                 </div>
 
                                 {/* Bottom: Authentic Personal Story Narrative */}
-                                <p className="font-editorial-serif text-xs sm:text-sm text-slate-700 leading-relaxed text-justify">
+                                <p className="font-editorial-serif text-xs text-slate-700 leading-relaxed text-justify line-clamp-3">
                                     {lang === 'id'
-                                        ? 'Bagi saya, arsitektur sistem backend dan olahraga ketahanan fisik memiliki filosofi yang sama: konsistensi, daya tahan, dan ketenangan menghadapi tekanan. Saat tidak sedang mengoptimasi query database atau pipeline server, saya me-recharge energi dengan menaklukkan tanjakan trail run di alam terbuka, menyalurkan fokus lewat Muay Thai, atau menikmati kesabaran hening saat memancing.'
-                                        : 'To me, distributed backend engineering and endurance athletics share the exact same philosophy: consistency, resilience, and calm focus under pressure. When not optimizing database queries or server pipelines, I recharge by conquering mountain trail runs, channeling focus through Muay Thai, or practicing patient stillness while weekend fishing.'}
+                                        ? 'Bagi saya, arsitektur sistem backend dan olahraga ketahanan fisik memiliki filosofi yang sama: konsistensi, daya tahan, dan ketenangan menghadapi tekanan. Saat jeda coding, saya me-recharge energi lewat trail run di alam bebas, Muay Thai, atau kesabaran memancing.'
+                                        : 'To me, distributed backend engineering and endurance athletics share the exact same philosophy: consistency, resilience, and calm focus under pressure. When not optimizing servers, I recharge through mountain trail runs, Muay Thai, or weekend angling.'}
                                 </p>
                             </motion.div>
 
-                            {/* ── RIGHT COLUMN: Spotify Playlist & Real Interactive Audio Player (3.5 cols) ── */}
+                            {/* ── RIGHT COLUMN: Spotify Playlist & Real Interactive Audio Player (3 cols on desktop, Order 3 on mobile) ── */}
                             <motion.div 
-                                initial={{ opacity: 0, x: 10 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.7, delay: 0.3 }}
-                                className="lg:col-span-3 bg-slate-950 text-slate-100 rounded-2xl p-5 border border-slate-800 shadow-xl flex flex-col justify-between space-y-4 relative overflow-hidden"
+                                initial={{ opacity: 0, y: 16 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.45, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                                className="lg:col-span-3 order-3 lg:order-3 bg-white/95 rounded-2xl p-4 sm:p-5 border border-emerald-200/90 shadow-sm flex flex-col justify-between space-y-3 relative overflow-hidden"
                             >
-                                {/* Gentle slow background glow */}
-                                <motion.div 
-                                    animate={{ 
-                                        opacity: [0.15, 0.3, 0.15],
-                                        scale: [1, 1.1, 1]
-                                    }}
-                                    transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" }}
-                                    className="absolute -bottom-10 -right-10 w-44 h-44 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"
-                                />
-
                                 {/* Header: Jawa Holic Playlist */}
                                 <div className="space-y-2 relative z-10">
-                                    <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-                                        <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-400 font-bold flex items-center gap-1.5">
-                                            <Headphones size={13} className="text-emerald-400" />
+                                    <div className="flex items-center justify-between pb-1.5 border-b border-emerald-100">
+                                        <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-900 font-bold flex items-center gap-1.5">
+                                            <Headphones size={13} className="text-emerald-700" />
                                             <span>ON REPEAT &bull; JAWA HOLIC</span>
                                         </span>
-                                        <span className={`w-2 h-2 rounded-full ${isPlaying ? 'bg-emerald-400 animate-ping' : 'bg-slate-600'}`} />
+                                        <span className={`w-2 h-2 rounded-full ${isPlaying ? 'bg-emerald-500 animate-ping' : 'bg-slate-300'}`} />
                                     </div>
 
                                     {/* Track List */}
@@ -778,36 +794,36 @@ export default function AboutMeBento({ about, education = [] }) {
                                                     key={track.title}
                                                     onClick={() => changeTrack(tIdx)}
                                                     whileHover={{ x: 2 }}
-                                                    className={`w-full text-left p-2 rounded-lg transition-all flex items-center justify-between gap-2 ${
+                                                    className={`w-full text-left p-1.5 rounded-lg transition-all flex items-center justify-between gap-2 ${
                                                         isCurrent
-                                                            ? 'bg-emerald-950/80 text-white border border-emerald-600/50 shadow-sm'
-                                                            : 'hover:bg-slate-900 text-slate-400 hover:text-slate-200'
+                                                            ? 'bg-emerald-100/90 text-emerald-950 border border-emerald-300/80 shadow-2xs font-semibold'
+                                                            : 'hover:bg-emerald-50/70 text-slate-600 hover:text-slate-900'
                                                     }`}
                                                 >
                                                     <div className="flex items-center gap-2 min-w-0">
-                                                        <div className={`w-6 h-6 rounded flex items-center justify-center text-[10px] font-bold shrink-0 ${
-                                                            isCurrent ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-400'
+                                                        <div className={`w-5 h-5 rounded flex items-center justify-center text-[9px] font-bold shrink-0 ${
+                                                            isCurrent ? 'bg-emerald-700 text-white' : 'bg-slate-200 text-slate-600'
                                                         }`}>
                                                             {isCurrent && isPlaying ? (
-                                                                <span className="flex items-end gap-0.5 h-3">
-                                                                    <span className="w-0.5 h-full bg-slate-950 animate-pulse" />
-                                                                    <span className="w-0.5 h-2/3 bg-slate-950 animate-bounce" />
-                                                                    <span className="w-0.5 h-full bg-slate-950 animate-pulse" />
+                                                                <span className="flex items-end gap-0.5 h-2.5">
+                                                                    <span className="w-0.5 h-full bg-white animate-pulse" />
+                                                                    <span className="w-0.5 h-2/3 bg-white animate-bounce" />
+                                                                    <span className="w-0.5 h-full bg-white animate-pulse" />
                                                                 </span>
                                                             ) : (
-                                                                <Music size={11} />
+                                                                <Music size={10} />
                                                             )}
                                                         </div>
                                                         <div className="min-w-0">
-                                                            <p className={`text-xs font-bold truncate leading-tight ${isCurrent ? 'text-emerald-300' : 'text-slate-200'}`}>
+                                                            <p className={`text-[11px] font-bold truncate leading-tight ${isCurrent ? 'text-emerald-950' : 'text-slate-800'}`}>
                                                                 {track.title}
                                                             </p>
-                                                            <p className="text-[10px] text-slate-500 truncate font-mono">
+                                                            <p className="text-[9px] text-slate-500 truncate font-mono">
                                                                 {track.artist}
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <span className="text-[9.5px] font-mono text-slate-500 shrink-0">
+                                                    <span className="text-[9px] font-mono text-slate-500 shrink-0">
                                                         {track.durationStr}
                                                     </span>
                                                 </motion.button>
@@ -816,108 +832,117 @@ export default function AboutMeBento({ about, education = [] }) {
                                     </div>
                                 </div>
 
-                                {/* Integrated Now Playing Player with Vinyl Disc Spin Animation */}
-                                <div className="bg-slate-900/90 rounded-xl p-3.5 border border-slate-800 space-y-3 relative z-10 shadow-lg">
-                                    <div className="flex items-center justify-between text-[10px] font-mono text-slate-400">
-                                        <span className="text-emerald-400 font-bold uppercase flex items-center gap-1.5">
-                                            <span className={`w-1.5 h-1.5 rounded-full ${isPlaying ? 'bg-emerald-400 animate-pulse' : 'bg-slate-600'}`} />
+                                {/* Integrated Mini Player Console */}
+                                <div className="bg-gradient-to-r from-emerald-950 via-slate-900 to-emerald-950 text-white rounded-xl p-2.5 border border-emerald-800/60 space-y-2 relative z-10 shadow-md">
+                                    <div className="flex items-center justify-between text-[9px] font-mono text-emerald-300">
+                                        <span className="font-bold uppercase flex items-center gap-1.5">
+                                            <span className={`w-1.5 h-1.5 rounded-full ${isPlaying ? 'bg-emerald-400 animate-pulse' : 'bg-slate-500'}`} />
                                             {isPlaying ? 'PLAYING NOW' : 'PLAYER READY'}
                                         </span>
                                         <button 
                                             onClick={toggleMute}
-                                            className="text-slate-400 hover:text-emerald-400 transition-colors p-1"
+                                            className="text-slate-400 hover:text-emerald-400 transition-colors p-0.5"
                                             title={isMuted ? 'Unmute' : 'Mute'}
                                         >
-                                            {isMuted ? <VolumeX size={13} className="text-rose-400" /> : <Volume2 size={13} />}
+                                            {isMuted ? <VolumeX size={12} className="text-rose-400" /> : <Volume2 size={12} />}
                                         </button>
                                     </div>
 
-                                    {/* Song Details + Chill Vinyl Disc */}
-                                    <div className="flex items-center gap-3">
-                                        {/* Spinning Vinyl Record (Slow Chill Rotation) */}
-                                        <motion.div
-                                            animate={{ rotate: isPlaying ? 360 : 0 }}
-                                            transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
-                                            className="w-11 h-11 rounded-full bg-slate-950 border-2 border-slate-700/80 flex items-center justify-center shrink-0 shadow-lg relative"
-                                        >
-                                            <Disc size={28} className="text-slate-600" />
-                                            <div className="absolute w-3.5 h-3.5 rounded-full bg-emerald-500 flex items-center justify-center">
-                                                <div className="w-1 h-1 rounded-full bg-slate-950" />
-                                            </div>
-                                        </motion.div>
+                                    {/* Song Details + Mini Chill Vinyl Disc with Ambient Sound Aura */}
+                                    <div className="flex items-center gap-2.5">
+                                        <div className="relative shrink-0">
+                                            {/* Breathing Audio Aura behind vinyl when music is playing */}
+                                            {isPlaying && (
+                                                <motion.div
+                                                    animate={{ scale: [1, 1.4, 1], opacity: [0.35, 0.75, 0.35] }}
+                                                    transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
+                                                    className="absolute -inset-1 rounded-full bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-400 blur-sm pointer-events-none"
+                                                />
+                                            )}
+                                            <motion.div
+                                                animate={{ rotate: isPlaying ? 360 : 0 }}
+                                                transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
+                                                className="w-9 h-9 rounded-full bg-slate-950 border border-slate-700 flex items-center justify-center shrink-0 shadow-md relative z-10"
+                                            >
+                                                <Disc size={22} className={isPlaying ? "text-slate-400" : "text-slate-600"} />
+                                                <div className="absolute w-2.5 h-2.5 rounded-full bg-emerald-500 flex items-center justify-center">
+                                                    <div className="w-1 h-1 rounded-full bg-slate-950" />
+                                                </div>
+                                            </motion.div>
+                                        </div>
 
                                         <div className="min-w-0 flex-1">
-                                            <h4 className="font-bold text-sm text-slate-100 truncate">
+                                            <h4 className="font-bold text-xs text-white truncate leading-tight">
                                                 {activeTrack.title}
                                             </h4>
-                                            <p className="text-xs text-emerald-400 font-mono truncate">
-                                                {activeTrack.artist} &mdash; <span className="text-slate-400">{activeTrack.album}</span>
+                                            <p className="text-[10px] text-emerald-400 font-mono truncate">
+                                                {activeTrack.artist}
                                             </p>
                                         </div>
                                     </div>
 
-                                    {/* Smooth Ocean Wave Equalizer Bars */}
-                                    <div className="h-6 flex items-end justify-between gap-1 px-1 py-0.5 bg-slate-950/60 rounded border border-slate-800/80">
-                                        {[20, 50, 85, 60, 35, 95, 70, 45, 90, 40, 75, 55, 90, 65, 30, 80].map((h, i) => {
+                                    {/* Equalizer Wave Bars */}
+                                    <div className="h-4 flex items-end justify-between gap-0.5 px-1 bg-slate-950/70 rounded border border-slate-800/80">
+                                        {[25, 60, 85, 45, 95, 70, 40, 90, 50, 80, 60, 90, 35, 75].map((h, i) => {
                                             const dynamicHeight = isPlaying 
-                                                ? Math.max(18, (h * ((i % 3) + 1) + (currentTime * 12)) % 100) 
-                                                : 18;
+                                                ? Math.max(20, (h * ((i % 3) + 1) + (currentTime * 12)) % 100) 
+                                                : 20;
                                             return (
                                                 <span
                                                     key={i}
                                                     style={{
                                                         height: `${dynamicHeight}%`,
-                                                        transition: 'height 0.3s ease-out'
+                                                        transition: 'height 0.25s ease-out'
                                                     }}
-                                                    className={`w-1 rounded-full ${isPlaying ? 'bg-emerald-400' : 'bg-slate-700'}`}
+                                                    className={`w-0.5 sm:w-1 rounded-full ${isPlaying ? 'bg-emerald-400' : 'bg-slate-700'}`}
                                                 />
                                             );
                                         })}
                                     </div>
 
-                                    {/* Interactive Clickable Progress Bar */}
-                                    <div className="space-y-1">
+                                    {/* Interactive Progress Bar */}
+                                    <div className="space-y-0.5">
                                         <div 
                                             onClick={handleSeek}
-                                            className="w-full h-2 bg-slate-800 hover:bg-slate-700 rounded-full overflow-hidden cursor-pointer relative group/bar transition-colors"
+                                            className="w-full h-1.5 bg-slate-800 hover:bg-slate-700 rounded-full overflow-hidden cursor-pointer relative"
                                         >
                                             <div 
                                                 className="h-full bg-emerald-400 rounded-full transition-all duration-150" 
                                                 style={{ width: `${progressPercentage}%` }} 
                                             />
                                         </div>
-                                        <div className="flex items-center justify-between text-[9px] font-mono text-slate-500">
+                                        <div className="flex items-center justify-between text-[8.5px] font-mono text-slate-400">
                                             <span>{formatTime(currentTime)}</span>
                                             <span>{duration > 0 ? formatTime(duration) : activeTrack.durationStr}</span>
                                         </div>
                                     </div>
 
-                                    {/* Player Controls */}
-                                    <div className="flex items-center justify-center gap-3 pt-1">
+                                    {/* Controls */}
+                                    <div className="flex items-center justify-center gap-2 pt-0.5">
                                         <button
                                             onClick={prevTrack}
-                                            className="text-slate-400 hover:text-white transition-colors p-1"
+                                            className="text-slate-400 hover:text-white transition-colors p-0.5"
                                             aria-label="Previous track"
                                         >
-                                            <SkipBack size={16} />
+                                            <SkipBack size={14} />
                                         </button>
                                         <button
                                             onClick={togglePlay}
-                                            className="w-9 h-9 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 flex items-center justify-center transition-all shadow-md active:scale-95"
+                                            className="w-7 h-7 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 flex items-center justify-center transition-all shadow-sm active:scale-95"
                                             aria-label={isPlaying ? 'Pause' : 'Play'}
                                         >
                                             {isPlaying ? (
-                                                <Pause size={16} fill="currentColor" />
+                                                <Pause size={13} fill="currentColor" />
                                             ) : (
-                                                <Play size={16} fill="currentColor" className="ml-0.5" />
+                                                <Play size={13} fill="currentColor" className="ml-0.5" />
                                             )}
                                         </button>
                                         <button
                                             onClick={nextTrack}
-                                            className="text-slate-400 hover:text-white transition-colors p-1"
+                                            className="text-slate-400 hover:text-white transition-colors p-0.5"
                                             aria-label="Next track"
                                         >
-                                            <SkipForward size={16} />
+                                            <SkipForward size={14} />
                                         </button>
                                     </div>
                                 </div>

@@ -6,11 +6,10 @@ import ProjectBook from '@/Components/Portfolio/ProjectBook';
 import AnimatedSkillsLab from '@/Components/Portfolio/AnimatedSkillsLab';
 import AnimatedExperience from '@/Components/Portfolio/AnimatedExperience';
 import AboutMeBento from '@/Components/Portfolio/AboutMeBento';
+import ContactSection from '@/Components/Portfolio/ContactSection';
 import { 
     BookOpen, Briefcase, Wrench, Mail, FileDown, 
-    Send, MapPin, Phone, ExternalLink, 
-    Terminal, Glasses, List, CheckCircle2,
-    Zap, Sparkles
+    ExternalLink, List, Zap, Sparkles, Coffee, Headphones
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/Components/UI/SocialIcons';
 
@@ -21,17 +20,16 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
     // View mode for projects section: 'book' | 'table'
     const [projectViewMode, setProjectViewMode] = useState('book');
 
-    // Contact form state
-    const [contactForm, setContactForm] = useState({ name: '', email: '', subject: '', message: '' });
-    const [contactSent, setContactSent] = useState(false);
+    // Hero visual toggle: 'avatar' | 'photo'
+    const [heroVisual, setHeroVisual] = useState('avatar');
 
     // Dynamic rotating specialization badges
     const [roleIdx, setRoleIdx] = useState(0);
     const ROLES = [
-        lang === 'id' ? 'Enterprise Backend Architect' : 'Enterprise Backend Architect',
-        lang === 'id' ? 'Sistem Terdistribusi & REST API' : 'Distributed Systems & REST APIs',
-        lang === 'id' ? 'AI / RAG Vector Pipeline Builder' : 'AI / RAG Vector Pipeline Builder',
-        lang === 'id' ? 'High-Throughput Node.js & Laravel' : 'High-Throughput Node.js & Laravel'
+        lang === 'id' ? 'Enterprise Backend' : 'Enterprise Backend',
+        lang === 'id' ? 'Sistem Terdistribusi' : 'Distributed Systems',
+        lang === 'id' ? 'REST API & Database' : 'REST APIs & Databases',
+        lang === 'id' ? 'Node.js & Laravel' : 'Node.js & Laravel'
     ];
 
     useEffect(() => {
@@ -40,13 +38,6 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
         }, 3200);
         return () => clearInterval(timer);
     }, [ROLES.length]);
-
-    const handleContactSubmit = (e) => {
-        e.preventDefault();
-        const mailtoUrl = `mailto:nanangaditya2001@gmail.com?subject=${encodeURIComponent(contactForm.subject || 'Portfolio Inquiry')}&body=${encodeURIComponent(`From: ${contactForm.name} (${contactForm.email})\n\n${contactForm.message}`)}`;
-        window.location.href = mailtoUrl;
-        setContactSent(true);
-    };
 
     const scrollTo = (id) => {
         const el = document.getElementById(id);
@@ -98,17 +89,21 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                     </div>
 
                     <div className="grid lg:grid-cols-12 gap-8 items-stretch">
-                        {/* Left: Main Editorial Statement Sheet */}
-                        <div className="lg:col-span-7 desk-sheet p-8 sm:p-10 flex flex-col justify-between space-y-6 bg-white/95 h-full">
-                            <div className="space-y-4">
-                                <div className="flex flex-wrap items-center gap-2">
-                                    <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-semibold bg-emerald-50/80 px-2.5 py-1 rounded-md border border-emerald-200/80">
+                        {/* ── LEFT: CONVERSATIONAL & STYLISH EDITORIAL INTRO (7 COLS on desktop, Order 2 on mobile) ── */}
+                        <div className="lg:col-span-7 order-2 lg:order-1 desk-sheet p-8 sm:p-10 flex flex-col justify-between space-y-6 bg-white/95 h-full relative overflow-hidden border border-emerald-200/80 shadow-xl">
+                            {/* Ambient Subtle Studio Glow */}
+                            <div className="absolute -top-14 -left-14 w-48 h-48 bg-emerald-400/15 rounded-full blur-3xl pointer-events-none" />
+
+                            <div className="space-y-4 relative z-10">
+                                {/* Top Live Badges - Strictly Side-by-Side (No wrapping or jumping) */}
+                                <div className="flex items-center gap-2 flex-nowrap overflow-x-auto no-scrollbar py-0.5">
+                                    <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-900 font-bold bg-emerald-100/90 px-3 py-1 rounded-full border border-emerald-300 shadow-2xs shrink-0 whitespace-nowrap">
                                         <span className="inline-block w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
-                                        <span>{lang === 'id' ? 'Surabaya, Indonesia • Siap untuk Backend Enterprise' : 'Surabaya, Indonesia • Available for Enterprise Backend'}</span>
+                                        <span>{lang === 'id' ? 'Surabaya, ID • Backend Engineer' : 'Surabaya, ID • Backend Engineer'}</span>
                                     </div>
                                     
-                                    {/* Animated dynamic specialization pill */}
-                                    <div className="h-6 overflow-hidden flex items-center">
+                                    {/* Animated dynamic specialization pill - strictly beside */}
+                                    <div className="h-6 overflow-hidden flex items-center shrink-0">
                                         <AnimatePresence mode="wait">
                                             <motion.span
                                                 key={roleIdx}
@@ -116,7 +111,7 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                                 animate={{ opacity: 1, y: 0 }}
                                                 exit={{ opacity: 0, y: -10 }}
                                                 transition={{ duration: 0.25, ease: "easeOut" }}
-                                                className="text-[11px] font-mono font-bold text-emerald-800 bg-emerald-100/70 border border-emerald-300/80 shadow-2xs px-2 py-0.5 rounded flex items-center gap-1"
+                                                className="text-[11px] font-mono font-bold text-amber-950 bg-amber-100/90 border border-amber-300 shadow-2xs px-2.5 py-0.5 rounded-full flex items-center gap-1 shrink-0 whitespace-nowrap"
                                             >
                                                 <Zap size={11} className="text-amber-600 fill-amber-500" />
                                                 {ROLES[roleIdx]}
@@ -125,25 +120,32 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                     </div>
                                 </div>
 
-                                <h1 className="font-editorial-title text-6xl sm:text-7xl lg:text-8xl text-slate-900 leading-none tracking-tight">
-                                    NANANG ADITYA
-                                </h1>
+                                {/* Creative Big Title with Warm Personality */}
+                                <div className="space-y-2 pt-1">
+                                    <p className="text-xs sm:text-sm font-mono tracking-widest uppercase text-emerald-800 font-bold flex items-center gap-2">
+                                        <Sparkles size={14} className="text-amber-500" />
+                                        <span>{lang === 'id' ? 'PORTOFOLIO // SALAM KENAL' : 'PORTFOLIO // WELCOME'}</span>
+                                    </p>
+                                    <h1 className="font-editorial-title text-6xl sm:text-7xl lg:text-8xl text-slate-900 leading-none tracking-tight">
+                                        NANANG <span className="font-editorial-serif italic font-normal text-emerald-800">Aditya</span>
+                                    </h1>
+                                    <p className="font-editorial-serif text-xl sm:text-2xl text-slate-700 italic">
+                                        {lang === 'id'
+                                            ? 'Merancang arsitektur sistem enterprise, aktif berolahraga lari, dan menikmati alam terbuka.'
+                                            : 'Designing enterprise systems, active runner, and exploring the outdoors.'}
+                                    </p>
+                                </div>
 
-                                <p className="font-editorial-serif text-2xl sm:text-3xl text-slate-800 leading-snug">
+                                {/* Conversational, Relaxed Bio Narrative */}
+                                <p className="font-editorial-serif text-base sm:text-lg text-slate-700 leading-relaxed text-justify">
                                     {lang === 'id'
-                                        ? 'Software Engineer yang berfokus pada arsitektur sistem enterprise, backend skala besar, dan infrastruktur data.'
-                                        : 'Software Engineer specializing in enterprise backends, distributed data pipelines, and mission-critical systems.'}
-                                </p>
-
-                                <p className="text-base text-slate-600 leading-relaxed text-justify">
-                                    {lang === 'id'
-                                        ? 'Memiliki 3+ tahun pengalaman produksi membangun platform pemantauan konstruksi jalan tol nasional di PT Jasa Marga (Persero) Tbk, sistem digitalisasi dokumen di PT Adira Dinamika Multi Finance, serta NLP similarity engine. Berpengalaman di Express.js, Node.js, Laravel, Spring Boot, PostgreSQL, dan Docker.'
-                                        : '3+ years production experience building national toll road construction monitoring systems at PT Jasa Marga, loan document digitization at Adira Finance, and academic NLP similarity engines. Proficient in Express.js, Node.js, Laravel, Spring Boot, PostgreSQL, and Docker.'}
+                                        ? 'Halo! Saya Nanang. Sebagai Backend Engineer dengan 3+ tahun pengalaman di PT Jasa Marga dan Adira Finance, saya berfokus membangun RESTful API berkinerja tinggi, sistem terdistribusi, dan manajemen database relasional. Di luar baris kode, saya menyeimbangkan fokus lewat olahraga lari rutin, mendaki gunung di alam terbuka, atau menikmati secangkir Americano dingin bersama alunan lagu Jawa santuy.'
+                                        : 'Hello! I am Nanang. As a Backend Engineer with 3+ years of production experience at PT Jasa Marga and Adira Finance, I specialize in high-throughput REST APIs, distributed systems, and robust database architectures. Beyond the code, I find balance through routine running, hiking mountain trails, or unwinding with an iced Americano and Jawa beats.'}
                                 </p>
                             </div>
 
-                            {/* CTAs */}
-                            <div className="space-y-3 pt-2">
+                            {/* CTAs & Social Links */}
+                            <div className="space-y-4 pt-2 relative z-10">
                                 <div className="flex flex-wrap items-center gap-3">
                                     <motion.button
                                         whileHover={{ scale: 1.03 }}
@@ -152,7 +154,7 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                         className="btn-primary shimmer-button shadow-md shadow-emerald-900/15"
                                     >
                                         <BookOpen size={17} />
-                                        <span>{lang === 'id' ? 'Buka Buku Proyek 3D' : 'Open 3D Project Book'}</span>
+                                        <span>{lang === 'id' ? 'Buka Jurnal Proyek' : 'Explore Project Dossier'}</span>
                                     </motion.button>
                                     <motion.button
                                         whileHover={{ scale: 1.02 }}
@@ -189,7 +191,7 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                 </div>
 
                                 {/* Direct Contact & Social Links */}
-                                <div className="pt-3 border-t border-slate-200 flex flex-wrap items-center gap-5 text-sm text-slate-600">
+                                <div className="pt-3 border-t border-slate-200/80 flex flex-wrap items-center gap-5 text-sm text-slate-600">
                                     <a
                                         href="https://github.com/Nanang212"
                                         target="_blank"
@@ -216,106 +218,135 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                             </div>
                         </div>
 
-                        {/* Right: Unified Developer Studio Card (Portrait + Credentials + Terminal Telemetry) */}
+                        {/* ── RIGHT: CREATIVE CHARACTER STAGE & LANYARD PASS (5 COLS on desktop, Order 1 on mobile) ── */}
                         <motion.div
                             whileHover={{ y: -3 }}
                             transition={{ duration: 0.2 }}
-                            className="lg:col-span-5 desk-sheet p-6 sm:p-7 flex flex-col justify-between bg-white/95 space-y-4 hover:shadow-2xl transition-shadow h-full"
+                            className="lg:col-span-5 order-1 lg:order-2 desk-sheet p-6 sm:p-7 flex flex-col justify-between bg-gradient-to-b from-white via-emerald-50/30 to-slate-50 space-y-4 hover:shadow-2xl transition-all h-full relative overflow-hidden border border-emerald-200/90"
                         >
-                            {/* Top Header of the Studio Card */}
-                            <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+                            {/* Ambient Studio Lighting Backdrop */}
+                            <div className="absolute -top-16 -right-16 w-44 h-44 bg-teal-400/20 rounded-full blur-3xl pointer-events-none" />
+
+                            {/* Top Stage Header: Title & Interactive Visual Switcher */}
+                            <div className="flex items-center justify-between pb-2 border-b border-slate-200/80 relative z-20">
                                 <div className="flex items-center gap-2">
                                     <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
                                     <span className="text-xs font-mono font-bold text-slate-800 tracking-wider">
-                                        ENGINEER DOSSIER &bull; ID #2001
+                                        CREATIVE STUDIO &bull; ID #2001
                                     </span>
                                 </div>
-                                <span className="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-ping" />
-                                    ONLINE
-                                </span>
+                                
+                                {/* Visual Toggle: AI Illustration vs Real Photo */}
+                                <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 text-[10px] font-mono">
+                                    <button
+                                        onClick={() => setHeroVisual('avatar')}
+                                        className={`px-2.5 py-1 rounded-lg font-bold transition-all ${
+                                            heroVisual === 'avatar' 
+                                                ? 'bg-emerald-600 text-white shadow-xs' 
+                                                : 'text-slate-600 hover:text-slate-900'
+                                        }`}
+                                    >
+                                        🎨 Karakter AI
+                                    </button>
+                                    <button
+                                        onClick={() => setHeroVisual('photo')}
+                                        className={`px-2.5 py-1 rounded-lg font-bold transition-all ${
+                                            heroVisual === 'photo' 
+                                                ? 'bg-emerald-600 text-white shadow-xs' 
+                                                : 'text-slate-600 hover:text-slate-900'
+                                        }`}
+                                    >
+                                        📸 Foto Asli
+                                    </button>
+                                </div>
                             </div>
 
-                            {/* Identity Bar: Side-by-Side Portrait & Verified Credentials */}
-                            <div className="flex items-center gap-4 bg-slate-50/80 p-3.5 rounded-xl border border-slate-200/70">
-                                {/* Transparent PNG portrait in compact, elegant framed badge */}
+                            {/* Main Stage: Character Display with Floating Lanyard Pass & Stickers */}
+                            <div className="relative w-full h-[320px] sm:h-[360px] flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-b from-emerald-100/40 via-teal-50/30 to-white/90 border border-emerald-200/70 shadow-inner">
+                                <AnimatePresence mode="wait">
+                                    {heroVisual === 'avatar' ? (
+                                        <motion.div
+                                            key="avatar-visual"
+                                            initial={{ opacity: 0, scale: 0.94, y: 10 }}
+                                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                                            exit={{ opacity: 0, scale: 0.94, y: -10 }}
+                                            transition={{ duration: 0.35 }}
+                                            className="relative w-full h-full flex items-center justify-center p-2"
+                                        >
+                                            {/* Stylized Illustrated Character */}
+                                            <motion.img
+                                                animate={{ y: [0, -8, 0] }}
+                                                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                                                src="/images/avatar-illustration.png"
+                                                alt="Nanang Aditya - Illustrated Avatar"
+                                                className="max-h-full max-w-full object-contain drop-shadow-2xl z-10"
+                                            />
+                                        </motion.div>
+                                    ) : (
+                                        <motion.div
+                                            key="photo-visual"
+                                            initial={{ opacity: 0, scale: 0.94, y: 10 }}
+                                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                                            exit={{ opacity: 0, scale: 0.94, y: -10 }}
+                                            transition={{ duration: 0.35 }}
+                                            className="relative w-full h-full flex items-center justify-center p-3"
+                                        >
+                                            <img
+                                                src="/images/personal/jogging.png"
+                                                alt="Nanang Aditya - GBK Senayan Running"
+                                                className="max-h-full max-w-full object-contain rounded-2xl drop-shadow-xl z-10"
+                                            />
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+
+                                {/* Playful Floating Lifestyle Stickers around Avatar (Cleanly placed away from face) */}
                                 <motion.div
-                                    whileHover={{ scale: 1.03 }}
-                                    transition={{ type: "spring", stiffness: 350, damping: 22 }}
-                                    className="w-24 h-28 sm:w-28 sm:h-32 shrink-0 rounded-lg bg-gradient-to-b from-emerald-50 to-emerald-100/50 flex items-end justify-center overflow-hidden border border-emerald-200/80 shadow-inner cursor-pointer"
+                                    animate={{ rotate: [-2, 1, -2] }}
+                                    transition={{ repeat: Infinity, duration: 4.2, ease: "easeInOut" }}
+                                    className="absolute top-3 left-3 z-20 px-2.5 py-1 rounded-full bg-teal-100/95 border border-teal-300 text-teal-950 font-mono text-[10px] font-bold shadow-md flex items-center gap-1"
                                 >
-                                    <img
-                                        src="/images/profile.png"
-                                        alt="Nanang Aditya Sutahar — Software Engineer"
-                                        width="240"
-                                        height="300"
-                                        fetchPriority="high"
-                                        className="max-h-full w-auto object-contain drop-shadow"
-                                    />
+                                    <Headphones size={11} className="text-teal-700" />
+                                    <span>Jawa Holic</span>
                                 </motion.div>
 
-                                {/* Credentials Breakdown */}
-                                <div className="flex-1 min-w-0 space-y-1.5 text-xs">
-                                    <div>
-                                        <div className="text-[10px] font-mono uppercase text-emerald-800 font-bold tracking-wider">
-                                            Software Engineer
-                                        </div>
-                                        <div className="font-bold text-slate-900 text-sm truncate">
-                                            NANANG ADITYA S.
-                                        </div>
-                                    </div>
+                                <motion.div
+                                    animate={{ rotate: [-3, -1, -3] }}
+                                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                                    className="absolute bottom-3 left-3 z-20 px-2.5 py-1 rounded-full bg-emerald-100/95 border border-emerald-300 text-emerald-950 font-mono text-[10px] font-bold shadow-md flex items-center gap-1"
+                                >
+                                    <span>🏃‍♂️</span>
+                                    <span>{lang === 'id' ? 'Olahraga Lari' : 'Active Runner'}</span>
+                                </motion.div>
 
-                                    <div className="space-y-1 text-[11px] text-slate-600 font-sans border-t border-slate-200/80 pt-1.5">
-                                        <div className="flex items-baseline justify-between gap-1">
-                                            <span className="text-slate-400 font-mono text-[10px]">ENTERPRISE:</span>
-                                            <span className="text-slate-800 font-medium truncate text-right">PT Jasa Marga</span>
-                                        </div>
-                                        <div className="flex items-baseline justify-between gap-1">
-                                            <span className="text-slate-400 font-mono text-[10px]">{lang === 'id' ? 'PENGALAMAN:' : 'EXPERIENCE:'}</span>
-                                            <span className="text-emerald-700 font-semibold font-mono text-[10px]">{lang === 'id' ? '3+ Tahun' : '3+ Years'}</span>
-                                        </div>
-                                        <div className="flex items-baseline justify-between gap-1">
-                                            <span className="text-slate-400 font-mono text-[10px]">{lang === 'id' ? 'PENDIDIKAN:' : 'EDUCATION:'}</span>
-                                            <span className="text-slate-800 font-medium text-right text-[11px]">S1 Esa Unggul &bull; D3 PENS</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                <motion.div
+                                    animate={{ rotate: [3, 1, 3] }}
+                                    transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
+                                    className="absolute bottom-3 right-3 z-20 px-2.5 py-1 rounded-full bg-amber-100/95 border border-amber-300 text-amber-950 font-mono text-[10px] font-bold shadow-md flex items-center gap-1"
+                                >
+                                    <Coffee size={11} className="text-amber-700" />
+                                    <span>Americano Peach</span>
+                                </motion.div>
                             </div>
 
-                            {/* Integrated Dark Terminal Telemetry Window */}
-                            <div className="flex-1 min-h-0 bg-slate-950 text-slate-100 font-mono text-xs rounded-xl p-4 flex flex-col justify-between border border-slate-800 shadow-lg space-y-2">
-                                <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-                                    <div className="flex items-center gap-1.5">
-                                        <div className="w-2.5 h-2.5 rounded-full bg-rose-500" />
-                                        <div className="w-2.5 h-2.5 rounded-full bg-amber-500" />
-                                        <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                            {/* Clean Engineering Dossier Summary Pill (Replaced confusing terminal) */}
+                            <div className="w-full bg-white/95 rounded-xl p-3 border border-emerald-200/90 font-mono text-xs flex items-center justify-between shadow-xs">
+                                <div className="flex items-center gap-2.5 min-w-0">
+                                    <div className="w-7 h-7 rounded-lg bg-emerald-100 flex items-center justify-center shrink-0 border border-emerald-300">
+                                        <Briefcase size={14} className="text-emerald-800" />
                                     </div>
-                                    <span className="text-[11px] text-slate-400 flex items-center gap-1">
-                                        <Terminal size={12} className="text-emerald-400" /> zsh &mdash; nanang@workspace
-                                    </span>
-                                </div>
-
-                                <div className="space-y-1.5 text-slate-300 text-[11px] sm:text-xs leading-relaxed py-1">
-                                    <p className="text-emerald-400 font-semibold flex items-center gap-1">
-                                        <span>$ neofetch --engineer</span>
-                                        <span className="inline-block w-1.5 h-3.5 bg-emerald-400 animate-pulse ml-1" />
-                                    </p>
-                                    <div className="grid grid-cols-1 gap-1 text-slate-300">
-                                        <p><span className="text-emerald-400 font-bold">Stack:</span> Express.js &bull; Laravel &bull; Spring Boot</p>
-                                        <p><span className="text-emerald-400 font-bold">Data:</span> PostgreSQL &bull; Prisma &bull; Redis &bull; MinIO</p>
-                                        <p><span className="text-emerald-400 font-bold">AI/RAG:</span> Cosine Similarity (41.8ms Latency)</p>
-                                        <p><span className="text-emerald-400 font-bold">DevOps:</span> Docker &bull; Linux &bull; Cloudflare Tunnel</p>
+                                    <div className="min-w-0">
+                                        <p className="font-bold text-slate-900 text-xs truncate">
+                                            PT Jasa Marga (Persero) Tbk
+                                        </p>
+                                        <p className="text-[10px] text-slate-500 truncate">
+                                            Backend Developer &bull; 3+ {lang === 'id' ? 'Tahun Pengalaman' : 'Years Experience'}
+                                        </p>
                                     </div>
                                 </div>
-
-                                <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
-                                    <span className="flex items-center gap-1.5 text-slate-400">
-                                        <Glasses size={13} className="text-emerald-400" /> Developer Desk Spec
-                                    </span>
-                                    <span className="text-emerald-400 font-semibold font-mono text-[10px] flex items-center gap-1">
-                                        <Sparkles size={11} className="text-amber-400" /> 100% Production Verified
-                                    </span>
-                                </div>
+                                <span className="text-[10px] text-emerald-800 font-bold bg-emerald-100/90 px-2.5 py-1 rounded-full border border-emerald-300 shrink-0">
+                                    {lang === 'id' ? 'Terverifikasi' : 'Verified'}
+                                </span>
                             </div>
                         </motion.div>
                     </div>
@@ -334,16 +365,16 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                     <span>{lang === 'id' ? 'Laboratorium Rekayasa & Portofolio Sistem' : 'Engineering Lab & System Portfolio'}</span>
                                 </div>
                                 <h2 className="font-editorial-title text-4xl sm:text-6xl text-slate-900 tracking-tight leading-none">
-                                    {lang === 'id' ? 'BUKU PROYEK 3D INTERAKTIF' : '3D INTERACTIVE PROJECT BOOK'}
+                                    {lang === 'id' ? 'JURNAL REKAYASA PROYEK' : 'ENGINEERING PROJECT DOSSIER'}
                                 </h2>
-                                <p className="font-editorial-serif text-base sm:text-lg text-slate-600 mt-2 max-w-2xl italic">
+                                <p className="font-editorial-serif text-base sm:text-lg text-slate-600 mt-2 max-w-2xl leading-relaxed">
                                     {lang === 'id'
-                                        ? 'Terinspirasi oleh Paper by WeTransfer: pilih jurnal Moleskine di rak bawah untuk membuka lembaran spesifikasi sistem dan screenshot antarmuka.'
-                                        : 'Paper by WeTransfer journal shelf: select a notebook to open two-page engineering lab sheets and live schematics.'}
+                                        ? 'Dokumentasi terstruktur arsitektur sistem enterprise, pipeline transaksi, dan spesifikasi antarmuka platform yang telah dirilis ke tahap produksi.'
+                                        : 'Curated technical dossiers of enterprise backend architectures, transaction pipelines, and production systems.'}
                                 </p>
                             </div>
 
-                            {/* View Switcher: Book vs Table Archive */}
+                            {/* View Switcher: Journal vs Table Archive */}
                             <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-lg self-start md:self-end shrink-0 border border-slate-200">
                                 <button
                                     onClick={() => setProjectViewMode('book')}
@@ -354,7 +385,7 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                     }`}
                                 >
                                     <BookOpen size={14} />
-                                    <span>{lang === 'id' ? 'Buku 3D' : '3D Book'}</span>
+                                    <span>{lang === 'id' ? 'Mode Jurnal' : 'Journal Mode'}</span>
                                 </button>
                                 <button
                                     onClick={() => setProjectViewMode('table')}
@@ -374,68 +405,145 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                         {projectViewMode === 'book' ? (
                             <ProjectBook projects={projects} />
                         ) : (
-                            /* Table Archive Mode */
-                            <div className="overflow-x-auto border border-slate-200 rounded-xl bg-white mt-4">
-                                <table className="w-full text-left text-sm text-slate-800">
-                                    <thead className="bg-slate-50 text-xs font-mono uppercase text-slate-500 border-b border-slate-200">
-                                        <tr>
-                                            <th className="py-3.5 px-4 font-semibold">No</th>
-                                            <th className="py-3.5 px-4 font-semibold">{lang === 'id' ? 'Proyek' : 'Project'}</th>
-                                            <th className="py-3.5 px-4 font-semibold hidden sm:table-cell">Stack</th>
-                                            <th className="py-3.5 px-4 font-semibold hidden md:table-cell">{lang === 'id' ? 'Deskripsi Rekayasa' : 'Engineering Description'}</th>
-                                            <th className="py-3.5 px-4 font-semibold text-right">{lang === 'id' ? 'Tautan' : 'Links'}</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-slate-100 font-sans">
-                                        {projects.map((p, idx) => (
-                                            <tr key={p.id} className="hover:bg-slate-50/80 transition-colors">
-                                                <td className="py-3.5 px-4 font-mono text-xs text-slate-400">
-                                                    {(idx + 1).toString().padStart(2, '0')}
-                                                </td>
-                                                <td className="py-3.5 px-4 font-semibold text-slate-900">
-                                                    {lang === 'id' ? p.title_id : p.title_en}
-                                                </td>
-                                                <td className="py-3.5 px-4 hidden sm:table-cell">
-                                                    <div className="flex flex-wrap gap-1">
-                                                        {(p.tech_stack || []).slice(0, 3).map((t) => (
-                                                            <span key={t} className="text-xs px-2 py-0.5 bg-slate-100 text-slate-700 rounded">
-                                                                {t}
-                                                            </span>
-                                                        ))}
-                                                    </div>
-                                                </td>
-                                                <td className="py-3.5 px-4 hidden md:table-cell text-xs text-slate-600 max-w-sm line-clamp-2">
+                            /* Table / Card Archive Mode */
+                            <div className="mt-4">
+                                {/* Mobile View (< sm): Responsive Card List (No horizontal scroll, neatly arranged stack) */}
+                                <div className="sm:hidden space-y-3">
+                                    {projects.map((p, idx) => (
+                                        <div 
+                                            key={p.id}
+                                            className="bg-white border border-slate-200/90 rounded-xl p-4 shadow-sm hover:border-emerald-500/40 transition-colors"
+                                        >
+                                            {/* Header: Number, Title, and Action Links */}
+                                            <div className="flex items-start justify-between gap-2">
+                                                <div className="flex items-start gap-2.5 min-w-0">
+                                                    <span className="font-mono text-xs font-bold text-emerald-800 bg-emerald-100/70 border border-emerald-300/60 px-2 py-0.5 rounded shrink-0 mt-0.5">
+                                                        {(idx + 1).toString().padStart(2, '0')}
+                                                    </span>
+                                                    <h4 className="font-semibold text-slate-900 text-sm leading-snug">
+                                                        {lang === 'id' ? p.title_id : p.title_en}
+                                                    </h4>
+                                                </div>
+
+                                                {/* Action Links */}
+                                                <div className="flex items-center gap-1.5 shrink-0">
+                                                    {p.demo_url && (
+                                                        <a
+                                                            href={p.demo_url}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/80 px-2.5 py-1 rounded text-xs font-semibold inline-flex items-center gap-1 transition-colors"
+                                                            title="Live Demo"
+                                                        >
+                                                            <span>Live</span>
+                                                            <ExternalLink size={12} />
+                                                        </a>
+                                                    )}
+                                                    {p.github_url && (
+                                                        <a
+                                                            href={p.github_url}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="text-slate-600 bg-slate-100 hover:bg-slate-200 border border-slate-200 px-2 py-1 rounded text-xs inline-flex items-center transition-colors"
+                                                            title="Source Code"
+                                                        >
+                                                            <GithubIcon size={13} />
+                                                        </a>
+                                                    )}
+                                                </div>
+                                            </div>
+
+                                            {/* Description */}
+                                            {(p.description_id || p.description_en) && (
+                                                <p className="text-xs text-slate-600 font-editorial-serif leading-relaxed line-clamp-2 mt-2">
                                                     {lang === 'id' ? p.description_id : p.description_en}
-                                                </td>
-                                                <td className="py-3.5 px-4 text-right">
-                                                    <div className="flex items-center justify-end gap-2">
-                                                        {p.demo_url && (
-                                                            <a
-                                                                href={p.demo_url}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                className="text-emerald-700 hover:underline inline-flex items-center gap-1 text-xs font-semibold"
-                                                            >
-                                                                <span>Live</span>
-                                                                <ExternalLink size={12} />
-                                                            </a>
-                                                        )}
-                                                        {p.github_url && (
-                                                            <a
-                                                                href={p.github_url}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                className="text-slate-500 hover:text-slate-900 inline-flex items-center gap-1 text-xs ml-2"
-                                                            >
-                                                                <GithubIcon size={14} />
-                                                            </a>
-                                                        )}
-                                                    </div>
-                                                </td>
+                                                </p>
+                                            )}
+
+                                            {/* Tech Stack List - Arranged neatly */}
+                                            {(p.tech_stack || []).length > 0 && (
+                                                <div className="mt-3 pt-2.5 border-t border-slate-100 flex flex-wrap items-center gap-1.5">
+                                                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50/80 px-1.5 py-0.5 rounded">
+                                                        STACK
+                                                    </span>
+                                                    {p.tech_stack.map((t) => (
+                                                        <span 
+                                                            key={t}
+                                                            className="text-[11px] font-mono px-2 py-0.5 bg-slate-50 text-slate-700 rounded-md border border-slate-200/80"
+                                                        >
+                                                            {t}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Desktop View (>= sm): Classic High-Density Table */}
+                                <div className="hidden sm:block overflow-x-auto border border-slate-200 rounded-xl bg-white shadow-sm">
+                                    <table className="w-full text-left text-sm text-slate-800">
+                                        <thead className="bg-slate-50 text-xs font-mono uppercase text-slate-500 border-b border-slate-200">
+                                            <tr>
+                                                <th className="py-3.5 px-4 font-semibold w-12">No</th>
+                                                <th className="py-3.5 px-4 font-semibold">{lang === 'id' ? 'Proyek' : 'Project'}</th>
+                                                <th className="py-3.5 px-4 font-semibold">{lang === 'id' ? 'Teknologi' : 'Tech Stack'}</th>
+                                                <th className="py-3.5 px-4 font-semibold hidden md:table-cell">{lang === 'id' ? 'Deskripsi Rekayasa' : 'Engineering Description'}</th>
+                                                <th className="py-3.5 px-4 font-semibold text-right">{lang === 'id' ? 'Tautan' : 'Links'}</th>
                                             </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody className="divide-y divide-slate-100 font-sans">
+                                            {projects.map((p, idx) => (
+                                                <tr key={p.id} className="hover:bg-slate-50/80 transition-colors">
+                                                    <td className="py-3.5 px-4 font-mono text-xs text-slate-400">
+                                                        {(idx + 1).toString().padStart(2, '0')}
+                                                    </td>
+                                                    <td className="py-3.5 px-4 font-semibold text-slate-900">
+                                                        {lang === 'id' ? p.title_id : p.title_en}
+                                                    </td>
+                                                    <td className="py-3.5 px-4">
+                                                        <div className="flex flex-wrap gap-1 max-w-xs">
+                                                            {(p.tech_stack || []).map((t) => (
+                                                                <span key={t} className="text-xs px-2 py-0.5 bg-slate-100 text-slate-700 rounded-md border border-slate-200/60 font-mono">
+                                                                    {t}
+                                                                </span>
+                                                            ))}
+                                                        </div>
+                                                    </td>
+                                                    <td className="py-3.5 px-4 hidden md:table-cell text-xs text-slate-600 max-w-sm line-clamp-2">
+                                                        {lang === 'id' ? p.description_id : p.description_en}
+                                                    </td>
+                                                    <td className="py-3.5 px-4 text-right">
+                                                        <div className="flex items-center justify-end gap-2">
+                                                            {p.demo_url && (
+                                                                <a
+                                                                    href={p.demo_url}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    className="text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/80 px-2.5 py-1 rounded text-xs font-semibold inline-flex items-center gap-1 transition-colors"
+                                                                >
+                                                                    <span>Live</span>
+                                                                    <ExternalLink size={12} />
+                                                                </a>
+                                                            )}
+                                                            {p.github_url && (
+                                                                <a
+                                                                    href={p.github_url}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    className="text-slate-600 bg-slate-100 hover:bg-slate-200 border border-slate-200 p-1 rounded inline-flex items-center transition-colors"
+                                                                    title="Source Code"
+                                                                >
+                                                                    <GithubIcon size={14} />
+                                                                </a>
+                                                            )}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         )}
                     </div>
@@ -478,7 +586,7 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                    4. TECHNICAL SKILLS SECTION (#skills) - COMPACT STUDIO LAB
                    ══════════════════════════════════════════════════════════════ */}
                 <section id="skills" className="container-max scroll-mt-20">
-                    <div className="desk-sheet p-6 sm:p-8 space-y-5 bg-white/95">
+                    <div className="desk-sheet p-3.5 sm:p-6 lg:p-8 space-y-4 sm:space-y-5 bg-white/95">
                         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 pb-3">
                             <div>
                                 <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-semibold mb-1">
@@ -513,166 +621,9 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
 
 
                 {/* ══════════════════════════════════════════════════════════════
-                   6. CONTACT & MESSAGE SECTION (#contact)
+                   6. CONTACT & HIRE ME DOSSIER SECTION (#contact)
                    ══════════════════════════════════════════════════════════════ */}
-                <section id="contact" className="container-max scroll-mt-20">
-                    <div className="desk-sheet p-8 sm:p-12 space-y-8 bg-white/95">
-                        <div>
-                            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-semibold mb-1">
-                                <Mail size={14} className="text-emerald-700" />
-                                <span>{lang === 'id' ? 'Jalur Komunikasi Langsung' : 'Direct Communication Channel'}</span>
-                            </div>
-                            <h2 className="font-editorial-title text-4xl sm:text-6xl text-slate-900 tracking-tight leading-none">
-                                {lang === 'id' ? 'HUBUNGI SAYA' : 'GET IN TOUCH'}
-                            </h2>
-                            <p className="font-editorial-serif text-base sm:text-lg text-slate-600 mt-2 italic">
-                                {lang === 'id'
-                                    ? 'Terbuka untuk diskusi arsitektur sistem, kolaborasi rekayasa backend, atau peluang karir.'
-                                    : 'Open for system architecture inquiries, backend engineering collaborations, or opportunities.'}
-                            </p>
-                        </div>
-
-                        <div className="grid md:grid-cols-12 gap-8 items-start">
-                            {/* Left Direct Coordinates */}
-                            <div className="md:col-span-5 space-y-4">
-                                <div className="p-6 bg-slate-50 rounded-xl border border-slate-200 space-y-4 text-sm">
-                                    <div>
-                                        <span className="text-xs font-mono uppercase text-slate-400 block mb-1">
-                                            {lang === 'id' ? 'Email Langsung' : 'Direct Email'}
-                                        </span>
-                                        <a
-                                            href="mailto:nanangaditya2001@gmail.com"
-                                            className="text-base font-semibold text-slate-900 hover:text-emerald-700 flex items-center gap-2"
-                                        >
-                                            <Mail size={16} className="text-emerald-700" /> nanangaditya2001@gmail.com
-                                        </a>
-                                    </div>
-
-                                    <div>
-                                        <span className="text-xs font-mono uppercase text-slate-400 block mb-1">
-                                            {lang === 'id' ? 'Telepon / WhatsApp' : 'Phone / WhatsApp'}
-                                        </span>
-                                        <a
-                                            href="tel:+6285790663367"
-                                            className="text-base font-semibold text-slate-900 hover:text-emerald-700 flex items-center gap-2"
-                                        >
-                                            <Phone size={16} className="text-emerald-700" /> +62 857-9066-3367
-                                        </a>
-                                    </div>
-
-                                    <div>
-                                        <span className="text-xs font-mono uppercase text-slate-400 block mb-1">
-                                            {lang === 'id' ? 'Lokasi Kerja' : 'Work Location'}
-                                        </span>
-                                        <p className="text-base font-semibold text-slate-900 flex items-center gap-2">
-                                            <MapPin size={16} className="text-emerald-700" /> Surabaya, East Java, Indonesia
-                                        </p>
-                                    </div>
-
-                                    <div className="pt-2 border-t border-slate-200 flex items-center gap-4">
-                                        <a
-                                            href="https://github.com/Nanang212"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="hover:text-emerald-700 flex items-center gap-1.5 text-xs font-semibold"
-                                        >
-                                            <GithubIcon size={16} /> GitHub Profile
-                                        </a>
-                                        <a
-                                            href="https://www.linkedin.com/in/nanang-aditya/"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="hover:text-emerald-700 flex items-center gap-1.5 text-xs font-semibold"
-                                        >
-                                            <LinkedinIcon size={16} /> LinkedIn
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Right Message Form */}
-                            <div className="md:col-span-7">
-                                {contactSent ? (
-                                    <div className="p-8 bg-emerald-50 rounded-xl border border-emerald-200 text-center space-y-3">
-                                        <CheckCircle2 size={36} className="text-emerald-700 mx-auto" />
-                                        <h3 className="font-editorial-title text-2xl text-emerald-950">
-                                            {lang === 'id' ? 'Pesan Terkirim' : 'Message Dispatched'}
-                                        </h3>
-                                        <p className="text-xs text-emerald-800">
-                                            {lang === 'id'
-                                                ? 'Klien email Anda telah dibuka untuk mengirim pesan ini langsung ke nanangaditya2001@gmail.com.'
-                                                : 'Your email client has been opened to send this note directly to nanangaditya2001@gmail.com.'}
-                                        </p>
-                                    </div>
-                                ) : (
-                                    <form onSubmit={handleContactSubmit} className="space-y-4">
-                                        <div className="grid sm:grid-cols-2 gap-4">
-                                            <div className="space-y-1">
-                                                <label className="text-xs font-mono uppercase text-slate-500 font-semibold">
-                                                    {lang === 'id' ? 'Nama Pengirim' : 'Your Name'}
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    required
-                                                    value={contactForm.name}
-                                                    onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
-                                                    placeholder={lang === 'id' ? 'Nama Anda' : 'Your Name'}
-                                                    className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-emerald-600"
-                                                />
-                                            </div>
-                                            <div className="space-y-1">
-                                                <label className="text-xs font-mono uppercase text-slate-500 font-semibold">
-                                                    {lang === 'id' ? 'Alamat Email' : 'Email Address'}
-                                                </label>
-                                                <input
-                                                    type="email"
-                                                    required
-                                                    value={contactForm.email}
-                                                    onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
-                                                    placeholder={lang === 'id' ? 'email@perusahaan.com' : 'email@company.com'}
-                                                    className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-emerald-600"
-                                                />
-                                            </div>
-                                        </div>
-
-                                        <div className="space-y-1">
-                                            <label className="text-xs font-mono uppercase text-slate-500 font-semibold">
-                                                {lang === 'id' ? 'Subjek / Topik' : 'Subject / Topic'}
-                                            </label>
-                                            <input
-                                                type="text"
-                                                required
-                                                value={contactForm.subject}
-                                                onChange={(e) => setContactForm({ ...contactForm, subject: e.target.value })}
-                                                placeholder={lang === 'id' ? 'Diskusi Proyek / Kolaborasi' : 'Project Discussion / Collaboration'}
-                                                className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-emerald-600"
-                                            />
-                                        </div>
-
-                                        <div className="space-y-1">
-                                            <label className="text-xs font-mono uppercase text-slate-500 font-semibold">
-                                                {lang === 'id' ? 'Isi Pesan' : 'Message Body'}
-                                            </label>
-                                            <textarea
-                                                rows={4}
-                                                required
-                                                value={contactForm.message}
-                                                onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
-                                                placeholder={lang === 'id' ? 'Tuliskan pesan atau kebutuhan sistem Anda...' : 'Type your message or system requirements here...'}
-                                                className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-emerald-600 resize-none"
-                                            />
-                                        </div>
-
-                                        <button type="submit" className="btn-primary w-full sm:w-auto">
-                                            <Send size={15} />
-                                            <span>{lang === 'id' ? 'Kirim Pesan Sekarang' : 'Send Message Now'}</span>
-                                        </button>
-                                    </form>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <ContactSection />
 
             </div>
         </PortfolioLayout>

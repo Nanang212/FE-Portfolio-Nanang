@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { MessageSquare, X, Send } from 'lucide-react';
 
 export default function Assistant() {
@@ -7,7 +7,7 @@ export default function Assistant() {
   const [messages, setMessages] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem('assistant_chat') || '[]');
-    } catch (e) { return []; }
+    } catch { return []; }
   });
   const [loading, setLoading] = useState(false);
   const listRef = useRef(null);
@@ -41,7 +41,7 @@ export default function Assistant() {
       }
       const bullets = topMatches.map((it) => `• ${it.title}: ${it.summary}`).join('\n');
       return `Berdasarkan arsip teknis portfolio ini:\n${bullets}`;
-    } catch (err) {
+    } catch {
       return null;
     }
   };
@@ -69,7 +69,7 @@ export default function Assistant() {
         const data = await r.json();
         if (r.ok) reply = data.reply || null;
         else reply = data.hint || null;
-      } catch (err) {
+      } catch {
         reply = null;
       }
 
@@ -80,7 +80,7 @@ export default function Assistant() {
 
       const botMsg = { role: 'assistant', text: reply, ts: Date.now() };
       setMessages((prev) => [...prev, botMsg]);
-    } catch (err) {
+    } catch {
       const fb = await fallbackReplyFromKnowledge(userMsg.text);
       setMessages((prev) => [...prev, { role: 'assistant', text: fb || friendlyFallback, ts: Date.now() }]);
     } finally {
@@ -98,7 +98,7 @@ export default function Assistant() {
       {/* Expanded Dialog Box */}
       {open && (
         <div
-          className="mb-3 w-[22rem] sm:w-[24rem] max-w-[calc(100vw-2rem)] bg-[var(--surface)] border border-[var(--border)] shadow-xl flex flex-col h-[28rem] sm:h-[32rem]"
+          className="mb-3 w-[22rem] sm:w-[24rem] max-w-[calc(100vw-2rem)] bg-[var(--surface)] border border-[var(--border)] shadow-2xl flex flex-col h-[26rem] sm:h-[32rem] rounded-2xl overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-200"
           role="dialog"
           aria-label="Assistant Inquiry"
         >
@@ -143,7 +143,7 @@ export default function Assistant() {
                       setInput(q);
                       setTimeout(() => send(), 60);
                     }}
-                    className="px-2 py-1 bg-[var(--surface-subtle)] border border-[var(--border-subtle)] text-[var(--ink)] hover:border-[var(--accent)] transition-colors text-[11px]"
+                    className="px-2 py-1 bg-[var(--surface-subtle)] border border-[var(--border-subtle)] text-[var(--ink)] hover:border-[var(--accent)] transition-colors text-[11px] rounded"
                   >
                     {q}
                   </button>
@@ -160,7 +160,7 @@ export default function Assistant() {
                   {m.role === 'user' ? 'YOU' : 'ARCHIVE BOT'}
                 </span>
                 <div
-                  className={`p-3 max-w-[90%] whitespace-pre-wrap leading-relaxed ${
+                  className={`p-3 max-w-[90%] whitespace-pre-wrap leading-relaxed rounded-lg ${
                     m.role === 'user'
                       ? 'bg-[var(--accent)] text-[var(--accent-contrast)]'
                       : 'bg-[var(--surface-subtle)] text-[var(--ink)] border border-[var(--border-subtle)]'
@@ -187,12 +187,12 @@ export default function Assistant() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ketik pertanyaan..."
-              className="flex-1 px-3 py-2 text-xs bg-[var(--surface-subtle)] text-[var(--ink)] border border-[var(--border-subtle)] outline-none focus:border-[var(--accent)]"
+              className="flex-1 px-3 py-2 text-xs bg-[var(--surface-subtle)] text-[var(--ink)] border border-[var(--border-subtle)] rounded outline-none focus:border-[var(--accent)]"
             />
             <button
               type="submit"
               disabled={loading || !input.trim()}
-              className="btn-primary !p-2 disabled:opacity-40"
+              className="btn-primary !p-2 disabled:opacity-40 rounded"
               aria-label="Send Query"
             >
               <Send size={14} />
@@ -204,11 +204,26 @@ export default function Assistant() {
       {/* Toggle button */}
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="flex items-center gap-2 px-4 py-2.5 bg-[var(--accent)] text-[var(--accent-contrast)] hover:opacity-95 transition-all text-xs font-semibold uppercase tracking-wider"
+        className="group relative flex items-center justify-center gap-2 w-12 h-12 sm:w-auto sm:h-auto sm:px-4 sm:py-2.5 rounded-full bg-[var(--accent)] text-[var(--accent-contrast)] hover:opacity-95 shadow-lg shadow-emerald-950/25 active:scale-95 transition-all focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2"
         aria-label="Toggle Portfolio Assistant"
+        title="Portfolio Assistant"
       >
-        <MessageSquare size={15} />
-        <span>ASSISTANT</span>
+        {/* Pulsing beacon dot (visible when closed) */}
+        {!open && (
+          <span className="absolute top-0 right-0 sm:top-1 sm:right-1 flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400 border border-white" />
+          </span>
+        )}
+
+        {open ? (
+          <X size={20} className="transition-transform duration-200" />
+        ) : (
+          <MessageSquare size={19} className="transition-transform duration-200 group-hover:scale-110" />
+        )}
+        <span className="hidden sm:inline font-mono font-bold tracking-wider text-[11px]">
+          ASSISTANT
+        </span>
       </button>
     </div>
   );

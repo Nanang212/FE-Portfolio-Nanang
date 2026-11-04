@@ -461,48 +461,85 @@ export default function AnimatedSkillsLab() {
                 })}
             </div>
 
-            {/* ── 2. SUB-TECHNOLOGY TABS OF THE ACTIVE DOMAIN ── */}
-            <div className="flex items-center justify-between gap-2 overflow-x-auto p-1 bg-slate-100 rounded-lg border border-slate-200">
-                <div className="flex items-center gap-1 min-w-0 overflow-x-auto py-0.5">
-                    <span className="text-[10px] font-mono font-bold uppercase text-slate-500 px-2 shrink-0 flex items-center gap-1">
-                        <Activity size={11} className="text-emerald-700" />
-                        <span>{lang === 'id' ? 'Pilih Teknologi' : 'Select Tech'}:</span>
-                    </span>
-
-                    {currentDomain.technologies.map((tech) => {
-                        const isTechActive = selectedTech === tech;
-                        return (
-                            <motion.button
-                                key={tech}
-                                onClick={() => setSelectedTech(tech)}
-                                whileHover={{ scale: 1.04 }}
-                                whileTap={{ scale: 0.96 }}
-                                className={`px-2.5 py-1 rounded text-[11px] font-mono font-semibold transition-all whitespace-nowrap relative ${
-                                    isTechActive
-                                        ? 'bg-emerald-700 text-white shadow-xs'
-                                        : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200'
-                                }`}
-                            >
-                                <span className="flex items-center gap-1.5">
-                                    <span className={`w-1.5 h-1.5 rounded-full ${isTechActive ? 'bg-white animate-ping' : 'bg-emerald-600'}`} />
-                                    <span>{tech}</span>
-                                </span>
-                            </motion.button>
-                        );
-                    })}
+            {/* ── 2. SUB-TECHNOLOGY TABS WITH ANIMATED CONTINUOUS RUNNING LIGHT LINE ── */}
+            <div className="relative overflow-hidden p-1.5 bg-gradient-to-r from-slate-50 via-emerald-50/50 to-slate-50 rounded-xl border border-emerald-200/90 shadow-2xs">
+                
+                {/* ── Animated Continuous Running Light Stream (Garis Lampu Menyala Berjalan di Bawah) ── */}
+                <div className="absolute inset-x-0 bottom-0 h-[2px] bg-emerald-200/50 overflow-hidden pointer-events-none">
+                    {/* Glowing traveling laser beam (bergerak memanjang mulus tanpa henti) */}
+                    <motion.div
+                        className="w-48 sm:w-72 h-full bg-gradient-to-r from-transparent via-emerald-400 to-transparent shadow-[0_0_12px_#10b981,0_0_4px_#34d399]"
+                        animate={{ x: ['-100%', '800%'] }}
+                        transition={{ repeat: Infinity, duration: 3.6, ease: "linear" }}
+                    />
                 </div>
 
-                <div className="hidden md:flex items-center gap-1 text-[10px] font-mono text-emerald-800 font-semibold px-2 shrink-0">
-                    <ShieldCheck size={12} className="text-emerald-700" />
-                    <span>{lang === 'id' ? 'Terverifikasi Produksi' : 'Production Verified'}</span>
+                {/* Top Subtle Counter-Pulse Shimmer Line */}
+                <div className="absolute inset-x-0 top-0 h-[1.5px] bg-emerald-200/40 overflow-hidden pointer-events-none">
+                    <motion.div
+                        className="w-40 h-full bg-gradient-to-r from-transparent via-teal-400 to-transparent shadow-[0_0_8px_#14b8a6]"
+                        animate={{ x: ['800%', '-100%'] }}
+                        transition={{ repeat: Infinity, duration: 4.8, ease: "linear" }}
+                    />
+                </div>
+
+                <div className="relative z-10 p-1 sm:p-1.5 space-y-2">
+                    {/* Header Bar: Label & Production Status Badge */}
+                    <div className="flex items-center justify-between gap-1.5 sm:gap-2 px-0.5 sm:px-1">
+                        <div className="flex items-center gap-1.5 sm:gap-2">
+                            <span className="text-[9.5px] sm:text-[10px] font-mono font-bold uppercase text-emerald-900 bg-emerald-100/90 px-2 sm:px-2.5 py-1 rounded-md border border-emerald-300/80 shrink-0 flex items-center gap-1.5 shadow-2xs">
+                                <Activity size={11} className="text-emerald-700 animate-pulse" />
+                                <span>{lang === 'id' ? 'Pilih Teknologi' : 'Select Tech'}:</span>
+                            </span>
+                            <span className="text-[10px] font-mono text-slate-500 hidden md:inline">
+                                ({currentDomain.technologies.length} {lang === 'id' ? 'stack terdaftar' : 'registered stacks'})
+                            </span>
+                        </div>
+
+                        {/* Production Verified Status Badge with Pulsing Live Node */}
+                        <div className="flex items-center gap-1 sm:gap-1.5 text-[9.5px] sm:text-[10px] font-mono text-emerald-900 font-bold bg-emerald-100/90 px-2 sm:px-2.5 py-1 rounded-md border border-emerald-300/80 shrink-0 shadow-2xs">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-ping" />
+                            <ShieldCheck size={12} className="text-emerald-700" />
+                            <span>{lang === 'id' ? 'Produksi Terverifikasi' : 'Production Verified'}</span>
+                        </div>
+                    </div>
+
+                    {/* Technology Pills: flex-wrap layout so all stack options are 100% visible without any horizontal scrolling */}
+                    <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 px-0.5 sm:px-1 pt-0.5">
+                        {currentDomain.technologies.map((tech) => {
+                            const isTechActive = selectedTech === tech;
+                            return (
+                                <motion.button
+                                    key={tech}
+                                    onClick={() => setSelectedTech(tech)}
+                                    whileHover={{ scale: 1.04, y: -1 }}
+                                    whileTap={{ scale: 0.96 }}
+                                    className={`px-2.5 sm:px-3 py-1.5 rounded-lg text-[10.5px] sm:text-[11px] font-mono font-semibold transition-all relative group cursor-pointer ${
+                                        isTechActive
+                                            ? 'bg-emerald-700 text-white shadow-md shadow-emerald-900/20 border border-emerald-600 ring-2 ring-emerald-500/30'
+                                            : 'bg-white/95 text-slate-700 hover:text-emerald-950 hover:bg-emerald-50/80 border border-slate-200/90 hover:border-emerald-300 shadow-2xs'
+                                    }`}
+                                >
+                                    <span className="flex items-center gap-1.5">
+                                        <span className={`w-1.5 h-1.5 rounded-full transition-all ${
+                                            isTechActive 
+                                                ? 'bg-emerald-200 shadow-[0_0_6px_#6ee7b7] animate-pulse' 
+                                                : 'bg-emerald-600 group-hover:scale-125'
+                                        }`} />
+                                        <span>{tech}</span>
+                                    </span>
+                                </motion.button>
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
 
             {/* ── 3. SPLIT 2-COLUMN DISPLAY: Explanation & Capabilities (Left) + Live Telemetry Terminal (Right) ── */}
-            <div className="grid lg:grid-cols-12 gap-4 sm:gap-5 items-stretch">
+            <div className="grid lg:grid-cols-12 gap-3.5 sm:gap-5 items-stretch min-w-0">
                 
                 {/* ── LEFT COLUMN: Domain Explanation & Architecture Capabilities ── */}
-                <div className="lg:col-span-6 bg-slate-50/90 rounded-xl p-4 sm:p-5 border border-slate-200 flex flex-col justify-between space-y-4 shadow-2xs">
+                <div className="lg:col-span-6 bg-slate-50/90 rounded-xl p-3.5 sm:p-5 border border-slate-200 flex flex-col justify-between space-y-3.5 sm:space-y-4 shadow-2xs min-w-0 overflow-hidden">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={activeDomain}
@@ -510,36 +547,36 @@ export default function AnimatedSkillsLab() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -6 }}
                             transition={{ duration: 0.18 }}
-                            className="space-y-3.5"
+                            className="space-y-3 min-w-0"
                         >
                             {/* Domain Title & Badge */}
                             <div>
-                                <div className="flex items-center justify-between pb-1.5 border-b border-slate-200">
-                                    <span className="text-[10px] font-mono uppercase font-bold text-emerald-800 tracking-wider">
+                                <div className="flex flex-wrap items-center justify-between gap-1.5 pb-1.5 border-b border-slate-200">
+                                    <span className="text-[9.5px] sm:text-[10px] font-mono uppercase font-bold text-emerald-800 tracking-wider">
                                         {lang === 'id' ? 'PROFIL DOMAIN' : 'DOMAIN PROFILE'} &bull; 0{domainKeys.indexOf(activeDomain) + 1}
                                     </span>
-                                    <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-white text-slate-700 border border-slate-200">
+                                    <span className="px-2 py-0.5 rounded text-[9.5px] sm:text-[10px] font-mono font-bold bg-white text-slate-700 border border-slate-200">
                                         {currentDomain.badge}
                                     </span>
                                 </div>
-                                <h3 className="font-editorial-title text-2xl sm:text-3xl text-slate-900 mt-1 leading-tight">
+                                <h3 className="font-editorial-title text-xl sm:text-2xl lg:text-3xl text-slate-900 mt-1 leading-tight break-words">
                                     {currentDomain.title}
                                 </h3>
                             </div>
 
                             {/* Detailed Explanation */}
-                            <p className="font-editorial-serif text-sm sm:text-base text-slate-700 leading-relaxed text-justify">
+                            <p className="font-editorial-serif text-xs sm:text-sm lg:text-base text-slate-700 leading-relaxed text-justify">
                                 {lang === 'id' ? currentDomain.description.id : currentDomain.description.en}
                             </p>
 
                             {/* Key Capability Highlights */}
-                            <div className="grid grid-cols-3 gap-2 pt-1">
+                            <div className="grid grid-cols-3 gap-1.5 sm:gap-2 pt-1">
                                 {currentDomain.highlights.map((h, i) => (
-                                    <div key={i} className="bg-white p-2 rounded-lg border border-slate-200 text-center shadow-2xs">
-                                        <div className="text-[9px] font-mono text-slate-400 uppercase truncate">
+                                    <div key={i} className="bg-white p-1.5 sm:p-2 rounded-lg border border-slate-200 text-center shadow-2xs min-w-0 overflow-hidden">
+                                        <div className="text-[7.5px] xs:text-[8px] sm:text-[9px] font-mono text-slate-400 uppercase truncate">
                                             {h.label}
                                         </div>
-                                        <div className="text-xs sm:text-sm font-bold text-slate-900 truncate mt-0.5">
+                                        <div className="text-[10.5px] xs:text-xs sm:text-sm font-bold text-slate-900 truncate mt-0.5">
                                             {h.value}
                                         </div>
                                     </div>
@@ -549,31 +586,31 @@ export default function AnimatedSkillsLab() {
                     </AnimatePresence>
 
                     {/* Active Selected Tech Info Card */}
-                    <div className="pt-2 border-t border-slate-200/80 flex items-center justify-between text-xs font-mono">
-                        <span className="text-slate-500 flex items-center gap-1.5">
-                            <CheckCircle2 size={13} className="text-emerald-700" />
+                    <div className="pt-2 border-t border-slate-200/80 flex flex-wrap items-center justify-between gap-1 text-xs font-mono">
+                        <span className="text-slate-500 flex items-center gap-1.5 text-[11px] sm:text-xs truncate">
+                            <CheckCircle2 size={13} className="text-emerald-700 shrink-0" />
                             <span>{lang === 'id' ? 'Inspeksi' : 'Inspecting'}: <strong className="text-slate-900 font-bold">{selectedTech}</strong></span>
                         </span>
-                        <span className="text-emerald-800 font-bold text-[11px] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                        <span className="text-emerald-800 font-bold text-[10px] sm:text-[11px] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 shrink-0">
                             {activeTelemetry.badge}
                         </span>
                     </div>
                 </div>
 
                 {/* ── RIGHT COLUMN: Live Telemetry Terminal Console ── */}
-                <div className="lg:col-span-6 flex flex-col justify-between p-4 sm:p-5 bg-slate-950 text-slate-100 rounded-xl shadow-xl border border-slate-800 font-mono space-y-3 min-h-[360px]">
+                <div className="lg:col-span-6 flex flex-col justify-between p-3.5 sm:p-5 bg-slate-950 text-slate-100 rounded-xl shadow-xl border border-slate-800 font-mono space-y-3 min-h-[300px] sm:min-h-[360px] min-w-0 overflow-hidden">
                     {/* Terminal Window Header */}
-                    <div className="flex items-center justify-between pb-2 border-b border-slate-800 text-[11px]">
-                        <div className="flex items-center gap-1.5">
-                            <span className="w-2.5 h-2.5 rounded-full bg-rose-500" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-                            <span className="text-slate-300 ml-1.5 font-bold text-emerald-400 flex items-center gap-1">
-                                <Terminal size={12} />
-                                <span>telemetry &mdash; {selectedTech}</span>
+                    <div className="flex items-center justify-between gap-2 pb-2 border-b border-slate-800 text-[10px] sm:text-[11px]">
+                        <div className="flex items-center gap-1.5 min-w-0">
+                            <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shrink-0" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
+                            <span className="text-slate-300 ml-1 font-bold text-emerald-400 flex items-center gap-1 truncate max-w-[170px] xs:max-w-none">
+                                <Terminal size={12} className="shrink-0" />
+                                <span className="truncate">telemetry &mdash; {selectedTech}</span>
                             </span>
                         </div>
-                        <span className="px-2 py-0.5 bg-emerald-900/60 text-emerald-300 rounded text-[10px] border border-emerald-500/30 font-semibold">
+                        <span className="px-2 py-0.5 bg-emerald-900/60 text-emerald-300 rounded text-[9.5px] sm:text-[10px] border border-emerald-500/30 font-semibold shrink-0">
                             {activeTelemetry.status}
                         </span>
                     </div>
@@ -586,18 +623,18 @@ export default function AnimatedSkillsLab() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -5 }}
                             transition={{ duration: 0.16 }}
-                            className="flex-1 bg-slate-900/80 rounded-lg p-3 border border-slate-800 space-y-2 text-xs flex flex-col justify-between"
+                            className="flex-1 bg-slate-900/80 rounded-lg p-2.5 sm:p-3 border border-slate-800 space-y-2 text-xs flex flex-col justify-between min-w-0 overflow-hidden"
                         >
-                            <div>
-                                <p className="text-emerald-400 text-[11px] flex items-center gap-1 font-semibold">
+                            <div className="min-w-0">
+                                <p className="text-emerald-400 text-[10.5px] sm:text-[11px] flex items-center gap-1 font-semibold truncate">
                                     <span className="text-slate-500">$</span>
-                                    <span>{activeTelemetry.command}</span>
-                                    <span className="inline-block w-1.5 h-3 bg-emerald-400 animate-pulse ml-0.5" />
+                                    <span className="truncate">{activeTelemetry.command}</span>
+                                    <span className="inline-block w-1.5 h-3 bg-emerald-400 animate-pulse ml-0.5 shrink-0" />
                                 </p>
                                 
-                                <div className="space-y-1.5 text-slate-300 text-[11px] pt-2 pl-2 border-l border-emerald-500/40">
+                                <div className="space-y-1.5 text-slate-300 text-[10px] sm:text-[11px] pt-2 pl-2 border-l border-emerald-500/40">
                                     {activeTelemetry.output.map((line, idx) => (
-                                        <p key={idx} className="leading-snug">
+                                        <p key={idx} className="leading-snug break-words">
                                             {line}
                                         </p>
                                     ))}
@@ -605,19 +642,20 @@ export default function AnimatedSkillsLab() {
                             </div>
 
                             {/* Production Proof Environment */}
-                            <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[10px] text-slate-400">
-                                <span className="truncate max-w-[280px]">{lang === 'id' ? 'Bukti' : 'Proof'}: {activeTelemetry.project}</span>
-                                <span className="text-emerald-400 font-bold">{activeTelemetry.latency}</span>
+                            <div className="pt-2 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-1 text-[9.5px] sm:text-[10px] text-slate-400">
+                                <span className="truncate max-w-[200px] xs:max-w-[280px]">{lang === 'id' ? 'Bukti' : 'Proof'}: {activeTelemetry.project}</span>
+                                <span className="text-emerald-400 font-bold shrink-0">{activeTelemetry.latency}</span>
                             </div>
                         </motion.div>
                     </AnimatePresence>
 
                     {/* Bottom Terminal Footer */}
-                    <div className="flex items-center justify-between text-[10px] text-slate-400 pt-1 border-t border-slate-900">
+                    <div className="flex flex-wrap items-center justify-between gap-1 text-[9.5px] sm:text-[10px] text-slate-400 pt-1 border-t border-slate-900">
                         <span className="flex items-center gap-1">
-                            <Zap size={11} className="text-amber-400 fill-amber-400" /> {lang === 'id' ? 'Telemetri Arsitektur Sistem' : 'System Architecture Telemetry'}
+                            <Zap size={11} className="text-amber-400 fill-amber-400 shrink-0" />
+                            <span className="truncate">{lang === 'id' ? 'Telemetri Arsitektur' : 'Architecture Telemetry'}</span>
                         </span>
-                        <span className="text-slate-400">{lang === 'id' ? 'Respons' : 'Response'}: <strong className="text-emerald-400">{activeTelemetry.latency}</strong></span>
+                        <span>{lang === 'id' ? 'Respons' : 'Response'}: <strong className="text-emerald-400">{activeTelemetry.latency}</strong></span>
                     </div>
                 </div>
 
