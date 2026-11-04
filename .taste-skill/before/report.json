@@ -1,0 +1,1787 @@
+{
+ "url": "http://localhost:5175/",
+ "at": "2026-11-04T05:04:12.623Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.16,
+    0.89,
+    0.78,
+    0.55
+   ],
+   "motion": {
+    "elements": 47,
+    "css": 29,
+    "transitions": 18,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 3058,
+     "screens": 3.4,
+     "words": 830,
+     "img": 3,
+     "video": 0,
+     "canvas": 0,
+     "svg": 15,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 1,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "developer-illustration.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [
+      "👋",
+      "⚡",
+      "🚀",
+      "✕"
+     ],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Nanang Aditya",
+     "words": 2,
+     "chars": 13,
+     "lines": 1,
+     "size": 60,
+     "vw": 4.2,
+     "font": "Inter",
+     "weight": 800,
+     "tracking": 0,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.36,
+     "top": 343,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Nanang Aditya",
+     "words": 2,
+     "lines": 1,
+     "size": 60,
+     "font": "Inter"
+    },
+    "headings": [
+     {
+      "text": "Nanang Aditya",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 60,
+      "vw": 4.2,
+      "font": "Inter",
+      "weight": 800,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.36,
+      "top": 343,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Software Engineer",
+      "words": 2,
+      "chars": 17,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.36,
+      "top": 411,
+      "gradientText": true,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Projects",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.8,
+      "top": 980,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Tech Stack",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.8,
+      "top": 2699,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 4,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 2,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 1,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      14,
+      16,
+      18,
+      30,
+      36,
+      60
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "Inter",
+      "size": 14,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 5.7
+     },
+     "measureChars": 45,
+     "max": {
+      "size": 60,
+      "vw": 4.2,
+      "font": "Inter",
+      "text": "Nanang Aditya"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "</>",
+      "code",
+      "{}",
+      "build",
+      "deploy",
+      "ship"
+     ],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.02,
+     "smallText": 3
+    },
+    "eyebrows": [
+     {
+      "text": "👋 Hi, I'm Nanang",
+      "above": "Nanang Aditya",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": true,
+      "size": 14,
+      "top": 287
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0f172a",
+     "bodyBgHsl": {
+      "h": 222,
+      "s": 0.47,
+      "l": 0.11
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#0f172a",
+       "top": 0,
+       "hsl": {
+        "h": 222,
+        "s": 0.47,
+        "l": 0.11
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#94a3b8",
+       "share": 0.79
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.08
+      },
+      {
+       "color": "#93c5fd",
+       "share": 0.07
+      },
+      {
+       "color": "#cbd5e1",
+       "share": 0.02
+      },
+      {
+       "color": "#64748b",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#334155",
+      "hsl": {
+       "h": 215,
+       "s": 0.25,
+       "l": 0.27
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": [
+      {
+       "text": "Clear",
+       "ratio": 3.8,
+       "need": 4.5,
+       "size": 14,
+       "fg": "#64748b",
+       "bg": "#0f172a"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 9,
+     "inHero": 8,
+     "radius": 12,
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "View My Work",
+      "Get In Touch",
+      "Unduh CV",
+      "skills apa saja?",
+      "project utama apa?"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 20,
+     "shadowOverlay": 2,
+     "shadowSamples": [
+      "a.btn-primary → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.absolute.top-6 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130",
+      "div.absolute.top-10 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(168, 85",
+      "div.absolute.bottom-16 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(34, 197"
+     ],
+     "gradients": 2,
+     "scrims": 0,
+     "gradientSamples": [
+      "div.absolute.inset-0 → linear-gradient(to right bottom, rgba(37, 99, 235, 0.2), rgba(99, 102, 241, 0.1), rgba(147, 51, 234, 0.2))",
+      "div.absolute.inset-0 → linear-gradient(to top, rgba(30, 58, 138, 0.3), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))"
+     ],
+     "gradientText": 1,
+     "hairlines": 4,
+     "hairlineSamples": [
+      "header.fixed.top-0 1440px",
+      "footer.border-t.border-slate-200 1440px",
+      "div.px-5.py-4 384px",
+      "form.p-4.border-t 384px"
+     ],
+     "outlinedBoxes": 16,
+     "dashed": 0,
+     "blurred": 5,
+     "roundedBoxes": 19,
+     "boxRadius": 16,
+     "squareMedia": 0,
+     "roundedMedia": 1,
+     "mediaRadius": 9999,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 14,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 1104
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 7,
+     "fixed": true,
+     "height": 81,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 3058,
+    "margins": {
+     "left": 169,
+     "right": 174
+    },
+    "sections": [
+     {
+      "sel": "section.relative.min-h-screen",
+      "tag": "section",
+      "top": 0,
+      "height": 900,
+      "words": 35,
+      "media": 1,
+      "middle": 50,
+      "heading": {
+       "text": "Nanang Aditya",
+       "size": 60,
+       "tag": "h1"
+      },
+      "left": 176,
+      "right": 233,
+      "textLeft": 176,
+      "textRight": 233,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding.bg-slate-50",
+      "tag": "section",
+      "top": 900,
+      "height": 1719,
+      "words": 837,
+      "media": 0,
+      "middle": 76,
+      "heading": {
+       "text": "Projects",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 169,
+      "right": 169,
+      "textLeft": 169,
+      "textRight": 169,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding",
+      "tag": "section",
+      "top": 2619,
+      "height": 324,
+      "words": 16,
+      "media": 0,
+      "middle": 44,
+      "heading": {
+       "text": "Tech Stack",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 178,
+      "right": 178,
+      "textLeft": 178,
+      "textRight": 178,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Nanang Aditya",
+      "size": 60,
+      "top": 343,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 169,
+      "n": 12
+     },
+     {
+      "x": 561,
+      "n": 10
+     },
+     {
+      "x": 953,
+      "n": 8
+     }
+    ],
+    "leftBlocks": 30,
+    "bodySize": 14,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.17,
+    "voidBox": {
+     "x": 0,
+     "y": 600,
+     "w": 720,
+     "h": 300
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.22,
+    0.92,
+    0.81,
+    0.51
+   ],
+   "motion": {
+    "elements": 66,
+    "css": 29,
+    "transitions": 37,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 3871,
+     "screens": 3.8,
+     "words": 830,
+     "img": 3,
+     "video": 0,
+     "canvas": 0,
+     "svg": 15,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 1,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "developer-illustration.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [
+      "👋",
+      "⚡",
+      "🚀",
+      "✕"
+     ],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Nanang Aditya",
+     "words": 2,
+     "chars": 13,
+     "lines": 1,
+     "size": 48,
+     "vw": 6.3,
+     "font": "Inter",
+     "weight": 800,
+     "tracking": 0,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.94,
+     "top": 200,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Nanang Aditya",
+     "words": 2,
+     "lines": 1,
+     "size": 48,
+     "font": "Inter"
+    },
+    "headings": [
+     {
+      "text": "Nanang Aditya",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Inter",
+      "weight": 800,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 200,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Software Engineer",
+      "words": 2,
+      "chars": 17,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 256,
+      "gradientText": true,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Projects",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 1179,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Tech Stack",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 3506,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 4,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 2,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 1,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      14,
+      16,
+      18,
+      30,
+      36,
+      48
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "Inter",
+      "size": 14,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 5.7
+     },
+     "measureChars": 43,
+     "max": {
+      "size": 48,
+      "vw": 6.3,
+      "font": "Inter",
+      "text": "Nanang Aditya"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "</>",
+      "code",
+      "{}",
+      "build",
+      "deploy",
+      "ship"
+     ],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.02,
+     "smallText": 3
+    },
+    "eyebrows": [
+     {
+      "text": "👋 Hi, I'm Nanang",
+      "above": "Nanang Aditya",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": true,
+      "size": 14,
+      "top": 144
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0f172a",
+     "bodyBgHsl": {
+      "h": 222,
+      "s": 0.47,
+      "l": 0.11
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#0f172a",
+       "top": 0,
+       "hsl": {
+        "h": 222,
+        "s": 0.47,
+        "l": 0.11
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#94a3b8",
+       "share": 0.79
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.08
+      },
+      {
+       "color": "#93c5fd",
+       "share": 0.07
+      },
+      {
+       "color": "#cbd5e1",
+       "share": 0.02
+      },
+      {
+       "color": "#64748b",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#334155",
+      "hsl": {
+       "h": 215,
+       "s": 0.25,
+       "l": 0.27
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": [
+      {
+       "text": "Clear",
+       "ratio": 3.8,
+       "need": 4.5,
+       "size": 14,
+       "fg": "#64748b",
+       "bg": "#0f172a"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 9,
+     "inHero": 8,
+     "radius": 12,
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "View My Work",
+      "Get In Touch",
+      "Unduh CV",
+      "skills apa saja?",
+      "project utama apa?"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 20,
+     "shadowOverlay": 2,
+     "shadowSamples": [
+      "a.btn-primary → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.absolute.top-6 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130",
+      "div.absolute.top-10 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(168, 85",
+      "div.absolute.bottom-16 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(34, 197"
+     ],
+     "gradients": 2,
+     "scrims": 0,
+     "gradientSamples": [
+      "div.absolute.inset-0 → linear-gradient(to right bottom, rgba(37, 99, 235, 0.2), rgba(99, 102, 241, 0.1), rgba(147, 51, 234, 0.2))",
+      "div.absolute.inset-0 → linear-gradient(to top, rgba(30, 58, 138, 0.3), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))"
+     ],
+     "gradientText": 1,
+     "hairlines": 4,
+     "hairlineSamples": [
+      "header.fixed.top-0 768px",
+      "footer.border-t.border-slate-200 768px",
+      "div.px-5.py-4 384px",
+      "form.p-4.border-t 384px"
+     ],
+     "outlinedBoxes": 16,
+     "dashed": 0,
+     "blurred": 5,
+     "roundedBoxes": 19,
+     "boxRadius": 16,
+     "squareMedia": 0,
+     "roundedMedia": 1,
+     "mediaRadius": 9999,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 14,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 1303
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.1
+     }
+    ],
+    "nav": {
+     "links": 7,
+     "fixed": true,
+     "height": 81,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 3871,
+    "margins": {
+     "left": 24,
+     "right": 51
+    },
+    "sections": [
+     {
+      "sel": "section.relative.min-h-screen",
+      "tag": "section",
+      "top": 0,
+      "height": 1099,
+      "words": 35,
+      "media": 1,
+      "middle": 2,
+      "heading": {
+       "text": "Nanang Aditya",
+       "size": 48,
+       "tag": "h1"
+      },
+      "left": 24,
+      "right": 181,
+      "textLeft": 24,
+      "textRight": 181,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding.bg-slate-50",
+      "tag": "section",
+      "top": 1099,
+      "height": 2328,
+      "words": 837,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Projects",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 49,
+      "right": 49,
+      "textLeft": 49,
+      "textRight": 49,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding",
+      "tag": "section",
+      "top": 3426,
+      "height": 324,
+      "words": 16,
+      "media": 0,
+      "middle": 38,
+      "heading": {
+       "text": "Tech Stack",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 59,
+      "right": 59,
+      "textLeft": 59,
+      "textRight": 59,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.border-t.border-slate-200",
+      "tag": "footer",
+      "top": 3750,
+      "height": 121,
+      "words": 14,
+      "media": 0,
+      "middle": 37,
+      "heading": null,
+      "left": 60,
+      "right": 240,
+      "textLeft": 60,
+      "textRight": 240,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Nanang Aditya",
+      "size": 48,
+      "top": 200,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 49,
+      "n": 14
+     },
+     {
+      "x": 421,
+      "n": 14
+     },
+     {
+      "x": 24,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 30,
+    "bodySize": 14,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 7,
+   "filled": [
+    0.29,
+    0.63,
+    0.84,
+    0.68,
+    0.59,
+    0.52,
+    0.42
+   ],
+   "motion": {
+    "elements": 61,
+    "css": 28,
+    "transitions": 33,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 5760,
+     "screens": 6.8,
+     "words": 822,
+     "img": 3,
+     "video": 0,
+     "canvas": 0,
+     "svg": 15,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 1,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "developer-illustration.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [
+      "👋",
+      "⚡",
+      "🚀",
+      "✕"
+     ],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Nanang Aditya",
+     "words": 2,
+     "chars": 13,
+     "lines": 1,
+     "size": 36,
+     "vw": 9.2,
+     "font": "Inter",
+     "weight": 800,
+     "tracking": 0,
+     "leading": 1.25,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.92,
+     "top": 200,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Nanang Aditya",
+     "words": 2,
+     "lines": 1,
+     "size": 36,
+     "font": "Inter"
+    },
+    "headings": [
+     {
+      "text": "Nanang Aditya",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Inter",
+      "weight": 800,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 200,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Software Engineer",
+      "words": 2,
+      "chars": 17,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 253,
+      "gradientText": true,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Projects",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1088,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Tech Stack",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5193,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 4,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 2,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 1,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      14,
+      16,
+      18,
+      24,
+      30,
+      36
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "Inter",
+      "size": 14,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 5.7
+     },
+     "measureChars": 44,
+     "max": {
+      "size": 36,
+      "vw": 9.2,
+      "font": "Inter",
+      "text": "Nanang Aditya"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "</>",
+      "code",
+      "{}",
+      "build",
+      "deploy",
+      "ship"
+     ],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.02,
+     "smallText": 3
+    },
+    "eyebrows": [
+     {
+      "text": "👋 Hi, I'm Nanang",
+      "above": "Nanang Aditya",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": true,
+      "size": 14,
+      "top": 144
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0f172a",
+     "bodyBgHsl": {
+      "h": 222,
+      "s": 0.47,
+      "l": 0.11
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#0f172a",
+       "top": 0,
+       "hsl": {
+        "h": 222,
+        "s": 0.47,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#1e293b",
+       "top": 1208,
+       "hsl": {
+        "h": 217,
+        "s": 0.33,
+        "l": 0.17
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#94a3b8",
+       "share": 0.8
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.08
+      },
+      {
+       "color": "#93c5fd",
+       "share": 0.07
+      },
+      {
+       "color": "#cbd5e1",
+       "share": 0.02
+      },
+      {
+       "color": "#64748b",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#334155",
+      "hsl": {
+       "h": 215,
+       "s": 0.25,
+       "l": 0.27
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": [
+      {
+       "text": "Hi! Ask me about the portfolio (projects",
+       "ratio": 3.8,
+       "need": 4.5,
+       "size": 14,
+       "fg": "#64748b",
+       "bg": "#0f172a"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 9,
+     "inHero": 8,
+     "radius": 12,
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "View My Work",
+      "Get In Touch",
+      "Unduh CV",
+      "skills apa saja?",
+      "project utama apa?"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 20,
+     "shadowOverlay": 2,
+     "shadowSamples": [
+      "a.btn-primary → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.absolute.top-6 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130",
+      "div.absolute.top-10 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(168, 85",
+      "div.absolute.bottom-16 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(34, 197"
+     ],
+     "gradients": 2,
+     "scrims": 0,
+     "gradientSamples": [
+      "div.absolute.inset-0 → linear-gradient(to right bottom, rgba(37, 99, 235, 0.2), rgba(99, 102, 241, 0.1), rgba(147, 51, 234, 0.2))",
+      "div.absolute.inset-0 → linear-gradient(to top, rgba(30, 58, 138, 0.3), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))"
+     ],
+     "gradientText": 1,
+     "hairlines": 3,
+     "hairlineSamples": [
+      "footer.border-t.border-slate-200 390px",
+      "div.px-5.py-4 366px",
+      "form.p-4.border-t 366px"
+     ],
+     "outlinedBoxes": 16,
+     "dashed": 0,
+     "blurred": 4,
+     "roundedBoxes": 19,
+     "boxRadius": 16,
+     "squareMedia": 0,
+     "roundedMedia": 1,
+     "mediaRadius": 9999,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.12
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 80,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 5760,
+    "margins": {
+     "left": 16,
+     "right": 37
+    },
+    "sections": [
+     {
+      "sel": "section.relative.min-h-screen",
+      "tag": "section",
+      "top": 0,
+      "height": 1008,
+      "words": 34,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Nanang Aditya",
+       "size": 36,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 22,
+      "textLeft": 16,
+      "textRight": 22,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding.bg-slate-50",
+      "tag": "section",
+      "top": 1008,
+      "height": 4106,
+      "words": 837,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Projects",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 41,
+      "right": 42,
+      "textLeft": 41,
+      "textRight": 42,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding",
+      "tag": "section",
+      "top": 5113,
+      "height": 416,
+      "words": 16,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Tech Stack",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 56,
+      "right": 56,
+      "textLeft": 56,
+      "textRight": 56,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.border-t.border-slate-200",
+      "tag": "footer",
+      "top": 5529,
+      "height": 231,
+      "words": 14,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 16,
+      "right": 46,
+      "textLeft": 16,
+      "textRight": 46,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Nanang Aditya",
+      "size": 36,
+      "top": 200,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 41,
+      "n": 28
+     },
+     {
+      "x": 16,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 30,
+    "bodySize": 14,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "width": 1440,
+   "message": "1 eyebrow/kicker label(s) above headings: \"👋 Hi, I'm Nanang\" (pill) above \"Nanang Aditya\"",
+   "fix": "Delete them. If the label carried real information, fold it into the headline or the supporting sentence.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "emoji",
+   "width": 1440,
+   "message": "Emoji in the page: 👋 ⚡ 🚀 ✕",
+   "fix": "Remove. Use words or real imagery.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "gradient",
+   "width": 1440,
+   "message": "2 gradient fill(s): div.absolute.inset-0 → linear-gradient(to right bottom, rgba(37, 99, 235, 0.2), rgba(99, 102, 241, 0.1), rgba(147, 51, 234, 0.2)) | div.absolute.inset-0 → linear-gradient(to top, rgba(30, 58, 138, 0.3), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))",
+   "fix": "Use a flat colour or a real image. The only gradient allowed by default is a neutral scrim over a photo for legibility.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "gradient-text",
+   "width": 1440,
+   "message": "1 gradient-filled text element(s).",
+   "fix": "Solid colour text.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "shadow",
+   "width": 1440,
+   "message": "20 box-shadow(s) on elements at rest: a.btn-primary → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0 | div.absolute.top-6 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130 | div.absolute.top-10 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(168, 85",
+   "fix": "Remove. Separate surfaces with a tone step or space. Shadows are for things that really float (menus, dialogs, sticky bars).",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "hairline",
+   "width": 1440,
+   "message": "4 thin rule(s)/divider line(s): header.fixed.top-0 1440px | footer.border-t.border-slate-200 1440px | div.px-5.py-4 384px | form.p-4.border-t 384px",
+   "fix": "Delete. Separate with space, a tone change, or scale. Lines are only for real tables and form fields.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "outlined-box",
+   "width": 1440,
+   "message": "16 boxes drawn with a 1px outline.",
+   "fix": "Define a surface by its fill (one tone step from the page) or leave the content unboxed.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "glass",
+   "width": 1440,
+   "message": "5 backdrop-blur surfaces.",
+   "fix": "One blurred sticky bar at most; glass cards are a tell.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "contrast",
+   "width": 1440,
+   "message": "Low-contrast text: \"Clear\" 3.8:1 needs 4.5:1",
+   "fix": "Darken or lighten the text colour.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "body-size",
+   "width": 1440,
+   "message": "Body text is 14px (the size most of the running text is set in).",
+   "fix": "Body copy 16–20px. Map small sizes from blueprints onto your body step.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "grey-body",
+   "width": 1440,
+   "message": "The running text is a soft grey on its ground (5.7:1).",
+   "fix": "Set body copy in the full ink (7:1 or more). Keep the muted ink for secondary notes; pages read thin and unfinished when everything is grey.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "few-pictures",
+   "width": 1440,
+   "message": "Only 1 picture(s) on the page (1 photographs, footage or raster images, 0 interface fragments). Drawings in SVG do not count.",
+   "fix": "Find real pictures of the subject's world with scripts/assets.mjs (photographs, archival images, maps, engravings, footage), download them to assets/ and give them room: a hero picture, one per section that has a subject, a full-width band. At least four, usually six to twelve."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "small-text",
+   "width": 1440,
+   "message": "3 text block(s) under 13px.",
+   "fix": "Nothing meant to be read goes below 13px.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "focal-point",
+   "width": 1440,
+   "message": "The first screen has no dominant element: the largest type is 60px (4.2vw) and no single picture holds a third of the viewport.",
+   "fix": "Make one thing lead: the headline at display size, or one large picture. A grid of many small pictures is not one thing; in blind tests jurors marked a first screen without a headline down every time. On the strongest studied sites the largest type has a median of 8.4vw."
+  },
+  {
+   "level": "WARN",
+   "id": "dev-server",
+   "width": 1440,
+   "message": "This page is served by a development server (Vite, webpack or Next in dev mode).",
+   "fix": "Run the last gate on the production build too (vite build && vite preview, next build && next start, or the built index.html): minifiers and bundlers change the CSS a visitor receives.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "font-not-dealt",
+   "width": 1440,
+   "message": "The sheet dealt Bebas Neue and EB Garamond, but the page renders Inter, ui-monospace.",
+   "fix": "Load the dealt face (the link on the sheet) and put it first in font-family. A build that falls back to a default face lands on the default look."
+  },
+  {
+   "level": "WARN",
+   "id": "off-centre",
+   "width": 768,
+   "message": "The margins differ: 24px on the left, 51px on the right, at 768px.",
+   "fix": "Put the navigation and the content on one pair of margins; check for padding on one side only, a scrollbar gutter, or a header on another inset than the page."
+  },
+  {
+   "level": "FAIL",
+   "id": "covered-text",
+   "width": 768,
+   "message": "Large text lies under another element at some scroll position: \"Tech Stack\" (screen 4, 50% hidden)",
+   "fix": "Nothing may sit on top of a headline or statement. Move the picture, shorten the pinned run, or raise the text above it (z-index) and give it a ground.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "off-centre",
+   "width": 390,
+   "message": "The page sits off-centre: its content comes to 16px from the left edge but only to 37px from the right, at 390px.",
+   "fix": "Give the page one pair of equal margins. Check the wrapper for a max-width without margin-inline: auto, a grid with an empty last column, or padding on one side only. If one side is meant to hold air, it must still be closed by something that reaches the margin (a picture, the navigation's last item, a figure)."
+  },
+  {
+   "level": "FAIL",
+   "id": "reduced-hidden",
+   "width": 1440,
+   "message": "With reduced motion requested, 8 text block(s) on the first screen stay invisible: \"Assistant\", \"Ask about this portfolio\", \"Clear\", \"Hi! Ask me about the portfolio (projects\"",
+   "fix": "Put every hidden starting state inside @media (prefers-reduced-motion: no-preference); the reduced page is the finished page (references/motion.md §8)."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/before/desktop-fold.jpg",
+   "pages": [
+    "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/before/desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/before/tablet-fold.jpg",
+   "pages": [
+    "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/before/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/before/mobile-fold.jpg",
+   "pages": [
+    "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/before/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

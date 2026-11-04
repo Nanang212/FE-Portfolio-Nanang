@@ -7,40 +7,65 @@ export default function Footer() {
     const year = new Date().getFullYear();
 
     return (
-        <footer className="border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 py-10">
-            <div className="container-max px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                    {/* Brand */}
-                    <div className="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
-                        <div className="w-7 h-7 rounded-lg overflow-hidden ring-1 ring-primary-200 dark:ring-primary-800 shrink-0">
-                            <img
-                                src="/images/brandIcon.png"
-                                alt="Brand icon"
-                                className="w-full h-full object-contain"
-                            />
-                        </div>
-                        Nanang<span className="text-primary-600">.</span>
+        <footer className="bg-[#10382c] text-emerald-100/90 py-14 mt-16 border-t border-emerald-500/20">
+            <div className="container-max">
+                <div className="grid md:grid-cols-12 gap-8 items-start">
+                    {/* Left: Message / Imprint */}
+                    <div className="md:col-span-7 space-y-3">
+                        <h4 className="font-editorial-title text-3xl sm:text-4xl text-white leading-none tracking-tight">
+                            NANANG ADITYA
+                        </h4>
+                        <p className="font-editorial-serif text-base text-emerald-100/80 max-w-lg leading-relaxed">
+                            Software Engineer specializing in enterprise backends, distributed data pipelines, and mission-critical systems in Indonesia.
+                        </p>
+                        <p className="text-xs text-emerald-300/60 font-mono pt-1">
+                            Engineered on Maker's Cutting Mat &bull; Laravel &bull; Node.js &bull; Spring Boot &bull; PostgreSQL &bull; Docker
+                        </p>
                     </div>
 
-                    {/* Links */}
-                    <p className="text-sm text-slate-500 dark:text-slate-400">
-                        {t('footer.built_with')} · © {year} {t('footer.rights')}
-                    </p>
+                    {/* Right: Direct Dispatch / Contacts */}
+                    <div className="md:col-span-5 space-y-3">
+                        <p className="text-sm font-semibold uppercase tracking-wider text-emerald-300 font-mono">
+                            Kontak Langsung
+                        </p>
 
-                    {/* Social */}
-                    <div className="flex items-center gap-3">
-                        <a href="https://github.com/Nanang212" target="_blank" rel="noopener noreferrer"
-                            className="btn-ghost p-2" aria-label="GitHub">
-                            <GithubIcon size={18} />
-                        </a>
-                        <a href="https://www.linkedin.com/in/nanang-aditya/" target="_blank" rel="noopener noreferrer"
-                            className="btn-ghost p-2" aria-label="LinkedIn">
-                                <LinkedinIcon size={18}/>
-                        </a>
-                        <a href="mailto:nanangaditya2001@gmail.com"
-                            className="btn-ghost p-2" aria-label="Email">
-                            <Mail size={18} />
-                        </a>
+                        <div className="space-y-2.5 text-sm">
+                            <div>
+                                <a
+                                    href="mailto:nanangaditya2001@gmail.com"
+                                    className="text-emerald-100 hover:text-white hover:underline inline-flex items-center gap-2 font-medium"
+                                >
+                                    <Mail size={15} className="text-emerald-400" />
+                                    <span>nanangaditya2001@gmail.com</span>
+                                </a>
+                            </div>
+                            <div>
+                                <a
+                                    href="https://www.linkedin.com/in/nanang-aditya/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-emerald-100 hover:text-white hover:underline inline-flex items-center gap-2 font-medium"
+                                >
+                                    <LinkedinIcon size={15} className="text-emerald-400" />
+                                    <span>linkedin.com/in/nanang-aditya</span>
+                                </a>
+                            </div>
+                            <div>
+                                <a
+                                    href="https://github.com/Nanang212"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-emerald-100 hover:text-white hover:underline inline-flex items-center gap-2 font-medium"
+                                >
+                                    <GithubIcon size={15} className="text-emerald-400" />
+                                    <span>github.com/Nanang212</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="pt-4 border-t border-emerald-500/20 text-xs text-emerald-400/60 font-mono">
+                            &copy; {year} Nanang Aditya Sutahar. All systems operational.
+                        </div>
                     </div>
                 </div>
             </div>

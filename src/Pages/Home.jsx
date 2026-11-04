@@ -1,164 +1,759 @@
+import React, { useState } from 'react';
 import PortfolioLayout from '@/Layouts/PortfolioLayout';
-import { Link } from '@/Components/Link';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, Mail, ChevronDown, FileDown } from 'lucide-react';
+import ProjectBook from '@/Components/Portfolio/ProjectBook';
+import AnimatedSkillsLab from '@/Components/Portfolio/AnimatedSkillsLab';
+import { 
+    BookOpen, Briefcase, Wrench, User, Mail, FileDown, 
+    ArrowRight, Calendar, Send, MapPin, Phone, ExternalLink, 
+    Layers, Terminal, GraduationCap, Laptop, Glasses, List, CheckCircle2
+} from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/Components/UI/SocialIcons';
-import WorkingIllustration from '@/Components/Portfolio/WorkingIllustration';
 
-export default function Home({ about, projects, skills }) {
+export default function Home({ about, projects = [], skills = {}, experiences = [] }) {
     const { t, i18n } = useTranslation();
     const lang = i18n.language;
 
+    // View mode for projects section: 'book' | 'table'
+    const [projectViewMode, setProjectViewMode] = useState('book');
+
+    // Contact form state
+    const [contactForm, setContactForm] = useState({ name: '', email: '', subject: '', message: '' });
+    const [contactSent, setContactSent] = useState(false);
+
+    const handleContactSubmit = (e) => {
+        e.preventDefault();
+        const mailtoUrl = `mailto:nanangaditya2001@gmail.com?subject=${encodeURIComponent(contactForm.subject || 'Portfolio Inquiry')}&body=${encodeURIComponent(`From: ${contactForm.name} (${contactForm.email})\n\n${contactForm.message}`)}`;
+        window.location.href = mailtoUrl;
+        setContactSent(true);
+    };
+
+    const formatDate = (dateStr) => {
+        if (!dateStr) return '';
+        const d = new Date(dateStr);
+        return d.toLocaleDateString(lang === 'id' ? 'id-ID' : 'en-US', { month: 'short', year: 'numeric' });
+    };
+
+    const scrollTo = (id) => {
+        const el = document.getElementById(id);
+        if (el) {
+            const yOffset = -70;
+            const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    };
+
+    const education = about?.education || [
+        {
+            degree_en: "Bachelor's Degree (S1) in Informatics Engineering",
+            degree_id: "Sarjana (S1) Teknik Informatika",
+            institution: "Universitas Esa Unggul",
+            period: "2024 - Present",
+            gpa: "3.66 / 4.00"
+        },
+        {
+            degree_en: "Associate's Degree (D3) in Informatics Engineering",
+            degree_id: "Diploma (D3) Teknik Informatika",
+            institution: "Politeknik Elektronika Negeri Surabaya (EEPIS / PENS)",
+            period: "2020 - 2023",
+            gpa: "3.69 / 4.00"
+        }
+    ];
+
     return (
-        <PortfolioLayout title="Home">
-            {/* ── Hero ─────────────────────────────────────────────── */}
-            <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-                {/* Background gradient blob */}
-                <div className="absolute inset-0 -z-10 overflow-hidden">
-                    <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-primary-600/10 rounded-full blur-3xl"/>
-                    <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] bg-blue-400/10 rounded-full blur-3xl"/>
-                </div>
+        <PortfolioLayout title="Nanang Aditya — Software Engineer">
+            <div className="pt-20 sm:pt-24 pb-20 space-y-16 sm:space-y-24">
 
-                <div className="container-max section-padding w-full">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        {/* Text */}
-                        <div className="animate-fade-up">
-                            <span className="badge-blue mb-4 inline-flex">
-                                👋 {t('hero.greeting')} Nanang
-                            </span>
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight mt-3">
-                                {t('hero.name')}
-                            </h1>
-                            <p className="text-gradient text-2xl sm:text-3xl font-bold mt-2">
-                                {t('hero.role')}
-                            </p>
-                            <p className="text-slate-600 dark:text-slate-400 mt-5 text-lg leading-relaxed max-w-lg">
-                                {t('hero.tagline')}
-                            </p>
+                {/* ══════════════════════════════════════════════════════════════
+                   1. HERO & WORKSPACE SETUP SECTION (#home)
+                   ══════════════════════════════════════════════════════════════ */}
+                <section id="home" className="container-max scroll-mt-20">
+                    {/* Cutting Mat Metric Measurement Ruler along top */}
+                    <div className="hidden sm:flex items-center justify-between text-[11px] font-mono text-emerald-300/60 pb-2 px-1 select-none border-b border-white/10 mb-4">
+                        <span>| 00 CM</span>
+                        <span>· · · · 10</span>
+                        <span>· · · · 20</span>
+                        <span>· · · · 30</span>
+                        <span>· · · · 40</span>
+                        <span>· · · · 50</span>
+                        <span>· · · · 60</span>
+                        <span>· · · · 70</span>
+                        <span>· · · · 80</span>
+                        <span>· · · · 90</span>
+                        <span>| 100 CM [MAKER'S CUTTING MAT]</span>
+                    </div>
 
-                            <div className="flex flex-wrap gap-3 mt-8">
-                                <Link href="/projects" className="btn-primary">
-                                    {t('hero.cta_primary')}
-                                    <ArrowRight size={18}/>
-                                </Link>
-                                <Link href="/contact" className="btn-secondary">
-                                    {t('hero.cta_secondary')}
-                                </Link>
-                                {about?.resume_path && (
-                                    <a href={`/storage/${about?.resume_path}`} className="btn-secondary flex items-center gap-2">
-                                        <FileDown size={18}/>
-                                        Unduh CV
+                    <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+                        {/* Left: Main Editorial Statement Sheet */}
+                        <div className="lg:col-span-7 desk-sheet p-8 sm:p-10 flex flex-col justify-between space-y-6 bg-white/95">
+                            <div className="space-y-4">
+                                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-semibold">
+                                    <span className="inline-block w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+                                    <span>Surabaya, Indonesia &bull; Available for Enterprise Backend</span>
+                                </div>
+
+                                <h1 className="font-editorial-title text-6xl sm:text-7xl lg:text-8xl text-slate-900 leading-none tracking-tight">
+                                    NANANG ADITYA
+                                </h1>
+
+                                <p className="font-editorial-serif text-2xl sm:text-3xl text-slate-800 leading-snug">
+                                    {lang === 'id'
+                                        ? 'Software Engineer yang berfokus pada arsitektur sistem enterprise, backend skala besar, dan infrastruktur data.'
+                                        : 'Software Engineer specializing in enterprise backends, distributed data pipelines, and mission-critical systems.'}
+                                </p>
+
+                                <p className="text-base text-slate-600 leading-relaxed text-justify">
+                                    {lang === 'id'
+                                        ? 'Memiliki 3+ tahun pengalaman produksi membangun platform pemantauan konstruksi jalan tol nasional di PT Jasa Marga (Persero) Tbk, sistem digitalisasi dokumen di PT Adira Dinamika Multi Finance, serta NLP similarity engine. Berpengalaman di Express.js, Node.js, Laravel, Spring Boot, PostgreSQL, dan Docker.'
+                                        : '3+ years production experience building national toll road construction monitoring systems at PT Jasa Marga, loan document digitization at Adira Finance, and academic NLP similarity engines. Proficient in Express.js, Node.js, Laravel, Spring Boot, PostgreSQL, and Docker.'}
+                                </p>
+                            </div>
+
+                            {/* CTAs */}
+                            <div className="space-y-3 pt-2">
+                                <div className="flex flex-wrap items-center gap-3">
+                                    <button
+                                        onClick={() => scrollTo('projects')}
+                                        className="btn-primary"
+                                    >
+                                        <BookOpen size={17} />
+                                        <span>{lang === 'id' ? 'Buka Buku Proyek 3D' : 'Open 3D Project Book'}</span>
+                                    </button>
+                                    <button
+                                        onClick={() => scrollTo('contact')}
+                                        className="btn-secondary"
+                                    >
+                                        <span>{lang === 'id' ? 'Hubungi Saya' : 'Get In Touch'}</span>
+                                    </button>
+                                    <a
+                                        href="/downloads/CV_Nanang_Aditya_Sutahar_ATS.pdf"
+                                        className="btn-secondary flex items-center gap-2"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        download="CV_Nanang_Aditya_Sutahar_ATS.pdf"
+                                    >
+                                        <FileDown size={16} />
+                                        <span>{lang === 'id' ? 'Unduh CV ATS' : 'Download ATS CV'}</span>
                                     </a>
-                                )}
+                                    <a
+                                        href="/downloads/Portfolio_Nanang_Aditya_Sutahar.pdf"
+                                        className="btn-secondary flex items-center gap-2"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        download="Portfolio_Nanang_Aditya_Sutahar.pdf"
+                                    >
+                                        <FileDown size={16} />
+                                        <span>{lang === 'id' ? 'Portofolio PDF' : 'Portfolio PDF'}</span>
+                                    </a>
+                                </div>
+
+                                {/* Direct Contact & Social Links */}
+                                <div className="pt-3 border-t border-slate-200 flex flex-wrap items-center gap-5 text-sm text-slate-600">
+                                    <a
+                                        href="https://github.com/Nanang212"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:text-emerald-700 inline-flex items-center gap-1.5 font-medium transition-colors"
+                                    >
+                                        <GithubIcon size={16} /> GitHub
+                                    </a>
+                                    <a
+                                        href="https://www.linkedin.com/in/nanang-aditya/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:text-emerald-700 inline-flex items-center gap-1.5 font-medium transition-colors"
+                                    >
+                                        <LinkedinIcon size={16} /> LinkedIn
+                                    </a>
+                                    <a
+                                        href="mailto:nanangaditya2001@gmail.com"
+                                        className="hover:text-emerald-700 inline-flex items-center gap-1.5 font-medium transition-colors"
+                                    >
+                                        <Mail size={16} /> nanangaditya2001@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right: Unified Developer Studio Card (Portrait + Credentials + Terminal Telemetry) */}
+                        <div className="lg:col-span-5 desk-sheet p-6 sm:p-7 flex flex-col justify-between bg-white/95 space-y-4">
+                            {/* Top Header of the Studio Card */}
+                            <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+                                <div className="flex items-center gap-2">
+                                    <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+                                    <span className="text-xs font-mono font-bold text-slate-800 tracking-wider">
+                                        ENGINEER DOSSIER &bull; ID #2001
+                                    </span>
+                                </div>
+                                <span className="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                                    ONLINE
+                                </span>
                             </div>
 
-                            {/* Social row */}
-                            <div className="flex items-center gap-4 mt-8">
-                                <a href="https://github.com/Nanang212" target="_blank" rel="noopener noreferrer"
-                                    className="btn-ghost p-2" aria-label="GitHub">
-                                    <GithubIcon size={20}/>
-                                </a>
-                                <a href="https://www.linkedin.com/in/nanang-aditya/" target="_blank" rel="noopener noreferrer"
-                                    className="btn-ghost p-2" aria-label="LinkedIn">
-                                    <LinkedinIcon size={20}/>
-                                </a>
-                                <a href="mailto:nanangaditya2001@gmail.com" className="btn-ghost p-2" aria-label="Email">
-                                    <Mail size={20}/>
-                                </a>
-                            </div>
-                        </div>
+                            {/* Identity Bar: Side-by-Side Portrait & Verified Credentials */}
+                            <div className="flex items-center gap-4 bg-slate-50/80 p-3.5 rounded-xl border border-slate-200/70">
+                                {/* Transparent PNG portrait in compact, elegant framed badge */}
+                                <div className="w-24 h-28 sm:w-28 sm:h-32 shrink-0 rounded-lg bg-gradient-to-b from-emerald-50 to-emerald-100/50 flex items-end justify-center overflow-hidden border border-emerald-200/80 shadow-inner">
+                                    <img
+                                        src="/images/profile.png"
+                                        alt="Nanang Aditya Sutahar — Software Engineer"
+                                        width="240"
+                                        height="300"
+                                        fetchPriority="high"
+                                        className="max-h-full w-auto object-contain drop-shadow"
+                                    />
+                                </div>
 
-                        {/* Illustration */}
-                        <div className="animate-fade-up animate-delay-200 flex justify-center">
-                            <WorkingIllustration className="w-full max-w-md drop-shadow-xl"/>
-                        </div>
-                    </div>
-
-                    {/* Scroll cue */}
-                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-400 animate-bounce hidden md:flex flex-col items-center gap-1 text-xs">
-                        <span>scroll</span>
-                        <ChevronDown size={16}/>
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Featured Projects ────────────────────────────────── */}
-            {projects && projects.length > 0 && (
-                <section className="section-padding bg-slate-50 dark:bg-slate-800/40">
-                    <div className="container-max">
-                        <div className="text-center mb-12 animate-fade-up">
-                            <h2 className="section-title">{t('projects.title')}</h2>
-                            <p className="section-subtitle">{t('projects.subtitle')}</p>
-                        </div>
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {projects.map((p, i) => (
-                                <div key={p.id} className="card p-6 flex flex-col gap-4 animate-fade-up" style={{ animationDelay: `${i * 100}ms` }}>
-                                    <h3 className="font-bold text-slate-900 dark:text-white text-lg">
-                                        {lang === 'id' ? p.title_id : p.title_en}
-                                    </h3>
-                                    <p className="text-slate-500 dark:text-slate-400 text-sm flex-1 leading-relaxed line-clamp-3">
-                                        {lang === 'id' ? p.description_id : p.description_en}
-                                    </p>
-                                    <div className="flex flex-wrap gap-1.5">
-                                        {(p.tech_stack || []).slice(0, 4).map(t => (
-                                            <span key={t} className="badge-blue text-xs">{t}</span>
-                                        ))}
+                                {/* Credentials Breakdown */}
+                                <div className="flex-1 min-w-0 space-y-1.5 text-xs">
+                                    <div>
+                                        <div className="text-[10px] font-mono uppercase text-emerald-800 font-bold tracking-wider">
+                                            Software Engineer
+                                        </div>
+                                        <div className="font-bold text-slate-900 text-sm truncate">
+                                            NANANG ADITYA S.
+                                        </div>
                                     </div>
-                                    <div className="flex gap-3 pt-1">
-                                        {p.github_url && (
-                                            <a href={p.github_url} target="_blank" rel="noopener noreferrer"
-                                                className="flex items-center gap-1.5 text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline">
-                                                <GithubIcon size={14}/> {t('projects.view_code')}
-                                            </a>
-                                        )}
+
+                                    <div className="space-y-1 text-[11px] text-slate-600 font-sans border-t border-slate-200/80 pt-1.5">
+                                        <div className="flex items-baseline justify-between gap-1">
+                                            <span className="text-slate-400 font-mono text-[10px]">ENTERPRISE:</span>
+                                            <span className="text-slate-800 font-medium truncate text-right">PT Jasa Marga</span>
+                                        </div>
+                                        <div className="flex items-baseline justify-between gap-1">
+                                            <span className="text-slate-400 font-mono text-[10px]">EXPERIENCE:</span>
+                                            <span className="text-emerald-700 font-semibold font-mono text-[10px]">3+ Years</span>
+                                        </div>
+                                        <div className="flex items-baseline justify-between gap-1">
+                                            <span className="text-slate-400 font-mono text-[10px]">EDUCATION:</span>
+                                            <span className="text-slate-800 font-medium text-right text-[11px]">S1 Esa Unggul &bull; D3 PENS</span>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+
+                            {/* Integrated Dark Terminal Telemetry Window */}
+                            <div className="flex-1 min-h-0 bg-slate-950 text-slate-100 font-mono text-xs rounded-xl p-4 flex flex-col justify-between border border-slate-800 shadow-lg space-y-2">
+                                <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+                                    <div className="flex items-center gap-1.5">
+                                        <div className="w-2.5 h-2.5 rounded-full bg-rose-500" />
+                                        <div className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                                        <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                                    </div>
+                                    <span className="text-[11px] text-slate-400 flex items-center gap-1">
+                                        <Terminal size={12} className="text-emerald-400" /> zsh &mdash; nanang@workspace
+                                    </span>
+                                </div>
+
+                                <div className="space-y-1.5 text-slate-300 text-[11px] sm:text-xs leading-relaxed py-1">
+                                    <p className="text-emerald-400 font-semibold">$ neofetch --engineer</p>
+                                    <div className="grid grid-cols-1 gap-1 text-slate-300">
+                                        <p><span className="text-emerald-400 font-bold">Stack:</span> Express.js &bull; Laravel &bull; Spring Boot</p>
+                                        <p><span className="text-emerald-400 font-bold">Data:</span> PostgreSQL &bull; Prisma &bull; Redis &bull; MinIO</p>
+                                        <p><span className="text-emerald-400 font-bold">AI/RAG:</span> Cosine Similarity (41.8ms Latency)</p>
+                                        <p><span className="text-emerald-400 font-bold">DevOps:</span> Docker &bull; Linux &bull; Cloudflare Tunnel</p>
+                                    </div>
+                                </div>
+
+                                <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+                                    <span className="flex items-center gap-1.5 text-slate-400">
+                                        <Glasses size={13} className="text-emerald-400" /> Developer Desk Spec
+                                    </span>
+                                    <span className="text-emerald-400 font-semibold font-mono text-[10px]">
+                                        Production Verified &bull; 100% Pass
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                {/* ══════════════════════════════════════════════════════════════
+                   2. 3D PROJECT BOOK SECTION (#projects) - DIRECTLY ON HOME
+                   ══════════════════════════════════════════════════════════════ */}
+                <section id="projects" className="container-max scroll-mt-20">
+                    <div className="desk-sheet p-6 sm:p-10 mb-8 bg-white/95">
+                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+                            <div>
+                                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-semibold mb-1">
+                                    <BookOpen size={14} className="text-emerald-700" />
+                                    <span>Laboratorium Rekayasa & Portofolio Sistem</span>
+                                </div>
+                                <h2 className="font-editorial-title text-4xl sm:text-6xl text-slate-900 tracking-tight leading-none">
+                                    {lang === 'id' ? 'BUKU PROYEK 3D INTERAKTIF' : '3D INTERACTIVE PROJECT BOOK'}
+                                </h2>
+                                <p className="font-editorial-serif text-base sm:text-lg text-slate-600 mt-2 max-w-2xl italic">
+                                    {lang === 'id'
+                                        ? 'Terinspirasi oleh Paper by WeTransfer: pilih jurnal Moleskine di rak bawah untuk membuka lembaran spesifikasi sistem dan screenshot antarmuka.'
+                                        : 'Paper by WeTransfer journal shelf: select a notebook to open two-page engineering lab sheets and live schematics.'}
+                                </p>
+                            </div>
+
+                            {/* View Switcher: Book vs Table Archive */}
+                            <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-lg self-start md:self-end shrink-0 border border-slate-200">
+                                <button
+                                    onClick={() => setProjectViewMode('book')}
+                                    className={`flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-md transition-all ${
+                                        projectViewMode === 'book'
+                                            ? 'bg-white text-slate-900 shadow-sm'
+                                            : 'text-slate-600 hover:text-slate-900'
+                                    }`}
+                                >
+                                    <BookOpen size={14} />
+                                    <span>{lang === 'id' ? 'Buku 3D' : '3D Book'}</span>
+                                </button>
+                                <button
+                                    onClick={() => setProjectViewMode('table')}
+                                    className={`flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-md transition-all ${
+                                        projectViewMode === 'table'
+                                            ? 'bg-white text-slate-900 shadow-sm'
+                                            : 'text-slate-600 hover:text-slate-900'
+                                    }`}
+                                >
+                                    <List size={14} />
+                                    <span>{lang === 'id' ? 'Daftar Arsip' : 'Table Archive'}</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Interactive Content */}
+                        {projectViewMode === 'book' ? (
+                            <ProjectBook projects={projects} />
+                        ) : (
+                            /* Table Archive Mode */
+                            <div className="overflow-x-auto border border-slate-200 rounded-xl bg-white mt-4">
+                                <table className="w-full text-left text-sm text-slate-800">
+                                    <thead className="bg-slate-50 text-xs font-mono uppercase text-slate-500 border-b border-slate-200">
+                                        <tr>
+                                            <th className="py-3.5 px-4 font-semibold">No</th>
+                                            <th className="py-3.5 px-4 font-semibold">Proyek</th>
+                                            <th className="py-3.5 px-4 font-semibold hidden sm:table-cell">Stack</th>
+                                            <th className="py-3.5 px-4 font-semibold hidden md:table-cell">Deskripsi Rekayasa</th>
+                                            <th className="py-3.5 px-4 font-semibold text-right">Tautan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-slate-100 font-sans">
+                                        {projects.map((p, idx) => (
+                                            <tr key={p.id} className="hover:bg-slate-50/80 transition-colors">
+                                                <td className="py-3.5 px-4 font-mono text-xs text-slate-400">
+                                                    {(idx + 1).toString().padStart(2, '0')}
+                                                </td>
+                                                <td className="py-3.5 px-4 font-semibold text-slate-900">
+                                                    {lang === 'id' ? p.title_id : p.title_en}
+                                                </td>
+                                                <td className="py-3.5 px-4 hidden sm:table-cell">
+                                                    <div className="flex flex-wrap gap-1">
+                                                        {(p.tech_stack || []).slice(0, 3).map((t) => (
+                                                            <span key={t} className="text-xs px-2 py-0.5 bg-slate-100 text-slate-700 rounded">
+                                                                {t}
+                                                            </span>
+                                                        ))}
+                                                    </div>
+                                                </td>
+                                                <td className="py-3.5 px-4 hidden md:table-cell text-xs text-slate-600 max-w-sm line-clamp-2">
+                                                    {lang === 'id' ? p.description_id : p.description_en}
+                                                </td>
+                                                <td className="py-3.5 px-4 text-right">
+                                                    <div className="flex items-center justify-end gap-2">
+                                                        {p.demo_url && (
+                                                            <a
+                                                                href={p.demo_url}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="text-emerald-700 hover:underline inline-flex items-center gap-1 text-xs font-semibold"
+                                                            >
+                                                                <span>Live</span>
+                                                                <ExternalLink size={12} />
+                                                            </a>
+                                                        )}
+                                                        {p.github_url && (
+                                                            <a
+                                                                href={p.github_url}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="text-slate-500 hover:text-slate-900 inline-flex items-center gap-1 text-xs ml-2"
+                                                            >
+                                                                <GithubIcon size={14} />
+                                                            </a>
+                                                        )}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        )}
+                    </div>
+                </section>
+
+
+                {/* ══════════════════════════════════════════════════════════════
+                   3. WORK EXPERIENCE SECTION (#experience)
+                   ══════════════════════════════════════════════════════════════ */}
+                <section id="experience" className="container-max scroll-mt-20">
+                    <div className="desk-sheet p-8 sm:p-12 space-y-10 bg-white/95">
+                        <div>
+                            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-semibold mb-1">
+                                <Briefcase size={14} className="text-emerald-700" />
+                                <span>Riwayat Karir Industri</span>
+                            </div>
+                            <h2 className="font-editorial-title text-4xl sm:text-6xl text-slate-900 tracking-tight leading-none">
+                                {lang === 'id' ? 'PENGALAMAN KERJA' : 'WORK EXPERIENCE'}
+                            </h2>
+                            <p className="font-editorial-serif text-base sm:text-lg text-slate-600 mt-2 italic">
+                                {lang === 'id'
+                                    ? 'Sistem enterprise berskala nasional yang dikembangkan dan dipertahankan dalam lingkungan produksi.'
+                                    : 'Production systems engineered and maintained across enterprise environments.'}
+                            </p>
+                        </div>
+
+                        {/* Experience Stack */}
+                        <div className="space-y-8 divide-y divide-slate-200">
+                            {experiences.map((exp) => (
+                                <article key={exp.id} className="pt-8 first:pt-0 space-y-4">
+                                    <div className="flex flex-wrap items-start justify-between gap-3">
+                                        <div>
+                                            <div className="flex items-center gap-2.5">
+                                                {exp.is_current && (
+                                                    <span className="px-2.5 py-0.5 bg-emerald-700 text-white text-xs font-semibold rounded">
+                                                        Posisi Saat Ini
+                                                    </span>
+                                                )}
+                                            </div>
+                                            <h3 className="font-editorial-title text-3xl sm:text-4xl text-slate-900 mt-2">
+                                                {exp.company}
+                                            </h3>
+                                            <p className="text-base text-emerald-800 font-semibold">
+                                                {exp.role}
+                                            </p>
+                                        </div>
+
+                                        <div className="text-xs text-slate-500 font-mono flex items-center gap-1.5 self-start pt-1 bg-slate-100 px-3 py-1 rounded border border-slate-200">
+                                            <Calendar size={13} />
+                                            <span>
+                                                {formatDate(exp.period_start)} &mdash; {exp.is_current ? (lang === 'id' ? 'Sekarang' : 'Present') : formatDate(exp.period_end)}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    {/* Tech Stack Chips */}
+                                    <div className="flex flex-wrap gap-1.5 pt-1">
+                                        {(exp.tech_stack || []).map((tech) => (
+                                            <span
+                                                key={tech}
+                                                className="px-2.5 py-0.5 bg-slate-100 text-slate-700 text-xs font-medium rounded border border-slate-200"
+                                            >
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    {/* Sub-projects list */}
+                                    {exp.projects && exp.projects.length > 0 && (
+                                        <div className="grid gap-3 pt-3">
+                                            {exp.projects.map((p, idx) => (
+                                                <div key={idx} className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
+                                                    <div className="flex flex-wrap items-center justify-between gap-2">
+                                                        <h4 className="font-semibold text-sm text-slate-900">
+                                                            {p.name}
+                                                        </h4>
+                                                        {p.period && (
+                                                            <span className="text-[11px] font-mono text-slate-500">
+                                                                {p.period}
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                    <p className="text-xs text-slate-600 leading-relaxed text-justify">
+                                                        {lang === 'id' ? p.description_id : p.description_en}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </article>
                             ))}
                         </div>
-                        <div className="text-center mt-10">
-                            <Link href="/projects" className="btn-secondary">
-                                {t('projects.view_all')} <ArrowRight size={16}/>
-                            </Link>
-                        </div>
                     </div>
                 </section>
-            )}
 
-            {/* ── Quick Skills ─────────────────────────────────────── */}
-            {skills && Object.keys(skills).length > 0 && (
-                <section className="section-padding">
-                    <div className="container-max">
-                        <div className="text-center mb-10 animate-fade-up">
-                            <h2 className="section-title">{t('skills.title')}</h2>
+
+                {/* ══════════════════════════════════════════════════════════════
+                   4. TECHNICAL SKILLS SECTION (#skills) - COMPACT STUDIO LAB
+                   ══════════════════════════════════════════════════════════════ */}
+                <section id="skills" className="container-max scroll-mt-20">
+                    <div className="desk-sheet p-6 sm:p-8 space-y-5 bg-white/95">
+                        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 pb-3">
+                            <div>
+                                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-semibold mb-1">
+                                    <Wrench size={13} className="text-emerald-700" />
+                                    <span>Matriks Keahlian & Telemetri Arsitektur</span>
+                                </div>
+                                <h2 className="font-editorial-title text-3xl sm:text-5xl text-slate-900 tracking-tight leading-none">
+                                    {lang === 'id' ? 'KEAHLIAN TEKNIS' : 'TECHNICAL SKILLS'}
+                                </h2>
+                            </div>
+                            <p className="font-editorial-serif text-sm text-slate-600 italic max-w-md sm:text-right">
+                                {lang === 'id'
+                                    ? 'Teknologi backend, database, dan DevOps yang terverifikasi di lingkungan produksi.'
+                                    : 'Production-verified backend, database, and DevOps engineering stacks.'}
+                            </p>
                         </div>
-                        <div className="flex flex-wrap justify-center gap-3 animate-fade-up animate-delay-200">
-                            {Object.values(skills).flat().slice(0, 12).map((skill, i) => {
-                                // deterministic pseudo-random values based on index
-                                const offsetX = `${((i % 5) - 2) * 12}px`; // -24..+24 spread
-                                const rot = `${((i * 37) % 11) - 5}deg`; // -5..+5 deg
-                                const delay = `${i * 90}ms`;
-                                const floatDur = `${3 + (i % 4) * 0.6}s`;
-                                const floatDelay = `${200 + (i % 6) * 120}ms`;
-                                return (
-                                    <span
-                                        key={skill.id}
-                                        className="badge-slate px-4 py-2 text-sm font-medium tech-pill"
-                                        style={{
-                                            '--tech-delay': delay,
-                                            '--tech-offset': offsetX,
-                                            '--tech-rot': rot,
-                                            '--tech-float-duration': floatDur,
-                                            '--tech-float-delay': floatDelay,
-                                        }}
+
+                        {/* Interactive Animated Skills Lab in Compact 2-Column Split */}
+                        <AnimatedSkillsLab skills={skills} />
+                    </div>
+                </section>
+
+
+                {/* ══════════════════════════════════════════════════════════════
+                   5. ABOUT & EDUCATION SECTION (#about)
+                   ══════════════════════════════════════════════════════════════ */}
+                <section id="about" className="container-max scroll-mt-20">
+                    <div className="desk-sheet p-8 sm:p-12 space-y-10 bg-white/95">
+                        <div>
+                            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-semibold mb-1">
+                                <User size={14} className="text-emerald-700" />
+                                <span>Dossier Pribadi & Kualifikasi</span>
+                            </div>
+                            <h2 className="font-editorial-title text-4xl sm:text-6xl text-slate-900 tracking-tight leading-none">
+                                {lang === 'id' ? 'TENTANG SAYA' : 'ABOUT ME'}
+                            </h2>
+                        </div>
+
+                        {/* Bio Letter with Compact Portrait */}
+                        <div className="grid md:grid-cols-12 gap-8 items-start">
+                            <div className="md:col-span-4 flex flex-col items-center text-center space-y-3">
+                                <div className="w-36 sm:w-40 h-48 sm:h-52 flex items-end justify-center bg-slate-50 rounded-xl pt-3 px-2 overflow-hidden border border-slate-200">
+                                    <img
+                                        src="/images/profile.png"
+                                        alt="Nanang Aditya Sutahar"
+                                        className="max-h-full w-auto object-contain drop-shadow"
+                                    />
+                                </div>
+                                <div className="text-sm text-slate-600 space-y-1">
+                                    <div className="text-slate-900 font-bold">Nanang Aditya Sutahar</div>
+                                    <div className="text-xs text-slate-500">Software Engineer | Backend & Full Stack</div>
+                                    <div className="text-xs text-emerald-700 font-semibold">PT Jasa Marga (Persero) Tbk</div>
+                                </div>
+                            </div>
+
+                            <div className="md:col-span-8 space-y-4">
+                                <h3 className="font-editorial-title text-2xl sm:text-3xl text-slate-900">
+                                    {lang === 'id' ? 'RINGKASAN PROFESIONAL' : 'PROFESSIONAL SUMMARY'}
+                                </h3>
+
+                                <p className="font-editorial-serif text-base sm:text-lg text-slate-700 leading-relaxed text-justify">
+                                    {about ? (lang === 'id' ? about.bio_id : about.bio_en) : ''}
+                                </p>
+
+                                <div className="pt-2 flex flex-wrap gap-3">
+                                    <a
+                                        href="/downloads/CV_Nanang_Aditya_Sutahar_ATS.pdf"
+                                        className="btn-primary flex items-center gap-2"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        download="CV_Nanang_Aditya_Sutahar_ATS.pdf"
                                     >
-                                        {skill.name}
-                                    </span>
-                                );
-                            })}
+                                        <FileDown size={16} />
+                                        <span>{lang === 'id' ? 'Unduh CV ATS Resmi (PDF)' : 'Download Official ATS CV (PDF)'}</span>
+                                    </a>
+                                    <a
+                                        href="/downloads/Portfolio_Nanang_Aditya_Sutahar.pdf"
+                                        className="btn-secondary flex items-center gap-2"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        download="Portfolio_Nanang_Aditya_Sutahar.pdf"
+                                    >
+                                        <FileDown size={16} />
+                                        <span>{lang === 'id' ? 'Unduh Portofolio Lengkap (PDF)' : 'Download Full Portfolio (PDF)'}</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Education Qualifications */}
+                        <div className="pt-6 border-t border-slate-200 space-y-4">
+                            <h3 className="font-editorial-title text-2xl sm:text-3xl text-slate-900 flex items-center gap-2">
+                                <GraduationCap size={22} className="text-emerald-700" />
+                                <span>{lang === 'id' ? 'KUALIFIKASI PENDIDIKAN' : 'EDUCATIONAL QUALIFICATIONS'}</span>
+                            </h3>
+
+                            <div className="grid sm:grid-cols-2 gap-4">
+                                {education.map((edu, idx) => (
+                                    <div key={idx} className="p-5 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
+                                        <div className="flex flex-wrap items-center justify-between gap-2">
+                                            <h4 className="font-semibold text-sm text-slate-900">
+                                                {lang === 'id' ? edu.degree_id : edu.degree_en}
+                                            </h4>
+                                            <span className="text-xs font-semibold px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded">
+                                                IPK: {edu.gpa}
+                                            </span>
+                                        </div>
+                                        <p className="text-xs text-slate-600 font-medium">
+                                            {edu.institution}
+                                        </p>
+                                        <p className="text-[11px] font-mono text-slate-400">
+                                            {edu.period}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </section>
-            )}
+
+
+                {/* ══════════════════════════════════════════════════════════════
+                   6. CONTACT & MESSAGE SECTION (#contact)
+                   ══════════════════════════════════════════════════════════════ */}
+                <section id="contact" className="container-max scroll-mt-20">
+                    <div className="desk-sheet p-8 sm:p-12 space-y-8 bg-white/95">
+                        <div>
+                            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-semibold mb-1">
+                                <Mail size={14} className="text-emerald-700" />
+                                <span>Jalur Komunikasi Langsung</span>
+                            </div>
+                            <h2 className="font-editorial-title text-4xl sm:text-6xl text-slate-900 tracking-tight leading-none">
+                                {lang === 'id' ? 'HUBUNGI SAYA' : 'GET IN TOUCH'}
+                            </h2>
+                            <p className="font-editorial-serif text-base sm:text-lg text-slate-600 mt-2 italic">
+                                {lang === 'id'
+                                    ? 'Terbuka untuk diskusi arsitektur sistem, kolaborasi rekayasa backend, atau peluang karir.'
+                                    : 'Open for system architecture inquiries, backend engineering collaborations, or opportunities.'}
+                            </p>
+                        </div>
+
+                        <div className="grid md:grid-cols-12 gap-8 items-start">
+                            {/* Left Direct Coordinates */}
+                            <div className="md:col-span-5 space-y-4">
+                                <div className="p-6 bg-slate-50 rounded-xl border border-slate-200 space-y-4 text-sm">
+                                    <div>
+                                        <span className="text-xs font-mono uppercase text-slate-400 block mb-1">Email Langsung</span>
+                                        <a
+                                            href="mailto:nanangaditya2001@gmail.com"
+                                            className="text-base font-semibold text-slate-900 hover:text-emerald-700 flex items-center gap-2"
+                                        >
+                                            <Mail size={16} className="text-emerald-700" /> nanangaditya2001@gmail.com
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <span className="text-xs font-mono uppercase text-slate-400 block mb-1">Telepon / WhatsApp</span>
+                                        <a
+                                            href="tel:+6285790663367"
+                                            className="text-base font-semibold text-slate-900 hover:text-emerald-700 flex items-center gap-2"
+                                        >
+                                            <Phone size={16} className="text-emerald-700" /> +62 857-9066-3367
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <span className="text-xs font-mono uppercase text-slate-400 block mb-1">Lokasi Kerja</span>
+                                        <p className="text-base font-semibold text-slate-900 flex items-center gap-2">
+                                            <MapPin size={16} className="text-emerald-700" /> Surabaya, East Java, Indonesia
+                                        </p>
+                                    </div>
+
+                                    <div className="pt-2 border-t border-slate-200 flex items-center gap-4">
+                                        <a
+                                            href="https://github.com/Nanang212"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="hover:text-emerald-700 flex items-center gap-1.5 text-xs font-semibold"
+                                        >
+                                            <GithubIcon size={16} /> GitHub Profile
+                                        </a>
+                                        <a
+                                            href="https://www.linkedin.com/in/nanang-aditya/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="hover:text-emerald-700 flex items-center gap-1.5 text-xs font-semibold"
+                                        >
+                                            <LinkedinIcon size={16} /> LinkedIn
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Right Message Form */}
+                            <div className="md:col-span-7">
+                                {contactSent ? (
+                                    <div className="p-8 bg-emerald-50 rounded-xl border border-emerald-200 text-center space-y-3">
+                                        <CheckCircle2 size={36} className="text-emerald-700 mx-auto" />
+                                        <h3 className="font-editorial-title text-2xl text-emerald-950">
+                                            {lang === 'id' ? 'Pesan Terkirim' : 'Message Dispatched'}
+                                        </h3>
+                                        <p className="text-xs text-emerald-800">
+                                            {lang === 'id'
+                                                ? 'Klien email Anda telah dibuka untuk mengirim pesan ini langsung ke nanangaditya2001@gmail.com.'
+                                                : 'Your email client has been opened to send this note directly to nanangaditya2001@gmail.com.'}
+                                        </p>
+                                    </div>
+                                ) : (
+                                    <form onSubmit={handleContactSubmit} className="space-y-4">
+                                        <div className="grid sm:grid-cols-2 gap-4">
+                                            <div className="space-y-1">
+                                                <label className="text-xs font-mono uppercase text-slate-500 font-semibold">Nama Pengirim</label>
+                                                <input
+                                                    type="text"
+                                                    required
+                                                    value={contactForm.name}
+                                                    onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
+                                                    placeholder="Nama Anda"
+                                                    className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-emerald-600"
+                                                />
+                                            </div>
+                                            <div className="space-y-1">
+                                                <label className="text-xs font-mono uppercase text-slate-500 font-semibold">Alamat Email</label>
+                                                <input
+                                                    type="email"
+                                                    required
+                                                    value={contactForm.email}
+                                                    onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
+                                                    placeholder="email@perusahaan.com"
+                                                    className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-emerald-600"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="space-y-1">
+                                            <label className="text-xs font-mono uppercase text-slate-500 font-semibold">Subjek / Topik</label>
+                                            <input
+                                                type="text"
+                                                required
+                                                value={contactForm.subject}
+                                                onChange={(e) => setContactForm({ ...contactForm, subject: e.target.value })}
+                                                placeholder="Diskusi Proyek / Kolaborasi"
+                                                className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-emerald-600"
+                                            />
+                                        </div>
+
+                                        <div className="space-y-1">
+                                            <label className="text-xs font-mono uppercase text-slate-500 font-semibold">Isi Pesan</label>
+                                            <textarea
+                                                rows={4}
+                                                required
+                                                value={contactForm.message}
+                                                onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
+                                                placeholder="Tuliskan pesan atau kebutuhan sistem Anda..."
+                                                className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-emerald-600 resize-none"
+                                            />
+                                        </div>
+
+                                        <button type="submit" className="btn-primary w-full sm:w-auto">
+                                            <Send size={15} />
+                                            <span>{lang === 'id' ? 'Kirim Pesan Sekarang' : 'Send Message Now'}</span>
+                                        </button>
+                                    </form>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
         </PortfolioLayout>
     );
 }

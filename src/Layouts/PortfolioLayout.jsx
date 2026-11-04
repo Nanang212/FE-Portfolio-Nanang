@@ -8,20 +8,16 @@ import { useEffect } from 'react';
 export default function PortfolioLayout({ children, title = '' }) {
     const { t } = useTranslation();
 
-    // Apply dark mode class on mount
+    // Enforce clean Light Mode
     useEffect(() => {
-        const saved = localStorage.getItem('portfolio_theme');
-        if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('portfolio_theme', 'light');
     }, []);
 
     return (
         <>
             <Head title={title} />
-            <div className="min-h-screen flex flex-col bg-white dark:bg-slate-900 transition-colors duration-300">
+            <div className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--ink)]">
                 <NavBar />
                 <main className="flex-1">
                     {children}

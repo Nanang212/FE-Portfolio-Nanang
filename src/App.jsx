@@ -26,7 +26,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home about={about} projects={projects} skills={groupedSkills} />} />
+        <Route path="/" element={<Home about={about} projects={projects} skills={groupedSkills} experiences={experiences} />} />
         <Route path="/about" element={<About about={about} />} />
         <Route path="/projects" element={<Projects projects={projects} />} />
         <Route path="/experience" element={<Experience experiences={experiences} />} />

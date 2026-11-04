@@ -1,0 +1,1710 @@
+{
+ "url": "http://localhost:5175/projects",
+ "at": "2026-11-04T05:47:25.370Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.93,
+    1
+   ],
+   "motion": {
+    "elements": 33,
+    "css": 0,
+    "transitions": 33,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 1737,
+     "screens": 1.9,
+     "words": 146,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 13,
+     "sections": 0,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "MONOGRAPH",
+     "words": 1,
+     "chars": 9,
+     "lines": 1,
+     "size": 128,
+     "vw": 8.9,
+     "font": "Bebas Neue",
+     "weight": 400,
+     "tracking": -0.01,
+     "leading": 1,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "right",
+     "widthRatio": 0.33,
+     "top": 452,
+     "tag": "div",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Projects",
+     "words": 1,
+     "lines": 1,
+     "size": 72,
+     "font": "Bebas Neue"
+    },
+    "headings": [
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.09,
+      "top": 22,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Projects",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 72,
+      "vw": 5,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.4,
+      "top": 144,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "MONOGRAPH",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 128,
+      "vw": 8.9,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.33,
+      "top": 452,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "SELECTED WORKS",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 96,
+      "vw": 6.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.4,
+      "top": 550,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.43,
+      "top": 1384,
+      "tag": "h4",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 5,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 0.62,
+       "mono": false
+      },
+      {
+       "family": "EB Garamond",
+       "share": 0.31,
+       "mono": false
+      },
+      {
+       "family": "Bebas Neue",
+       "share": 0.06,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      12,
+      14,
+      16,
+      18,
+      20,
+      24,
+      30,
+      36,
+      72,
+      96,
+      128
+     ],
+     "sizeCount": 11,
+     "notLoaded": [],
+     "body": {
+      "font": "EB Garamond",
+      "size": 18,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 13.9
+     },
+     "measureChars": 57,
+     "max": {
+      "size": 128,
+      "vw": 8.9,
+      "font": "Bebas Neue",
+      "text": "MONOGRAPH"
+     },
+     "monoShare": 0.01,
+     "monoProseShare": 0.01,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "ASSISTANT"
+     ],
+     "microLabels": 1,
+     "microLabelShare": 0.007,
+     "microSamples": [
+      "Penulis"
+     ],
+     "upperShare": 0.08,
+     "centerShare": 0.09,
+     "smallText": 2
+    },
+    "eyebrows": [
+     {
+      "text": "Arsip Teknik • Vol. 2022-2026",
+      "above": "SELECTED WORKS",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 502
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0d1217",
+     "bodyBgHsl": {
+      "h": 210,
+      "s": 0.28,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#0f172a",
+       "top": 0,
+       "hsl": {
+        "h": 222,
+        "s": 0.47,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#151e27",
+       "top": 436,
+       "hsl": {
+        "h": 210,
+        "s": 0.3,
+        "l": 0.12
+       }
+      },
+      {
+       "color": "#0a1117",
+       "top": 436,
+       "hsl": {
+        "h": 208,
+        "s": 0.39,
+        "l": 0.06
+       }
+      },
+      {
+       "color": "#1c2732",
+       "top": 1320,
+       "hsl": {
+        "h": 210,
+        "s": 0.28,
+        "l": 0.15
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#f2f5f8",
+       "share": 0.29
+      },
+      {
+       "color": "#94a3b8",
+       "share": 0.25
+      },
+      {
+       "color": "#cbd5e1",
+       "share": 0.23
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.21
+      },
+      {
+       "color": "#091a12",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#1c2732",
+      "hsl": {
+       "h": 210,
+       "s": 0.28,
+       "l": 0.15
+      },
+      "fg": "#f2f5f8"
+     },
+     "lowContrast": [
+      {
+       "text": "Open First Sheet",
+       "ratio": 3,
+       "need": 4.5,
+       "size": 14,
+       "fg": "#ffffff",
+       "bg": "#2ea879"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 8,
+     "inHero": 5,
+     "radius": 0,
+     "height": 36,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 1,
+     "upper": 1,
+     "heroLabels": [
+      "Projects",
+      "3D Book",
+      "Prev",
+      "Next",
+      "ASSISTANT"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 2,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "button.flex.items-center → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.relative.w-full → rgba(255, 255, 255, 0.06) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.45) 4px 6px 16p"
+     ],
+     "gradients": 0,
+     "scrims": 2,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 1,
+     "hairlineSamples": [
+      "div.hidden.md:block 620px rule"
+     ],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 7,
+     "fixed": true,
+     "height": 80,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bebas neue",
+     "eb garamond",
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 1737,
+    "margins": {
+     "left": 176,
+     "right": 176
+    },
+    "sections": [
+     {
+      "sel": "main.flex-1",
+      "tag": "main",
+      "top": 0,
+      "height": 1240,
+      "words": 74,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "MONOGRAPH",
+       "size": 128,
+       "tag": "div"
+      },
+      "left": 176,
+      "right": 176,
+      "textLeft": 176,
+      "textRight": 196,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.bg-[var(--surface-subtle)].text-[var(--ink)]",
+      "tag": "footer",
+      "top": 1320,
+      "height": 417,
+      "words": 65,
+      "media": 0,
+      "middle": 77,
+      "heading": {
+       "text": "NANANG ADITYA",
+       "size": 36,
+       "tag": "h4"
+      },
+      "left": 176,
+      "right": 176,
+      "textLeft": 176,
+      "textRight": 176,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Projects",
+      "size": 72,
+      "top": 144,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 176,
+      "n": 2
+     },
+     {
+      "x": 272,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 4,
+    "bodySize": 14,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.12,
+    "voidBox": {
+     "x": 0,
+     "y": 780,
+     "w": 1260,
+     "h": 120
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.97,
+    1
+   ],
+   "motion": {
+    "elements": 33,
+    "css": 0,
+    "transitions": 33,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 1748,
+     "screens": 1.7,
+     "words": 146,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 13,
+     "sections": 0,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "MONOGRAPH",
+     "words": 1,
+     "chars": 9,
+     "lines": 1,
+     "size": 128,
+     "vw": 16.7,
+     "font": "Bebas Neue",
+     "weight": 400,
+     "tracking": -0.01,
+     "leading": 1,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "right",
+     "widthRatio": 0.61,
+     "top": 452,
+     "tag": "div",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Projects",
+     "words": 1,
+     "lines": 1,
+     "size": 72,
+     "font": "Bebas Neue"
+    },
+    "headings": [
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 2,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.09,
+      "top": 4,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Projects",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 72,
+      "vw": 9.4,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.62,
+      "top": 144,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "MONOGRAPH",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 128,
+      "vw": 16.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.61,
+      "top": 452,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "SELECTED WORKS",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 72,
+      "vw": 9.4,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 550,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.53,
+      "top": 1384,
+      "tag": "h4",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 5,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 0.62,
+       "mono": false
+      },
+      {
+       "family": "EB Garamond",
+       "share": 0.31,
+       "mono": false
+      },
+      {
+       "family": "Bebas Neue",
+       "share": 0.06,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      12,
+      14,
+      16,
+      18,
+      20,
+      24,
+      30,
+      36,
+      72,
+      128
+     ],
+     "sizeCount": 10,
+     "notLoaded": [],
+     "body": {
+      "font": "EB Garamond",
+      "size": 18,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 13.9
+     },
+     "measureChars": 45,
+     "max": {
+      "size": 128,
+      "vw": 16.7,
+      "font": "Bebas Neue",
+      "text": "MONOGRAPH"
+     },
+     "monoShare": 0.01,
+     "monoProseShare": 0.01,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "ASSISTANT"
+     ],
+     "microLabels": 1,
+     "microLabelShare": 0.007,
+     "microSamples": [
+      "Penulis"
+     ],
+     "upperShare": 0.08,
+     "centerShare": 0.09,
+     "smallText": 2
+    },
+    "eyebrows": [
+     {
+      "text": "Arsip Teknik • Vol. 2022-2026",
+      "above": "SELECTED WORKS",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 502
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0d1217",
+     "bodyBgHsl": {
+      "h": 210,
+      "s": 0.28,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#0f172a",
+       "top": 0,
+       "hsl": {
+        "h": 222,
+        "s": 0.47,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#151e27",
+       "top": 436,
+       "hsl": {
+        "h": 210,
+        "s": 0.3,
+        "l": 0.12
+       }
+      },
+      {
+       "color": "#0a1117",
+       "top": 436,
+       "hsl": {
+        "h": 208,
+        "s": 0.39,
+        "l": 0.06
+       }
+      },
+      {
+       "color": "#1c2732",
+       "top": 1320,
+       "hsl": {
+        "h": 210,
+        "s": 0.28,
+        "l": 0.15
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#f2f5f8",
+       "share": 0.29
+      },
+      {
+       "color": "#94a3b8",
+       "share": 0.25
+      },
+      {
+       "color": "#cbd5e1",
+       "share": 0.23
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.21
+      },
+      {
+       "color": "#091a12",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#1c2732",
+      "hsl": {
+       "h": 210,
+       "s": 0.28,
+       "l": 0.15
+      },
+      "fg": "#f2f5f8"
+     },
+     "lowContrast": [
+      {
+       "text": "Open First Sheet",
+       "ratio": 3,
+       "need": 4.5,
+       "size": 14,
+       "fg": "#ffffff",
+       "bg": "#2ea879"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 8,
+     "inHero": 6,
+     "radius": 0,
+     "height": 36,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 1,
+     "upper": 1,
+     "heroLabels": [
+      "Projects",
+      "3D Book",
+      "Prev",
+      "Next",
+      "Open First Sheet"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 2,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "button.flex.items-center → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.relative.w-full → rgba(255, 255, 255, 0.06) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.45) 4px 6px 16p"
+     ],
+     "gradients": 0,
+     "scrims": 2,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 1,
+     "hairlineSamples": [
+      "div.hidden.md:block 620px rule"
+     ],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 7,
+     "fixed": true,
+     "height": 80,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bebas neue",
+     "eb garamond",
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 1748,
+    "margins": {
+     "left": 24,
+     "right": 24
+    },
+    "sections": [
+     {
+      "sel": "main.flex-1",
+      "tag": "main",
+      "top": 0,
+      "height": 1240,
+      "words": 74,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "MONOGRAPH",
+       "size": 128,
+       "tag": "div"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 40,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.bg-[var(--surface-subtle)].text-[var(--ink)]",
+      "tag": "footer",
+      "top": 1320,
+      "height": 428,
+      "words": 65,
+      "media": 0,
+      "middle": 64,
+      "heading": {
+       "text": "NANANG ADITYA",
+       "size": 36,
+       "tag": "h4"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Projects",
+      "size": 72,
+      "top": 144,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 24,
+      "n": 2
+     },
+     {
+      "x": 88,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 4,
+    "bodySize": 14,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.95,
+    1,
+    1
+   ],
+   "motion": {
+    "elements": 28,
+    "css": 0,
+    "transitions": 28,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 1943,
+     "screens": 2.3,
+     "words": 128,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 13,
+     "sections": 0,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 1,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "MONOGRAPH",
+     "words": 1,
+     "chars": 9,
+     "lines": 1,
+     "size": 96,
+     "vw": 24.6,
+     "font": "Bebas Neue",
+     "weight": 400,
+     "tracking": -0.01,
+     "leading": 1,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.9,
+     "top": 448,
+     "tag": "div",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Projects",
+     "words": 1,
+     "lines": 1,
+     "size": 48,
+     "font": "Bebas Neue"
+    },
+    "headings": [
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.33,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.27,
+      "top": 16,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Projects",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 48,
+      "vw": 12.3,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 112,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "MONOGRAPH",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 96,
+      "vw": 24.6,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 448,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "SELECTED WORKS",
+      "words": 2,
+      "chars": 14,
+      "lines": 2,
+      "size": 60,
+      "vw": 15.4,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 514,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1304,
+      "tag": "h4",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 5,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 0.58,
+       "mono": false
+      },
+      {
+       "family": "EB Garamond",
+       "share": 0.35,
+       "mono": false
+      },
+      {
+       "family": "Bebas Neue",
+       "share": 0.06,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      12,
+      14,
+      16,
+      18,
+      20,
+      24,
+      30,
+      48,
+      60,
+      96
+     ],
+     "sizeCount": 10,
+     "notLoaded": [],
+     "body": {
+      "font": "EB Garamond",
+      "size": 18,
+      "leading": 1.56,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 12
+     },
+     "measureChars": 40,
+     "max": {
+      "size": 96,
+      "vw": 24.6,
+      "font": "Bebas Neue",
+      "text": "MONOGRAPH"
+     },
+     "monoShare": 0.01,
+     "monoProseShare": 0.01,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "ASSISTANT"
+     ],
+     "microLabels": 1,
+     "microLabelShare": 0.008,
+     "microSamples": [
+      "Penulis"
+     ],
+     "upperShare": 0.09,
+     "centerShare": 0.1,
+     "smallText": 2
+    },
+    "eyebrows": [
+     {
+      "text": "Front Cover",
+      "above": "MONOGRAPH",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 14,
+      "top": 344
+     },
+     {
+      "text": "Arsip Teknik • Vol. 2022-2026",
+      "above": "SELECTED WORKS",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 466
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0d1217",
+     "bodyBgHsl": {
+      "h": 210,
+      "s": 0.28,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#0f172a",
+       "top": 0,
+       "hsl": {
+        "h": 222,
+        "s": 0.47,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#151e27",
+       "top": 432,
+       "hsl": {
+        "h": 210,
+        "s": 0.3,
+        "l": 0.12
+       }
+      },
+      {
+       "color": "#0a1117",
+       "top": 432,
+       "hsl": {
+        "h": 208,
+        "s": 0.39,
+        "l": 0.06
+       }
+      },
+      {
+       "color": "#1c2732",
+       "top": 1240,
+       "hsl": {
+        "h": 210,
+        "s": 0.28,
+        "l": 0.15
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#f2f5f8",
+       "share": 0.32
+      },
+      {
+       "color": "#94a3b8",
+       "share": 0.28
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.23
+      },
+      {
+       "color": "#cbd5e1",
+       "share": 0.14
+      },
+      {
+       "color": "#091a12",
+       "share": 0.03
+      }
+     ],
+     "button": {
+      "bg": "#1c2732",
+      "hsl": {
+       "h": 210,
+       "s": 0.28,
+       "l": 0.15
+      },
+      "fg": "#f2f5f8"
+     },
+     "lowContrast": [
+      {
+       "text": "Open First Sheet",
+       "ratio": 3,
+       "need": 4.5,
+       "size": 14,
+       "fg": "#ffffff",
+       "bg": "#2ea879"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 7,
+     "inHero": 4,
+     "radius": 0,
+     "height": 36,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 1,
+     "upper": 1,
+     "heroLabels": [
+      "3D Book",
+      "Prev",
+      "Next",
+      "ASSISTANT"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 2,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "button.flex.items-center → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.relative.w-full → rgba(255, 255, 255, 0.06) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.45) 4px 6px 16p"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 64,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bebas neue",
+     "eb garamond",
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 1943,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [
+     {
+      "sel": "main.flex-1",
+      "tag": "main",
+      "top": 0,
+      "height": 1160,
+      "words": 59,
+      "media": 0,
+      "middle": 92,
+      "heading": {
+       "text": "MONOGRAPH",
+       "size": 96,
+       "tag": "div"
+      },
+      "left": 0,
+      "right": 0,
+      "textLeft": 16,
+      "textRight": 16,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.bg-[var(--surface-subtle)].text-[var(--ink)]",
+      "tag": "footer",
+      "top": 1240,
+      "height": 703,
+      "words": 65,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "NANANG ADITYA",
+       "size": 30,
+       "tag": "h4"
+      },
+      "left": 16,
+      "right": 17,
+      "textLeft": 16,
+      "textRight": 17,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Projects",
+      "size": 48,
+      "top": 112,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 2
+     },
+     {
+      "x": 48,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 4,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "width": 1440,
+   "message": "1 eyebrow/kicker label(s) above headings: \"Arsip Teknik • Vol. 2022-2026\" above \"SELECTED WORKS\"",
+   "fix": "Delete them. If the label carried real information, fold it into the headline or the supporting sentence.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "mono",
+   "width": 1440,
+   "message": "Monospace type outside code: ui-monospace — e.g. \"ASSISTANT\"",
+   "fix": "Set it in the text face. Monospace is for literal code inside <pre>/<code> only.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "micro-label",
+   "width": 1440,
+   "message": "1 tiny uppercase letter-spaced label(s): \"Penulis\"",
+   "fix": "Prefer sentence case at body size.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "shadow",
+   "width": 1440,
+   "message": "2 box-shadow(s) on elements at rest: button.flex.items-center → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0 | div.relative.w-full → rgba(255, 255, 255, 0.06) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.45) 4px 6px 16p",
+   "fix": "Remove. Separate surfaces with a tone step or space. Shadows are for things that really float (menus, dialogs, sticky bars).",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "hairline",
+   "width": 1440,
+   "message": "1 thin rule(s)/divider line(s): div.hidden.md:block 620px rule",
+   "fix": "Delete. Separate with space, a tone change, or scale. Lines are only for real tables and form fields.",
+   "alsoAt": [
+    768
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "contrast",
+   "width": 1440,
+   "message": "Low-contrast text: \"Open First Sheet\" 3:1 needs 4.5:1",
+   "fix": "Darken or lighten the text colour.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "font-count",
+   "width": 1440,
+   "message": "3 typefaces in use (Inter, EB Garamond, Bebas Neue).",
+   "fix": "Two at most.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "11 different font sizes (12, 14, 16, 18, 20, 24, 30, 36, 72, 96, 128).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "few-pictures",
+   "width": 1440,
+   "message": "Only 0 picture(s) on the page (0 photographs, footage or raster images, 0 interface fragments). Drawings in SVG do not count.",
+   "fix": "Find real pictures of the subject's world with scripts/assets.mjs (photographs, archival images, maps, engravings, footage), download them to assets/ and give them room: a hero picture, one per section that has a subject, a full-width band. At least four, usually six to twelve."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "small-text",
+   "width": 1440,
+   "message": "2 text block(s) under 13px.",
+   "fix": "Nothing meant to be read goes below 13px.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "dev-server",
+   "width": 1440,
+   "message": "This page is served by a development server (Vite, webpack or Next in dev mode).",
+   "fix": "Run the last gate on the production build too (vite build && vite preview, next build && next start, or the built index.html): minifiers and bundlers change the CSS a visitor receives.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "covered-text",
+   "width": 1440,
+   "message": "Large text lies under another element at some scroll position: \"SELECTED WORKS\" (screen 1, 25% hidden)",
+   "fix": "Nothing may sit on top of a headline or statement. Move the picture, shorten the pinned run, or raise the text above it (z-index) and give it a ground.",
+   "alsoAt": [
+    768
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "side-scroll",
+   "width": 390,
+   "message": "1 row(s) scroll sideways with content past their edge.",
+   "fix": "Jurors and most visitors read a row cut at the edge as clipped, not as scrollable. Wrap it onto more lines, or end it inside the grid."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/projects/desktop-fold.jpg",
+   "pages": [
+    "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/projects/desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/projects/tablet-fold.jpg",
+   "pages": [
+    "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/projects/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/projects/mobile-fold.jpg",
+   "pages": [
+    "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/projects/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

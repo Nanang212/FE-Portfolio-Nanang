@@ -1,26 +1,47 @@
 [
   {
-    "id": "about",
-    "title": "About",
-    "summary": "Nanang Aditya - Software Engineer. Builds scalable enterprise systems using Laravel, Node.js (Express), Spring Boot, Docker.",
-    "text": "Nanang Aditya is a Software Engineer focusing on building robust, scalable enterprise applications. Experienced with Laravel, Node.js (Express), Spring Boot, Docker, and CI/CD practices."
+    "title": "About Nanang Aditya Sutahar",
+    "summary": "Fullstack & Backend Engineer specializing in scalable enterprise systems, toll road construction monitoring, and AI/RAG architectures.",
+    "text": "Nanang Aditya Sutahar is a Software Engineer based in Indonesia with degrees from Electronic Engineering Polytechnic Institute of Surabaya (EEPIS/PENS, D3 GPA 3.69) and Esa Unggul University (S1 GPA 3.66). He specializes in backend engineering using Express.js, Node.js, Laravel, Spring Boot, PostgreSQL, Docker, and AI RAG pipelines."
   },
   {
-    "id": "experience_jm",
-    "title": "PT Jasa Marga - Fullstack Developer",
-    "summary": "Worked on JM-RISE (toll road construction monitoring) and Aggregator Operasi (centralized master data).",
-    "text": "At Jasa Marga, developed JM-RISE, a toll road construction monitoring system, and Aggregator Operasi, a centralized master data aggregator. Responsibilities included database design, API development, integrations, and CI/CD."
+    "title": "PT Jasa Marga (Persero) Tbk - Backend Developer",
+    "summary": "Backend Developer (March 2025 – Present) building enterprise platforms for national toll road operations.",
+    "text": "At PT Jasa Marga, Nanang develops key platforms: 1) JM-RISE: Toll road construction monitoring (Kurva S), legal chronologies, AI RAG vector ingestion, Server-Sent Events (SSE) chat, MinIO S3 storage, Prisma ORM, PostgreSQL. 2) Aggregator Operasi: Centralized master data service unifying multiple internal systems. 3) JM-ACT: Toll road user complaint management system integrated with Travoy mobile app. 4) JIMMS: Toll road environmental maintenance system with RBAC approval workflows."
   },
   {
-    "id": "skills",
-    "title": "Skills",
-    "summary": "Tech stack includes React, Vite, TailwindCSS, Laravel, Node.js, Docker, MySQL, Redis, GitLab CI/CD.",
-    "text": "Frontend: React, Vite, TailwindCSS. Backend: Laravel, Node.js (Express). Databases: MySQL, Redis. DevOps: Docker, GitLab CI/CD. Other: experience with API design, system integration, and scalable architectures."
+    "title": "PT Adira Dinamika Multi Finance - Programmer",
+    "summary": "Programmer (March 2024 – February 2025) maintaining core loan application Action and building digitization services.",
+    "text": "Maintained core application Action for nationwide branches. Developed Project Digitalisasi Document using Spring Boot, Apache POI, Kafka consumers, and tax e-stamps. Built Project Autofill Document and Project Pengkinian Data integrating with Dukcapil."
   },
   {
-    "id": "projects",
-    "title": "Selected Projects",
-    "summary": "JM-RISE, Aggregator Operasi, JM-ACT — systems for monitoring, aggregation, and complaint management.",
-    "text": "JM-RISE: toll road monitoring with real-time tracking and reporting. Aggregator Operasi: centralized master data API. JM-ACT: complaint management integrated with mobile apps, supporting RESTful APIs and notifications."
+    "title": "JM-RISE (Jasa Marga Toll Road Construction Monitoring & AI Assistant)",
+    "summary": "Enterprise web platform for toll road construction monitoring, Kurva S, and AI RAG Assistant.",
+    "text": "JM-RISE monitors physical and financial milestones across Jasa Marga subsidiaries (APJT). Nanang designed PostgreSQL schemas, Express.js REST APIs with Prisma ORM, automated AI RAG document ingestion into vector databases, real-time multi-turn chat via Server-Sent Events (SSE), and MinIO document storage."
+  },
+  {
+    "title": "SIM SEMPRO & TA (Academic Proposal & Final Project Management System)",
+    "summary": "Academic capstone project built with Laravel 11, Inertia.js, React TypeScript, NLP Cosine Similarity, and Docker.",
+    "text": "SIM SEMPRO & TA is a centralized academic management web platform built using a Modular Monolith architecture integrating Laravel 11, Inertia.js, React (TypeScript), and Tailwind CSS. It implements an NLP text similarity engine using N-gram tokenization and Cosine Similarity to calculate title duplication against past theses with 41.8 ms latency. Features include Topic-to-Lecturer matching, RBAC across 4 roles (Student, Lecturer, Admin, Kaprodi), 8-session guidance audit trails, Google Meet integration, 78 automated Unit/Feature tests (100% pass), SUS score 87.08 (Grade A), and Docker Compose with Cloudflare Zero-Trust Tunnel."
+  },
+  {
+    "title": "WordPress Multi-Site Cloud VPS Migration & Infrastructure Optimization (Freelance)",
+    "summary": "Zero-downtime server migration of 26+ WordPress domains to Linux CloudPanel VPS with bot mitigation and performance tuning.",
+    "text": "Successfully planned and executed an end-to-end zero-downtime server migration for high-traffic WordPress websites (including JatimDaily.com and 26+ client domains) from Hostinger Shared Hosting to a dedicated Linux Cloud VPS powered by CloudPanel (Nginx, PHP 8.3 FPM, MariaDB). Handled database export/import, file synchronization via rsync/SSH, custom DNS routing with local hosts bypass verification, and automated SSL/TLS provisioning. Resolved critical server bottlenecks where CPU Load Average spiked to 104+ due to aggressive AI crawlers (Meta/Claude/Exa bots) by implementing custom Nginx HTTP 403 blocking, PHP-FPM process pool tuning (pm.max_children), and Redis object caching. Reduced CPU load from 104+ to < 0.5, freed 4.5+ GB RAM, and improved TTFB from 40s+ down to 1-3 seconds. Skills: Linux (Ubuntu/Debian), Nginx, CloudPanel, WordPress, PHP-FPM, MariaDB, Redis, Bash/SSH, Server Performance Tuning, Web Security."
+  },
+  {
+    "title": "SIGNFLOW (Digital Signature & Document Verification Platform)",
+    "summary": "Secure web-based digital signature and document validation platform built with Laravel, Inertia.js, React TypeScript, PWA, and MinIO.",
+    "text": "SIGNFLOW is a secure web-based digital signature and document validation platform developed as a freelance project to digitize enterprise document signing workflows. Engineered dynamic PDF manipulation and cryptographic hash verification to ensure document authenticity and tamper protection. Implemented sequential multi-level approval workflows, automated queue-driven email notifications, role-based access control (RBAC), and bulk user status management with Sonner toasts. Built as a responsive Progressive Web App (PWA) supporting offline access and mobile-friendly touch signature drawing. Skills: Laravel, Inertia.js, React, TypeScript, Tailwind CSS, PostgreSQL, MinIO (S3), Docker, PAdES/FPDI, Mail Queue, PWA, Sonner, Postman, Git."
+  },
+  {
+    "title": "AGGREGATOR OPERASI (Centralized Master Data Management for Toll Operations)",
+    "summary": "Master Data Management (MDM) service unifying operational toll data across PT Jasa Marga.",
+    "text": "Designed and developed a centralized Master Data Management (MDM) service to unify, standardize, and distribute operational data (toll gates, clusters, routes, transaction reports) across Jasa Marga internal systems. Established a Single Source of Truth (SSOT) architecture, built high-performance RESTful APIs with Redis caching, ensured zero-downtime legacy database backward compatibility, and structured backend with Repository and Service Layer patterns. Skills: Express.js, PostgreSQL, Redis, Docker, Postman, Swagger, Clean Architecture, Jira."
+  },
+  {
+    "title": "Technical Skills & Qualifications",
+    "summary": "Backend, databases, DevOps, and cloud storage technologies.",
+    "text": "Languages: JavaScript, SQL, PHP, Java, Python, Go, .Net. Frameworks: Express.js, Laravel, Spring Boot, Prisma ORM, React.js, TailwindCSS. Databases: PostgreSQL, MySQL, Redis. DevOps & Storage: Docker, MinIO S3, AWS S3, GitLab CI/CD, Jenkins, Kafka, Swagger, Postman."
   }
 ]

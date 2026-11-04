@@ -1,0 +1,2041 @@
+{
+ "url": "http://localhost:5175/",
+ "at": "2026-11-04T05:46:33.088Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.95,
+    1,
+    0.98,
+    1
+   ],
+   "motion": {
+    "elements": 17,
+    "css": 0,
+    "transitions": 17,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 3287,
+     "screens": 3.7,
+     "words": 567,
+     "img": 5,
+     "video": 0,
+     "canvas": 0,
+     "svg": 16,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "jakarta-bogor-ciawi-jbc-toll-road-jalan.jpg",
+      "3e69b54f-d62f-47a1-be91-13eaf042e0ab.webp",
+      "890f367b-228f-4b41-a2fe-bb8a6fb18cdc.webp",
+      "10f32a2f-c46e-4263-adeb-275aa019f289.webp",
+      "813a7dca-dc17-4fe4-9c8a-de85d4178165.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "NANANG ADITYA",
+     "words": 2,
+     "chars": 13,
+     "lines": 1,
+     "size": 96,
+     "vw": 6.7,
+     "font": "Bebas Neue",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 1,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.42,
+     "top": 144,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "NANANG ADITYA",
+     "words": 2,
+     "lines": 1,
+     "size": 96,
+     "font": "Bebas Neue"
+    },
+    "headings": [
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.09,
+      "top": 22,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 96,
+      "vw": 6.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.42,
+      "top": 144,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Software engineer building enterprise backends, distributed data pipelines, and mission-critical systems.",
+      "words": 11,
+      "chars": 105,
+      "lines": 3,
+      "size": 30,
+      "vw": 2.1,
+      "font": "EB Garamond",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.42,
+      "top": 264,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "SELECTED ENTERPRISE SYSTEMS",
+      "words": 3,
+      "chars": 27,
+      "lines": 1,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.31,
+      "top": 820,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "JM-RISE",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.32,
+      "top": 980,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Aggregator Operasi",
+      "words": 2,
+      "chars": 18,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.32,
+      "top": 980,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "JM-ACT",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.32,
+      "top": 1545,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "JIMMS",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.32,
+      "top": 1545,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "TECHNICAL RIGOR",
+      "words": 2,
+      "chars": 15,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.23,
+      "top": 2238,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.43,
+      "top": 2934,
+      "tag": "h4",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 10,
+     "maxLines": 3,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "EB Garamond",
+       "share": 0.71,
+       "mono": false
+      },
+      {
+       "family": "Inter",
+       "share": 0.26,
+       "mono": false
+      },
+      {
+       "family": "Bebas Neue",
+       "share": 0.03,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0,
+       "mono": false
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      12,
+      14,
+      16,
+      18,
+      30,
+      36,
+      48,
+      96
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "EB Garamond",
+      "size": 18,
+      "leading": 1.56,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 10.2
+     },
+     "measureChars": 52,
+     "max": {
+      "size": 96,
+      "vw": 6.7,
+      "font": "Bebas Neue",
+      "text": "NANANG ADITYA"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "ASSISTANT"
+     ],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.03,
+     "centerShare": 0,
+     "smallText": 1
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0d1217",
+     "bodyBgHsl": {
+      "h": 210,
+      "s": 0.28,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#0f172a",
+       "top": 0,
+       "hsl": {
+        "h": 222,
+        "s": 0.47,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#141c23",
+       "top": 724,
+       "hsl": {
+        "h": 208,
+        "s": 0.27,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#1c2732",
+       "top": 2870,
+       "hsl": {
+        "h": 210,
+        "s": 0.28,
+        "l": 0.15
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#cbd5e1",
+       "share": 0.73
+      },
+      {
+       "color": "#f2f5f8",
+       "share": 0.18
+      },
+      {
+       "color": "#94a3b8",
+       "share": 0.06
+      },
+      {
+       "color": "#2ea879",
+       "share": 0.01
+      },
+      {
+       "color": "#091a12",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#1c2732",
+      "hsl": {
+       "h": 210,
+       "s": 0.28,
+       "l": 0.15
+      },
+      "fg": "#f2f5f8"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 6,
+     "inHero": 6,
+     "radius": 0,
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 1,
+     "upper": 1,
+     "heroLabels": [
+      "Home",
+      "Open 3D Project Book",
+      "Get In Touch",
+      "Unduh CV",
+      "Open All in 3D Book"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 948
+      },
+      {
+       "count": 5,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 2238
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.1
+     }
+    ],
+    "nav": {
+     "links": 7,
+     "fixed": true,
+     "height": 80,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bebas neue",
+     "eb garamond",
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 3287,
+    "margins": {
+     "left": 176,
+     "right": 187
+    },
+    "sections": [
+     {
+      "sel": "section.pt-28.sm:pt-36",
+      "tag": "section",
+      "top": 0,
+      "height": 724,
+      "words": 90,
+      "media": 1,
+      "middle": 115,
+      "heading": {
+       "text": "NANANG ADITYA",
+       "size": 96,
+       "tag": "h1"
+      },
+      "left": 176,
+      "right": 176,
+      "textLeft": 176,
+      "textRight": 187,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding.bg-[var(--surface)]",
+      "tag": "section",
+      "top": 724,
+      "height": 1418,
+      "words": 462,
+      "media": 4,
+      "middle": 96,
+      "heading": {
+       "text": "SELECTED ENTERPRISE SYSTEMS",
+       "size": 48,
+       "tag": "h2"
+      },
+      "left": 176,
+      "right": 208,
+      "textLeft": 176,
+      "textRight": 209,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding",
+      "tag": "section",
+      "top": 2142,
+      "height": 648,
+      "words": 46,
+      "media": 0,
+      "middle": 120,
+      "heading": {
+       "text": "TECHNICAL RIGOR",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 176,
+      "right": 229,
+      "textLeft": 176,
+      "textRight": 229,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.bg-[var(--surface-subtle)].text-[var(--ink)]",
+      "tag": "footer",
+      "top": 2870,
+      "height": 417,
+      "words": 65,
+      "media": 0,
+      "middle": 77,
+      "heading": {
+       "text": "NANANG ADITYA",
+       "size": 36,
+       "tag": "h4"
+      },
+      "left": 176,
+      "right": 176,
+      "textLeft": 176,
+      "textRight": 176,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "NANANG ADITYA",
+      "size": 96,
+      "top": 144,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 176,
+      "n": 6
+     },
+     {
+      "x": 208,
+      "n": 4
+     },
+     {
+      "x": 768,
+      "n": 4
+     },
+     {
+      "x": 576,
+      "n": 3
+     },
+     {
+      "x": 944,
+      "n": 3
+     }
+    ],
+    "leftBlocks": 20,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.14,
+    "voidBox": {
+     "x": 420,
+     "y": 600,
+     "w": 1020,
+     "h": 180
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.87,
+    1,
+    0.99,
+    1
+   ],
+   "motion": {
+    "elements": 17,
+    "css": 0,
+    "transitions": 17,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 3856,
+     "screens": 3.8,
+     "words": 567,
+     "img": 5,
+     "video": 0,
+     "canvas": 0,
+     "svg": 16,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "jakarta-bogor-ciawi-jbc-toll-road-jalan.jpg",
+      "3e69b54f-d62f-47a1-be91-13eaf042e0ab.webp",
+      "890f367b-228f-4b41-a2fe-bb8a6fb18cdc.webp",
+      "10f32a2f-c46e-4263-adeb-275aa019f289.webp",
+      "813a7dca-dc17-4fe4-9c8a-de85d4178165.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "NANANG ADITYA",
+     "words": 2,
+     "chars": 13,
+     "lines": 1,
+     "size": 72,
+     "vw": 9.4,
+     "font": "Bebas Neue",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 1,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.94,
+     "top": 144,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "NANANG ADITYA",
+     "words": 2,
+     "lines": 1,
+     "size": 72,
+     "font": "Bebas Neue"
+    },
+    "headings": [
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 2,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.09,
+      "top": 4,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 72,
+      "vw": 9.4,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 144,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Software engineer building enterprise backends, distributed data pipelines, and mission-critical systems.",
+      "words": 11,
+      "chars": 105,
+      "lines": 2,
+      "size": 30,
+      "vw": 3.9,
+      "font": "EB Garamond",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 240,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "SELECTED ENTERPRISE SYSTEMS",
+      "words": 3,
+      "chars": 27,
+      "lines": 1,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.59,
+      "top": 1419,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "JM-RISE",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.36,
+      "top": 1579,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Aggregator Operasi",
+      "words": 2,
+      "chars": 18,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.36,
+      "top": 1579,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "JM-ACT",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.36,
+      "top": 2102,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "JIMMS",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.36,
+      "top": 2102,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "TECHNICAL RIGOR",
+      "words": 2,
+      "chars": 15,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.28,
+      "top": 2724,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.53,
+      "top": 3492,
+      "tag": "h4",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 10,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "EB Garamond",
+       "share": 0.71,
+       "mono": false
+      },
+      {
+       "family": "Inter",
+       "share": 0.26,
+       "mono": false
+      },
+      {
+       "family": "Bebas Neue",
+       "share": 0.03,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0,
+       "mono": false
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      12,
+      14,
+      16,
+      18,
+      30,
+      36,
+      48,
+      72
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "EB Garamond",
+      "size": 18,
+      "leading": 1.56,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 10.2
+     },
+     "measureChars": 31,
+     "max": {
+      "size": 72,
+      "vw": 9.4,
+      "font": "Bebas Neue",
+      "text": "NANANG ADITYA"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "ASSISTANT"
+     ],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.03,
+     "centerShare": 0,
+     "smallText": 1
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0d1217",
+     "bodyBgHsl": {
+      "h": 210,
+      "s": 0.28,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#0f172a",
+       "top": 0,
+       "hsl": {
+        "h": 222,
+        "s": 0.47,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#1c2732",
+       "top": 624,
+       "hsl": {
+        "h": 210,
+        "s": 0.28,
+        "l": 0.15
+       }
+      },
+      {
+       "color": "#141c23",
+       "top": 1323,
+       "hsl": {
+        "h": 208,
+        "s": 0.27,
+        "l": 0.11
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#cbd5e1",
+       "share": 0.73
+      },
+      {
+       "color": "#f2f5f8",
+       "share": 0.18
+      },
+      {
+       "color": "#94a3b8",
+       "share": 0.06
+      },
+      {
+       "color": "#2ea879",
+       "share": 0.01
+      },
+      {
+       "color": "#091a12",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#1c2732",
+      "hsl": {
+       "h": 210,
+       "s": 0.28,
+       "l": 0.15
+      },
+      "fg": "#f2f5f8"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 6,
+     "inHero": 5,
+     "radius": 0,
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 1,
+     "upper": 1,
+     "heroLabels": [
+      "Home",
+      "Open 3D Project Book",
+      "Get In Touch",
+      "Unduh CV",
+      "ASSISTANT"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 1547
+      },
+      {
+       "count": 5,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 2724
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.37
+     }
+    ],
+    "nav": {
+     "links": 7,
+     "fixed": true,
+     "height": 80,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bebas neue",
+     "eb garamond",
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 3856,
+    "margins": {
+     "left": 24,
+     "right": 36
+    },
+    "sections": [
+     {
+      "sel": "section.pt-28.sm:pt-36",
+      "tag": "section",
+      "top": 0,
+      "height": 1323,
+      "words": 90,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "NANANG ADITYA",
+       "size": 72,
+       "tag": "h1"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding.bg-[var(--surface)]",
+      "tag": "section",
+      "top": 1323,
+      "height": 1305,
+      "words": 462,
+      "media": 4,
+      "middle": 0,
+      "heading": {
+       "text": "SELECTED ENTERPRISE SYSTEMS",
+       "size": 48,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 56,
+      "textLeft": 24,
+      "textRight": 56,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding",
+      "tag": "section",
+      "top": 2628,
+      "height": 720,
+      "words": 46,
+      "media": 0,
+      "middle": 95,
+      "heading": {
+       "text": "TECHNICAL RIGOR",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 69,
+      "textLeft": 24,
+      "textRight": 69,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.bg-[var(--surface-subtle)].text-[var(--ink)]",
+      "tag": "footer",
+      "top": 3428,
+      "height": 428,
+      "words": 65,
+      "media": 0,
+      "middle": 64,
+      "heading": {
+       "text": "NANANG ADITYA",
+       "size": 36,
+       "tag": "h4"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "NANANG ADITYA",
+      "size": 72,
+      "top": 144,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 24,
+      "n": 6
+     },
+     {
+      "x": 56,
+      "n": 4
+     },
+     {
+      "x": 432,
+      "n": 4
+     },
+     {
+      "x": 301,
+      "n": 3
+     },
+     {
+      "x": 547,
+      "n": 3
+     }
+    ],
+    "leftBlocks": 20,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 7,
+   "filled": [
+    0.91,
+    1,
+    1,
+    1,
+    0.86,
+    0.94,
+    1
+   ],
+   "motion": {
+    "elements": 12,
+    "css": 0,
+    "transitions": 12,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 5437,
+     "screens": 6.4,
+     "words": 559,
+     "img": 5,
+     "video": 0,
+     "canvas": 0,
+     "svg": 16,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "jakarta-bogor-ciawi-jbc-toll-road-jalan.jpg",
+      "3e69b54f-d62f-47a1-be91-13eaf042e0ab.webp",
+      "890f367b-228f-4b41-a2fe-bb8a6fb18cdc.webp",
+      "10f32a2f-c46e-4263-adeb-275aa019f289.webp",
+      "813a7dca-dc17-4fe4-9c8a-de85d4178165.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "NANANG ADITYA",
+     "words": 2,
+     "chars": 13,
+     "lines": 1,
+     "size": 60,
+     "vw": 15.4,
+     "font": "Bebas Neue",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 1,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.92,
+     "top": 112,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "NANANG ADITYA",
+     "words": 2,
+     "lines": 1,
+     "size": 60,
+     "font": "Bebas Neue"
+    },
+    "headings": [
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.33,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.27,
+      "top": 16,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 60,
+      "vw": 15.4,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 112,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Software engineer building enterprise backends, distributed data pipelines, and mission-critical systems.",
+      "words": 11,
+      "chars": 105,
+      "lines": 3,
+      "size": 24,
+      "vw": 6.2,
+      "font": "EB Garamond",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.38,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 196,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "SELECTED ENTERPRISE SYSTEMS",
+      "words": 3,
+      "chars": 27,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1221,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "JM-RISE",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 1461,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Aggregator Operasi",
+      "words": 2,
+      "chars": 18,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 1982,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "JM-ACT",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 2504,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "JIMMS",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 2995,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "TECHNICAL RIGOR",
+      "words": 2,
+      "chars": 15,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 3551,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 4798,
+      "tag": "h4",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 10,
+     "maxLines": 3,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "EB Garamond",
+       "share": 0.72,
+       "mono": false
+      },
+      {
+       "family": "Inter",
+       "share": 0.25,
+       "mono": false
+      },
+      {
+       "family": "Bebas Neue",
+       "share": 0.03,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0,
+       "mono": false
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      12,
+      14,
+      16,
+      18,
+      24,
+      30,
+      36,
+      60
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "EB Garamond",
+      "size": 16,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 10.2
+     },
+     "measureChars": 37,
+     "max": {
+      "size": 60,
+      "vw": 15.4,
+      "font": "Bebas Neue",
+      "text": "NANANG ADITYA"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "ASSISTANT"
+     ],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.03,
+     "centerShare": 0,
+     "smallText": 1
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0d1217",
+     "bodyBgHsl": {
+      "h": 210,
+      "s": 0.28,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#0f172a",
+       "top": 0,
+       "hsl": {
+        "h": 222,
+        "s": 0.47,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#1c2732",
+       "top": 707,
+       "hsl": {
+        "h": 210,
+        "s": 0.28,
+        "l": 0.15
+       }
+      },
+      {
+       "color": "#141c23",
+       "top": 1157,
+       "hsl": {
+        "h": 208,
+        "s": 0.27,
+        "l": 0.11
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#cbd5e1",
+       "share": 0.73
+      },
+      {
+       "color": "#f2f5f8",
+       "share": 0.18
+      },
+      {
+       "color": "#94a3b8",
+       "share": 0.07
+      },
+      {
+       "color": "#2ea879",
+       "share": 0.01
+      },
+      {
+       "color": "#091a12",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#1c2732",
+      "hsl": {
+       "h": 210,
+       "s": 0.28,
+       "l": 0.15
+      },
+      "fg": "#f2f5f8"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 4,
+     "radius": 0,
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 1,
+     "upper": 1,
+     "heroLabels": [
+      "Open 3D Project Book",
+      "Get In Touch",
+      "Unduh CV",
+      "ASSISTANT"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.15
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 64,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bebas neue",
+     "eb garamond",
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 5437,
+    "margins": {
+     "left": 16,
+     "right": 17
+    },
+    "sections": [
+     {
+      "sel": "section.pt-28.sm:pt-36",
+      "tag": "section",
+      "top": 0,
+      "height": 1157,
+      "words": 90,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "NANANG ADITYA",
+       "size": 60,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 16,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding.bg-[var(--surface)]",
+      "tag": "section",
+      "top": 1157,
+      "height": 2330,
+      "words": 462,
+      "media": 4,
+      "middle": 0,
+      "heading": {
+       "text": "SELECTED ENTERPRISE SYSTEMS",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 36,
+      "textLeft": 16,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding",
+      "tag": "section",
+      "top": 3487,
+      "height": 1168,
+      "words": 46,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "TECHNICAL RIGOR",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 37,
+      "textLeft": 16,
+      "textRight": 37,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.bg-[var(--surface-subtle)].text-[var(--ink)]",
+      "tag": "footer",
+      "top": 4734,
+      "height": 703,
+      "words": 65,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "NANANG ADITYA",
+       "size": 30,
+       "tag": "h4"
+      },
+      "left": 16,
+      "right": 17,
+      "textLeft": 16,
+      "textRight": 17,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "NANANG ADITYA",
+      "size": 60,
+      "top": 112,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 40,
+      "n": 14
+     },
+     {
+      "x": 16,
+      "n": 6
+     }
+    ],
+    "leftBlocks": 20,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "card-rows",
+   "width": 1440,
+   "message": "2 rows of identical boxed cards.",
+   "fix": "Vary the composition; not every section is a card grid.",
+   "alsoAt": [
+    768
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "font-count",
+   "width": 1440,
+   "message": "3 typefaces in use (EB Garamond, Inter, Bebas Neue).",
+   "fix": "Two at most.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "small-text",
+   "width": 1440,
+   "message": "1 text block(s) under 13px.",
+   "fix": "Nothing meant to be read goes below 13px.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "dev-server",
+   "width": 1440,
+   "message": "This page is served by a development server (Vite, webpack or Next in dev mode).",
+   "fix": "Run the last gate on the production build too (vite build && vite preview, next build && next start, or the built index.html): minifiers and bundlers change the CSS a visitor receives.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/final/desktop-fold.jpg",
+   "pages": [
+    "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/final/desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/final/tablet-fold.jpg",
+   "pages": [
+    "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/final/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/final/mobile-fold.jpg",
+   "pages": [
+    "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/final/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

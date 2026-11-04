@@ -10,9 +10,26 @@ export default {
     theme: {
         extend: {
             fontFamily: {
+                display: ['"Bebas Neue"', 'sans-serif'],
+                serif: ['"EB Garamond"', 'Georgia', 'serif'],
                 sans: ['Inter', ...defaultTheme.fontFamily.sans],
             },
             colors: {
+                paper: {
+                    50:  '#faf8f4',
+                    100: '#f4eedf',
+                    200: '#e7decb',
+                    300: '#d5c7ad',
+                    800: '#1c242c',
+                    900: '#141b21',
+                    950: '#0d1318',
+                },
+                accent: {
+                    DEFAULT: '#1f382b',
+                    hover: '#15271e',
+                    light: '#2a4c3a',
+                    dark: '#2ea879',
+                },
                 primary: {
                     50:  '#eff6ff',
                     100: '#dbeafe',
@@ -24,29 +41,6 @@ export default {
                     700: '#1d4ed8',
                     800: '#1e40af',
                     900: '#1e3a8a',
-                },
-            },
-            animation: {
-                'fade-up': 'fadeUp 0.5s ease-out both',
-                'fade-in': 'fadeIn 0.4s ease-out both',
-                'float': 'float 3s ease-in-out infinite',
-                'float-delay': 'float 3s ease-in-out 1.5s infinite',
-                'spin-very-slow': 'spin 20s linear infinite',
-                'spin-very-slow-reverse': 'spin 25s linear infinite reverse',
-                'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            },
-            keyframes: {
-                fadeUp: {
-                    '0%':   { opacity: '0', transform: 'translateY(20px)' },
-                    '100%': { opacity: '1', transform: 'translateY(0)' },
-                },
-                fadeIn: {
-                    '0%':   { opacity: '0' },
-                    '100%': { opacity: '1' },
-                },
-                float: {
-                    '0%, 100%': { transform: 'translateY(0px)' },
-                    '50%':      { transform: 'translateY(-10px)' },
                 },
             },
         },

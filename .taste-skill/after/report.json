@@ -1,0 +1,2522 @@
+{
+ "url": "http://localhost:5175/",
+ "at": "2026-11-04T05:40:05.471Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.94,
+    0.73,
+    0.83,
+    1
+   ],
+   "motion": {
+    "elements": 17,
+    "css": 0,
+    "transitions": 17,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 3275,
+     "screens": 3.6,
+     "words": 605,
+     "img": 5,
+     "video": 0,
+     "canvas": 0,
+     "svg": 16,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "jakarta-bogor-ciawi-jbc-toll-road-jalan.jpg",
+      "3e69b54f-d62f-47a1-be91-13eaf042e0ab.webp",
+      "890f367b-228f-4b41-a2fe-bb8a6fb18cdc.webp",
+      "10f32a2f-c46e-4263-adeb-275aa019f289.webp",
+      "813a7dca-dc17-4fe4-9c8a-de85d4178165.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "NANANG ADITYA",
+     "words": 2,
+     "chars": 13,
+     "lines": 1,
+     "size": 96,
+     "vw": 6.7,
+     "font": "Bebas Neue",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 1,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.43,
+     "top": 168,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "NANANG ADITYA",
+     "words": 2,
+     "lines": 1,
+     "size": 96,
+     "font": "Bebas Neue"
+    },
+    "headings": [
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.09,
+      "top": 22,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 96,
+      "vw": 6.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.43,
+      "top": 168,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Software engineer building enterprise backends, distributed data pipelines, and mission-critical systems.",
+      "words": 11,
+      "chars": 105,
+      "lines": 3,
+      "size": 30,
+      "vw": 2.1,
+      "font": "EB Garamond",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.43,
+      "top": 288,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "SELECTED ENTERPRISE SYSTEMS",
+      "words": 3,
+      "chars": 27,
+      "lines": 1,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.31,
+      "top": 862,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "JM-RISE (Jasa Marga Toll Road Construction Monitoring Application)",
+      "words": 8,
+      "chars": 66,
+      "lines": 2,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.33,
+      "top": 1020,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Aggregator Operasi",
+      "words": 2,
+      "chars": 18,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.33,
+      "top": 1020,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "JM-ACT (Jasa Marga Adukan Cermati Tuntaskan)",
+      "words": 6,
+      "chars": 44,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.33,
+      "top": 1629,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "JIMMS (Jasa Marga Integrated Maintenance Management System)",
+      "words": 7,
+      "chars": 59,
+      "lines": 2,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.33,
+      "top": 1629,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "TECHNICAL RIGOR",
+      "words": 2,
+      "chars": 15,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.24,
+      "top": 2386,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.43,
+      "top": 2978,
+      "tag": "h4",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 10,
+     "maxLines": 3,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "EB Garamond",
+       "share": 0.67,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.21,
+       "mono": false
+      },
+      {
+       "family": "Inter",
+       "share": 0.06,
+       "mono": false
+      },
+      {
+       "family": "Bebas Neue",
+       "share": 0.06,
+       "mono": false
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      11,
+      12,
+      14,
+      16,
+      18,
+      30,
+      36,
+      48,
+      96
+     ],
+     "sizeCount": 9,
+     "notLoaded": [],
+     "body": {
+      "font": "EB Garamond",
+      "size": 16,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.8
+     },
+     "measureChars": 60,
+     "max": {
+      "size": 96,
+      "vw": 6.7,
+      "font": "Bebas Neue",
+      "text": "NANANG ADITYA"
+     },
+     "monoShare": 0.21,
+     "monoProseShare": 0.21,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "/ Software Engineer",
+      "Home",
+      "Projects",
+      "Experience",
+      "About",
+      "Skills"
+     ],
+     "microLabels": 13,
+     "microLabelShare": 0.029,
+     "microSamples": [
+      "PORTFOLIO & MONOGRAPH",
+      "•",
+      "INDONESIA",
+      "FLAGSHIP ARCHIVES",
+      "STACK • CORE",
+      "Backend"
+     ],
+     "upperShare": 0.09,
+     "centerShare": 0,
+     "smallText": 19
+    },
+    "eyebrows": [
+     {
+      "text": "PORTFOLIO & MONOGRAPH",
+      "above": "NANANG ADITYA",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 128
+     },
+     {
+      "text": "FLAGSHIP ARCHIVES",
+      "above": "SELECTED ENTERPRISE SYSTEMS",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 828
+     },
+     {
+      "text": "ITEM #01",
+      "above": "JM-RISE (Jasa Marga Toll Road Constructi",
+      "upper": true,
+      "tracked": false,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 992
+     },
+     {
+      "text": "ITEM #02",
+      "above": "Aggregator Operasi",
+      "upper": true,
+      "tracked": false,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 992
+     },
+     {
+      "text": "ITEM #03",
+      "above": "JM-ACT (Jasa Marga Adukan Cermati Tuntas",
+      "upper": true,
+      "tracked": false,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 1601
+     },
+     {
+      "text": "ITEM #04",
+      "above": "JIMMS (Jasa Marga Integrated Maintenance",
+      "upper": true,
+      "tracked": false,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 1601
+     },
+     {
+      "text": "STACK • CORE",
+      "above": "TECHNICAL RIGOR",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 2348
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0d1217",
+     "bodyBgHsl": {
+      "h": 210,
+      "s": 0.28,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#0f172a",
+       "top": 0,
+       "hsl": {
+        "h": 222,
+        "s": 0.47,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#141c23",
+       "top": 731,
+       "hsl": {
+        "h": 208,
+        "s": 0.27,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#1a252f",
+       "top": 2886,
+       "hsl": {
+        "h": 209,
+        "s": 0.29,
+        "l": 0.14
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#9aa8b6",
+       "share": 0.74
+      },
+      {
+       "color": "#f2f5f8",
+       "share": 0.14
+      },
+      {
+       "color": "#6e7d8d",
+       "share": 0.1
+      },
+      {
+       "color": "#2ea879",
+       "share": 0.01
+      },
+      {
+       "color": "#091a12",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#2ea879",
+      "hsl": {
+       "h": 157,
+       "s": 0.57,
+       "l": 0.42
+      },
+      "fg": "#091a12"
+     },
+     "lowContrast": [
+      {
+       "text": "Built with React • Vite • TailwindCSS. V",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#6e7d8d",
+       "bg": "#1a252f"
+      },
+      {
+       "text": "DIRECT DISPATCH",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#6e7d8d",
+       "bg": "#1a252f"
+      },
+      {
+       "text": "Archival highway photography © Firzafp, ",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 11,
+       "fg": "#6e7d8d",
+       "bg": "#1a252f"
+      },
+      {
+       "text": "Jakarta, Indonesia",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#6e7d8d",
+       "bg": "#1a252f"
+      },
+      {
+       "text": "© 2026 Nanang Aditya. All rights reserve",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#6e7d8d",
+       "bg": "#1a252f"
+      },
+      {
+       "text": "PLATE 01 • INFRASTRUCTURE",
+       "ratio": 4.1,
+       "need": 4.5,
+       "size": 11,
+       "fg": "#6e7d8d",
+       "bg": "#141c23"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 5,
+     "radius": 0,
+     "height": 46,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 2,
+     "upper": 1,
+     "heroLabels": [
+      "Open 3D Project Book",
+      "Get In Touch",
+      "Unduh CV",
+      "Open All in 3D Book",
+      "ASSISTANT"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 18,
+     "hairlineSamples": [
+      "header.fixed.top-0 1440px",
+      "section.pt-24.sm:pt-32 1440px",
+      "div.p-3.bg-[var(--surface)] 423px",
+      "section.section-padding.border-b 1440px",
+      "div.flex.flex-col 1088px"
+     ],
+     "outlinedBoxes": 15,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 967
+      },
+      {
+       "count": 5,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 2347
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.1
+     }
+    ],
+    "nav": {
+     "links": 7,
+     "fixed": true,
+     "height": 81,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bebas neue",
+     "eb garamond",
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 3275,
+    "margins": {
+     "left": 176,
+     "right": 189
+    },
+    "sections": [
+     {
+      "sel": "section.pt-24.sm:pt-32",
+      "tag": "section",
+      "top": 0,
+      "height": 731,
+      "words": 96,
+      "media": 1,
+      "middle": 110,
+      "heading": {
+       "text": "NANANG ADITYA",
+       "size": 96,
+       "tag": "h1"
+      },
+      "left": 176,
+      "right": 177,
+      "textLeft": 176,
+      "textRight": 189,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding.border-b",
+      "tag": "section",
+      "top": 731,
+      "height": 1520,
+      "words": 486,
+      "media": 4,
+      "middle": 82,
+      "heading": {
+       "text": "SELECTED ENTERPRISE SYSTEMS",
+       "size": 48,
+       "tag": "h2"
+      },
+      "left": 176,
+      "right": 201,
+      "textLeft": 176,
+      "textRight": 201,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding",
+      "tag": "section",
+      "top": 2251,
+      "height": 571,
+      "words": 49,
+      "media": 0,
+      "middle": 75,
+      "heading": {
+       "text": "TECHNICAL RIGOR",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 176,
+      "right": 238,
+      "textLeft": 176,
+      "textRight": 238,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.border-t.border-[var(--border)]",
+      "tag": "footer",
+      "top": 2886,
+      "height": 389,
+      "words": 69,
+      "media": 0,
+      "middle": 123,
+      "heading": {
+       "text": "NANANG ADITYA",
+       "size": 36,
+       "tag": "h4"
+      },
+      "left": 176,
+      "right": 176,
+      "textLeft": 176,
+      "textRight": 176,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "NANANG ADITYA",
+      "size": 96,
+      "top": 168,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 176,
+      "n": 6
+     },
+     {
+      "x": 201,
+      "n": 4
+     },
+     {
+      "x": 761,
+      "n": 4
+     }
+    ],
+    "leftBlocks": 14,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.16,
+    "voidBox": {
+     "x": 420,
+     "y": 600,
+     "w": 840,
+     "h": 240
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.8,
+    0.94,
+    0.8,
+    0.99
+   ],
+   "motion": {
+    "elements": 17,
+    "css": 0,
+    "transitions": 17,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 3865,
+     "screens": 3.8,
+     "words": 605,
+     "img": 5,
+     "video": 0,
+     "canvas": 0,
+     "svg": 16,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "jakarta-bogor-ciawi-jbc-toll-road-jalan.jpg",
+      "3e69b54f-d62f-47a1-be91-13eaf042e0ab.webp",
+      "890f367b-228f-4b41-a2fe-bb8a6fb18cdc.webp",
+      "10f32a2f-c46e-4263-adeb-275aa019f289.webp",
+      "813a7dca-dc17-4fe4-9c8a-de85d4178165.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "NANANG ADITYA",
+     "words": 2,
+     "chars": 13,
+     "lines": 1,
+     "size": 72,
+     "vw": 9.4,
+     "font": "Bebas Neue",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 1,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.94,
+     "top": 168,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "NANANG ADITYA",
+     "words": 2,
+     "lines": 1,
+     "size": 72,
+     "font": "Bebas Neue"
+    },
+    "headings": [
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 2,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.09,
+      "top": 4,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 72,
+      "vw": 9.4,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 168,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Software engineer building enterprise backends, distributed data pipelines, and mission-critical systems.",
+      "words": 11,
+      "chars": 105,
+      "lines": 2,
+      "size": 30,
+      "vw": 3.9,
+      "font": "EB Garamond",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 264,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "SELECTED ENTERPRISE SYSTEMS",
+      "words": 3,
+      "chars": 27,
+      "lines": 1,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.59,
+      "top": 1447,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "JM-RISE (Jasa Marga Toll Road Construction Monitoring Application)",
+      "words": 8,
+      "chars": 66,
+      "lines": 3,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 1605,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Aggregator Operasi",
+      "words": 2,
+      "chars": 18,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.38,
+      "top": 1605,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "JM-ACT (Jasa Marga Adukan Cermati Tuntaskan)",
+      "words": 6,
+      "chars": 44,
+      "lines": 2,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 2171,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "JIMMS (Jasa Marga Integrated Maintenance Management System)",
+      "words": 7,
+      "chars": 59,
+      "lines": 3,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.38,
+      "top": 2171,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "TECHNICAL RIGOR",
+      "words": 2,
+      "chars": 15,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.28,
+      "top": 2884,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.53,
+      "top": 3540,
+      "tag": "h4",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 10,
+     "maxLines": 3,
+     "over2Lines": 2,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "EB Garamond",
+       "share": 0.67,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.21,
+       "mono": false
+      },
+      {
+       "family": "Inter",
+       "share": 0.06,
+       "mono": false
+      },
+      {
+       "family": "Bebas Neue",
+       "share": 0.06,
+       "mono": false
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      11,
+      12,
+      14,
+      16,
+      18,
+      30,
+      36,
+      48,
+      72
+     ],
+     "sizeCount": 9,
+     "notLoaded": [],
+     "body": {
+      "font": "EB Garamond",
+      "size": 16,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.8
+     },
+     "measureChars": 37,
+     "max": {
+      "size": 72,
+      "vw": 9.4,
+      "font": "Bebas Neue",
+      "text": "NANANG ADITYA"
+     },
+     "monoShare": 0.21,
+     "monoProseShare": 0.21,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "/ Software Engineer",
+      "Home",
+      "Projects",
+      "Experience",
+      "About",
+      "Skills"
+     ],
+     "microLabels": 13,
+     "microLabelShare": 0.029,
+     "microSamples": [
+      "PORTFOLIO & MONOGRAPH",
+      "•",
+      "INDONESIA",
+      "FLAGSHIP ARCHIVES",
+      "STACK • CORE",
+      "Backend"
+     ],
+     "upperShare": 0.09,
+     "centerShare": 0,
+     "smallText": 19
+    },
+    "eyebrows": [
+     {
+      "text": "PORTFOLIO & MONOGRAPH",
+      "above": "NANANG ADITYA",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 128
+     },
+     {
+      "text": "FLAGSHIP ARCHIVES",
+      "above": "SELECTED ENTERPRISE SYSTEMS",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 1413
+     },
+     {
+      "text": "ITEM #01",
+      "above": "JM-RISE (Jasa Marga Toll Road Constructi",
+      "upper": true,
+      "tracked": false,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 1577
+     },
+     {
+      "text": "ITEM #02",
+      "above": "Aggregator Operasi",
+      "upper": true,
+      "tracked": false,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 1577
+     },
+     {
+      "text": "ITEM #03",
+      "above": "JM-ACT (Jasa Marga Adukan Cermati Tuntas",
+      "upper": true,
+      "tracked": false,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 2143
+     },
+     {
+      "text": "ITEM #04",
+      "above": "JIMMS (Jasa Marga Integrated Maintenance",
+      "upper": true,
+      "tracked": false,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 2143
+     },
+     {
+      "text": "STACK • CORE",
+      "above": "TECHNICAL RIGOR",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 2846
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0d1217",
+     "bodyBgHsl": {
+      "h": 210,
+      "s": 0.28,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#0f172a",
+       "top": 0,
+       "hsl": {
+        "h": 222,
+        "s": 0.47,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#1a252f",
+       "top": 638,
+       "hsl": {
+        "h": 209,
+        "s": 0.29,
+        "l": 0.14
+       }
+      },
+      {
+       "color": "#141c23",
+       "top": 1316,
+       "hsl": {
+        "h": 208,
+        "s": 0.27,
+        "l": 0.11
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#9aa8b6",
+       "share": 0.74
+      },
+      {
+       "color": "#f2f5f8",
+       "share": 0.14
+      },
+      {
+       "color": "#6e7d8d",
+       "share": 0.1
+      },
+      {
+       "color": "#2ea879",
+       "share": 0.01
+      },
+      {
+       "color": "#091a12",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#2ea879",
+      "hsl": {
+       "h": 157,
+       "s": 0.57,
+       "l": 0.42
+      },
+      "fg": "#091a12"
+     },
+     "lowContrast": [
+      {
+       "text": "Built with React • Vite • TailwindCSS. V",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#6e7d8d",
+       "bg": "#1a252f"
+      },
+      {
+       "text": "DIRECT DISPATCH",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#6e7d8d",
+       "bg": "#1a252f"
+      },
+      {
+       "text": "Archival highway photography © Firzafp, ",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 11,
+       "fg": "#6e7d8d",
+       "bg": "#1a252f"
+      },
+      {
+       "text": "Jakarta, Indonesia",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#6e7d8d",
+       "bg": "#1a252f"
+      },
+      {
+       "text": "© 2026 Nanang Aditya. All rights reserve",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#6e7d8d",
+       "bg": "#1a252f"
+      },
+      {
+       "text": "PLATE 01 • INFRASTRUCTURE",
+       "ratio": 4.1,
+       "need": 4.5,
+       "size": 11,
+       "fg": "#6e7d8d",
+       "bg": "#141c23"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 4,
+     "radius": 0,
+     "height": 46,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 2,
+     "upper": 1,
+     "heroLabels": [
+      "Open 3D Project Book",
+      "Get In Touch",
+      "Unduh CV",
+      "ASSISTANT"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 12,
+     "hairlineSamples": [
+      "header.fixed.top-0 768px",
+      "section.pt-24.sm:pt-32 768px",
+      "div.p-3.bg-[var(--surface)] 718px",
+      "section.section-padding.border-b 768px",
+      "div.flex.flex-col 720px"
+     ],
+     "outlinedBoxes": 15,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 1552
+      },
+      {
+       "count": 5,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 2845
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.35
+     }
+    ],
+    "nav": {
+     "links": 7,
+     "fixed": true,
+     "height": 81,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bebas neue",
+     "eb garamond",
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 3865,
+    "margins": {
+     "left": 24,
+     "right": 31
+    },
+    "sections": [
+     {
+      "sel": "section.pt-24.sm:pt-32",
+      "tag": "section",
+      "top": 0,
+      "height": 1316,
+      "words": 96,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "NANANG ADITYA",
+       "size": 72,
+       "tag": "h1"
+      },
+      "left": 24,
+      "right": 25,
+      "textLeft": 24,
+      "textRight": 37,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding.border-b",
+      "tag": "section",
+      "top": 1316,
+      "height": 1433,
+      "words": 486,
+      "media": 4,
+      "middle": 0,
+      "heading": {
+       "text": "SELECTED ENTERPRISE SYSTEMS",
+       "size": 48,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 49,
+      "textLeft": 24,
+      "textRight": 49,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding",
+      "tag": "section",
+      "top": 2749,
+      "height": 635,
+      "words": 49,
+      "media": 0,
+      "middle": 80,
+      "heading": {
+       "text": "TECHNICAL RIGOR",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 67,
+      "textLeft": 24,
+      "textRight": 67,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.border-t.border-[var(--border)]",
+      "tag": "footer",
+      "top": 3448,
+      "height": 417,
+      "words": 69,
+      "media": 0,
+      "middle": 34,
+      "heading": {
+       "text": "NANANG ADITYA",
+       "size": 36,
+       "tag": "h4"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "NANANG ADITYA",
+      "size": 72,
+      "top": 168,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 24,
+      "n": 6
+     },
+     {
+      "x": 49,
+      "n": 4
+     },
+     {
+      "x": 425,
+      "n": 4
+     }
+    ],
+    "leftBlocks": 14,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 7,
+   "filled": [
+    0.83,
+    0.94,
+    0.75,
+    0.87,
+    0.92,
+    0.94,
+    1
+   ],
+   "motion": {
+    "elements": 12,
+    "css": 0,
+    "transitions": 12,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 5304,
+     "screens": 6.3,
+     "words": 596,
+     "img": 5,
+     "video": 0,
+     "canvas": 0,
+     "svg": 16,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "jakarta-bogor-ciawi-jbc-toll-road-jalan.jpg",
+      "3e69b54f-d62f-47a1-be91-13eaf042e0ab.webp",
+      "890f367b-228f-4b41-a2fe-bb8a6fb18cdc.webp",
+      "10f32a2f-c46e-4263-adeb-275aa019f289.webp",
+      "813a7dca-dc17-4fe4-9c8a-de85d4178165.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "NANANG ADITYA",
+     "words": 2,
+     "chars": 13,
+     "lines": 1,
+     "size": 60,
+     "vw": 15.4,
+     "font": "Bebas Neue",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 1,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.92,
+     "top": 136,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "NANANG ADITYA",
+     "words": 2,
+     "lines": 1,
+     "size": 60,
+     "font": "Bebas Neue"
+    },
+    "headings": [
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.33,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.27,
+      "top": 16,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 60,
+      "vw": 15.4,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 136,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Software engineer building enterprise backends, distributed data pipelines, and mission-critical systems.",
+      "words": 11,
+      "chars": 105,
+      "lines": 3,
+      "size": 24,
+      "vw": 6.2,
+      "font": "EB Garamond",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.38,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 220,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "SELECTED ENTERPRISE SYSTEMS",
+      "words": 3,
+      "chars": 27,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.11,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1247,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "JM-RISE (Jasa Marga Toll Road Construction Monitoring Application)",
+      "words": 8,
+      "chars": 66,
+      "lines": 2,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 1455,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Aggregator Operasi",
+      "words": 2,
+      "chars": 18,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 1984,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "JM-ACT (Jasa Marga Adukan Cermati Tuntaskan)",
+      "words": 6,
+      "chars": 44,
+      "lines": 2,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 2482,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "JIMMS (Jasa Marga Integrated Maintenance Management System)",
+      "words": 7,
+      "chars": 59,
+      "lines": 2,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 3012,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "TECHNICAL RIGOR",
+      "words": 2,
+      "chars": 15,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 3625,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "NANANG ADITYA",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Bebas Neue",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 4745,
+      "tag": "h4",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 10,
+     "maxLines": 3,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "EB Garamond",
+       "share": 0.67,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.2,
+       "mono": false
+      },
+      {
+       "family": "Inter",
+       "share": 0.06,
+       "mono": false
+      },
+      {
+       "family": "Bebas Neue",
+       "share": 0.06,
+       "mono": false
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      11,
+      12,
+      14,
+      16,
+      24,
+      30,
+      36,
+      60
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "EB Garamond",
+      "size": 16,
+      "leading": 1.63,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.8
+     },
+     "measureChars": 39,
+     "max": {
+      "size": 60,
+      "vw": 15.4,
+      "font": "Bebas Neue",
+      "text": "NANANG ADITYA"
+     },
+     "monoShare": 0.2,
+     "monoProseShare": 0.2,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "ID",
+      "PORTFOLIO & MONOGRAPH",
+      "•",
+      "INDONESIA",
+      "SALURAN:",
+      "GitHub"
+     ],
+     "microLabels": 13,
+     "microLabelShare": 0.03,
+     "microSamples": [
+      "PORTFOLIO & MONOGRAPH",
+      "•",
+      "INDONESIA",
+      "FLAGSHIP ARCHIVES",
+      "STACK • CORE",
+      "Backend"
+     ],
+     "upperShare": 0.08,
+     "centerShare": 0,
+     "smallText": 18
+    },
+    "eyebrows": [
+     {
+      "text": "PORTFOLIO & MONOGRAPH",
+      "above": "NANANG ADITYA",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 96
+     },
+     {
+      "text": "FLAGSHIP ARCHIVES",
+      "above": "SELECTED ENTERPRISE SYSTEMS",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 1213
+     },
+     {
+      "text": "ITEM #01",
+      "above": "JM-RISE (Jasa Marga Toll Road Constructi",
+      "upper": true,
+      "tracked": false,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 1427
+     },
+     {
+      "text": "ITEM #02",
+      "above": "Aggregator Operasi",
+      "upper": true,
+      "tracked": false,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 1956
+     },
+     {
+      "text": "ITEM #03",
+      "above": "JM-ACT (Jasa Marga Adukan Cermati Tuntas",
+      "upper": true,
+      "tracked": false,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 2454
+     },
+     {
+      "text": "ITEM #04",
+      "above": "JIMMS (Jasa Marga Integrated Maintenance",
+      "upper": true,
+      "tracked": false,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 2984
+     },
+     {
+      "text": "STACK • CORE",
+      "above": "TECHNICAL RIGOR",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 3587
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0d1217",
+     "bodyBgHsl": {
+      "h": 210,
+      "s": 0.28,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#0f172a",
+       "top": 0,
+       "hsl": {
+        "h": 222,
+        "s": 0.47,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#1a252f",
+       "top": 723,
+       "hsl": {
+        "h": 209,
+        "s": 0.29,
+        "l": 0.14
+       }
+      },
+      {
+       "color": "#141c23",
+       "top": 1148,
+       "hsl": {
+        "h": 208,
+        "s": 0.27,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#0d1217",
+       "top": 1402,
+       "hsl": {
+        "h": 210,
+        "s": 0.28,
+        "l": 0.07
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#9aa8b6",
+       "share": 0.74
+      },
+      {
+       "color": "#f2f5f8",
+       "share": 0.14
+      },
+      {
+       "color": "#6e7d8d",
+       "share": 0.1
+      },
+      {
+       "color": "#2ea879",
+       "share": 0.01
+      },
+      {
+       "color": "#091a12",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#2ea879",
+      "hsl": {
+       "h": 157,
+       "s": 0.57,
+       "l": 0.42
+      },
+      "fg": "#091a12"
+     },
+     "lowContrast": [
+      {
+       "text": "Built with React • Vite • TailwindCSS. V",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#6e7d8d",
+       "bg": "#1a252f"
+      },
+      {
+       "text": "DIRECT DISPATCH",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#6e7d8d",
+       "bg": "#1a252f"
+      },
+      {
+       "text": "PLATE 01 • INFRASTRUCTURE",
+       "ratio": 4.1,
+       "need": 4.5,
+       "size": 11,
+       "fg": "#6e7d8d",
+       "bg": "#141c23"
+      },
+      {
+       "text": "JAGORAWI TOLL ROAD",
+       "ratio": 4.1,
+       "need": 4.5,
+       "size": 11,
+       "fg": "#6e7d8d",
+       "bg": "#141c23"
+      },
+      {
+       "text": "Backend",
+       "ratio": 4.1,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#6e7d8d",
+       "bg": "#141c23"
+      },
+      {
+       "text": "Frontend",
+       "ratio": 4.1,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#6e7d8d",
+       "bg": "#141c23"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 4,
+     "radius": 0,
+     "height": 46,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 2,
+     "upper": 1,
+     "heroLabels": [
+      "Open 3D Project Book",
+      "Get In Touch",
+      "Unduh CV",
+      "ASSISTANT"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 18,
+     "hairlineSamples": [
+      "header.fixed.top-0 390px",
+      "section.pt-24.sm:pt-32 390px",
+      "div.p-3.bg-[var(--surface)] 356px",
+      "section.section-padding.border-b 390px",
+      "div.flex.flex-col 358px"
+     ],
+     "outlinedBoxes": 15,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.13
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 65,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bebas neue",
+     "eb garamond",
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 5304,
+    "margins": {
+     "left": 16,
+     "right": 23
+    },
+    "sections": [
+     {
+      "sel": "section.pt-24.sm:pt-32",
+      "tag": "section",
+      "top": 0,
+      "height": 1148,
+      "words": 96,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "NANANG ADITYA",
+       "size": 60,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 16,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding.border-b",
+      "tag": "section",
+      "top": 1148,
+      "height": 2374,
+      "words": 486,
+      "media": 4,
+      "middle": 0,
+      "heading": {
+       "text": "SELECTED ENTERPRISE SYSTEMS",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 36,
+      "textLeft": 16,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.section-padding",
+      "tag": "section",
+      "top": 3522,
+      "height": 1067,
+      "words": 49,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "TECHNICAL RIGOR",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 45,
+      "textLeft": 16,
+      "textRight": 45,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.border-t.border-[var(--border)]",
+      "tag": "footer",
+      "top": 4653,
+      "height": 651,
+      "words": 69,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "NANANG ADITYA",
+       "size": 30,
+       "tag": "h4"
+      },
+      "left": 16,
+      "right": 30,
+      "textLeft": 16,
+      "textRight": 30,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "NANANG ADITYA",
+      "size": 60,
+      "top": 136,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 41,
+      "n": 8
+     },
+     {
+      "x": 16,
+      "n": 6
+     }
+    ],
+    "leftBlocks": 14,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "width": 1440,
+   "message": "7 eyebrow/kicker label(s) above headings: \"PORTFOLIO & MONOGRAPH\" above \"NANANG ADITYA\"; \"FLAGSHIP ARCHIVES\" above \"SELECTED ENTERPRISE SYSTEMS\"; \"ITEM #01\" above \"JM-RISE (Jasa Marga Toll Road Constructi\"; \"ITEM #02\" above \"Aggregator Operasi\"; \"ITEM #03\" above \"JM-ACT (Jasa Marga Adukan Cermati Tuntas\"",
+   "fix": "Delete them. If the label carried real information, fold it into the headline or the supporting sentence.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "mono",
+   "width": 1440,
+   "message": "Monospace type outside code: ui-monospace — e.g. \"/ Software Engineer\", \"Home\", \"Projects\", \"Experience\"",
+   "fix": "Set it in the text face. Monospace is for literal code inside <pre>/<code> only.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "micro-label",
+   "width": 1440,
+   "message": "13 tiny uppercase letter-spaced labels (e.g. \"PORTFOLIO & MONOGRAPH\", \"•\", \"INDONESIA\", \"FLAGSHIP ARCHIVES\").",
+   "fix": "Use sentence-case text at a readable size, or delete the label.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "hairline",
+   "width": 1440,
+   "message": "18 thin rule(s)/divider line(s): header.fixed.top-0 1440px | section.pt-24.sm:pt-32 1440px | div.p-3.bg-[var(--surface)] 423px | section.section-padding.border-b 1440px",
+   "fix": "Delete. Separate with space, a tone change, or scale. Lines are only for real tables and form fields.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "outlined-box",
+   "width": 1440,
+   "message": "15 boxes drawn with a 1px outline.",
+   "fix": "Define a surface by its fill (one tone step from the page) or leave the content unboxed.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "card-rows",
+   "width": 1440,
+   "message": "2 rows of identical boxed cards.",
+   "fix": "Vary the composition; not every section is a card grid.",
+   "alsoAt": [
+    768
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "contrast",
+   "width": 1440,
+   "message": "Low-contrast text: \"Built with React • Vite • TailwindCSS. V\" 3.7:1 needs 4.5:1; \"DIRECT DISPATCH\" 3.7:1 needs 4.5:1; \"Archival highway photography © Firzafp, \" 3.7:1 needs 4.5:1; \"Jakarta, Indonesia\" 3.7:1 needs 4.5:1",
+   "fix": "Darken or lighten the text colour.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "font-count",
+   "width": 1440,
+   "message": "4 typefaces in use (EB Garamond, ui-monospace, Inter, Bebas Neue).",
+   "fix": "Two at most: one display, one text. Often one is enough.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "FAIL",
+   "id": "small-text",
+   "width": 1440,
+   "message": "19 text blocks under 13px.",
+   "fix": "Nothing meant to be read goes below 13px.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "dev-server",
+   "width": 1440,
+   "message": "This page is served by a development server (Vite, webpack or Next in dev mode).",
+   "fix": "Run the last gate on the production build too (vite build && vite preview, next build && next start, or the built index.html): minifiers and bundlers change the CSS a visitor receives.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "headline-lines",
+   "width": 768,
+   "message": "2 headline(s) wrap past two lines at 768px: \"JM-RISE (Jasa Marga Toll Road Construction Monit\" → 3 lines (8 words, 30px); \"JIMMS (Jasa Marga Integrated Maintenance Managem\" → 3 lines (7 words, 30px)",
+   "fix": "Cut words first (a headline is a title, not a sentence). Then give it a wider measure. Lower the size only as a last resort and never below the scale you chose. A real statement paragraph belongs in a <p> or <blockquote> at 32px or less."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/after/desktop-fold.jpg",
+   "pages": [
+    "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/after/desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/after/tablet-fold.jpg",
+   "pages": [
+    "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/after/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/after/mobile-fold.jpg",
+   "pages": [
+    "/Users/nanang212/Documents/PRJ-PRIBADI/static-frontend/.taste-skill/after/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

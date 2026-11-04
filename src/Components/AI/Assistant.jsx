@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { MessageSquare, X, Send } from 'lucide-react';
 
 export default function Assistant() {
   const [open, setOpen] = useState(false);
@@ -12,7 +13,7 @@ export default function Assistant() {
   const listRef = useRef(null);
 
   const friendlyFallback =
-    'Assistant sedang tidak tersedia. Coba lagi sebentar, atau tanyakan dengan kalimat lebih spesifik seperti “skills apa saja?” atau “project utama apa?”';
+    'Asisten saat ini merespons berdasarkan basis data portfolio. Anda dapat menanyakan tentang "proyek utama apa saja", "keahlian teknis", atau "pengalaman di Jasa Marga".';
 
   const normalize = (v) => (v || '').toLowerCase();
   const STOPWORDS = new Set(['yang', 'dan', 'di', 'ke', 'dari', 'untuk', 'the', 'a', 'an', 'is', 'are']);
@@ -36,14 +37,15 @@ export default function Assistant() {
       scored.sort((a, b) => b.score - a.score);
       const topMatches = scored.filter((e) => e.score > 0).slice(0, 3).map((e) => e.item);
       if (topMatches.length === 0) {
-        return 'Saya belum menemukan jawaban spesifik dari portfolio ini. Coba tanya: “skills apa saja?”, “project utama apa?”, atau “pengalaman kerja di mana?”.';
+        return 'Informasi spesifik belum ditemukan di database ringkas. Anda dapat menanyakan: "skills", "proyek utama", atau "pengalaman kerja".';
       }
       const bullets = topMatches.map((it) => `• ${it.title}: ${it.summary}`).join('\n');
-      return `Berdasarkan portfolio ini, berikut info yang relevan:\n${bullets}`;
+      return `Berdasarkan arsip teknis portfolio ini:\n${bullets}`;
     } catch (err) {
       return null;
     }
   };
+
   useEffect(() => {
     localStorage.setItem('assistant_chat', JSON.stringify(messages));
     if (listRef.current) listRef.current.scrollTop = listRef.current.scrollHeight;
@@ -53,36 +55,34 @@ export default function Assistant() {
     e && e.preventDefault();
     if (!input.trim()) return;
     const userMsg = { role: 'user', text: input, ts: Date.now() };
-    setMessages(prev => [...prev, userMsg]);
+    setMessages((prev) => [...prev, userMsg]);
     setInput('');
     setLoading(true);
     try {
       const r = await fetch('/api/assistant', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: userMsg.text })
+        body: JSON.stringify({ message: userMsg.text }),
       });
       let reply = null;
       try {
         const data = await r.json();
-        if (r.ok) reply = data.reply || 'Maaf, saya tidak dapat menjawab sekarang.';
+        if (r.ok) reply = data.reply || null;
         else reply = data.hint || null;
       } catch (err) {
         reply = null;
       }
 
       if (!reply) {
-        // attempt local fallback using knowledge.json
         const fb = await fallbackReplyFromKnowledge(userMsg.text);
         reply = fb || friendlyFallback;
       }
 
       const botMsg = { role: 'assistant', text: reply, ts: Date.now() };
-      setMessages(prev => [...prev, botMsg]);
+      setMessages((prev) => [...prev, botMsg]);
     } catch (err) {
-      // On network error, try local fallback first
       const fb = await fallbackReplyFromKnowledge(userMsg.text);
-      setMessages(prev => [...prev, { role: 'assistant', text: fb || friendlyFallback, ts: Date.now() }]);
+      setMessages((prev) => [...prev, { role: 'assistant', text: fb || friendlyFallback, ts: Date.now() }]);
     } finally {
       setLoading(false);
     }
@@ -94,66 +94,122 @@ export default function Assistant() {
   };
 
   return (
-    <>
-      {/* Bottom-right container (LinkedIn-style) */}
-      <div className="fixed right-6 bottom-6 z-50 flex flex-col items-end">
-
-        {/* Chat box (expands upward) */}
-        <div className={`mb-4 transition-all duration-300 ${open ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`} style={{ width: '24rem', maxWidth: 'calc(100vw - 1.5rem)' }}>
-          <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[32rem]">
-            <div className="px-5 py-4 flex items-center justify-between border-b border-slate-100 dark:border-slate-800">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center text-white font-bold text-sm">AI</div>
-                <div>
-                  <div className="font-semibold text-slate-900 dark:text-slate-100 text-base">Assistant</div>
-                  <div className="text-sm text-slate-500 dark:text-slate-400">Ask about this portfolio</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <button onClick={clearChat} className="text-sm text-slate-500 hover:text-slate-700">Clear</button>
-                <button onClick={() => setOpen(false)} className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">✕</button>
-              </div>
-            </div>
-
-            <div ref={listRef} className="flex-1 p-5 overflow-auto space-y-4 bg-transparent pb-32">
-              {messages.length === 0 && (
-                <div className="text-sm leading-relaxed text-slate-500">Hi! Ask me about the portfolio (projects, skills, experience).</div>
-              )}
-
-              {/* Suggested question chips for quick queries */}
-              <div className="flex flex-wrap gap-2.5">
-                <button onClick={async () => { setInput('skills apa saja?'); await new Promise(r=>setTimeout(r,50)); send(); }} className="text-xs px-3.5 py-1.5 bg-slate-700 text-white rounded-full">skills apa saja?</button>
-                <button onClick={async () => { setInput('project utama apa?'); await new Promise(r=>setTimeout(r,50)); send(); }} className="text-xs px-3.5 py-1.5 bg-slate-700 text-white rounded-full">project utama apa?</button>
-                <button onClick={async () => { setInput('pengalaman kerja di mana?'); await new Promise(r=>setTimeout(r,50)); send(); }} className="text-xs px-3.5 py-1.5 bg-slate-700 text-white rounded-full">pengalaman kerja di mana?</button>
-              </div>
-              {messages.map((m, idx) => (
-                <div key={idx} className={`max-w-full ${m.role === 'user' ? 'text-right' : 'text-left'}`}>
-                  <div className={`${m.role === 'user' ? 'inline-block bg-primary-600 text-white' : 'inline-block bg-slate-800/70 dark:bg-slate-800 text-slate-100'} px-4 py-3 rounded-xl leading-relaxed`}>{m.text}</div>
-                </div>
-              ))}
-              {loading && <div className="text-left"><div className="inline-block bg-slate-100 dark:bg-slate-800 px-4 py-3 rounded-xl">...</div></div>}
-            </div>
-
-            <form onSubmit={send} className="p-4 border-t border-slate-100 dark:border-slate-800 flex items-center gap-3 sticky bottom-0 bg-white/5 dark:bg-slate-900/95" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
-              <input value={input} onChange={e=>setInput(e.target.value)} placeholder="Ask a question..." className="flex-1 px-4 py-3 rounded-xl border border-slate-700 dark:border-slate-700 bg-slate-800 text-slate-100 placeholder-slate-400" />
-              <button type="submit" disabled={loading || !input.trim()} className="ml-1 px-5 py-3 bg-primary-600 text-white rounded-xl disabled:opacity-50">Send</button>
-            </form>
-          </div>
-        </div>
-
-        {/* Collapsed bar (icon + name) */}
-        <button
-          onClick={() => setOpen(o => !o)}
-          className="flex items-center gap-3 px-5 py-3 rounded-full bg-slate-900/95 text-white shadow-lg hover:shadow-2xl transition-all"
-          aria-label="Toggle Assistant"
+    <div className="fixed right-4 sm:right-6 bottom-4 sm:bottom-6 z-50 flex flex-col items-end">
+      {/* Expanded Dialog Box */}
+      {open && (
+        <div
+          className="mb-3 w-[22rem] sm:w-[24rem] max-w-[calc(100vw-2rem)] bg-[var(--surface)] border border-[var(--border)] shadow-xl flex flex-col h-[28rem] sm:h-[32rem]"
+          role="dialog"
+          aria-label="Assistant Inquiry"
         >
-          <div className="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center text-white font-semibold">AI</div>
-          <div className="hidden sm:block text-base font-medium">Assistant</div>
-          <svg className={`w-5 h-5 transition-transform ${open ? 'rotate-180' : ''}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-      </div>
-    </>
+          {/* Header */}
+          <div className="p-4 border-b border-[var(--border)] bg-[var(--surface-subtle)] flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="stamp-tag font-mono text-[10px]">INDEX QUERY</span>
+              <span className="font-editorial-title text-xl text-[var(--ink)]">ASSISTANT</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={clearChat}
+                className="text-xs font-mono text-[var(--ink)] hover:underline"
+              >
+                Clear
+              </button>
+              <button
+                onClick={() => setOpen(false)}
+                className="p-1 text-[var(--ink-muted)] hover:text-[var(--ink)]"
+                aria-label="Close Assistant"
+              >
+                <X size={16} />
+              </button>
+            </div>
+          </div>
+
+          {/* Conversation List */}
+          <div ref={listRef} className="flex-1 p-4 overflow-y-auto space-y-3 font-mono text-xs">
+            {messages.length === 0 && (
+              <p className="text-[var(--ink-muted)] font-editorial-serif text-sm italic">
+                Tanyakan ringkasan sistem, teknologi backend yang digunakan, atau riwayat kerja Nanang Aditya.
+              </p>
+            )}
+
+            {/* Quick chips */}
+            {messages.length === 0 && (
+              <div className="flex flex-wrap gap-1.5 pt-2">
+                {['skills apa saja?', 'project utama apa?', 'pengalaman kerja di mana?'].map((q) => (
+                  <button
+                    key={q}
+                    onClick={async () => {
+                      setInput(q);
+                      setTimeout(() => send(), 60);
+                    }}
+                    className="px-2 py-1 bg-[var(--surface-subtle)] border border-[var(--border-subtle)] text-[var(--ink)] hover:border-[var(--accent)] transition-colors text-[11px]"
+                  >
+                    {q}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {messages.map((m, idx) => (
+              <div
+                key={idx}
+                className={`flex flex-col ${m.role === 'user' ? 'items-end' : 'items-start'}`}
+              >
+                <span className="text-[10px] text-[var(--ink-faint)] uppercase mb-1">
+                  {m.role === 'user' ? 'YOU' : 'ARCHIVE BOT'}
+                </span>
+                <div
+                  className={`p-3 max-w-[90%] whitespace-pre-wrap leading-relaxed ${
+                    m.role === 'user'
+                      ? 'bg-[var(--accent)] text-[var(--accent-contrast)]'
+                      : 'bg-[var(--surface-subtle)] text-[var(--ink)] border border-[var(--border-subtle)]'
+                  }`}
+                >
+                  {m.text}
+                </div>
+              </div>
+            ))}
+
+            {loading && (
+              <div className="text-left text-[var(--ink-faint)] animate-pulse">
+                Mencari catatan arsip...
+              </div>
+            )}
+          </div>
+
+          {/* Input form */}
+          <form
+            onSubmit={send}
+            className="p-3 border-t border-[var(--border)] bg-[var(--surface)] flex items-center gap-2"
+          >
+            <input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Ketik pertanyaan..."
+              className="flex-1 px-3 py-2 text-xs bg-[var(--surface-subtle)] text-[var(--ink)] border border-[var(--border-subtle)] outline-none focus:border-[var(--accent)]"
+            />
+            <button
+              type="submit"
+              disabled={loading || !input.trim()}
+              className="btn-primary !p-2 disabled:opacity-40"
+              aria-label="Send Query"
+            >
+              <Send size={14} />
+            </button>
+          </form>
+        </div>
+      )}
+
+      {/* Toggle button */}
+      <button
+        onClick={() => setOpen((prev) => !prev)}
+        className="flex items-center gap-2 px-4 py-2.5 bg-[var(--accent)] text-[var(--accent-contrast)] hover:opacity-95 transition-all text-xs font-semibold uppercase tracking-wider"
+        aria-label="Toggle Portfolio Assistant"
+      >
+        <MessageSquare size={15} />
+        <span>ASSISTANT</span>
+      </button>
+    </div>
   );
 }

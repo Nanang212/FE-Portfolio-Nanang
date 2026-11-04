@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CV - Nanang Aditya Sutahar (Software Engineer)</title>
+<style>
+  @page {
+    size: A4;
+    margin: 14mm 16mm 14mm 16mm;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #111827;
+    background: #ffffff;
+    font-size: 9.5pt;
+    line-height: 1.38;
+    -webkit-font-smoothing: antialiased;
+  }
+  .header {
+    text-align: center;
+    border-bottom: 1.5pt solid #111827;
+    padding-bottom: 7pt;
+    margin-bottom: 9pt;
+  }
+  .header h1 {
+    font-size: 20pt;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #111827;
+    text-transform: uppercase;
+    margin-bottom: 2pt;
+  }
+  .header .title {
+    font-size: 11pt;
+    font-weight: 600;
+    color: #1e3a8a;
+    letter-spacing: 0.2px;
+    margin-bottom: 4pt;
+  }
+  .header .contact {
+    font-size: 8.8pt;
+    color: #374151;
+  }
+  .header .contact a {
+    color: #1e3a8a;
+    text-decoration: none;
+  }
+  .header .contact span {
+    margin: 0 4pt;
+    color: #9ca3af;
+  }
+  .section {
+    margin-bottom: 8pt;
+  }
+  .section-title {
+    font-size: 10.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #111827;
+    border-bottom: 0.75pt solid #d1d5db;
+    padding-bottom: 2pt;
+    margin-bottom: 5pt;
+  }
+  .skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9pt;
+  }
+  .skills-table td {
+    padding: 1.5pt 0;
+    vertical-align: top;
+  }
+  .skills-table .label {
+    width: 22%;
+    font-weight: 700;
+    color: #1f2937;
+  }
+  .skills-table .value {
+    width: 78%;
+    color: #374151;
+  }
+  .item {
+    margin-bottom: 6.5pt;
+    page-break-inside: avoid;
+  }
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.5pt;
+  }
+  .item-title {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #111827;
+  }
+  .item-title .company {
+    font-weight: 600;
+    color: #1e3a8a;
+  }
+  .item-date {
+    font-size: 8.8pt;
+    font-weight: 600;
+    color: #4b5563;
+    white-space: nowrap;
+  }
+  .sub-project {
+    margin-top: 3pt;
+    margin-bottom: 3pt;
+  }
+  .sub-project-title {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #1f2937;
+  }
+  .bullets {
+    list-style: disc outside;
+    margin-left: 14pt;
+    margin-top: 2pt;
+  }
+  .bullets li {
+    font-size: 8.8pt;
+    color: #374151;
+    margin-bottom: 1.8pt;
+    line-height: 1.34;
+    text-align: justify;
+  }
+  .bullets li strong {
+    color: #111827;
+  }
+  .edu-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3.5pt;
+  }
+  .edu-title {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #111827;
+  }
+  .edu-sub {
+    font-size: 8.8pt;
+    color: #4b5563;
+  }
+  .edu-date {
+    font-size: 8.8pt;
+    font-weight: 600;
+    color: #4b5563;
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Nanang Aditya Sutahar</h1>
+    <div class="title">Software Engineer | Backend &amp; Full Stack</div>
+    <div class="contact">
+      <div>Surabaya, East Java, Indonesia <span>&bull;</span> +62 857-9066-3367 <span>&bull;</span> <a href="mailto:nanangaditya2001@gmail.com">nanangaditya2001@gmail.com</a></div>
+      <div style="margin-top: 2pt;">
+        <strong>Portfolio:</strong> <a href="https://fe-portfolio-nanang.vercel.app/">https://fe-portfolio-nanang.vercel.app/</a>
+        <span>&bull;</span> <a href="https://linkedin.com/in/nanang-aditya">linkedin.com/in/nanang-aditya</a>
+        <span>&bull;</span> <a href="https://github.com/nanang-aditya">github.com/nanang-aditya</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <p style="font-size: 9pt; color: #374151; text-align: justify;">
+      Software Engineer with <strong>3+ years of professional experience</strong> designing, building, and deploying mission-critical web applications and high-performance RESTful APIs across the full stack. Currently a Backend Developer at <strong>PT Jasa Marga (Persero) Tbk</strong>, engineering enterprise toll road construction monitoring systems, automated AI/RAG vector pipelines, and centralized Master Data Management (MDM) services. Proven track record in relational database design, distributed message streaming, server performance tuning, zero-downtime Linux cloud migrations, and robust RBAC architectures. B.Sc. in Informatics Engineering in progress (GPA 3.66 / 4.00).
+    </p>
+  </div>
+
+  <!-- TECHNICAL SKILLS -->
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <table class="skills-table">
+      <tr>
+        <td class="label">Languages</td>
+        <td class="value">JavaScript (ES6+), TypeScript, PHP, Java (7/17), Python, Go, C#, SQL, Bash Scripting</td>
+      </tr>
+      <tr>
+        <td class="label">Backend &amp; Architecture</td>
+        <td class="value">Node.js, Express.js, Laravel (11/12), Spring Boot, RESTful APIs, Prisma ORM, Apache Kafka, Swagger / OpenAPI, Server-Sent Events (SSE), AI / RAG Integration, Clean Architecture, Repository Pattern</td>
+      </tr>
+      <tr>
+        <td class="label">Databases &amp; Caching</td>
+        <td class="value">PostgreSQL, MySQL, MariaDB, Redis (In-Memory Caching &amp; SSOT), Relational Schema Normalization, Query Indexing</td>
+      </tr>
+      <tr>
+        <td class="label">DevOps &amp; Infrastructure</td>
+        <td class="value">Docker, Docker Compose, Linux (Ubuntu/Debian), Nginx (Reverse Proxy &amp; Bot Security), CloudPanel, GitLab CI/CD, Jenkins, Cloudflare Zero-Trust, Let's Encrypt SSL, Server Performance Tuning</td>
+      </tr>
+      <tr>
+        <td class="label">Storage &amp; Frontend</td>
+        <td class="value">MinIO (S3), AWS S3, React.js, Inertia.js, Tailwind CSS, Progressive Web App (PWA), Sonner, Postman, PHPUnit, Git</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- WORK EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Work Experience</div>
+
+    <!-- PT Jasa Marga -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Backend Developer (Onsite) <span class="company">&mdash; PT Jasa Marga (Persero) Tbk</span></span>
+        <span class="item-date">March 2025 &ndash; Present | Jakarta, Indonesia</span>
+      </div>
+      <ul class="bullets">
+        <li>
+          <strong>JM-RISE (Toll Road Construction Monitoring &amp; AI Assistant):</strong> Designed the relational database architecture (normalization, indexes, migrations) and built high-performance RESTful APIs using Express.js, Prisma ORM, and PostgreSQL to track physical and financial milestones (Kurva S), legal chronologies, and technical project reports across toll road subsidiaries (APJT).
+        </li>
+        <li>
+          Engineered an automated <strong>AI RAG (Retrieval-Augmented Generation)</strong> ingestion engine parsing large-scale construction documents into external vector databases, developed live multi-turn streaming chat via <strong>Server-Sent Events (SSE)</strong>, and architected document storage on <strong>MinIO S3</strong>.
+        </li>
+        <li>
+          Resolved critical cross-application duplicate document overwriting issues through automated migration scripts and robust ID reconciliation, achieving <strong>100% data synchronization and reliability</strong> for internal stakeholders.
+        </li>
+        <li>
+          <strong>AGGREGATOR OPERASI (Centralized Master Data Management):</strong> Designed and built a centralized MDM service unifying heterogeneous operational data (toll gates, clusters, routes, transaction reports). Established a Single Source of Truth (SSOT) architecture and integrated <strong>Redis in-memory caching</strong> to accelerate frequent read queries and eliminate cross-system data conflicts with zero downtime.
+        </li>
+        <li>
+          <strong>JM-ACT &amp; JIMMS:</strong> Refactored legacy monolithic Laravel system into a Service-Oriented Architecture (SOA) consumed by Travoy mobile app with real-time push and email notifications. Added multi-level Role-Based Access Control (RBAC) approval workflows to JIMMS.
+        </li>
+      </ul>
+    </div>
+
+    <!-- PT Adira Finance -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Programmer (Onsite) <span class="company">&mdash; PT Adira Dinamika Multi Finance</span></span>
+        <span class="item-date">March 2024 &ndash; February 2025 | Jakarta, Indonesia</span>
+      </div>
+      <ul class="bullets">
+        <li>
+          <strong>ACTION Core Application Maintenance:</strong> Maintained and enhanced the nationwide Action core financing application utilized by branches across Indonesia for loan submissions, resolving MTC support tickets and validating complex customer loan data via SQL to maintain 99.9% operational uptime.
+        </li>
+        <li>
+          <strong>Document Digitization Platform:</strong> Engineered an automated loan paperwork digitization service using <strong>Java 17, Spring Boot, and Apache POI</strong>. Integrated official tax e-stamp (e-meterai) and digital signature interfaces to automate generation and verification of legally binding loan agreements.
+        </li>
+        <li>
+          <strong>Kafka Event Streaming:</strong> Implemented <strong>Apache Kafka consumer groups</strong> across Java 7 and Java 17 services to process asynchronous document creation and notification events with zero data loss.
+        </li>
+        <li>
+          <strong>Autofill &amp; Data Verification:</strong> Engineered an automated document autofill pipeline for repeat applicants and optimized identity validation with Dukcapil and GR Dedup, significantly cutting redundant hit queries and accelerating branch customer onboarding.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Earlier Experience -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Earlier Technical Experience</span>
+        <span class="item-date">August 2022 &ndash; November 2023</span>
+      </div>
+      <ul class="bullets">
+        <li>
+          <strong>Application Developer Jr. &mdash; PT Mitra Integrasi Informatika (Sep &ndash; Nov 2023):</strong> Built an enterprise Training Management web platform with Spring Boot; formulated BPMN/UML/ERD technical specs and integrated Java Mail Sender for automated participant notifications.
+        </li>
+        <li>
+          <strong>Full Stack Developer (Freelance) &mdash; Lavin Technologies (May &ndash; Jul 2023):</strong> Developed a supermarket web POS cashier system with Laravel and MySQL featuring barcode scanning, receipt printing, and Ag-Grid interactive data tables.
+        </li>
+        <li>
+          <strong>Full Stack Developer Intern &mdash; PT Unicam Digital Studio Pictures (Aug &ndash; Dec 2022):</strong> Developed KONSEL, a student counseling web platform with Laravel featuring role-based access and student guidance audit trails.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SELECTED PROJECTS -->
+  <div class="section">
+    <div class="section-title">Selected Production Projects</div>
+
+    <!-- SignFlow -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">SIGNFLOW &mdash; Digital Signature &amp; Document Verification Platform (Freelance)</span>
+        <span class="item-date">October 2026</span>
+      </div>
+      <ul class="bullets">
+        <li>
+          Architected a secure digital signature and document validation web platform using <strong>Laravel 12, Inertia.js, React (TypeScript), Tailwind CSS, MinIO (S3), and PostgreSQL</strong> to digitize enterprise signing workflows.
+        </li>
+        <li>
+          Engineered dynamic PDF manipulation and cryptographic hash verification for document authenticity and tamper protection; implemented sequential multi-level approval workflows, queue-driven email notifications, and bulk user actions with Sonner toasts. Built as a responsive <strong>Progressive Web App (PWA)</strong> supporting touch signature drawing.
+        </li>
+      </ul>
+    </div>
+
+    <!-- WordPress Migration -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">WORDPRESS MULTI-SITE CLOUD VPS MIGRATION &amp; INFRASTRUCTURE OPTIMIZATION (Freelance)</span>
+        <span class="item-date">October 2026</span>
+      </div>
+      <ul class="bullets">
+        <li>
+          Executed end-to-end zero-downtime server migration for <strong>26+ high-traffic WordPress websites</strong> (including JatimDaily.com) from Hostinger Shared Hosting to a dedicated Linux Cloud VPS with CloudPanel (Nginx, PHP 8.3 FPM, MariaDB, Redis).
+        </li>
+        <li>
+          Resolved critical server bottleneck where CPU Load Average spiked to 104+ due to aggressive AI crawlers (Meta/Claude/Exa bots). Hardened infrastructure via Nginx HTTP 403 blocking rules, PHP-FPM process pool tuning (pm.max_children), and Redis object caching&mdash;<strong>reducing CPU load to &lt; 0.5, freeing 4.5+ GB RAM, and accelerating TTFB from 40s+ down to 1&ndash;3 seconds</strong>.
+        </li>
+      </ul>
+    </div>
+
+    <!-- SIM SEMPRO -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">SIM SEMPRO &amp; TA &mdash; Academic Proposal &amp; Final Project Management System</span>
+        <span class="item-date">October 2026</span>
+      </div>
+      <ul class="bullets">
+        <li>
+          Engineered a Modular Monolith system (Laravel 11, Inertia.js, React TypeScript, PostgreSQL) featuring an <strong>NLP text similarity engine (N-gram tokenization + Cosine Similarity)</strong> calculating title duplication with <strong>41.8 ms latency</strong>.
+        </li>
+        <li>
+          Built Topic-to-Lecturer matching based on research keywords and quotas, 8-session guidance audit trails, Google Meet integration, and RBAC across 4 roles. Validated with <strong>78 automated Unit/Feature tests (100% pass)</strong>, achieving a <strong>System Usability Scale (SUS) score of 87.08 (Grade A)</strong>; containerized via Docker Compose with Cloudflare Zero-Trust Tunnel.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="edu-row">
+      <div>
+        <div class="edu-title">Universitas Esa Unggul</div>
+        <div class="edu-sub">Bachelor of Computer Science (S1) in Informatics Engineering &bull; <strong>GPA: 3.66 / 4.00</strong></div>
+      </div>
+      <div class="edu-date">2024 &ndash; Present</div>
+    </div>
+    <div class="edu-row">
+      <div>
+        <div class="edu-title">Politeknik Elektronika Negeri Surabaya (PENS)</div>
+        <div class="edu-sub">Associate Degree (D3) in Informatics Engineering &bull; <strong>GPA: 3.69 / 4.00</strong></div>
+      </div>
+      <div class="edu-date">2020 &ndash; 2023</div>
+    </div>
+  </div>
+
+  <!-- ORGANIZATIONS & AWARDS -->
+  <div class="section">
+    <div class="section-title">Organizations &amp; Awards</div>
+    <ul class="bullets">
+      <li><strong>Head of Home Affairs Department</strong> &mdash; HIMIT PENS (Himpunan Mahasiswa Teknik Informatika), 2022 &ndash; 2023</li>
+      <li><strong>1st Place Champion</strong> &mdash; Futsal Championship, PENSCOMP, 2023</li>
+    </ul>
+  </div>
+
+</body>
+</html>
