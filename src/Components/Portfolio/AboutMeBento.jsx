@@ -37,6 +37,15 @@ export default function AboutMeBento({ about, education = [] }) {
     // ── 1. ACTIVE PHOTO CAROUSEL & LIGHTBOX STATE ──
     const photos = [
         {
+            src: '/images/personal/office-work.jpg',
+            title_id: 'Keseharian Rekayasa di Kantor',
+            title_en: 'Engineering On Duty at the Office',
+            badge: 'Software Engineer',
+            location: 'Head Office, Jakarta',
+            caption_id: 'Fokus merancang arsitektur backend, diskusi sistem, dan pengembangan platform enterprise.',
+            caption_en: 'Architecting scalable backend services and developing enterprise production platforms.'
+        },
+        {
             src: '/images/personal/trail-run.jpg',
             title_id: 'Trail Run & Eksplorasi Alam',
             title_en: 'Trail Run & Nature Trekking',

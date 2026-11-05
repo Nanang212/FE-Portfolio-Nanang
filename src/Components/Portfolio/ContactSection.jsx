@@ -124,17 +124,17 @@ export default function ContactSection({ isStandalonePage = false }) {
                         <div className="p-5 sm:p-7 bg-slate-50/80 border border-slate-200/90 rounded-2xl shadow-xs relative overflow-hidden">
                             
                             {/* Card Pitch Header */}
-                            <div className="mb-5 pb-4 border-b border-[var(--border-subtle)]">
+                            <div className="mb-5 pb-4 border-b border-slate-200">
                                 <div className="flex items-center gap-1.5 mb-1 text-emerald-800">
                                     <Sparkles size={15} className="shrink-0" />
                                     <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider">
                                         {lang === 'id' ? 'BUTUH SOFTWARE / BACKEND ENGINEER?' : 'LOOKING FOR AN ENGINEER?'}
                                     </span>
                                 </div>
-                                <h3 className="font-editorial-title text-2xl sm:text-3xl text-[var(--ink)] leading-none mt-1">
+                                <h3 className="font-editorial-title text-2xl sm:text-3xl text-slate-900 leading-none mt-1">
                                     {lang === 'id' ? 'REKRUT NANANG ADITYA' : 'HIRE NANANG ADITYA'}
                                 </h3>
-                                <p className="text-xs sm:text-sm text-[var(--ink-muted)] mt-2 leading-relaxed">
+                                <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
                                     {lang === 'id'
                                         ? 'Backend & Full Stack Developer dengan rekam jejak terverifikasi di enterprise nasional (PT Jasa Marga & PT Adira Finance). Spesialis dalam membangun API scalable, optimasi database, dan sistem AI terintegrasi.'
                                         : 'Backend & Full Stack Developer with verified enterprise experience at national institutions (PT Jasa Marga & PT Adira Finance). Specializing in scalable APIs, database performance tuning, and intelligent AI pipelines.'}

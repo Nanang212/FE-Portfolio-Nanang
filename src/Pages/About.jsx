@@ -73,11 +73,11 @@ export default function About({ about }) {
                         <div className="p-8 sm:p-12 bg-[var(--surface)]">
                             <div className="grid md:grid-cols-12 gap-8 items-start">
                                 <div className="md:col-span-4 flex flex-col items-center text-center space-y-3">
-                                    <div className="w-36 sm:w-44 h-48 sm:h-56 flex items-end justify-center bg-[var(--surface-subtle)] rounded-xl pt-4 px-2 overflow-hidden">
+                                    <div className="w-36 sm:w-44 h-48 sm:h-56 flex items-center justify-center bg-[var(--surface-subtle)] rounded-xl overflow-hidden shadow-sm border border-slate-200">
                                         <img
-                                            src="/images/profile.png"
+                                            src="/images/personal/office-work.jpg"
                                             alt="Nanang Aditya Sutahar"
-                                            className="max-h-full w-auto object-contain drop-shadow-sm"
+                                            className="w-full h-full object-cover"
                                         />
                                     </div>
                                     <div className="text-sm text-[var(--ink-muted)] space-y-1">

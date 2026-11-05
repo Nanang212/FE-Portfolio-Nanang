@@ -289,12 +289,12 @@ export default function Home({ about, projects = [], skills = {}, experiences = 
                                             animate={{ opacity: 1, scale: 1, y: 0 }}
                                             exit={{ opacity: 0, scale: 0.94, y: -10 }}
                                             transition={{ duration: 0.35 }}
-                                            className="relative w-full h-full flex items-center justify-center p-3"
+                                            className="relative w-full h-full flex items-center justify-center p-2.5"
                                         >
                                             <img
-                                                src="/images/personal/jogging.png"
-                                                alt="Nanang Aditya - GBK Senayan Running"
-                                                className="max-h-full max-w-full object-contain rounded-2xl drop-shadow-xl z-10"
+                                                src="/images/personal/office-work.jpg"
+                                                alt="Nanang Aditya - Software Engineer on Duty"
+                                                className="w-full h-full object-cover rounded-2xl shadow-md z-10"
                                             />
                                         </motion.div>
                                     )}
